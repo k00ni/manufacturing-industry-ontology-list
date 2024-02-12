@@ -112,13 +112,26 @@ Die Kernontologien bilden die zweite Gruppe. Sie bauen in der Regel auf einer To
 
 Die dritte und letzte Gruppe sind die sogenannten Taskontologien, welche für die Bearbeitung eines konkreten Anwendungsfalls entwickelt und genutzt werden. In der Praxis wird diese Einteilung nicht immer in der Form umgesetzt, jedoch bietet sie sich für die Einordnung vorhandener Ontologien an.
 
-\subsection{Die Industrie, Industrie 4.0 und Industrieproduktion}
+\subsection{Ontology Design Pattern (ODP)}
 
-Die Autoren von \cite{lasi2014industrie} bezeichnen die Industrie als den Teil der Wirtschaft, der materielle Güter mit einem hohen Grad an Mechanisierung und Automatisierung erstellt. Dabei spielen viele Themengebiete eine Rolle, wie Rohstoffförderung, Logistik und digitale Systeme. Umgangssprachlich wird häufig der Begriff \textit{Industrieproduktion} verwendet, wenn man sich explizit auf den Herstellungsprozess bezieht. In der aktuellen Kommunikation im Bereich der Industrie scheinen Begriffe aus dem Themengebiet Industrie 4.0 (siehe nächster Abschnitt) sehr dominant. Nichtsdestotrotz zeigt die Praxis, dass Industrieunternehmen unterschiedliche Ausprägungsgrade bei der Adaption neuer Entwicklungen im Bereich Produktion haben.
+\textbf{TODO}
 
-Im Rahmen dieser Arbeit wird alles dem Themengebiet Industrie und Industrieproduktion zugeschrieben, was unmittelbar zur Herstellung von materiellen Gütern benötigt wird. Es soll hier keine tiefgehende Diskussion zur Begriffsschärfung von Industrie stattfinden. Aber aufgrund der Vielfalt an Buzz Words, Synonymen und Homonymen werden im Folgenden die relevanten Themengebiete näher betrachtet.
+\section{Thematische Einordnung}
 
-\subsubsection{Industrie 4.0}
+Im vorherigen Kapitel wurden die wichtigsten Begriffe vorgestellt und eingeordnet.
+Nun soll der thematische Fokus dieser Publikation herausgearbeitet werden, um darauf basierend entscheiden zu können, welche Ontologien für die Untersuchung in Frage kommen.
+
+Wir folgen den Autoren von \cite{lasi2014industrie}, die die Industrie als Teil der Wirtschaft bezeichnen, der materielle Güter mit einem hohen Grad an Mechanisierung und Automatisierung erstellt.
+Dabei spielen angrenzende Themengebiete wie z.B. die Rohstoffförderung, Logistik und digitale Systeme auch eine wichtige Rolle.
+Der thematische Fokus dieser Arbeit ist die Industrie und speziell die Güterfertigung.
+Angrenzende Themengebiete (z.B. Materialwirtschaft) werden nur soweit notwendig mit betrachtet.
+
+In der aktuellen Literatur (wissenschaftliche Publikationen, White-Paper, Blogs etc.) im Bereich der Industrie scheinen Begriffe aus dem Themengebiet Industrie 4.0 sehr dominant.
+Nichtsdestotrotz zeigt die Praxis, dass Industrieunternehmen unterschiedliche Ausprägungsgrade bei der Adaption neuer Entwicklungen im Bereich Produktion haben.
+Wir gehen daher davon aus, dass eine breit aufgestellte Betrachtung hier zielführender ist, als sich nur auf den Teil mit Industrie 4.0 zu fokussieren.
+Aufgrund der Vielfalt an Begriffen, Buzzwords, Synonymen und Homonymen im Bereich der Industrie wird im Folgenden eine grobe Einordnung der wichtigsten Begriffe vorgenommen.
+
+\subsection{Industrie 4.0}
 
 Der Begriff "Industrie 4.0" wurde 2011 von der deutschen Bundesregierung im Rahmen der Hightech-Strategie 2020 geprägt (\cite{lasi2014industrie} und \cite{trotta2018industry}, S. 1). Eine Verbreitung außerhalb des deutschen Sprachraums fand erst später statt. Ich teile die Ansicht von (\cite{ragavan2016engineering}, S. 1), dass der Begriff \textit{Industrie 4.0} eine Sammlung von vielen Buzzwords und Technologien ist. Allen Definitionen ist weitestgehend gemein, dass es bei der Industrie 4.0 um intelligente Fabriken (smart factory) geht, welche intelligente Produkte (smart products) mittels intelligenter Maschinen (smart machines) herstellen. Der Begriff spielt in vielen Ontologien eine wichtige Rolle, weshalb es zunächst eine grobe Einordnung des Begriffs erarbeitet werden soll. Danach folgt eine Auflistung der zugerechneten Themengebiete.
 
@@ -128,33 +141,33 @@ Die Befürworter sehen als Ausgangspunkt für die Entwicklung die Etablierung de
 
 Die Kritiker der Begriffswahl Industrie 4.0 entgegnen, dass der Begriff eine deutsche Wortschöpfung ist und sich das Gesagte auf die deutsche Wirtschaft bezieht. In anderen Regionen der Welt wurden im gleichen Zeitraum ähnliche Initiativen gegründet\footnote{Industry IoT Consortium (\url{https://www.iiconsortium.org/about-us/}) oder siehe \cite{trotta2018industry}, S. 2 ff}. All diese Initiativen unterscheiden sich in ihren thematischen Ausrichtungen, auch wenn es teils große Überlappungen gibt. Daher kann man nicht von einer Revolution im Sinne der Industrie 1.0 - 3.0 sprechen.
 
-\section{Thematischer Fokus}
-
-Im vorherigen Kapitel wurden die wichtigsten Begriffe vorgestellt und eingeordnet.
-Nun soll der thematische Fokus dieser Publikation herausgearbeitet werden.
-Er bestimmt, welche Ontologien für die Untersuchung in Frage kommen.
-Die folgende Aufzählung enthält alle Schlüsselwörter, mit denen eine Ontologie (zumindest teilweise) assoziiert sein muss, um für diese Arbeit relevant zu sein:
-
-\begin{enumerate}
-    \item Industry 4.0
-    \item Smart Factory oder Factory 4.0
-    \item Smart Manufacturing
-    \item Big Data + Data Analytics
-    \item Cyber-Physical Systems (CPS)
-    \item Supply Chain Management
-    \item Life Cycle Assessment (Nachhaltigkeitsbewertung)
-\end{enumerate}
-
-Diese Schlüsselwörter gehören zu sich überschneidenden Themengebieten und lassen sich teilweise nicht voneinander eindeutig abgrenzen.
-Im Folgenden eine Vorstellung der einzelnen Schlüsselwörter.
-
 \subsection{Life Cycle Assessment (LCA)}
 
 Bei der Lebenszyklusanalyse (Life Cycle Assessment) handelt es sich um "eine systematische Analyse potenzieller Umweltwirkungen und der Energiebilanz von Produkten während des gesamten Lebensweges" (Zitat Wikipedia \footnote{https://de.wikipedia.org/w/index.php?title=Lebenszyklusanalyse\&oldid=234859970}).
 
 [...]
 
-\section{Verwandte Arbeiten}
+\subsection{Schlüsselwörter}
+
+Die folgende Aufzählung enthält alle Schlüsselwörter, mit denen eine Ontologie in Teilen assoziiert sein muss, um für diese Arbeit relevant zu sein:
+
+\begin{enumerate}
+    \item \textbf{Industry} - (kommt später noch, erstmal rauslassen)
+    \item \textbf{Industry 4.0} - [...]
+    \item \textbf{Smart Factory} oder \textbf{Factory 4.0} - [...]
+    \item \textbf{Smart Manufacturing} - [...]
+    \item \textbf{Big Data} und \textbf{Data Analytics} - [...]
+    \item \textbf{Cyber-Physical Systems (CPS)} - [...]
+    \item \textbf{Supply Chain Management} - [...]
+    \item \textbf{Life Cycle Assessment} - (Nachhaltigkeitsbewertung) [...]
+\end{enumerate}
+
+Diese Schlüsselwörter gehören zu sich überschneidenden Themengebieten und lassen sich teilweise nicht voneinander eindeutig abgrenzen.
+Im Folgenden eine Vorstellung der einzelnen Schlüsselwörter.
+
+[...]
+
+\section{Verwandte Arbeiten (Related Work)}
 
 - Welche Untersuchungen wurden bereits dahingehend unternommen?
 
@@ -331,7 +344,7 @@ Weiterführende Metadaten zu den Ontologien finden Sie in unseren Rohdaten, welc
 
 Sie finden darin weitere Informationen zu den jeweiligen Ontologien, z.B. Link zum Projekt oder den RDF/OWL-Dateien.
 
-\subsection{Ontologie-Pattern}
+\subsection{Ontologie Design Pattern}
 
 % PDF: https://ceur-ws.org/Vol-1188/paper_11.pdf
 
@@ -377,8 +390,6 @@ https://scholar.google.de/scholar?q=An+ontology+design+pattern+for+material+tran
 
 
 
-
-
 \subsection{Kernontologien}
 
 \subsubsection{BONSAI Ontology (Big Open Network for Sustainability Assessment Information)}
@@ -403,7 +414,7 @@ Quelle: \cite{prestes2014core}
 - S. 2: wird mittels SUMO Ontology entwickelt
 
 
-\subsubsection{Units of Measure (OM2) Ontology}
+\subsubsection{Units of Measure (OM) Ontology}
 
 % https://www.semantic-web-journal.net/sites/default/files/swj177_7.pdf
 
@@ -411,7 +422,7 @@ Publikation: \cite{rijgersberg2013ontology}
 
 http://www.ontology-of-units-of-measure.org/
 
-Ist das die, die sich Paul bereits angeschaut hatte?
+TODO: diese + QUDT
 
 Wird in der BONSAI Ontologie \cite{ghose2022core} verwendet
 
