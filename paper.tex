@@ -114,7 +114,11 @@ Die dritte und letzte Gruppe sind die sogenannten Taskontologien, welche für di
 
 \subsection{Ontology Design Pattern (ODP)}
 
-\textbf{TODO}
+% PDF: https://ceur-ws.org/Vol-1188/paper_11.pdf
+
+Ein Ontology Design Pattern ist ein Ansatz bei der Ontologie-Entwicklung und wird eingesetzt, wenn wiederkehrende Modellierungsaufgaben zu lösen sind.
+Sie können dabei helfen, durch Wiederverwendung Zeit und Aufwand zu sparen.
+Für einen guten Überblick und Erläuterung der Terminologie wird auf die Publikation \cite{falbo2013ontology} verwiesen.
 
 \section{Thematische Einordnung}
 
@@ -287,6 +291,12 @@ extensible collection of ontologies with the primary purpose of enabling users t
 use one or several ontologies from this collection"
 
 
+\section{Methodik}
+
+Wie Recherche nach Ontologien?
+Worauf wurde bei Aufnahme einer Ontologie konkret geachtet?
+
+TODO
 
 
 \section{Ontologie und relevante Unterscheidungskriterien}
@@ -337,6 +347,8 @@ Zum Thema was ist eine Ontologie und was nicht. Wo ziehen wir die Grenze? Beispi
 
 [...]
 
+TODO: binde finale Version der Grafik ontology-map.png hier ein
+
 Die Ontologien werden im Folgenden noch kurz vorgestellt.
 Weiterführende Metadaten zu den Ontologien finden Sie in unseren Rohdaten, welche in Form einer CSV-Datei öffentlich zur Verfügung stehen.
 
@@ -352,24 +364,21 @@ Die SUMO\footnote{Projektseite: \url{https://www.ontologyportal.org/index.html}}
 Die Ontologie ist in der Sprache Standard Upper Ontology Knowledge Interchange Format (SUO-KIF) geschrieben\footnote{\url{https://github.com/ontologyportal/sigmakee/blob/master/suo-kif.pdf}} und
 bestand anfangs aus Ontologie-Beiträgen auf einer Mailing-Liste, die jedoch mit der Zeit stark erweitert wurden (\cite{niles2001towards}, S. 2 ff.).
 SUMO stellt Definitionen für sehr allgemeine Begriffe bereit, welche für aufbauende Kernontologien wiederverwendet werden können.
+Mit diesen Begriffen werden häufig verwendete Teile unserer Realität beschrieben, z.B. Objekte und Prozesse.
 Laut eigener Aussage wird sie für die Forschung und Entwicklung von Anwendungen aus den Bereichen Suche, Linguistik und Reasoning verwendet\footnote{Zitat "\textit{The Suggested Upper Merged Ontology (SUMO) and its domain ontologies form the largest formal public ontology in existence today. They are being used for research and applications in search, linguistics and reasoning.}" von Projektseite: \url{https://www.ontologyportal.org/index.html}}.
 Auf \url{https://github.com/ontologyportal/sumo} findet man die KIF-Dateien des Projektes, welche die einzelnen Ontologie-Bestandteile repräsentieren (z.B. Anatomy.kif, Military.kif).
 Das Projekt scheint weiterhin gepflegt zu werden, der letzte Commit auf Github ist ca. 3 Wochen alt\footnote{\url{https://github.com/ontologyportal/sumo/commit/69f22dc041ae5f307279134968a740ff74c04ff2}}.
 
-\subsection{Ontologie Design Pattern}
+\subsection{Ontology Design Pattern}
 
-% PDF: https://ceur-ws.org/Vol-1188/paper_11.pdf
+Im Folgenden eine Auflistung aller Ontology Design Pattern
 
-Ein Ontologie-Pattern ist ein Ansatz bei der Ontologieentwicklung und wird eingesetzt, wenn wiederkehrende Modellierungsaufgaben zu lösen sind.
-Sie können dabei helfen, durch Wiederverwendung Zeit und Aufwand zu sparen.
-Für einen guten Überblick und Erläuterung der Terminologie wird auf die Publikation \cite{falbo2013ontology} verwiesen.
-
-\subsubsection{Ontologie Design Pattern für LCA}
+\subsubsection{Ontology Design Pattern für LCA}
 
 % PDF: https://ceur-ws.org/Vol-1461/WOP2015_pattern_abstract_1.pdf
 
-Die Publikation "A Minimal Ontology Pattern for Life Cycle Assessment Data"\cite{vardem2015anminimal} stellt ein Ontologie Design Pattern vor, welches als Grundlage für umfangreichere Ontologien aus dem Bereich LCA genutzt werden kann.
-Ziel hinter dem Ontologie Design Pattern war es, die semantische Interoperabilität zwischen LCA-Datensätzen zu stärken.
+Die Publikation "A Minimal Ontology Pattern for Life Cycle Assessment Data"\cite{vardem2015anminimal} stellt ein Ontology Design Pattern vor, welches als Grundlage für umfangreichere Ontologien aus dem Bereich LCA genutzt werden kann.
+Ziel hinter dem Ontology Design Pattern war es, die semantische Interoperabilität zwischen LCA-Datensätzen zu stärken.
 Konkret geht es um die Einigung bei der zentralen Nomenklatur rund um LCA.
 Bisher bestand nach Aussage der Autoren eine Lücke, wodurch die Datenmodelle nicht durch Konzeptuelle Modelle gestützt wurden (\cite{vardem2015anminimal}, S. 2 ff.).
 Darauf aufbauende Arbeiten hätten damit das Problem, dass man bei deren Nutzung zu fehlerhaften oder nicht reproduzierbaren Ergebnisse kommen könnte.
@@ -383,7 +392,7 @@ Die zugehörige  OWL-Datei lässt sich leider nicht mehr über die in der Publik
 % PDF: https://ceur-ws.org/Vol-1486/paper_99.pdf
 % PDF: https://ebiquity.umbc.edu/_file_directory_/papers/763.pdf
 
-Die GeoLink Ontologie Design Pattern \cite{krisnadhi2015geolinkStart} sind Teil des GeoLink-Projektes, dessen Zielstellung es war, ein erweitertes Daten-Integrations- und Discovery-Framework unter Nutzung von Semantic Web Technologien für das EarthCube Programm bereitzustellen.
+Die GeoLink Ontology Design Pattern \cite{krisnadhi2015geolinkStart} sind Teil des GeoLink-Projektes, dessen Zielstellung es war, ein erweitertes Daten-Integrations- und Discovery-Framework unter Nutzung von Semantic Web Technologien für das EarthCube Programm bereitzustellen.
 Das EarthCube-Programm ist eine, durch die NSF (National Science Foundation) gesponsorte, Initiative zur Verbesserung der digitalen Infrastruktur der Geowissenschaften (Schwerpunkt Ozeanographie).
 
 Es wurde eine hohe Diversität in den verschiedenen Datensätzen festgestellt, z.B. aufgrund verschiedener Modellierungsansätze und genutzter Vokabulare.
@@ -392,7 +401,7 @@ Zusammen mit anderen Bestandteilen ermöglichen sie die Erstellung komplexerer O
 
 ==> \textbf{TODO:} leider erfährt man aus den oben genannten GeoLink Papieren nichts zu den in \cite{vardem2015anminimal}, S. 4 erwähnten Property Pattern.
 
-Diese Arbeit wurde in die Untersuchung aufgenommen, weil gewisse Bestandteile in der "Ontologie Design Pattern für LCA" verwendet werden (\cite{vardem2015anminimal}, S. 4).
+Diese Arbeit wurde in die Untersuchung aufgenommen, weil gewisse Bestandteile in der "Ontology Design Pattern für LCA" verwendet werden (\cite{vardem2015anminimal}, S. 4).
 
 \subsubsection{material transformation pattern}
 
@@ -417,13 +426,26 @@ Das Projekt wirkt verwaist und wird nur sehr selten gepflegt. Im Ontologie-Repos
 
 \subsubsection{Core Ontology for Robotics and Automation (CORA)}
 
-Quelle: \cite{prestes2014core}
+% https://repositorio.ipcb.pt/bitstream/10400.11/2815/1/proceedings_IROS2014_workshop_IEEE_ORA.pdf#page=13
 
-- S. 1: Standardisierung von Terminologie zwischen Menschen und Robotern sowie der Erarbeitung einer gemeinsamen Konzeptualisierung "über die Welt"
-- S. 1: Erarbeitung erster Terme für die Domain Robotics: ". In the case of CORA, it includes concepts such as robot, robotic system, robot part, etc. The main role of CORA is to maintain the consistency among the different sub-ontologies in the standard. For instance, future ontologies about industrial and service robotics to be included in the standard shall commit to the the already existing concepts/definitions in CORA. Otherwise, inconsistencies and wrong inferences might appear."
-- Darlegung relevanter Entitäten? device, robot, robot group and robotic system
-- Vorstellung von 3 Ontologien die CORA unterstützen: CORAX, RPARTS and POS
-- S. 2: wird mittels SUMO Ontology entwickelt
+Die Core Ontology for Robotics and Automation (abgekürzt: CORA) \cite{prestes2014core} wurde von der IEEE RAS Ontology for Robotics and Automation Working Group (IEEE RAS ORA WG) entwickelt und ist ein Ansatz zur Standardisierung der vorhandenen Robotik-Terminologie.
+Diese Entwicklung war Teil einer Initiative zur Schärfung der Terminologien u.a. in den folgenden Themengebieten: Industrieroboter (Industrial Robotics), Roboter-assistierte Chirugie (Surgical Robotics) and Service Roboter (Service Robotics).
+Mit CORA soll definiert werden, was ein Roboter ist, daher werden u.a. die Konzepte Roboter (robot), Robotisches System (robotic system) und Bestandteil eines Roboters (robotic part) näher beschrieben.
+Im Rahmen der Initiative wurden weitere Ontologien entwickelt, die auf CORA aufbauen.
+CORA nimmt dabei eine Vermittlerrolle ein, sodass darauf aufbauende Ontologien konsistente Konzepte verwenden können, was zu langfristiger Kompatibilität beitragen kann.
+Die Ontologie baut dabei der auf der Top Level Ontologie SUMO auf, wobei weitere Unterontologien von CORA entwickelt wurden, um semantische Lücken zwischen SUMO und CORA zu überbrücken (siehe Unterkapitel für CORAX, POS und RPARTS).
+
+Auf der Projektseite \url{https://github.com/srfiorini/IEEE1872-owl} findet man die OWL Spezifikation von CORA und anderen Ontologien hinter dem IEEE 1872-2015 Standard\footnote{\url{https://standards.ieee.org/ieee/1872/5354/}}. Der letzte Commit im Repository ist vom 21.10.2020\footnote{\url{https://github.com/srfiorini/IEEE1872-owl/commit/ffb6613350b28c3a710f8daf2a1e9e953ded7ed8}}, weshalb man annehmen kann, dass das Projekt nicht mehr aktiv betreut wird.
+
+\subsubsection{CORAX Ontologie}
+
+% PDF: https://www.sciencedirect.com/science/article/am/pii/S0736584514000659
+
+Die CORAX Ontologie wurde im Rahmen der CORA Ontologie entwickelt, mit dem Ziel notwendige Konzepte zu definieren, die für die CORA zu allgemein waren, aber in der Top Level Ontologie SUMO nicht existierten (\cite{fiorini2015extensions}, S. 3).
+Dazu gehören Definitionen zu den Konzepten Design (design, im Sinne von Produktdesign), physische Umgebung (physikal environment), Interaktion (interaction) und Künstliches System (artifical system).
+So wurde zum Beispiel zwischen SUMO:Artificat und CORA:Robotic System das Konzept CORAX:Artificial System (CORAX) eingeführt (\cite{fiorini2015extensions}, S. 6 ff.).
+
+Auf der Projektseite \url{https://github.com/srfiorini/IEEE1872-owl} findet man neben der OWL Spezifikation von CORA auch die von CORAX. Der letzte Commit im Repository ist vom 21.10.2020\footnote{\url{https://github.com/srfiorini/IEEE1872-owl/commit/ffb6613350b28c3a710f8daf2a1e9e953ded7ed8}}, weshalb man annehmen kann, dass das Projekt nicht mehr aktiv betreut wird.
 
 
 \subsubsection{Units of Measure (OM) Ontology}
