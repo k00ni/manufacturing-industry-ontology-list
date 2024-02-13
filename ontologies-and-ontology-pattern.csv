@@ -1,5 +1,5 @@
-Ontology name,Abbreviation,Type,Short description,Latest version,Latest activity found,Project page,RDF/OWL,Authors/creators
-BONSAI Ontology (Big Open Network for Sustainability Assessment Information),BONSAI,Core Ontology,The BONSAI ontologies provides elements of description for product footprint concepts defined in the bonsai.uno data base,0.2,2 years ago,https://github.com/BONSAMURAIS/ontology,https://ontology.bonsai.uno/core,http://bonsai.uno/foaf/bonsai.rdf#bonsai
+Ontology name,Abbreviation,Type,Short description,Latest version,Latest activity found,Project page,RDF/OWL or KIF,Authors/creators
+BONSAI Ontology (Big Open Network for Sustainability Assessment Information),BONSAI,Core Ontology,The BONSAI ontologies provides elements of description for product footprint concepts defined in the bonsai.uno data base,0.2,2022-04-12,https://github.com/BONSAMURAIS/ontology,https://ontology.bonsai.uno/core,http://bonsai.uno/foaf/bonsai.rdf#bonsai
 Core Ontology for Robotics and Automation,CORA,Core Ontology,It was developed within the IEEE 1872-2015 Standard Ontologies for Robotics and Automation. Specifies core conceptions of Robotics domain.,,?,https://repositorio.ipcb.pt/bitstream/10400.11/2815/1/proceedings_IROS2014_workshop_IEEE_ORA.pdf#page=13,,IEEE RAS Ontology for Robotics and Automation Working Group (IEEE RAS ORA WG)
 CORAX,CORAX,,,,?,,,
 GeoLink Ontology Design Pattern,,Ontology Design Pattern,,,,,,
@@ -8,3 +8,4 @@ ORArch,ORArch,,"It elaborates notions related to hardware and software, as well 
 POS,POS,,,,?,,,
 The Ontology for Autonomous Robotics,ROA,,It defines robotic notions identified as fundamental for Autonomous Robotics.,,?,https://www.aolivaresalarcos.com/pdf/2017-roman.pdf,,
 RPARTS,RPARTS,,,,,,,
+Suggested Upper Merged Ontology,SUMO,Top Level Ontology,,1.x,2024-01-20,https://github.com/ontologyportal/sumo,https://github.com/ontologyportal/sumo,Adam Pease and contributors (e.g. https://github.com/ontologyportal/sumo/graphs/contributors)

@@ -32,6 +32,21 @@
          style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
          transform="scale(0.8) rotate(180) translate(12.5,0)" />
     </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-3"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path892-6"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -41,8 +56,8 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="530.30455"
-     inkscape:cy="373.01351"
+     inkscape:cx="552.81226"
+     inkscape:cy="409.379"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -60,7 +75,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -70,61 +85,169 @@
      id="layer1"
      transform="translate(0,-87.000005)">
     <rect
-       style="fill:#dbedff;fill-opacity:1;stroke:#000000;stroke-width:0.46199998;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:#dbedff;fill-opacity:1;stroke:#000000;stroke-width:0.36403713;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect838"
-       width="66.817383"
-       height="9.6217022"
-       x="23.252447"
-       y="249.42065" />
+       width="52.649372"
+       height="7.5815086"
+       x="42.814835"
+       y="241.1277" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="27.173429"
-       y="255.47202"
+       style="font-style:normal;font-weight:normal;font-size:2.77974486px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.20848086"
+       x="45.904404"
+       y="245.89594"
        id="text836"><tspan
          sodipodi:role="line"
          id="tspan834"
-         x="27.173429"
-         y="255.47202"
-         style="stroke-width:0.26458332">GeoLink Ontology Design Pattern</tspan></text>
+         x="45.904404"
+         y="245.89594"
+         style="stroke-width:0.20848086">GeoLink Ontology Design Pattern</tspan></text>
     <rect
-       style="fill:#dbedff;fill-opacity:1;stroke:#000000;stroke-width:0.4681749;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:#dbedff;fill-opacity:1;stroke:#000000;stroke-width:0.39797831;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect838-3"
-       width="71.522438"
-       height="13.792219"
-       x="21.968996"
-       y="213.13028" />
+       width="60.798599"
+       height="11.724259"
+       x="39.840954"
+       y="206.18758" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="25.837084"
-       y="219.12874"
+       style="font-style:normal;font-weight:normal;font-size:2.99883437px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.22491257"
+       x="43.129074"
+       y="211.28664"
        id="text836-6"><tspan
          sodipodi:role="line"
-         x="25.837084"
-         y="219.12874"
-         style="stroke-width:0.26458332"
+         x="43.129074"
+         y="211.28664"
+         style="stroke-width:0.22491257"
          id="tspan879">Ontology Design Pattern for Life </tspan><tspan
          sodipodi:role="line"
-         x="25.837084"
-         y="223.53847"
-         style="stroke-width:0.26458332"
+         x="43.129074"
+         y="215.03519"
+         style="stroke-width:0.22491257"
          id="tspan883">Cycle Assessment (Vardemann et. al)</tspan></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
-       d="m 56.661138,227.4992 v 21.38156"
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m 67.08465,217.55669 v 22.81317"
        id="path887"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="fill:#dbedff;fill-opacity:1;stroke:#000000;stroke-width:0.2401287;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect838-7"
+       width="41.983036"
+       height="10.50997"
+       x="117.58774"
+       y="270.70392" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.83903241px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.21292743"
+       x="120.72849"
+       y="275.55914"
+       id="text836-5"><tspan
+         sodipodi:role="line"
+         x="120.72849"
+         y="275.55914"
+         style="stroke-width:0.21292743"
+         id="tspan1071">SUMO (Suggested Upper </tspan><tspan
+         sodipodi:role="line"
+         x="120.72849"
+         y="279.10794"
+         style="stroke-width:0.21292743"
+         id="tspan1075">Merged Ontology)</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-3)"
+       d="m 138.57925,187.76415 v 82.49051"
+       id="path887-5"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 6.4144686,262.07237 H 288.38382"
+       id="path896"
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="61.739262"
-       y="238.73524"
-       id="text1491"><tspan
+       x="5.7918692"
+       y="272.13284"
+       id="text836-5-6"><tspan
          sodipodi:role="line"
-         id="tspan1489"
-         x="61.739262"
-         y="238.73524"
-         style="stroke-width:0.26458332">uses</tspan></text>
+         id="tspan834-3-2"
+         x="5.7918692"
+         y="272.13284"
+         style="stroke-width:0.26458332">Top</tspan><tspan
+         sodipodi:role="line"
+         x="5.7918692"
+         y="276.54257"
+         style="stroke-width:0.26458332"
+         id="tspan916">Level</tspan><tspan
+         sodipodi:role="line"
+         x="5.7918692"
+         y="280.9523"
+         style="stroke-width:0.26458332"
+         id="tspan918">Ontologies</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 6.5481101,196.31215 H 288.51745"
+       id="path896-9"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="7.2017736"
+       y="206.45139"
+       id="text836-5-6-1"><tspan
+         sodipodi:role="line"
+         x="7.2017736"
+         y="206.45139"
+         style="stroke-width:0.26458332"
+         id="tspan918-0">Ontology</tspan><tspan
+         sodipodi:role="line"
+         x="7.2017736"
+         y="210.86111"
+         style="stroke-width:0.26458332"
+         id="tspan964">Design</tspan><tspan
+         sodipodi:role="line"
+         x="7.2017736"
+         y="215.27083"
+         style="stroke-width:0.26458332"
+         id="tspan966">Pattern</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="10.385242"
+       y="103.60954"
+       id="text836-5-6-1-9"><tspan
+         sodipodi:role="line"
+         x="10.385242"
+         y="103.60954"
+         style="stroke-width:0.26458332"
+         id="tspan966-0">Core </tspan><tspan
+         sodipodi:role="line"
+         x="10.385242"
+         y="108.01926"
+         style="stroke-width:0.26458332"
+         id="tspan997">Ontologies</tspan></text>
+    <rect
+       style="fill:#dbedff;fill-opacity:1;stroke:#000000;stroke-width:0.38930541;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect838-3-6"
+       width="58.134579"
+       height="11.732932"
+       x="113.92191"
+       y="175.75755" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.99883437px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.22491257"
+       x="117.21436"
+       y="180.86095"
+       id="text836-6-2"><tspan
+         sodipodi:role="line"
+         x="117.21436"
+         y="180.86095"
+         style="stroke-width:0.22491257"
+         id="tspan883-1">CORA (Core Ontology for Robotics</tspan><tspan
+         sodipodi:role="line"
+         x="117.21436"
+         y="184.6095"
+         style="stroke-width:0.22491257"
+         id="tspan1823">and Automation)</tspan></text>
   </g>
 </svg>

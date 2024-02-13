@@ -52,7 +52,7 @@ sorting=nty
 
 --+ Thematischer Bezug (Materialwissenschaften, Produktion, ...)
 
---+ Vorliegende Formate (Textuell z.B. als Paper, OWL/RDF)
+--+ Vorliegende Formate (Textuell z.B. als Paper, OWL/RDF oder KIF)
 
 --+ Umfang anhand der Anzahl von Klassen/Properties etc.
 
@@ -104,7 +104,7 @@ In der Fachliteratur werden Themengebiete häufig im Zusammenhang mit wissenscha
 
 \subsection{Ontologien und ihre Arten}
 
-Eine Ontologie im Sinne der Formalen Ontologien ist vordergründig eine strukturierte Form von Konzepten, Kategorien, Fakten, logischen Axiomen und Regeln aus einem Themengebiet, welche in Textform vorliegt. Das kann entweder in Form einer Publikation sein, in der diese Dinge textuell und behandelt, grafisch dargestellt und miteinander verknüpft werden. Axiome und logische Aussagen liegen dabei als formale Sprache vor, häufig Beschreibungslogik oder Prädikatenlogik der 1. Stufe. Eine andere Form sind RDFS-/OWL-Dateien, welche die genannten Inhalte entsprechend kodiert beinhaltet.
+Eine Ontologie im Sinne der Formalen Ontologien ist vordergründig eine strukturierte Form von Konzepten, Kategorien, Fakten, logischen Axiomen und Regeln aus einem Themengebiet, welche in Textform vorliegt. Das kann entweder in Form einer Publikation sein, in der diese Dinge textuell und behandelt, grafisch dargestellt und miteinander verknüpft werden. Axiome und logische Aussagen liegen dabei als formale Sprache vor, häufig Beschreibungslogik oder Prädikatenlogik der 1. Stufe. Eine andere Form sind RDFS-/OWL- bzw. KIF-Dateien, welche die genannten Inhalte entsprechend kodiert beinhaltet.
 
 Im Folgenden werden die Ontologien in eine von drei Gruppen eingeteilt (nach \cite{hoehndorf2009developing}). Die erste Gruppe sind die Top-Level-Ontologien (oder auch "foundational ontologies" genannt). Sie bilden das theoretische Fundament zur Modellierung von Phänomenen aus den genannten ontologischen Ebenen. Zu den bekanntesten Top Level Ontologien gehören DOLCE, SUMO, BFO und GFO.
 
@@ -343,6 +343,18 @@ Weiterführende Metadaten zu den Ontologien finden Sie in unseren Rohdaten, welc
 \textbf{TODO Link}
 
 Sie finden darin weitere Informationen zu den jeweiligen Ontologien, z.B. Link zum Projekt oder den RDF/OWL-Dateien.
+
+\subsection{Top Level Ontologien (upper ontology)}
+
+\subsubsection{Suggested Upper Merged Ontology (SUMO)}
+
+Die SUMO\footnote{Projektseite: \url{https://www.ontologyportal.org/index.html}} Ontologie ist eine Top Level Ontologie und deren Entwicklung wird laut Projektseite von Adam Pease (technical editor) geleitet.
+Die Ontologie ist in der Sprache Standard Upper Ontology Knowledge Interchange Format (SUO-KIF) geschrieben\footnote{\url{https://github.com/ontologyportal/sigmakee/blob/master/suo-kif.pdf}} und
+bestand anfangs aus Ontologie-Beiträgen auf einer Mailing-Liste, die jedoch mit der Zeit stark erweitert wurden (\cite{niles2001towards}, S. 2 ff.).
+SUMO stellt Definitionen für sehr allgemeine Begriffe bereit, welche für aufbauende Kernontologien wiederverwendet werden können.
+Laut eigener Aussage wird sie für die Forschung und Entwicklung von Anwendungen aus den Bereichen Suche, Linguistik und Reasoning verwendet\footnote{Zitat "\textit{The Suggested Upper Merged Ontology (SUMO) and its domain ontologies form the largest formal public ontology in existence today. They are being used for research and applications in search, linguistics and reasoning.}" von Projektseite: \url{https://www.ontologyportal.org/index.html}}.
+Auf \url{https://github.com/ontologyportal/sumo} findet man die KIF-Dateien des Projektes, welche die einzelnen Ontologie-Bestandteile repräsentieren (z.B. Anatomy.kif, Military.kif).
+Das Projekt scheint weiterhin gepflegt zu werden, der letzte Commit auf Github ist ca. 3 Wochen alt\footnote{\url{https://github.com/ontologyportal/sumo/commit/69f22dc041ae5f307279134968a740ff74c04ff2}}.
 
 \subsection{Ontologie Design Pattern}
 
