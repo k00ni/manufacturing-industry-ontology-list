@@ -1,0 +1,19 @@
+# This action provides a few helper to ease our paper writing process.
+name: Build LaTeX document
+on: [push]
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v3
+      # compiles our tex file to see if there are any problems
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: paper.tex
+      # Linter to validate our CSV file
+      - name: Run csv-lint
+        uses: blackstar257/docker-csvlint@master
+        env:
+          ACTION_STATE_NAME: "ontologies-and-ontology-pattern.csv"
