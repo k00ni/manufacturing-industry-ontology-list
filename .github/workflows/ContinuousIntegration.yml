@@ -1,5 +1,5 @@
 # This action provides a few helper to ease our paper writing process.
-name: Build LaTeX document
+name: Continuous Integration
 on: [push]
 jobs:
   build_latex:
