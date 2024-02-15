@@ -137,10 +137,14 @@ Die folgende Aufzählung enthält alle Schlüsselwörter, mit denen eine Ontolog
 
 \begin{enumerate}
     \item Industry 4.0
+    Dieser Begriff bezeichnet die vierte industrielle Revolution bezogen auf den technologischen Fortschritt. In einem I4.0 Szenario steht der Fertigungsprozess (Manufacturing-Prozess) im Mittelpunkt, dieser stellt die Hauptaktivität dar bei der Techniken und Hilfsmittel eingesetzt werden wie, autonome Roboter, Cyber-Physical-Systems, Big-Data Analysis und IoT. 
     \item Smart Factory oder Factory 4.0
     \item Smart Manufacturing
+    Ein Oberbegriff für eine (evolutionäre) Initiative zur Änderung der Geschäftsstrategie im Fertigungsbereich. Hierbei sollen Fertigungszentren modernisiert werden unter Einbeziehung von Technologien wie IIOT, 3D-Modeling, Industrieautomation, Mobile-Computing, Intelligente analysebasierte Entscheidungssysteme.
     \item Big Data + Data Analytics
     \item Cyber-Physical Systems (CPS)
+    Cyberphysische Systeme (auch "cyber-physische Systeme" geschrieben, nach engl. "Cyber-Physical Systems") sind Systeme, bei denen informations- und softwaretechnische mit mechanischen Komponenten verbunden sind, wobei Datentransfer und -austausch sowie Kontrolle bzw. Steuerung über ein Netzwerk wie das Internet in Echtzeit erfolgen. Wesentliche Bestandteile sind mobile und bewegliche Einrichtungen, Geräte und Maschinen (darunter auch Roboter), eingebettete Systeme und vernetzte Gegenstände (Internet der Dinge). Sensoren registrieren und verarbeiten Daten aus der physikalischen Welt, Aktoren (Antriebselemente) wirken auf die physikalische Welt ein, sodass z.B. Weichen gestellt, Schleusen geöffnet, Fenster und Türen geschlossen, Produktionsvorgänge begonnen, geändert und angehalten werden.\cite{GablerCPS2024}
+    
     \item Supply Chain Management
     \item Life Cycle Assessment (Nachhaltigkeitsbewertung)
 \end{enumerate}
@@ -403,7 +407,16 @@ Quelle: \cite{prestes2014core}
 - S. 2: wird mittels SUMO Ontology entwickelt
 
 
-\subsubsection{Units of Measure (OM2) Ontology}
+\subsubsection{Units of Measure Ontologies}
+
+\subsubsection{QUDT ontology, Quantities, Units, Dimensions and Types ontology}
+Unit-Measure-Ontologien stellen eine konzeptuelle Repräsentation von Quantitäten , Quantitätsarten, Einheiten dar. Der bekannteste und weitläufig eingesetzte Vertreter, ist die von der NASA entwickelte QUDT\cite{QUDTOntology}. Innerhalb dieser Ontologie werden im Kern die Konzepte physikalischer Quantitäten. Quantitätsarten, Einheiten und Dimensionen, sowie Datentypen repräsentiert. Die Ontologie basiert auf dem internationalen Standard der SI-Unit (franz. Système international d'unités) und liegt im OWL-Format vor. Ein Hauptanwendungszeck einer solchen Ontologien, ist das Konvertieren von physikalischen  Einheiten unter Berücksichtigung der Dimensionalität.
+QUDT wird eingesetzt in Luft- und Raumfahrt, Industrieproduktion, sowie Energie- und Wasserversorgung. Ein Beispiel ist die Verwendung von QUDT innerhalb der Systems-Architecture-Ontology (SAO) für Cyber-Physical-Systems.
+
+\subsubsection{OM ontology}
+OM wurde entwickelt als Teil einer umfassenderen Ontologie\cite{rijgersberg2013ontology}, der Ontology of Quantitative Research (OQR).
+Diese Ontologie versucht umfassend die Grundlegenden Konzepte von Maßeinheiten und Konversion zu integrieren, die bei anderen 
+Ontologien fehlen, wie z.B. die Konzepte Quantity und Prefix.
 
 % https://www.semantic-web-journal.net/sites/default/files/swj177_7.pdf
 
@@ -446,7 +459,6 @@ cite \cite{olszewska2017ontology}
 
 - Unterontologie? von CORA, mit Fokus auf Roboter-Bestandteile - \cite{prestes2014core}, S. 1 ff.
 
-\subsubsection{QUDT ontology}
 
 
 
