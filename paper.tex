@@ -77,6 +77,10 @@ Motivation: Es soll eine Bestandsaufnahme aller Ontologien gemacht werden, welch
 
 [Einleitungstext]
 
+Nur Auswahl von Ontologien, deren zugehörige Publikation(en) bzw. die OWL- oder KIF-Dateien für die Öffentlichkeit zugänglich sind.
+Eine Prüfung der vorliegenden Lizenz wurde nicht vorgenommen.
+
+
 Warum sind Ontologien relevant für heutige Industrie (bzw. Industrie 4.0)?
 - https://www.cambridge.org/core/services/aop-cambridge-core/content/view/BF86BB5310356D642C82470D67974804/S0269888919000109a.pdf/div-class-title-ontologies-for-industry-4-0-div.pdf, S. 4 => im Bereich der Cyber-Physical-System Integration stoßen heterogene Daten aufeinander, die integriert werden müssen. Weiterhin muss Integration auch in dem Agentenbasierten-Ökosystem umgesetzt werden, um eindeutige Kommunikation, effiziente Kollaboration und Kooperation zu ermöglichen/gewährleisten
 - siehe zweiter Absatz S. 4: "Indeed, ontologies aim
@@ -121,6 +125,11 @@ Sie können dabei helfen, durch Wiederverwendung Zeit und Aufwand zu sparen.
 Für einen guten Überblick und Erläuterung der Terminologie wird auf die Publikation \cite{falbo2013ontology} verwiesen.
 
 [...]
+
+\subsection{Vokabular}
+
+- Was ist das?
+- Abgrenzung zur Ontologie?
 
 \section{Thematische Einordnung}
 
@@ -426,6 +435,10 @@ Für die Modellierung von Messwerten und Maßeinheiten wird auf die Ontology of 
 
 Das Projekt wirkt verwaist und wird nur sehr selten gepflegt. Im Ontologie-Repository auf Github ist der letzte Commit über zwei Jahre alt\footnote{\url{https://github.com/BONSAMURAIS/ontology}}. Im zugehörigen Repository für sonstige Entwicklungsbeiträge und Diskussionen ist der letzte Commit über vier Jahre alt\footnote{\url{https://github.com/BONSAMURAIS/BONSAI-ontology-RDF-framework}}. Der Zustand der Issue-Tracker stützt diesen Eindruck.
 
+\subsubsection{Car Options Ontology}
+
+wird genutzt von Volkswagen Vehicles Ontology (https://data.industryportal.enit.fr/ontologies/VVO/submissions/1/download?apikey=019adb70-1d64-41b7-8f6e-8f7e5eb54942)
+
 \subsubsection{Core Ontology for Robotics and Automation (CORA)}
 
 % https://repositorio.ipcb.pt/bitstream/10400.11/2815/1/proceedings_IROS2014_workshop_IEEE_ORA.pdf#page=13
@@ -449,48 +462,15 @@ So wurde zum Beispiel zwischen SUMO:Artificat und CORA:Robotic System das Konzep
 
 Auf der Projektseite \url{https://github.com/srfiorini/IEEE1872-owl} findet man neben der OWL Spezifikation von CORA auch die von CORAX. Der letzte Commit im Repository ist vom 21.10.2020, weshalb man annehmen kann, dass das Projekt nicht mehr aktiv betreut wird.
 
-\subsubsection{Position Ontology (POS)}
+\subsubsection{GoodRelations Vokabular}
 
-% PDF: https://www.sciencedirect.com/science/article/am/pii/S0736584514000659
+Das GoodRelations\footnote{https://www.heppnetz.de/ontologies/goodrelations/v1.html} Vokabular ist laut eigener Aussage ein Vokabular zur Modellierung Daten im E-Commerce Bereich (z.B. Produkte, Dienstleistungen oder Unternehmen).
+Es wurde von Martin Hepp u.a. mit dem Ziel entwickelt, Produkte und Dienstleistungen auf E-Commerce-Webseiten mit zusätzlichen Metadaten auszuzeichnen, um die Sichtbarkeit in Suchmaschinen zu erhöhen.
+GoodRelations wurde 2012 als E-Commerce Kern in das Vokabular schema.org aufgenommen\footnote{\url{http://blog.schema.org/2012/11/good-relations-and-schemaorg.html}}.
+Damit gingen alle Klassen und Properties in das schema.org Vokabular über und wurden darin integriert\footnote{Beispiel: Klasse Product \url{https://schema.org/Product}}.
+Für Zugriff auf die maschinenlesbaren Daten bitte im Kapitel für schema.org schauen.
 
-Die Position Ontology (POS) wurde als Erweiterung der SUMO Ontologie im Rahmen des CORA Projektes entwickelt (\cite{fiorini2015extensions}, S. 17 ff).
-Sie komplementiert die CORA Ontologie mit neuen Konzepten zur Positionierung und Orientierung, was insbesondere bei der Modellierung von Informationen über Roboter und ihre Umgebung wichtig ist.
-Dafür wurden u.a. die folgenden Konzepte eingeführt: position, PositionCoordinateSystem, PositionPoint.
-Diese und andere Konzepte und Properties erlauben die Modellierung von Positionen in einem Koordinatensystem sowie die relative Positionierung.
-
-Auf der Projektseite \url{https://github.com/srfiorini/IEEE1872-owl} findet man neben der OWL Spezifikation von CORA auch die von POS. Der letzte Commit im Repository ist vom 21.10.2020, weshalb man annehmen kann, dass das Projekt nicht mehr aktiv betreut wird.
-
-\subsubsection{RPARTS Ontology}
-
-% PDF: https://www.sciencedirect.com/science/article/am/pii/S0736584514000659
-
-Die RPARTS Ontology ist eine Teil-Ontologie der CORA Ontology, welche zur Modellierung von Bestandteilen von Robotern verwednet werden kann. (\cite{fiorini2015extensions}, S. 14 ff).
-Der zugrundeliegende Ansatz ist, dass Roboter (\textit{devices}) immer aus Bestandteilen (anderen \textit{devices}) bestehen.
-Man unterscheidet zwischen Roboter-Bestandteilen zur Kommunikation (\textit{Robot communicating part}), Verarbeitung (\textit{Robot processing part}), Sensorik (\textit{Robot sensing part}) und Handlung (\textit{Robot actuating part}).
-[...]?
-
-Auf der Projektseite \url{https://github.com/srfiorini/IEEE1872-owl} findet man neben der OWL Spezifikation von CORA auch die von POS. Der letzte Commit im Repository ist vom 21.10.2020, weshalb man annehmen kann, dass das Projekt nicht mehr aktiv betreut wird.
-
-\subsubsection{Units of Measure (OM) Ontology}
-
-% https://www.semantic-web-journal.net/sites/default/files/swj177_7.pdf
-
-Publikation: \cite{rijgersberg2013ontology}
-
-http://www.ontology-of-units-of-measure.org/
-
-TODO: diese + QUDT
-
-Wird in der BONSAI Ontologie \cite{ghose2022core} verwendet
-
-
-\subsection{TODO einordnen}
-
-\subsubsection{CORAX}
-
-- Ergänzung des CORA Teams um Lücken der SUMO Ontologie bezogen auf Modellierung der Realität aufzufüllen
-
-\subsection{LCA scope ontology}
+\subsubsection{LCA scope ontology}
 
 \cite{vardem2015anminimal} verweißt auf S. 4 auf LCA scope ontology
 
@@ -506,16 +486,92 @@ Grafik machen: O4I4 nutzt CORA, ROA/ORA und ORArch (\cite{kumar2019ontologies}, 
 TODO lesen: https://www.aolivaresalarcos.com/pdf/2017-roman.pdf
 cite \cite{olszewska2017ontology}
 
-\subsubsection{POS}
+\subsubsection{Position Ontology (POS)}
 
-- Unterontologie von CORA, erweitert SUMO und ergänzt CORA um Konzepte und Relationen die etwas mit Positionierungen, Orientierung und Darstellungen? (pose) in einem Koordinatenssytem zu tun haben - \cite{prestes2014core}, S. 2
+% PDF: https://www.sciencedirect.com/science/article/am/pii/S0736584514000659
 
-\subsubsection{RPARTS}
+Die Position Ontology (POS) wurde als Erweiterung der SUMO Ontologie im Rahmen des CORA Projektes entwickelt (\cite{fiorini2015extensions}, S. 17 ff).
+Sie komplementiert die CORA Ontologie mit neuen Konzepten zur Positionierung und Orientierung, was insbesondere bei der Modellierung von Informationen über Roboter und ihre Umgebung wichtig ist.
+Dafür wurden u.a. die folgenden Konzepte eingeführt: position, PositionCoordinateSystem, PositionPoint.
+Diese und andere Konzepte und Properties erlauben die Modellierung von Positionen in einem Koordinatensystem sowie die relative Positionierung.
 
-- Unterontologie? von CORA, mit Fokus auf Roboter-Bestandteile - \cite{prestes2014core}, S. 1 ff.
+Auf der Projektseite \url{https://github.com/srfiorini/IEEE1872-owl} findet man neben der OWL Spezifikation von CORA auch die von POS. Der letzte Commit im Repository ist vom 21.10.2020, weshalb man annehmen kann, dass das Projekt nicht mehr aktiv betreut wird.
+
+\subsubsection{Product Ontology}
+
+http://www.productontology.org/ (nutzt GoodRElations)
 
 \subsubsection{QUDT ontology}
 
+[...]
+
+\subsubsection{RPARTS Ontology}
+
+% PDF: https://www.sciencedirect.com/science/article/am/pii/S0736584514000659
+
+Die RPARTS Ontology ist eine Teil-Ontologie der CORA Ontology, welche zur Modellierung von Bestandteilen von Robotern verwednet werden kann. (\cite{fiorini2015extensions}, S. 14 ff).
+Der zugrundeliegende Ansatz ist, dass Roboter (\textit{devices}) immer aus Bestandteilen (anderen \textit{devices}) bestehen.
+Man unterscheidet zwischen Roboter-Bestandteilen zur Kommunikation (\textit{Robot communicating part}), Verarbeitung (\textit{Robot processing part}), Sensorik (\textit{Robot sensing part}) und Handlung (\textit{Robot actuating part}).
+[...]?
+
+Auf der Projektseite \url{https://github.com/srfiorini/IEEE1872-owl} findet man neben der OWL Spezifikation von CORA auch die von POS. Der letzte Commit im Repository ist vom 21.10.2020, weshalb man annehmen kann, dass das Projekt nicht mehr aktiv betreut wird.
+
+\subsubsection{schema.org Vocabulary}
+
+Schema.org\footnote{\url{https://www.schema.org}} ist eine von Firmen und Freiwilligen gepflegte quelloffene Ontologie (bzw. Vokabular) zur Auszeichnung von Daten auf Webseiten.
+Das Ziel für dessen Entwicklung ist es, Suchmaschinen zusätzliche Metadaten über die Webseiteninhalte bereitstellen zu können.
+
+
+\subsubsection{Units of Measure (OM) Ontology}
+
+% https://www.semantic-web-journal.net/sites/default/files/swj177_7.pdf
+
+Publikation: \cite{rijgersberg2013ontology}
+
+http://www.ontology-of-units-of-measure.org/
+
+TODO: diese + QUDT
+
+Wird in der BONSAI Ontologie \cite{ghose2022core} verwendet
+
+
+\subsubsection{Vehicle Sales Ontology (VSO)}
+
+Quelle: https://www.heppnetz.de/ontologies/vso/ns
+
+Wird genutzt von VVO (IndustryPortal)
+
+nutzt GoodRelations Vokabular
+
+\subsubsection{Volkswagen Vehicles Ontology (VVO)}
+
+Aufgrund fehlender Originalquelle (z.B. wiss. Publikation oder Projektseite) und der unterschiedlichen Dokumentation zur Volkswagen Vehicles Ontology, werden die aktuellen Funde im Folgenden einzeln dargelegt.
+
+Die Ontologie wird in einer Untersuchung namens "Case Study: Contextual Search for Volkswagen and the Automotive Industry" des W3C aus dem Jahre 2011 erwähnt (\cite{greenly2011case}, S. 2).
+In der Studie ging es u.a. um die Verbesserung der Suche für Nutzer in digitalen Quellen.
+In diesem Zuge wurde u.a. die Volkswagen Vehicles Ontology entwickelt, um Volkswagen-spezifische Konzepte bei Fahrzeugen beschreiben zu können.
+Der Autor der Ontologie war Martin Hepp.
+Man nutzte diese und andere Vokabulare/Ontologien, um die eigenen Daten anzureichern, um kontextbasierte Suchanfragen zu ermöglichen.
+Die URL \url{http://purl.org/vvo/ns} wird als Quelle für die Ontologie angegeben, jedoch gelangt man darüber am Ende nur zu \url{https://www.volkswagen.co.uk/en.html}, welches keine weiteren Informationen bereitstellt.
+Weitere Details zur Ontologie selbst wurden nicht genannt.
+
+Der Link \url{https://industryportal.enit.fr/ontologies/VVO} führt zu einem Projekteintrag auf IndustryPortal.
+Als Autor wird Abdelouadoud Rasmi angegeben, der jedoch keine ersichtliche Verbindung zu Volkswagen hat.
+In der zugehörigen OWL-Datei\footnote{https://data.industryportal.enit.fr/ontologies/VVO/submissions/1/download?apikey=019adb70-1d64-41b7-8f6e-8f7e5eb54942} findet man jedoch im Abschnitt Autor auch Martin Hepp und bei Beitragende (contributors) u.a. den Erstautor der oben genannten W3C Studie William Greenly.
+Aufgrund dieses und anderer Gemeinsamkeiten, z.B. gleicher Name (Volkswagen Vehicles Ontology) und XML-Namensraum (http://purl.org/vvo/ns\#), wird angenommen, dass es sich um die gleiche Ontologie handelt. Die Ontologie auf IndustryPortal hat als Veröffentlichungsdatum den 2. November 2022, wobei als Veröffentlichungsdatum bei der Version der 12. Oktober 2010 genannt wird.
+Es liegen keine Informationen vor, dass zwischen diesen Daten weitere Veränderungen an der Ontologie vorgenommen wurden.
+Ich gehe daher davon aus, dass es sich hier lediglich um einen erneuten Upload der Version von 2010 handelt.
+
+Für die Ontologie existiert auch auf DataScientia ein Eintrag unter \url{http://liveschema.eu/dataset/lov\_vvo}.
+Als Autor wird wieder Martin Hepp angegeben.
+Der Eintrag wurde jedoch am 3. Februar 2020 erstellt und repräsentiert auch die Version 1.0 vom 12. Oktober 2010.
+
+
+\section{Fazit und weitere Arbeiten}
+
+[...]
+
+TODO: Erwähnung KI-Werk Projekt
 
 
 
