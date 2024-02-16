@@ -156,6 +156,17 @@ Im Folgenden eine Vorstellung der einzelnen Schlüsselwörter.
 
 Bei der Lebenszyklusanalyse (Life Cycle Assessment) handelt es sich um "eine systematische Analyse potenzieller Umweltwirkungen und der Energiebilanz von Produkten während des gesamten Lebensweges" (Zitat Wikipedia \footnote{https://de.wikipedia.org/w/index.php?title=Lebenszyklusanalyse\&oldid=234859970}).
 
+\subsection{ISIC. NACE and CPC}
+Im Kontext von Industrie 4.0 und Smart-Manufacturing seien noch die internationalen Klassifizierungsstandards ISIC, NACE und CPC zu nennen. Hierbei handelt es ich um Werke, die einzeln oder im Verbund ein Framework dar, um internationale Vergleichbarkeit von Waren, Gütern oder auch wirtschaftlichen Aktivitäten zu ermöglichen.
+
+
+\begin{itemize}
+	\item[I] \textbf{ISIC}: Diese ist die U.N. Klassifikation von wirtschaftlichen Aktivitäten. Diese liegt derzeit in der Revision 4 vor und der hauptsächliche Anwendungszweck ist die international einheitliche Einordnung wirtschaftlicher Aktivitäten um das Erstellen aussagekräftiger Wirtschaftsstatistiken zu ermöglichen, die international vergleichbar sind.\cite{UNSDISIC}
+	\item[II] \textbf{NACE}: Die NACE ist eine auf den europäischen Raum angepasste Version der ISIC und wird gleichfalls für die Analyse von Wirtschaftsdaten im europäischen Raum verwendet.\cite{EurostatNACE}
+	\item[III] \textbf{CPC}: Ist eine Klassifikation der U.N., welche derzeit in der Version 2.1 vorliegt. Hierbei werden Güter und Produkte hauptsächlich anhand physischer Form und ihrer industriellen Herkunft. Im letzteren Punkt ist die CPC sehr stark mit der ISIC gekoppelt.\cite{UNSDCPCv21}
+\end{itemize}
+
+
 [...]
 
 \section{Verwandte Arbeiten}
@@ -409,14 +420,17 @@ Quelle: \cite{prestes2014core}
 
 \subsubsection{Units of Measure Ontologies}
 
-\subsubsection{QUDT ontology, Quantities, Units, Dimensions and Types ontology}
+\paragraph{QUDT ontology, Quantities, Units, Dimensions and Types ontology}
 Unit-Measure-Ontologien stellen eine konzeptuelle Repräsentation von Quantitäten , Quantitätsarten, Einheiten dar. Der bekannteste und weitläufig eingesetzte Vertreter, ist die von der NASA entwickelte QUDT\cite{QUDTOntology}. Innerhalb dieser Ontologie werden im Kern die Konzepte physikalischer Quantitäten. Quantitätsarten, Einheiten und Dimensionen, sowie Datentypen repräsentiert. Die Ontologie basiert auf dem internationalen Standard der SI-Unit (franz. Système international d'unités) und liegt im OWL-Format vor. Ein Hauptanwendungszeck einer solchen Ontologien, ist das Konvertieren von physikalischen  Einheiten unter Berücksichtigung der Dimensionalität.
 QUDT wird eingesetzt in Luft- und Raumfahrt, Industrieproduktion, sowie Energie- und Wasserversorgung. Ein Beispiel ist die Verwendung von QUDT innerhalb der Systems-Architecture-Ontology (SAO) für Cyber-Physical-Systems.
 
-\subsubsection{OM ontology}
-OM wurde entwickelt als Teil einer umfassenderen Ontologie\cite{rijgersberg2013ontology}, der Ontology of Quantitative Research (OQR).
-Diese Ontologie versucht umfassend die Grundlegenden Konzepte von Maßeinheiten und Konversion zu integrieren, die bei anderen 
-Ontologien fehlen, wie z.B. die Konzepte Quantity und Prefix.
+\paragraph{OM ontology}
+OM wurde von dem Wissenschaftler Hajo Rijgersberg im Rahmen seiner Tätigkeit in der Abteilung Computer-Science der Universität Wageningen (Niederlande) entwickelt, als integrativer Teil einer größeren Ontologie\cite{rijgersberg2013ontology}, der Ontology of Quantitative Research (OQR).
+Die OM Ontologie versucht die Konzepte der Domäne von Maßen und Einheiten umfassend abzubilden, welche in Teilen bei anderen 
+Ontologien fehlen. Dies betrifft z.B. die Konzepte Quantity und Prefix. Die OM Ontologie bezieht sich dabei in Teilen auf die QUDT Ontologie und kommt in verschiedenen Ontologie-Projekten, wie z.B dem Bioportal\cite{OM_BioPortal}, oder innerhalb der Bonsai-Ontologie \cite{ghose2022core} zum Einsatz.
+Zum Zeitpunkt der Erstellung dieses Dokuments ist die OM-Ontologie in der Version 2.0 verfügbar
+
+
 
 % https://www.semantic-web-journal.net/sites/default/files/swj177_7.pdf
 
