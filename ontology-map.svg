@@ -182,6 +182,21 @@
          style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
          transform="matrix(-0.8,0,0,-0.8,-10,0)" />
     </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-2-9"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path892-9-12"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -191,8 +206,8 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="582.08925"
-     inkscape:cy="391.16683"
+     inkscape:cx="519.60097"
+     inkscape:cy="428.70714"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -224,17 +239,17 @@
        id="rect838"
        width="40.789539"
        height="5.873693"
-       x="34.416126"
+       x="33.093208"
        y="200.48906" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.1535778px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16151834"
-       x="36.809734"
+       x="35.486816"
        y="204.18318"
        id="text836"><tspan
          sodipodi:role="line"
          id="tspan834"
-         x="36.809734"
+         x="35.486816"
          y="204.18318"
          style="stroke-width:0.16151834">GeoLink Ontology Design Pattern</tspan></text>
     <rect
@@ -242,27 +257,27 @@
        id="rect838-3"
        width="47.103069"
        height="9.0832453"
-       x="32.112141"
+       x="30.789221"
        y="173.41957" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.32331491px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.17424862"
-       x="34.659576"
+       x="33.336662"
        y="177.37001"
        id="text836-6"><tspan
          sodipodi:role="line"
-         x="34.659576"
+         x="33.336662"
          y="177.37001"
          style="stroke-width:0.17424862"
          id="tspan879">Ontology Design Pattern for Life </tspan><tspan
          sodipodi:role="line"
-         x="34.659576"
+         x="33.336662"
          y="180.27415"
          style="stroke-width:0.17424862"
          id="tspan883">Cycle Assessment (Vardemann et. al)</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.15494788;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
-       d="m 53.218904,182.22766 v 17.67426"
+       d="m 51.895988,182.22766 v 17.67426"
        id="path887"
        inkscape:connector-curvature="0" />
     <rect
@@ -270,22 +285,22 @@
        id="rect838-7"
        width="57.343262"
        height="6.2485561"
-       x="89.081078"
+       x="149.7083"
        y="223.41809" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.19951034px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16496326"
-       x="93.139053"
+       x="153.76628"
        y="227.16446"
        id="text836-5"><tspan
          sodipodi:role="line"
-         x="93.139053"
+         x="153.76628"
          y="227.16446"
          style="stroke-width:0.16496326"
          id="tspan1075">SUMO (Suggested Upper Merged Ontology)</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.15668699;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-3)"
-       d="m 95.437191,157.40534 v 65.35129"
+       d="m 156.06463,157.40534 v 65.35129"
        id="path887-5"
        inkscape:connector-curvature="0" />
     <path
@@ -361,21 +376,21 @@
        id="rect838-3-6"
        width="45.039146"
        height="9.0899639"
-       x="89.505577"
+       x="150.1328"
        y="120.02697" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.32331491px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.17424862"
-       x="92.056366"
+       x="152.68359"
        y="123.98077"
        id="text836-6-2"><tspan
          sodipodi:role="line"
-         x="92.056366"
+         x="152.68359"
          y="123.98077"
          style="stroke-width:0.17424862"
          id="tspan883-1">CORA (Core Ontology for Robotics</tspan><tspan
          sodipodi:role="line"
-         x="92.056366"
+         x="152.68359"
          y="126.88491"
          style="stroke-width:0.17424862"
          id="tspan1823">and Automation)</tspan></text>
@@ -384,37 +399,37 @@
        id="rect838-3-6-3"
        width="40.869896"
        height="11.960899"
-       x="58.666985"
+       x="119.29438"
        y="145.44444" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.32331491px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.17424862"
-       x="61.203796"
+       x="121.8312"
        y="149.38425"
        id="text836-6-2-6"><tspan
          sodipodi:role="line"
-         x="61.203796"
+         x="121.8312"
          y="149.38425"
          style="stroke-width:0.17424862"
          id="tspan896">CORAX (part of project behind</tspan><tspan
          sodipodi:role="line"
-         x="61.203796"
+         x="121.8312"
          y="152.28839"
          style="stroke-width:0.17424862"
          id="tspan900">Core Ontology for Robotics</tspan><tspan
          sodipodi:role="line"
-         x="61.203796"
+         x="121.8312"
          y="155.19254"
          style="stroke-width:0.17424862"
          id="tspan902">and Automation) </tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.15494788;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-3-3)"
-       d="m 114.71697,129.31794 v 93.35151"
+       d="m 175.34441,129.31794 v 93.35151"
        id="path887-5-6"
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.14657244;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-2)"
-       d="m 95.667079,129.16824 v 15.8152"
+       d="m 156.29452,129.16824 v 15.8152"
        id="path887-1"
        inkscape:connector-curvature="0" />
     <rect
@@ -422,22 +437,22 @@
        id="rect838-3-6-3-3"
        width="31.654959"
        height="7.3013787"
-       x="120.94183"
+       x="181.56906"
        y="149.7038" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.32331491px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.17424862"
-       x="123.12016"
+       x="183.74739"
        y="154.10506"
        id="text836-6-2-6-6"><tspan
          sodipodi:role="line"
-         x="123.12016"
+         x="183.74739"
          y="154.10506"
          style="stroke-width:0.17424862"
          id="tspan902-3">POS (position ontology)</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.15668699;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-3-5)"
-       d="m 129.41854,157.31814 v 65.35131"
+       d="m 190.04598,157.31814 v 65.35131"
        id="path887-5-2"
        inkscape:connector-curvature="0" />
     <rect
@@ -445,32 +460,32 @@
        id="rect838-3-6-3-3-9"
        width="43.371647"
        height="11.977882"
-       x="89.821671"
+       x="150.4489"
        y="92.738113" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.32331491px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.17424862"
-       x="91.957016"
+       x="152.58424"
        y="97.096375"
        id="text836-6-2-6-6-1"><tspan
          sodipodi:role="line"
-         x="91.957016"
+         x="152.58424"
          y="97.096375"
          style="stroke-width:0.17424862"
          id="tspan902-3-2">RPARTS Ontology (part of project</tspan><tspan
          sodipodi:role="line"
-         x="91.957016"
+         x="152.58424"
          y="100.00052"
          style="stroke-width:0.17424862"
          id="tspan1536">behind Core Ontology for Robotics </tspan><tspan
          sodipodi:role="line"
-         x="91.957016"
+         x="152.58424"
          y="102.90466"
          style="stroke-width:0.17424862"
          id="tspan1544">and Automation) </tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.14258046;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-7)"
-       d="m 110.78276,104.76862 v 14.96546"
+       d="m 171.4102,104.76862 v 14.96546"
        id="path887-9"
        inkscape:connector-curvature="0" />
     <rect
@@ -478,16 +493,16 @@
        id="rect838-7-3"
        width="47.280769"
        height="6.2626486"
-       x="164.46315"
+       x="225.09038"
        y="254.41939" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.19951034px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16496326"
-       x="179.05258"
+       x="239.67981"
        y="258.41748"
        id="text836-5-67"><tspan
          sodipodi:role="line"
-         x="179.05258"
+         x="239.67981"
          y="258.41748"
          style="stroke-width:0.16496326"
          id="tspan1075-5">GoodRelations</tspan></text>
@@ -512,27 +527,27 @@
        id="rect838-3-6-3-3-1"
        width="24.265333"
        height="9.540494"
-       x="164.46706"
+       x="225.09428"
        y="146.97533" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.32331491px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.17424862"
-       x="166.64531"
+       x="227.27254"
        y="151.37651"
        id="text836-6-2-6-6-2"><tspan
          sodipodi:role="line"
-         x="166.64531"
+         x="227.27254"
          y="151.37651"
          style="stroke-width:0.17424862"
          id="tspan902-3-7">Vehicle Sales </tspan><tspan
          sodipodi:role="line"
-         x="166.64531"
+         x="227.27254"
          y="154.28065"
          style="stroke-width:0.17424862"
          id="tspan1297">Ontology (VSO)</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.15726914;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-3-3-0)"
-       d="m 175.55569,157.19904 v 96.30354"
+       d="m 236.18313,157.19904 v 96.30354"
        id="path887-5-6-3"
        inkscape:connector-curvature="0" />
     <rect
@@ -540,32 +555,32 @@
        id="rect838-3-6-3-3-1-6"
        width="25.604692"
        height="9.5363073"
-       x="178.97888"
+       x="239.60611"
        y="121.03539" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.32331491px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.17424862"
-       x="180.26837"
+       x="240.8956"
        y="125.43449"
        id="text836-6-2-6-6-2-0"><tspan
          sodipodi:role="line"
-         x="180.26837"
+         x="240.8956"
          y="125.43449"
          style="stroke-width:0.17424862"
          id="tspan1297-2">Volkswagen Vehicle</tspan><tspan
          sodipodi:role="line"
-         x="180.26837"
+         x="240.8956"
          y="128.33862"
          style="stroke-width:0.17424862"
          id="tspan1325">Ontology (VVO</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.14657244;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-2-6)"
-       d="m 182.08216,131.16012 v 15.8152"
+       d="m 242.7096,131.16012 v 15.8152"
        id="path887-1-8"
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.17500415;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-3-3-0-7)"
-       d="M 197.69329,130.47426 V 253.89243"
+       d="M 258.32073,130.47426 V 253.89243"
        id="path887-5-6-3-2"
        inkscape:connector-curvature="0" />
     <rect
@@ -573,34 +588,113 @@
        id="rect838-7-3-0"
        width="47.280769"
        height="6.2626491"
-       x="181.48668"
+       x="242.11391"
        y="277.41983" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.19951034px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16496326"
-       x="196.07613"
+       x="256.70337"
        y="281.41794"
        id="text836-5-67-2"><tspan
          sodipodi:role="line"
-         x="196.07613"
+         x="256.70337"
          y="281.41794"
          style="stroke-width:0.16496326"
          id="tspan2072">schema.org</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.14657244;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-2-6-8)"
-       d="m 188.79493,260.97433 v 15.8152"
+       d="m 249.42237,260.97433 v 15.8152"
        id="path887-1-8-7"
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.32331491px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.17424862"
-       x="190.24258"
+       x="250.86981"
        y="269.31039"
        id="text836-6-2-6-6-3"><tspan
          sodipodi:role="line"
-         x="190.24258"
+         x="250.86981"
          y="269.31039"
          style="stroke-width:0.17424862"
          id="tspan902-3-6">is part of it since 2012</tspan></text>
+    <rect
+       style="fill:#dbedff;fill-opacity:1;stroke:#000000;stroke-width:0.17160787;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect838-3-3"
+       width="47.086411"
+       height="11.145454"
+       x="78.2836"
+       y="117.04797" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.32331491px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.17424862"
+       x="80.822701"
+       y="120.99007"
+       id="text836-6-6"><tspan
+         sodipodi:role="line"
+         x="80.822701"
+         y="120.99007"
+         style="stroke-width:0.17424862"
+         id="tspan883-5">BONSAI Ontology (Big Open Network </tspan><tspan
+         sodipodi:role="line"
+         x="80.822701"
+         y="123.89421"
+         style="stroke-width:0.17424862"
+         id="tspan1137">for Sustainability Assessment </tspan><tspan
+         sodipodi:role="line"
+         x="80.822701"
+         y="126.79836"
+         style="stroke-width:0.17424862"
+         id="tspan1139">Information)</tspan></text>
+    <rect
+       style="fill:#dbedff;fill-opacity:1;stroke:#000000;stroke-width:0.14697514;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect838-3-6-3-3-3"
+       width="28.450136"
+       height="7.3093514"
+       x="83.160515"
+       y="145.36766" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.32331491px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.17424862"
+       x="85.342834"
+       y="148.71458"
+       id="text836-6-2-6-6-5"><tspan
+         sodipodi:role="line"
+         x="85.342834"
+         y="148.71458"
+         style="stroke-width:0.17424862"
+         id="tspan902-3-62">Ontology of units of </tspan><tspan
+         sodipodi:role="line"
+         x="85.342834"
+         y="151.61873"
+         style="stroke-width:0.17424862"
+         id="tspan1162">Measure</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.14657244;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-2-9)"
+       d="m 98.991971,128.49924 v 15.8152"
+       id="path887-1-7"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="fill:#dbedff;fill-opacity:1;stroke:#000000;stroke-width:0.1684913;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect838-3-6-3-3-3-0"
+       width="37.50005"
+       height="7.2878356"
+       x="37.764328"
+       y="144.8763" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.32331491px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.17424862"
+       x="39.935886"
+       y="148.21246"
+       id="text836-6-2-6-6-5-9"><tspan
+         sodipodi:role="line"
+         x="39.935886"
+         y="148.21246"
+         style="stroke-width:0.17424862"
+         id="tspan1162-6">Quantities, Units, Dimensions </tspan><tspan
+         sodipodi:role="line"
+         x="39.935886"
+         y="151.11661"
+         style="stroke-width:0.17424862"
+         id="tspan1426">and Types ontology</tspan></text>
   </g>
 </svg>

@@ -168,41 +168,38 @@ Bei der Lebenszyklusanalyse (Life Cycle Assessment) handelt es sich um "eine sys
 
 \subsection{Schlüsselwörter}
 
-Die folgende Aufzählung enthält alle Schlüsselwörter, mit denen eine Ontologie in Teilen assoziiert sein muss, um für diese Arbeit relevant zu sein:
+Die folgende Aufzählung enthält alle Schlüsselwörter, mit denen eine Ontologie in Teilen assoziiert sein muss, um für diese Arbeit relevant zu sein. Die Schlüsselwörter gehören zu sich überschneidenden Themengebieten und lassen sich teilweise nicht voneinander eindeutig abgrenzen.
 
 \begin{enumerate}
-    \item Industry 4.0
-    Dieser Begriff bezeichnet die vierte industrielle Revolution bezogen auf den technologischen Fortschritt. In einem I4.0 Szenario steht der Fertigungsprozess (Manufacturing-Prozess) im Mittelpunkt, dieser stellt die Hauptaktivität dar bei der Techniken und Hilfsmittel eingesetzt werden wie, autonome Roboter, Cyber-Physical-Systems, Big-Data Analysis und IoT.
-    \item Smart Factory oder Factory 4.0
-    \item Smart Manufacturing
-    Ein Oberbegriff für eine (evolutionäre) Initiative zur Änderung der Geschäftsstrategie im Fertigungsbereich. Hierbei sollen Fertigungszentren modernisiert werden unter Einbeziehung von Technologien wie IIOT, 3D-Modeling, Industrieautomation, Mobile-Computing, Intelligente analysebasierte Entscheidungssysteme.
-    \item Big Data + Data Analytics
-    \item Cyber-Physical Systems (CPS)
-    Cyberphysische Systeme (auch "cyber-physische Systeme" geschrieben, nach engl. "Cyber-Physical Systems") sind Systeme, bei denen informations- und softwaretechnische mit mechanischen Komponenten verbunden sind, wobei Datentransfer und -austausch sowie Kontrolle bzw. Steuerung über ein Netzwerk wie das Internet in Echtzeit erfolgen. Wesentliche Bestandteile sind mobile und bewegliche Einrichtungen, Geräte und Maschinen (darunter auch Roboter), eingebettete Systeme und vernetzte Gegenstände (Internet der Dinge). Sensoren registrieren und verarbeiten Daten aus der physikalischen Welt, Aktoren (Antriebselemente) wirken auf die physikalische Welt ein, sodass z.B. Weichen gestellt, Schleusen geöffnet, Fenster und Türen geschlossen, Produktionsvorgänge begonnen, geändert und angehalten werden.\cite{GablerCPS2024}
-
-    \item Supply Chain Management
-    \item Life Cycle Assessment (Nachhaltigkeitsbewertung)
+    \item \textbf{Industry 4.0} - Dieser Begriff bezeichnet die vierte industrielle Revolution bezogen auf den technologischen Fortschritt. In einem I4.0 Szenario steht der Fertigungsprozess (Manufacturing-Prozess) im Mittelpunkt, dieser stellt die Hauptaktivität dar bei der Techniken und Hilfsmittel eingesetzt werden wie, autonome Roboter, Cyber-Physical-Systems, Big-Data Analysis und IoT.
+    \item \textbf{Smart Manufacturing} (sowie Smart Factory oder Factory 4.0) - Ein Oberbegriff für eine (evolutionäre) Initiative zur Änderung der Geschäftsstrategie im Fertigungsbereich. Hierbei sollen Fertigungszentren modernisiert werden unter Einbeziehung von Technologien wie Industry Internet of Things (IIOT), 3D-Modeling, Industrieautomation, Mobile-Computing und Intelligente analysebasierte Entscheidungssysteme.
+    \item \textbf{Big Data + Data Analytics} - TODO
+    \item \textbf{Cyber-Physical Systems} (CPS) - Cyberphysische Systeme (engl. "Cyber-Physical Systems") sind Systeme, bei denen informations- und softwaretechnische mit mechanischen Komponenten verbunden sind, wobei Datentransfer und -austausch sowie Kontrolle bzw. Steuerung über ein Netzwerk, wie das Internet, in Echtzeit erfolgen. Wesentliche Bestandteile sind mobile und bewegliche Einrichtungen, Geräte und Maschinen (darunter auch Roboter), eingebettete und vernetzte Systeme (Internet der Dinge). Sensoren registrieren und verarbeiten Daten aus der physikalischen Welt, Aktoren (Antriebselemente) wirken auf die physikalische Welt ein, sodass z.B. Weichen gestellt, Schleusen geöffnet, Fenster und Türen geschlossen, Produktionsvorgänge begonnen, geändert und angehalten werden \cite{GablerCPS2024}.
+    \item \textbf{Supply Chain Management} - TODO
+    \item \textbf{Life Cycle Assessment} (Nachhaltigkeitsbewertung) - Relevant; TODO?
 \end{enumerate}
 
-Diese Schlüsselwörter gehören zu sich überschneidenden Themengebieten und lassen sich teilweise nicht voneinander eindeutig abgrenzen.
-Im Folgenden eine Vorstellung der einzelnen Schlüsselwörter.
+Alle Ontologien, die mit einem oder mehreren der genannten Schlüsselwörter aufbauen, basieren womöglich auf anderen Ontologien, Ontologie-Design-Pattern oder Vokabularen. In diesem Fall werden auch diese mit in die Arbeit aufgenommen, auch wenn ihnen keine der obigen Schlüsselwörter zugeordnet wurden.
 
 \subsection{Life Cycle Assessment (LCA)}
 
 Bei der Lebenszyklusanalyse (Life Cycle Assessment) handelt es sich um "eine systematische Analyse potenzieller Umweltwirkungen und der Energiebilanz von Produkten während des gesamten Lebensweges" (Zitat Wikipedia \footnote{https://de.wikipedia.org/w/index.php?title=Lebenszyklusanalyse\&oldid=234859970}).
 
-\subsection{ISIC. NACE and CPC}
-Im Kontext von Industrie 4.0 und Smart-Manufacturing seien noch die internationalen Klassifizierungsstandards ISIC, NACE und CPC zu nennen. Hierbei handelt es ich um Werke, die einzeln oder im Verbund ein Framework dar, um internationale Vergleichbarkeit von Waren, Gütern oder auch wirtschaftlichen Aktivitäten zu ermöglichen.
+\subsection{Internationale Standards ISIC, NACE und CPC}
 
+Im Kontext dieser Arbeit sind die folgenden internationalen Standards von Interesse:
 
 \begin{itemize}
-	\item[I] \textbf{ISIC}: Diese ist die U.N. Klassifikation von wirtschaftlichen Aktivitäten. Diese liegt derzeit in der Revision 4 vor und der hauptsächliche Anwendungszweck ist die international einheitliche Einordnung wirtschaftlicher Aktivitäten um das Erstellen aussagekräftiger Wirtschaftsstatistiken zu ermöglichen, die international vergleichbar sind.\cite{UNSDISIC}
-	\item[II] \textbf{NACE}: Die NACE ist eine auf den europäischen Raum angepasste Version der ISIC und wird gleichfalls für die Analyse von Wirtschaftsdaten im europäischen Raum verwendet.\cite{EurostatNACE}
-	\item[III] \textbf{CPC}: Ist eine Klassifikation der U.N., welche derzeit in der Version 2.1 vorliegt. Hierbei werden Güter und Produkte hauptsächlich anhand physischer Form und ihrer industriellen Herkunft. Im letzteren Punkt ist die CPC sehr stark mit der ISIC gekoppelt.\cite{UNSDCPCv21}
+    \item \textbf{International Standard Industrial Classification} (ISIC): Diese ist die U.N. Klassifikation von wirtschaftlichen Aktivitäten. Diese liegt derzeit in der Revision 4 vor und der hauptsächliche Anwendungszweck ist die international einheitliche Einordnung wirtschaftlicher Aktivitäten um das Erstellen aussagekräftiger Wirtschaftsstatistiken zu ermöglichen, die international vergleichbar sind \cite{UNSDISIC}.
+    \item \textbf{die Statistische Systematik der Wirtschaftszweige in der Europäischen Gemeinschaft} (französisch Nomenclature statistique des activités économiques dans la Communauté européenne, kurz NACE): Die NACE ist eine auf den europäischen Raum angepasste Version der ISIC und wird gleichfalls für die Analyse von Wirtschaftsdaten im europäischen Raum verwendet \cite{EurostatNACE}.
+    \item \textbf{Central Product Classification} (CPC): Ist eine Klassifikation der U.N., welche derzeit in der Version 2.1 vorliegt. Hierbei werden Güter und Produkte hauptsächlich anhand physischer Form und ihrer industriellen Herkunft. Im letzteren Punkt ist die CPC sehr stark mit der ISIC gekoppelt \cite{UNSDCPCv21}.
 \end{itemize}
 
+Hierbei handelt es ich um Werke, die einzeln oder im Verbund ein Framework darstellen, um internationale Vergleichbarkeit von Waren, Gütern oder auch wirtschaftlichen Aktivitäten zu ermöglichen. Sie spielen für diese Arbeit auf der Ebene der Begriffe eine Rolle. [...]
 
-[...]
+TODO: Nennung passender Definitionen [...]
+
+TODO: Überlege/Prüfe, ob langfristig relevant für das Dokument
 
 \section{Verwandte Arbeiten (Related Work)}
 
@@ -463,23 +460,7 @@ Das Projekt wirkt verwaist und wird nur sehr selten gepflegt. Im Ontologie-Repos
 
 wird genutzt von Volkswagen Vehicles Ontology (https://data.industryportal.enit.fr/ontologies/VVO/submissions/1/download?apikey=019adb70-1d64-41b7-8f6e-8f7e5eb54942)
 
-\subsubsection{Units of Measure Ontologies}
-
-\paragraph{QUDT - Quantities, Units, Dimensions and Types ontology}
-\vspace{1em}
-
-Unit-Measure-Ontologien stellen eine konzeptuelle Repräsentation von Quantitäten , Quantitätsarten, Einheiten dar. Der bekannteste und weitläufig eingesetzte Vertreter, ist die von der NASA entwickelte QUDT\cite{QUDTOntology}. Innerhalb dieser Ontologie werden im Kern die Konzepte physikalischer Quantitäten. Quantitätsarten, Einheiten und Dimensionen, sowie Datentypen repräsentiert. Die Ontologie basiert auf dem internationalen Standard der SI-Unit (franz. Système international d'unités) und liegt im OWL-Format vor. Ein Hauptanwendungszeck einer solchen Ontologien, ist das Konvertieren von physikalischen  Einheiten unter Berücksichtigung der Dimensionalität.
-QUDT wird eingesetzt in Luft- und Raumfahrt, Industrieproduktion, sowie Energie- und Wasserversorgung. Ein Beispiel ist die Verwendung von QUDT innerhalb der Systems-Architecture-Ontology (SAO) für Cyber-Physical-Systems.
-
-\paragraph{OM ontology}
-\vspace{1em} % Adjust the pt value as needed
-
-OM wurde von dem Wissenschaftler Hajo Rijgersberg im Rahmen seiner Tätigkeit in der Abteilung Computer-Science der Universität Wageningen (Niederlande) entwickelt, als integrativer Teil einer größeren Ontologie\cite{rijgersberg2013ontology}, der Ontology of Quantitative Research (OQR).
-Die OM Ontologie versucht die Konzepte der Domäne von Maßen und Einheiten umfassend abzubilden, welche in Teilen bei anderen
-Ontologien fehlen. Dies betrifft z.B. die Konzepte Quantity und Prefix. Die OM Ontologie bezieht sich dabei in Teilen auf die QUDT Ontologie und kommt in verschiedenen Ontologie-Projekten, wie z.B dem Bioportal\cite{OM_BioPortal}, oder innerhalb der Bonsai-Ontologie \cite{ghose2022core} zum Einsatz.
-Zum Zeitpunkt der Erstellung dieses Dokuments ist die OM-Ontologie in der Version 2.0 verfügbar
-
-
+\subsubsection{CORA Ontology}
 
 % https://repositorio.ipcb.pt/bitstream/10400.11/2815/1/proceedings_IROS2014_workshop_IEEE_ORA.pdf#page=13
 
@@ -516,15 +497,22 @@ Für Zugriff auf die maschinenlesbaren Daten bitte im Kapitel für schema.org sc
 
 https://www.acsu.buffalo.edu/~yhu42/papers/2015\_stscope\_ontology.pdf
 
+\subsubsection{Ontology for Autonomous Robotics (ROA / ORA)}
+TODO lesen: https://www.aolivaresalarcos.com/pdf/2017-roman.pdf
+cite \cite{olszewska2017ontology}
+
 \subsubsection{Ontology for Industry 4.0 (O4I4)}
 
 \cite{kumar2019ontologies}
 
 Grafik machen: O4I4 nutzt CORA, ROA/ORA und ORArch (\cite{kumar2019ontologies}, S. 7)
 
-\subsubsection{Ontology for Autonomous Robotics (ROA / ORA)}
-TODO lesen: https://www.aolivaresalarcos.com/pdf/2017-roman.pdf
-cite \cite{olszewska2017ontology}
+\subsubsection{Ontology of units of Measure (OM)}
+
+Die Ontology of units of Measure (OM) wurde von dem Wissenschaftler Hajo Rijgersberg im Rahmen seiner Tätigkeit in der Abteilung Computer-Science der Universität Wageningen (Niederlande) entwickelt, als integrativer Teil einer größeren Ontologie\cite{rijgersberg2013ontology}, der Ontology of Quantitative Research (OQR).
+Die OM Ontologie versucht die Konzepte der Domäne von Maßen und Einheiten umfassend abzubilden, welche in Teilen bei anderen Ontologien fehlen. Dies betrifft z.B. die Konzepte Quantity und Prefix. Die OM Ontologie bezieht sich dabei in Teilen auf die QUDT Ontologie und kommt in verschiedenen Ontologie-Projekten, wie z.B dem Bioportal\cite{OM_BioPortal}, oder innerhalb der Bonsai-Ontologie \cite{ghose2022core} zum Einsatz.
+
+Auf der Projektseite \url{https://github.com/HajoRijgersberg/OM} steht die Ontologie in der Version 2.0 zur Verfügung. Die Ontologie wird aktiv betreut, so ist z.B. der letzte Commit im Repository vom 08.02.2024.
 
 \subsubsection{Position Ontology (POS)}
 
@@ -541,8 +529,14 @@ Auf der Projektseite \url{https://github.com/srfiorini/IEEE1872-owl} findet man 
 
 http://www.productontology.org/ (nutzt GoodRElations)
 
-
 [...]
+
+\subsubsection{Quantities, Units, Dimensions and Types ontology (QUDT)}
+
+Unit-Measure-Ontologien stellen eine konzeptuelle Repräsentation von Quantitäten , Quantitätsarten, Einheiten dar. Der bekannteste und weitläufig eingesetzte Vertreter, ist die von der NASA entwickelte QUDT\cite{QUDTOntology}. Innerhalb dieser Ontologie werden im Kern die Konzepte physikalischer Quantitäten. Quantitätsarten, Einheiten und Dimensionen, sowie Datentypen repräsentiert. Die Ontologie basiert auf dem internationalen Standard der SI-Unit (franz. Système international d'unités) und liegt im OWL-Format vor. Ein Hauptanwendungszeck einer solchen Ontologien, ist das Konvertieren von physikalischen  Einheiten unter Berücksichtigung der Dimensionalität.
+QUDT wird eingesetzt in Luft- und Raumfahrt, Industrieproduktion, sowie Energie- und Wasserversorgung. Ein Beispiel ist die Verwendung von QUDT innerhalb der Systems-Architecture-Ontology (SAO) für Cyber-Physical-Systems.
+
+TODO: Projektseite und letzte Aktivität
 
 \subsubsection{RPARTS Ontology}
 
@@ -559,20 +553,6 @@ Auf der Projektseite \url{https://github.com/srfiorini/IEEE1872-owl} findet man 
 
 Schema.org\footnote{\url{https://www.schema.org}} ist eine von Firmen und Freiwilligen gepflegte quelloffene Ontologie (bzw. Vokabular) zur Auszeichnung von Daten auf Webseiten.
 Das Ziel für dessen Entwicklung ist es, Suchmaschinen zusätzliche Metadaten über die Webseiteninhalte bereitstellen zu können.
-
-
-\subsubsection{Units of Measure (OM) Ontology}
-
-% https://www.semantic-web-journal.net/sites/default/files/swj177_7.pdf
-
-Publikation: \cite{rijgersberg2013ontology}
-
-http://www.ontology-of-units-of-measure.org/
-
-TODO: diese + QUDT
-
-Wird in der BONSAI Ontologie \cite{ghose2022core} verwendet
-
 
 \subsubsection{Vehicle Sales Ontology (VSO)}
 
