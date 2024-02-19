@@ -1,3 +1,5 @@
+/.~lock*
+/*.pdf
 /ax.zip
 /paper.aux
 /paper.bbl
@@ -7,4 +9,3 @@
 /paper.out
 /paper.run.xml
 /paper.synctex.gz
-**/*.pdf

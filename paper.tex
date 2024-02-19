@@ -52,7 +52,7 @@ sorting=nty
 
 --+ Thematischer Bezug (Materialwissenschaften, Produktion, ...)
 
---+ Vorliegende Formate (Textuell z.B. als Paper, OWL/RDF)
+--+ Vorliegende Formate (Textuell z.B. als Paper, OWL/RDF oder KIF)
 
 --+ Umfang anhand der Anzahl von Klassen/Properties etc.
 
@@ -73,9 +73,13 @@ sorting=nty
 
 \section{Einleitung}
 
-Motivation: Es soll eine Bestandsaufnahme aller Ontologien gemacht werden, welche sich thematisch auf den Fachbereich der Industrieproduktion beziehen (ohne Agrarproduktion). Dabei liegt der Fokus darin, vorhandene Ontologien, die in einer formalen Sprache vorliegen, thematisch zu ordnen (Überlappungen, Abgrenzungen, Eigenständigkeit) und nach objektiven Kriterien aufzulisten. Der Wert dieser Arbeit für die Ontologie-Community besteht in einer fundierten, aufbereiteten Übersicht von Ontologien zum Thema Industrie. Darauf aufbauend können weitergehende Untersuchungen angeknüpft werden.
+Motivation: Es soll eine Bestandsaufnahme aller Ontologien/Vokabluaren?? gemacht werden, welche sich thematisch auf den Fachbereich der Industrieproduktion beziehen (ohne Agrarproduktion). Dabei liegt der Fokus darin, vorhandene Ontologien, die in einer formalen Sprache vorliegen, thematisch zu ordnen (Überlappungen, Abgrenzungen, Eigenständigkeit) und nach objektiven Kriterien aufzulisten. Der Wert dieser Arbeit für die Ontologie-Community besteht in einer fundierten, aufbereiteten Übersicht von Ontologien zum Thema Industrie. Darauf aufbauend können weitergehende Untersuchungen angeknüpft werden.
 
 [Einleitungstext]
+
+Nur Auswahl von Ontologien, deren zugehörige Publikation(en) bzw. die OWL- oder KIF-Dateien für die Öffentlichkeit zugänglich sind.
+Eine Prüfung der vorliegenden Lizenz wurde nicht vorgenommen.
+
 
 Warum sind Ontologien relevant für heutige Industrie (bzw. Industrie 4.0)?
 - https://www.cambridge.org/core/services/aop-cambridge-core/content/view/BF86BB5310356D642C82470D67974804/S0269888919000109a.pdf/div-class-title-ontologies-for-industry-4-0-div.pdf, S. 4 => im Bereich der Cyber-Physical-System Integration stoßen heterogene Daten aufeinander, die integriert werden müssen. Weiterhin muss Integration auch in dem Agentenbasierten-Ökosystem umgesetzt werden, um eindeutige Kommunikation, effiziente Kollaboration und Kooperation zu ermöglichen/gewährleisten
@@ -102,9 +106,18 @@ This paper is structured as follows: [TODO]
 Im Rahmen dieser Arbeit werden thematisch passende Ontologien untersucht, weshalb im Folgenden die Sichtweise der Formalen Ontologien gewählt wurde. Dafür beziehe ich mich auf die theoretischen Grundlagen hinter der "General Formal Ontology" (kurz GFO). Sie geht davon aus, dass unsere Realität sich in drei ontologische Ebenen aufteilen lässt (auch Strata genannt) \cite{herre2006general}. Diese sind: die materielle Ebene (Raum-Zeit), die mentale/psychologische Ebene und die soziale Ebene. Ein Themengebiet ist ein Ausschnitt aus mindestens einer dieser ontologischen Ebenen.
 In der Fachliteratur werden Themengebiete häufig im Zusammenhang mit wissenschaftlichen Disziplinen organisiert. Eine wissenschaftliche Disziplin (auch Fachgebiet oder Einzelwissenschaft) ist eine Menge (mehr oder weniger) abgegrenzter Themengebiete, die sich in Lehre, Forschung und Praxis spezialisieren\footnote{https://de.wikipedia.org/wiki/Fachgebiet}. Die Grenze zwischen den Themengebieten ist fließend und nicht immer eindeutig.
 
+
+\subsection{Vokabular bzw. (Controlled) Vocabulary}
+
+Unsere Rechercheergebnisse zeigen, dass die Vokabular- und Ontologie-Autoren häufig ihre eigenen Kreationen entweder in eine oder beide Kategorien einordnen.
+Aufgrund der Rechercherergebnisse definieren und Praktikabilitätsgründen folgen wir
+
+TODO arbeite \cite{neuhaus2018ontology} in diese und das folgende Unterkapitel ein
+
+
 \subsection{Ontologien und ihre Arten}
 
-Eine Ontologie im Sinne der Formalen Ontologien ist vordergründig eine strukturierte Form von Konzepten, Kategorien, Fakten, logischen Axiomen und Regeln aus einem Themengebiet, welche in Textform vorliegt. Das kann entweder in Form einer Publikation sein, in der diese Dinge textuell und behandelt, grafisch dargestellt und miteinander verknüpft werden. Axiome und logische Aussagen liegen dabei als formale Sprache vor, häufig Beschreibungslogik oder Prädikatenlogik der 1. Stufe. Eine andere Form sind RDFS-/OWL-Dateien, welche die genannten Inhalte entsprechend kodiert beinhaltet.
+Eine Ontologie im Sinne der Formalen Ontologien ist vordergründig eine strukturierte Form von Konzepten, Kategorien, Fakten, logischen Axiomen und Regeln aus einem Themengebiet, welche in Textform vorliegt. Das kann entweder in Form einer Publikation sein, in der diese Dinge textuell und behandelt, grafisch dargestellt und miteinander verknüpft werden. Axiome und logische Aussagen liegen dabei als formale Sprache vor, häufig Beschreibungslogik oder Prädikatenlogik der 1. Stufe. Eine andere Form sind RDFS-/OWL- bzw. KIF-Dateien, welche die genannten Inhalte entsprechend kodiert beinhaltet.
 
 Im Folgenden werden die Ontologien in eine von drei Gruppen eingeteilt (nach \cite{hoehndorf2009developing}). Die erste Gruppe sind die Top-Level-Ontologien (oder auch "foundational ontologies" genannt). Sie bilden das theoretische Fundament zur Modellierung von Phänomenen aus den genannten ontologischen Ebenen. Zu den bekanntesten Top Level Ontologien gehören DOLCE, SUMO, BFO und GFO.
 
@@ -112,13 +125,32 @@ Die Kernontologien bilden die zweite Gruppe. Sie bauen in der Regel auf einer To
 
 Die dritte und letzte Gruppe sind die sogenannten Taskontologien, welche für die Bearbeitung eines konkreten Anwendungsfalls entwickelt und genutzt werden. In der Praxis wird diese Einteilung nicht immer in der Form umgesetzt, jedoch bietet sie sich für die Einordnung vorhandener Ontologien an.
 
-\subsection{Die Industrie, Industrie 4.0 und Industrieproduktion}
+\subsection{Ontology Design Pattern (ODP)}
 
-Die Autoren von \cite{lasi2014industrie} bezeichnen die Industrie als den Teil der Wirtschaft, der materielle Güter mit einem hohen Grad an Mechanisierung und Automatisierung erstellt. Dabei spielen viele Themengebiete eine Rolle, wie Rohstoffförderung, Logistik und digitale Systeme. Umgangssprachlich wird häufig der Begriff \textit{Industrieproduktion} verwendet, wenn man sich explizit auf den Herstellungsprozess bezieht. In der aktuellen Kommunikation im Bereich der Industrie scheinen Begriffe aus dem Themengebiet Industrie 4.0 (siehe nächster Abschnitt) sehr dominant. Nichtsdestotrotz zeigt die Praxis, dass Industrieunternehmen unterschiedliche Ausprägungsgrade bei der Adaption neuer Entwicklungen im Bereich Produktion haben.
+% PDF: https://ceur-ws.org/Vol-1188/paper_11.pdf
 
-Im Rahmen dieser Arbeit wird alles dem Themengebiet Industrie und Industrieproduktion zugeschrieben, was unmittelbar zur Herstellung von materiellen Gütern benötigt wird. Es soll hier keine tiefgehende Diskussion zur Begriffsschärfung von Industrie stattfinden. Aber aufgrund der Vielfalt an Buzz Words, Synonymen und Homonymen werden im Folgenden die relevanten Themengebiete näher betrachtet.
+Ein Ontology Design Pattern ist ein Ansatz bei der Ontologie-Entwicklung und wird eingesetzt, wenn wiederkehrende Modellierungsaufgaben zu lösen sind.
+Sie können dabei helfen, durch Wiederverwendung Zeit und Aufwand zu sparen.
+Für einen guten Überblick und Erläuterung der Terminologie wird auf die Publikation \cite{falbo2013ontology} verwiesen.
 
-\subsubsection{Industrie 4.0}
+[...]
+
+\section{Thematische Einordnung}
+
+Im vorherigen Kapitel wurden die wichtigsten Begriffe vorgestellt und eingeordnet.
+Nun soll der thematische Fokus dieser Publikation herausgearbeitet werden, um darauf basierend entscheiden zu können, welche Ontologien für die Untersuchung in Frage kommen.
+
+Wir folgen den Autoren von \cite{lasi2014industrie}, die die Industrie als Teil der Wirtschaft bezeichnen, der materielle Güter mit einem hohen Grad an Mechanisierung und Automatisierung erstellt.
+Dabei spielen angrenzende Themengebiete wie z.B. die Rohstoffförderung, Logistik und digitale Systeme auch eine wichtige Rolle.
+Der thematische Fokus dieser Arbeit ist die Industrie und speziell die Güterfertigung.
+Angrenzende Themengebiete (z.B. Materialwirtschaft) werden nur soweit notwendig mit betrachtet.
+
+In der aktuellen Literatur (wissenschaftliche Publikationen, White-Paper, Blogs etc.) im Bereich der Industrie scheinen Begriffe aus dem Themengebiet Industrie 4.0 sehr dominant.
+Nichtsdestotrotz zeigt die Praxis, dass Industrieunternehmen unterschiedliche Ausprägungsgrade bei der Adaption neuer Entwicklungen im Bereich Produktion haben.
+Wir gehen daher davon aus, dass eine breit aufgestellte Betrachtung hier zielführender ist, als sich nur auf den Teil mit Industrie 4.0 zu fokussieren.
+Aufgrund der Vielfalt an Begriffen, Buzzwords, Synonymen und Homonymen im Bereich der Industrie wird im Folgenden eine grobe Einordnung der wichtigsten Begriffe vorgenommen.
+
+\subsection{Industrie 4.0}
 
 Der Begriff "Industrie 4.0" wurde 2011 von der deutschen Bundesregierung im Rahmen der Hightech-Strategie 2020 geprägt (\cite{lasi2014industrie} und \cite{trotta2018industry}, S. 1). Eine Verbreitung außerhalb des deutschen Sprachraums fand erst später statt. Ich teile die Ansicht von (\cite{ragavan2016engineering}, S. 1), dass der Begriff \textit{Industrie 4.0} eine Sammlung von vielen Buzzwords und Technologien ist. Allen Definitionen ist weitestgehend gemein, dass es bei der Industrie 4.0 um intelligente Fabriken (smart factory) geht, welche intelligente Produkte (smart products) mittels intelligenter Maschinen (smart machines) herstellen. Der Begriff spielt in vielen Ontologien eine wichtige Rolle, weshalb es zunächst eine grobe Einordnung des Begriffs erarbeitet werden soll. Danach folgt eine Auflistung der zugerechneten Themengebiete.
 
@@ -128,23 +160,26 @@ Die Befürworter sehen als Ausgangspunkt für die Entwicklung die Etablierung de
 
 Die Kritiker der Begriffswahl Industrie 4.0 entgegnen, dass der Begriff eine deutsche Wortschöpfung ist und sich das Gesagte auf die deutsche Wirtschaft bezieht. In anderen Regionen der Welt wurden im gleichen Zeitraum ähnliche Initiativen gegründet\footnote{Industry IoT Consortium (\url{https://www.iiconsortium.org/about-us/}) oder siehe \cite{trotta2018industry}, S. 2 ff}. All diese Initiativen unterscheiden sich in ihren thematischen Ausrichtungen, auch wenn es teils große Überlappungen gibt. Daher kann man nicht von einer Revolution im Sinne der Industrie 1.0 - 3.0 sprechen.
 
-\section{Thematischer Fokus}
+\subsection{Life Cycle Assessment (LCA)}
 
-Im vorherigen Kapitel wurden die wichtigsten Begriffe vorgestellt und eingeordnet.
-Nun soll der thematische Fokus dieser Publikation herausgearbeitet werden.
-Er bestimmt, welche Ontologien für die Untersuchung in Frage kommen.
-Die folgende Aufzählung enthält alle Schlüsselwörter, mit denen eine Ontologie (zumindest teilweise) assoziiert sein muss, um für diese Arbeit relevant zu sein:
+Bei der Lebenszyklusanalyse (Life Cycle Assessment) handelt es sich um "eine systematische Analyse potenzieller Umweltwirkungen und der Energiebilanz von Produkten während des gesamten Lebensweges" (Zitat Wikipedia \footnote{https://de.wikipedia.org/w/index.php?title=Lebenszyklusanalyse\&oldid=234859970}).
+
+[...]
+
+\subsection{Schlüsselwörter}
+
+Die folgende Aufzählung enthält alle Schlüsselwörter, mit denen eine Ontologie in Teilen assoziiert sein muss, um für diese Arbeit relevant zu sein:
 
 \begin{enumerate}
     \item Industry 4.0
-    Dieser Begriff bezeichnet die vierte industrielle Revolution bezogen auf den technologischen Fortschritt. In einem I4.0 Szenario steht der Fertigungsprozess (Manufacturing-Prozess) im Mittelpunkt, dieser stellt die Hauptaktivität dar bei der Techniken und Hilfsmittel eingesetzt werden wie, autonome Roboter, Cyber-Physical-Systems, Big-Data Analysis und IoT. 
+    Dieser Begriff bezeichnet die vierte industrielle Revolution bezogen auf den technologischen Fortschritt. In einem I4.0 Szenario steht der Fertigungsprozess (Manufacturing-Prozess) im Mittelpunkt, dieser stellt die Hauptaktivität dar bei der Techniken und Hilfsmittel eingesetzt werden wie, autonome Roboter, Cyber-Physical-Systems, Big-Data Analysis und IoT.
     \item Smart Factory oder Factory 4.0
     \item Smart Manufacturing
     Ein Oberbegriff für eine (evolutionäre) Initiative zur Änderung der Geschäftsstrategie im Fertigungsbereich. Hierbei sollen Fertigungszentren modernisiert werden unter Einbeziehung von Technologien wie IIOT, 3D-Modeling, Industrieautomation, Mobile-Computing, Intelligente analysebasierte Entscheidungssysteme.
     \item Big Data + Data Analytics
     \item Cyber-Physical Systems (CPS)
     Cyberphysische Systeme (auch "cyber-physische Systeme" geschrieben, nach engl. "Cyber-Physical Systems") sind Systeme, bei denen informations- und softwaretechnische mit mechanischen Komponenten verbunden sind, wobei Datentransfer und -austausch sowie Kontrolle bzw. Steuerung über ein Netzwerk wie das Internet in Echtzeit erfolgen. Wesentliche Bestandteile sind mobile und bewegliche Einrichtungen, Geräte und Maschinen (darunter auch Roboter), eingebettete Systeme und vernetzte Gegenstände (Internet der Dinge). Sensoren registrieren und verarbeiten Daten aus der physikalischen Welt, Aktoren (Antriebselemente) wirken auf die physikalische Welt ein, sodass z.B. Weichen gestellt, Schleusen geöffnet, Fenster und Türen geschlossen, Produktionsvorgänge begonnen, geändert und angehalten werden.\cite{GablerCPS2024}
-    
+
     \item Supply Chain Management
     \item Life Cycle Assessment (Nachhaltigkeitsbewertung)
 \end{enumerate}
@@ -169,7 +204,7 @@ Im Kontext von Industrie 4.0 und Smart-Manufacturing seien noch die internationa
 
 [...]
 
-\section{Verwandte Arbeiten}
+\section{Verwandte Arbeiten (Related Work)}
 
 - Welche Untersuchungen wurden bereits dahingehend unternommen?
 
@@ -289,6 +324,12 @@ extensible collection of ontologies with the primary purpose of enabling users t
 use one or several ontologies from this collection"
 
 
+\section{Methodik}
+
+Wie Recherche nach Ontologien?
+Worauf wurde bei Aufnahme einer Ontologie konkret geachtet?
+
+TODO
 
 
 \section{Ontologie und relevante Unterscheidungskriterien}
@@ -339,6 +380,8 @@ Zum Thema was ist eine Ontologie und was nicht. Wo ziehen wir die Grenze? Beispi
 
 [...]
 
+TODO: binde finale Version der Grafik ontology-map.png hier ein
+
 Die Ontologien werden im Folgenden noch kurz vorgestellt.
 Weiterführende Metadaten zu den Ontologien finden Sie in unseren Rohdaten, welche in Form einer CSV-Datei öffentlich zur Verfügung stehen.
 
@@ -346,20 +389,29 @@ Weiterführende Metadaten zu den Ontologien finden Sie in unseren Rohdaten, welc
 
 Sie finden darin weitere Informationen zu den jeweiligen Ontologien, z.B. Link zum Projekt oder den RDF/OWL-Dateien.
 
-\subsection{Ontologie-Pattern}
+\subsection{Top Level Ontologien (upper ontology)}
 
-% PDF: https://ceur-ws.org/Vol-1188/paper_11.pdf
+\subsubsection{Suggested Upper Merged Ontology (SUMO)}
 
-Ein Ontologie-Pattern ist ein Ansatz bei der Ontologieentwicklung und wird eingesetzt, wenn wiederkehrende Modellierungsaufgaben zu lösen sind.
-Sie können dabei helfen, durch Wiederverwendung Zeit und Aufwand zu sparen.
-Für einen guten Überblick und Erläuterung der Terminologie wird auf die Publikation \cite{falbo2013ontology} verwiesen.
+Die SUMO\footnote{Projektseite: \url{https://www.ontologyportal.org/index.html}} Ontologie ist eine Top Level Ontologie und deren Entwicklung wird laut Projektseite von Adam Pease (technical editor) geleitet.
+Die Ontologie ist in der Sprache Standard Upper Ontology Knowledge Interchange Format (SUO-KIF) geschrieben\footnote{\url{https://github.com/ontologyportal/sigmakee/blob/master/suo-kif.pdf}} und
+bestand anfangs aus Ontologie-Beiträgen auf einer Mailing-Liste, die jedoch mit der Zeit stark erweitert wurden (\cite{niles2001towards}, S. 2 ff.).
+SUMO stellt Definitionen für sehr allgemeine Begriffe bereit, welche für aufbauende Kernontologien wiederverwendet werden können.
+Mit diesen Begriffen werden häufig verwendete Teile unserer Realität beschrieben, z.B. Objekte und Prozesse.
+Laut eigener Aussage wird sie für die Forschung und Entwicklung von Anwendungen aus den Bereichen Suche, Linguistik und Reasoning verwendet\footnote{Zitat "\textit{The Suggested Upper Merged Ontology (SUMO) and its domain ontologies form the largest formal public ontology in existence today. They are being used for research and applications in search, linguistics and reasoning.}" von Projektseite: \url{https://www.ontologyportal.org/index.html}}.
+Auf \url{https://github.com/ontologyportal/sumo} findet man die KIF-Dateien des Projektes, welche die einzelnen Ontologie-Bestandteile repräsentieren (z.B. Anatomy.kif, Military.kif).
+Das Projekt scheint weiterhin gepflegt zu werden, der letzte Commit auf Github ist ca. 3 Wochen alt\footnote{\url{https://github.com/ontologyportal/sumo/commit/69f22dc041ae5f307279134968a740ff74c04ff2}}.
 
-\subsubsection{Ontologie Design Pattern für LCA}
+\subsection{Ontology Design Pattern}
+
+Im Folgenden eine Auflistung aller Ontology Design Pattern
+
+\subsubsection{Ontology Design Pattern für LCA}
 
 % PDF: https://ceur-ws.org/Vol-1461/WOP2015_pattern_abstract_1.pdf
 
-Die Publikation "A Minimal Ontology Pattern for Life Cycle Assessment Data"\cite{vardem2015anminimal} stellt ein Ontologie Design Pattern vor, welches als Grundlage für umfangreichere Ontologien aus dem Bereich LCA genutzt werden kann.
-Ziel hinter dem Ontologie Design Pattern war es, die semantische Interoperabilität zwischen LCA-Datensätzen zu stärken.
+Die Publikation "A Minimal Ontology Pattern for Life Cycle Assessment Data"\cite{vardem2015anminimal} stellt ein Ontology Design Pattern vor, welches als Grundlage für umfangreichere Ontologien aus dem Bereich LCA genutzt werden kann.
+Ziel hinter dem Ontology Design Pattern war es, die semantische Interoperabilität zwischen LCA-Datensätzen zu stärken.
 Konkret geht es um die Einigung bei der zentralen Nomenklatur rund um LCA.
 Bisher bestand nach Aussage der Autoren eine Lücke, wodurch die Datenmodelle nicht durch Konzeptuelle Modelle gestützt wurden (\cite{vardem2015anminimal}, S. 2 ff.).
 Darauf aufbauende Arbeiten hätten damit das Problem, dass man bei deren Nutzung zu fehlerhaften oder nicht reproduzierbaren Ergebnisse kommen könnte.
@@ -373,7 +425,7 @@ Die zugehörige  OWL-Datei lässt sich leider nicht mehr über die in der Publik
 % PDF: https://ceur-ws.org/Vol-1486/paper_99.pdf
 % PDF: https://ebiquity.umbc.edu/_file_directory_/papers/763.pdf
 
-Die GeoLink Ontologie Design Pattern \cite{krisnadhi2015geolinkStart} sind Teil des GeoLink-Projektes, dessen Zielstellung es war, ein erweitertes Daten-Integrations- und Discovery-Framework unter Nutzung von Semantic Web Technologien für das EarthCube Programm bereitzustellen.
+Die GeoLink Ontology Design Pattern \cite{krisnadhi2015geolinkStart} sind Teil des GeoLink-Projektes, dessen Zielstellung es war, ein erweitertes Daten-Integrations- und Discovery-Framework unter Nutzung von Semantic Web Technologien für das EarthCube Programm bereitzustellen.
 Das EarthCube-Programm ist eine, durch die NSF (National Science Foundation) gesponsorte, Initiative zur Verbesserung der digitalen Infrastruktur der Geowissenschaften (Schwerpunkt Ozeanographie).
 
 Es wurde eine hohe Diversität in den verschiedenen Datensätzen festgestellt, z.B. aufgrund verschiedener Modellierungsansätze und genutzter Vokabulare.
@@ -382,7 +434,7 @@ Zusammen mit anderen Bestandteilen ermöglichen sie die Erstellung komplexerer O
 
 ==> \textbf{TODO:} leider erfährt man aus den oben genannten GeoLink Papieren nichts zu den in \cite{vardem2015anminimal}, S. 4 erwähnten Property Pattern.
 
-Diese Arbeit wurde in die Untersuchung aufgenommen, weil gewisse Bestandteile in der "Ontologie Design Pattern für LCA" verwendet werden (\cite{vardem2015anminimal}, S. 4).
+Diese Arbeit wurde in die Untersuchung aufgenommen, weil gewisse Bestandteile in der "Ontology Design Pattern für LCA" verwendet werden (\cite{vardem2015anminimal}, S. 4).
 
 \subsubsection{material transformation pattern}
 
@@ -392,9 +444,9 @@ https://scholar.google.de/scholar?q=An+ontology+design+pattern+for+material+tran
 
 
 
+\subsection{Ontologien und Vokabulare}
 
-
-\subsection{Kernontologien}
+TODO: Kurze Erklärung warum beides hier?
 
 \subsubsection{BONSAI Ontology (Big Open Network for Sustainability Assessment Information)}
 
@@ -407,21 +459,14 @@ Für die Modellierung von Messwerten und Maßeinheiten wird auf die Ontology of 
 
 Das Projekt wirkt verwaist und wird nur sehr selten gepflegt. Im Ontologie-Repository auf Github ist der letzte Commit über zwei Jahre alt\footnote{\url{https://github.com/BONSAMURAIS/ontology}}. Im zugehörigen Repository für sonstige Entwicklungsbeiträge und Diskussionen ist der letzte Commit über vier Jahre alt\footnote{\url{https://github.com/BONSAMURAIS/BONSAI-ontology-RDF-framework}}. Der Zustand der Issue-Tracker stützt diesen Eindruck.
 
-\subsubsection{Core Ontology for Robotics and Automation (CORA)}
+\subsubsection{Car Options Ontology}
 
-Quelle: \cite{prestes2014core}
-
-- S. 1: Standardisierung von Terminologie zwischen Menschen und Robotern sowie der Erarbeitung einer gemeinsamen Konzeptualisierung "über die Welt"
-- S. 1: Erarbeitung erster Terme für die Domain Robotics: ". In the case of CORA, it includes concepts such as robot, robotic system, robot part, etc. The main role of CORA is to maintain the consistency among the different sub-ontologies in the standard. For instance, future ontologies about industrial and service robotics to be included in the standard shall commit to the the already existing concepts/definitions in CORA. Otherwise, inconsistencies and wrong inferences might appear."
-- Darlegung relevanter Entitäten? device, robot, robot group and robotic system
-- Vorstellung von 3 Ontologien die CORA unterstützen: CORAX, RPARTS and POS
-- S. 2: wird mittels SUMO Ontology entwickelt
-
+wird genutzt von Volkswagen Vehicles Ontology (https://data.industryportal.enit.fr/ontologies/VVO/submissions/1/download?apikey=019adb70-1d64-41b7-8f6e-8f7e5eb54942)
 
 \subsubsection{Units of Measure Ontologies}
 
 \paragraph{QUDT - Quantities, Units, Dimensions and Types ontology}
-\vspace{1em} 
+\vspace{1em}
 
 Unit-Measure-Ontologien stellen eine konzeptuelle Repräsentation von Quantitäten , Quantitätsarten, Einheiten dar. Der bekannteste und weitläufig eingesetzte Vertreter, ist die von der NASA entwickelte QUDT\cite{QUDTOntology}. Innerhalb dieser Ontologie werden im Kern die Konzepte physikalischer Quantitäten. Quantitätsarten, Einheiten und Dimensionen, sowie Datentypen repräsentiert. Die Ontologie basiert auf dem internationalen Standard der SI-Unit (franz. Système international d'unités) und liegt im OWL-Format vor. Ein Hauptanwendungszeck einer solchen Ontologien, ist das Konvertieren von physikalischen  Einheiten unter Berücksichtigung der Dimensionalität.
 QUDT wird eingesetzt in Luft- und Raumfahrt, Industrieproduktion, sowie Energie- und Wasserversorgung. Ein Beispiel ist die Verwendung von QUDT innerhalb der Systems-Architecture-Ontology (SAO) für Cyber-Physical-Systems.
@@ -430,30 +475,42 @@ QUDT wird eingesetzt in Luft- und Raumfahrt, Industrieproduktion, sowie Energie-
 \vspace{1em} % Adjust the pt value as needed
 
 OM wurde von dem Wissenschaftler Hajo Rijgersberg im Rahmen seiner Tätigkeit in der Abteilung Computer-Science der Universität Wageningen (Niederlande) entwickelt, als integrativer Teil einer größeren Ontologie\cite{rijgersberg2013ontology}, der Ontology of Quantitative Research (OQR).
-Die OM Ontologie versucht die Konzepte der Domäne von Maßen und Einheiten umfassend abzubilden, welche in Teilen bei anderen 
+Die OM Ontologie versucht die Konzepte der Domäne von Maßen und Einheiten umfassend abzubilden, welche in Teilen bei anderen
 Ontologien fehlen. Dies betrifft z.B. die Konzepte Quantity und Prefix. Die OM Ontologie bezieht sich dabei in Teilen auf die QUDT Ontologie und kommt in verschiedenen Ontologie-Projekten, wie z.B dem Bioportal\cite{OM_BioPortal}, oder innerhalb der Bonsai-Ontologie \cite{ghose2022core} zum Einsatz.
 Zum Zeitpunkt der Erstellung dieses Dokuments ist die OM-Ontologie in der Version 2.0 verfügbar
 
 
 
-% https://www.semantic-web-journal.net/sites/default/files/swj177_7.pdf
+% https://repositorio.ipcb.pt/bitstream/10400.11/2815/1/proceedings_IROS2014_workshop_IEEE_ORA.pdf#page=13
 
-Publikation: \cite{rijgersberg2013ontology}
+Die Core Ontology for Robotics and Automation (abgekürzt: CORA) \cite{prestes2014core} wurde von der IEEE RAS Ontology for Robotics and Automation Working Group (IEEE RAS ORA WG) entwickelt und ist ein Ansatz zur Standardisierung der vorhandenen Robotik-Terminologie.
+Diese Entwicklung war Teil einer Initiative zur Schärfung der Terminologien u.a. in den folgenden Themengebieten: Industrieroboter (Industrial Robotics), Roboter-assistierte Chirugie (Surgical Robotics) and Service Roboter (Service Robotics).
+Mit CORA soll definiert werden, was ein Roboter ist, daher werden u.a. die Konzepte Roboter (robot), Robotisches System (robotic system) und Bestandteil eines Roboters (robotic part) näher beschrieben.
+Im Rahmen der Initiative wurden weitere Ontologien entwickelt, die auf CORA aufbauen.
+CORA nimmt dabei eine Vermittlerrolle ein, sodass darauf aufbauende Ontologien konsistente Konzepte verwenden können, was zu langfristiger Kompatibilität beitragen kann.
+Die Ontologie baut dabei der auf der Top Level Ontologie SUMO auf, wobei weitere Unterontologien von CORA entwickelt wurden, um semantische Lücken zwischen SUMO und CORA zu überbrücken (siehe Unterkapitel für CORAX, POS und RPARTS).
 
-http://www.ontology-of-units-of-measure.org/
+Auf der Projektseite \url{https://github.com/srfiorini/IEEE1872-owl} findet man die OWL Spezifikation von CORA und anderen Ontologien hinter dem IEEE 1872-2015 Standard\footnote{\url{https://standards.ieee.org/ieee/1872/5354/}}. Der letzte Commit im Repository ist vom 21.10.2020\footnote{\url{https://github.com/srfiorini/IEEE1872-owl/commit/ffb6613350b28c3a710f8daf2a1e9e953ded7ed8}}, weshalb man annehmen kann, dass das Projekt nicht mehr aktiv betreut wird.
 
-Ist das die, die sich Paul bereits angeschaut hatte?
+\subsubsection{CORAX Ontology}
 
-Wird in der BONSAI Ontologie \cite{ghose2022core} verwendet
+% PDF: https://www.sciencedirect.com/science/article/am/pii/S0736584514000659
 
+Die CORAX Ontologie wurde im Rahmen der CORA Ontologie entwickelt, mit dem Ziel notwendige Konzepte zu definieren, die für die CORA zu allgemein waren, aber in der Top Level Ontologie SUMO nicht existierten (\cite{fiorini2015extensions}, S. 3).
+Dazu gehören Definitionen zu den Konzepten Design (design, im Sinne von Produktdesign), physische Umgebung (physikal environment), Interaktion (interaction) und Künstliches System (artifical system).
+So wurde zum Beispiel zwischen SUMO:Artificat und CORA:Robotic System das Konzept CORAX:Artificial System (CORAX) eingeführt (\cite{fiorini2015extensions}, S. 6 ff.).
 
-\subsection{TODO einordnen}
+Auf der Projektseite \url{https://github.com/srfiorini/IEEE1872-owl} findet man neben der OWL Spezifikation von CORA auch die von CORAX. Der letzte Commit im Repository ist vom 21.10.2020, weshalb man annehmen kann, dass das Projekt nicht mehr aktiv betreut wird.
 
-\subsubsection{CORAX}
+\subsubsection{GoodRelations Vokabular}
 
-- Ergänzung des CORA Teams um Lücken der SUMO Ontologie bezogen auf Modellierung der Realität aufzufüllen
+Das GoodRelations\footnote{https://www.heppnetz.de/ontologies/goodrelations/v1.html} Vokabular ist laut eigener Aussage ein Vokabular zur Modellierung Daten im E-Commerce Bereich (z.B. Produkte, Dienstleistungen oder Unternehmen).
+Es wurde von Martin Hepp u.a. mit dem Ziel entwickelt, Produkte und Dienstleistungen auf E-Commerce-Webseiten mit zusätzlichen Metadaten auszuzeichnen, um die Sichtbarkeit in Suchmaschinen zu erhöhen.
+GoodRelations wurde 2012 als E-Commerce Kern in das Vokabular schema.org aufgenommen\footnote{\url{http://blog.schema.org/2012/11/good-relations-and-schemaorg.html}}.
+Damit gingen alle Klassen und Properties in das schema.org Vokabular über und wurden darin integriert\footnote{Beispiel: Klasse Product \url{https://schema.org/Product}}.
+Für Zugriff auf die maschinenlesbaren Daten bitte im Kapitel für schema.org schauen.
 
-\subsection{LCA scope ontology}
+\subsubsection{LCA scope ontology}
 
 \cite{vardem2015anminimal} verweißt auf S. 4 auf LCA scope ontology
 
@@ -469,15 +526,91 @@ Grafik machen: O4I4 nutzt CORA, ROA/ORA und ORArch (\cite{kumar2019ontologies}, 
 TODO lesen: https://www.aolivaresalarcos.com/pdf/2017-roman.pdf
 cite \cite{olszewska2017ontology}
 
-\subsubsection{POS}
+\subsubsection{Position Ontology (POS)}
 
-- Unterontologie von CORA, erweitert SUMO und ergänzt CORA um Konzepte und Relationen die etwas mit Positionierungen, Orientierung und Darstellungen? (pose) in einem Koordinatenssytem zu tun haben - \cite{prestes2014core}, S. 2
+% PDF: https://www.sciencedirect.com/science/article/am/pii/S0736584514000659
 
-\subsubsection{RPARTS}
+Die Position Ontology (POS) wurde als Erweiterung der SUMO Ontologie im Rahmen des CORA Projektes entwickelt (\cite{fiorini2015extensions}, S. 17 ff).
+Sie komplementiert die CORA Ontologie mit neuen Konzepten zur Positionierung und Orientierung, was insbesondere bei der Modellierung von Informationen über Roboter und ihre Umgebung wichtig ist.
+Dafür wurden u.a. die folgenden Konzepte eingeführt: position, PositionCoordinateSystem, PositionPoint.
+Diese und andere Konzepte und Properties erlauben die Modellierung von Positionen in einem Koordinatensystem sowie die relative Positionierung.
 
-- Unterontologie? von CORA, mit Fokus auf Roboter-Bestandteile - \cite{prestes2014core}, S. 1 ff.
+Auf der Projektseite \url{https://github.com/srfiorini/IEEE1872-owl} findet man neben der OWL Spezifikation von CORA auch die von POS. Der letzte Commit im Repository ist vom 21.10.2020, weshalb man annehmen kann, dass das Projekt nicht mehr aktiv betreut wird.
+
+\subsubsection{Product Ontology}
+
+http://www.productontology.org/ (nutzt GoodRElations)
 
 
+[...]
+
+\subsubsection{RPARTS Ontology}
+
+% PDF: https://www.sciencedirect.com/science/article/am/pii/S0736584514000659
+
+Die RPARTS Ontology ist eine Teil-Ontologie der CORA Ontology, welche zur Modellierung von Bestandteilen von Robotern verwednet werden kann. (\cite{fiorini2015extensions}, S. 14 ff).
+Der zugrundeliegende Ansatz ist, dass Roboter (\textit{devices}) immer aus Bestandteilen (anderen \textit{devices}) bestehen.
+Man unterscheidet zwischen Roboter-Bestandteilen zur Kommunikation (\textit{Robot communicating part}), Verarbeitung (\textit{Robot processing part}), Sensorik (\textit{Robot sensing part}) und Handlung (\textit{Robot actuating part}).
+[...]?
+
+Auf der Projektseite \url{https://github.com/srfiorini/IEEE1872-owl} findet man neben der OWL Spezifikation von CORA auch die von POS. Der letzte Commit im Repository ist vom 21.10.2020, weshalb man annehmen kann, dass das Projekt nicht mehr aktiv betreut wird.
+
+\subsubsection{schema.org Vocabulary}
+
+Schema.org\footnote{\url{https://www.schema.org}} ist eine von Firmen und Freiwilligen gepflegte quelloffene Ontologie (bzw. Vokabular) zur Auszeichnung von Daten auf Webseiten.
+Das Ziel für dessen Entwicklung ist es, Suchmaschinen zusätzliche Metadaten über die Webseiteninhalte bereitstellen zu können.
+
+
+\subsubsection{Units of Measure (OM) Ontology}
+
+% https://www.semantic-web-journal.net/sites/default/files/swj177_7.pdf
+
+Publikation: \cite{rijgersberg2013ontology}
+
+http://www.ontology-of-units-of-measure.org/
+
+TODO: diese + QUDT
+
+Wird in der BONSAI Ontologie \cite{ghose2022core} verwendet
+
+
+\subsubsection{Vehicle Sales Ontology (VSO)}
+
+Quelle: https://www.heppnetz.de/ontologies/vso/ns
+
+Wird genutzt von VVO (IndustryPortal)
+
+nutzt GoodRelations Vokabular
+
+\subsubsection{Volkswagen Vehicles Ontology (VVO)}
+
+Aufgrund fehlender Originalquelle (z.B. wiss. Publikation oder Projektseite) und der unterschiedlichen Dokumentation zur Volkswagen Vehicles Ontology, werden die aktuellen Funde im Folgenden einzeln dargelegt.
+
+Die Ontologie wird in einer Untersuchung namens "Case Study: Contextual Search for Volkswagen and the Automotive Industry" des W3C aus dem Jahre 2011 erwähnt (\cite{greenly2011case}, S. 2).
+In der Studie ging es u.a. um die Verbesserung der Suche für Nutzer in digitalen Quellen.
+In diesem Zuge wurde u.a. die Volkswagen Vehicles Ontology entwickelt, um Volkswagen-spezifische Konzepte bei Fahrzeugen beschreiben zu können.
+Der Autor der Ontologie war Martin Hepp.
+Man nutzte diese und andere Vokabulare/Ontologien, um die eigenen Daten anzureichern, um kontextbasierte Suchanfragen zu ermöglichen.
+Die URL \url{http://purl.org/vvo/ns} wird als Quelle für die Ontologie angegeben, jedoch gelangt man darüber am Ende nur zu \url{https://www.volkswagen.co.uk/en.html}, welches keine weiteren Informationen bereitstellt.
+Weitere Details zur Ontologie selbst wurden nicht genannt.
+
+Der Link \url{https://industryportal.enit.fr/ontologies/VVO} führt zu einem Projekteintrag auf IndustryPortal.
+Als Autor wird Abdelouadoud Rasmi angegeben, der jedoch keine ersichtliche Verbindung zu Volkswagen hat.
+In der zugehörigen OWL-Datei\footnote{https://data.industryportal.enit.fr/ontologies/VVO/submissions/1/download?apikey=019adb70-1d64-41b7-8f6e-8f7e5eb54942} findet man jedoch im Abschnitt Autor auch Martin Hepp und bei Beitragende (contributors) u.a. den Erstautor der oben genannten W3C Studie William Greenly.
+Aufgrund dieses und anderer Gemeinsamkeiten, z.B. gleicher Name (Volkswagen Vehicles Ontology) und XML-Namensraum (http://purl.org/vvo/ns\#), wird angenommen, dass es sich um die gleiche Ontologie handelt. Die Ontologie auf IndustryPortal hat als Veröffentlichungsdatum den 2. November 2022, wobei als Veröffentlichungsdatum bei der Version der 12. Oktober 2010 genannt wird.
+Es liegen keine Informationen vor, dass zwischen diesen Daten weitere Veränderungen an der Ontologie vorgenommen wurden.
+Ich gehe daher davon aus, dass es sich hier lediglich um einen erneuten Upload der Version von 2010 handelt.
+
+Für die Ontologie existiert auch auf DataScientia ein Eintrag unter \url{http://liveschema.eu/dataset/lov\_vvo}.
+Als Autor wird wieder Martin Hepp angegeben.
+Der Eintrag wurde jedoch am 3. Februar 2020 erstellt und repräsentiert auch die Version 1.0 vom 12. Oktober 2010.
+
+
+\section{Fazit und weitere Arbeiten}
+
+[...]
+
+TODO: Erwähnung KI-Werk Projekt
 
 
 
