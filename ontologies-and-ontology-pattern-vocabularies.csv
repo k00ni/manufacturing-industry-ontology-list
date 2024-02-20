@@ -1,5 +1,6 @@
 Column1;Column2;Column3;Column4;Column5;Column6;Column7;Column8;Column9
 Column1;Column2;Column3;Column4;Column5;Column6;Column7;Column8;Column9
+Column1;Column2;Column3;Column4;Column5;Column6;Column7;Column8;Column9
 Name;Abbreviation;Type;Short description;Latest version;Latest activity found;Project page;RDF/OWL or KIF;Authors/creators
 BONSAI Ontology (Big Open Network for Sustainability Assessment Information);BONSAI;Core Ontology;The BONSAI ontologies provides elements of description for product footprint concepts defined in the bonsai.uno data base;0.2;12.04.2022;https://github.com/BONSAMURAIS/ontology;https://ontology.bonsai.uno/core;http://bonsai.uno/foaf/bonsai.rdf#bonsai
 Core Ontology for Robotics and Automation;CORA;Core Ontology;It was developed within the IEEE 1872-2015 Standard Ontologies for Robotics and Automation. Specifies core conceptions of Robotics domain.;1.x;21.10.2020;https://github.com/srfiorini/IEEE1872-owl;https://raw.githubusercontent.com/srfiorini/IEEE1872-owl/master/cora.owl;IEEE RAS Ontology for Robotics and Automation Working Group (IEEE RAS ORA WG)
