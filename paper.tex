@@ -171,6 +171,11 @@ https://iirds.org/fileadmin/iiRDS\_specification/20201103-1.1-release/index.html
 
 TODO: Passt das?
 
+\subsubsection{Industry Foundation Classes (IFC)}
+
+"The Industry Foundation Classes IFC represent an open specification for Building Information Modeling BIM data that is exchanged and shared among the various participants in a building construction or facility management project. IFC's are the international openBIM standard."
+
+https://standards.buildingsmart.org/IFC/RELEASE/IFC4/ADD1/HTML/
 
 \section{Verwandte Arbeiten (Related Work)}
 
@@ -243,9 +248,8 @@ https://industryportal.enit.fr/
 
 \section{Methodik}
 
-In diesem Kapitel gehen wir auf unsere Methodik ein.
-Unser Ziel war die Erarbeitung einer Liste von Ontologien die sich auf das Fachgebiet Industrie beziehen\footnote{Für weitere Informationen siehe vorheriges Kapitel zur thematischen Einordnung}.
-
+In diesem Kapitel wird die verwendete Methodik vorgestellt.
+Das Ziel war die Erarbeitung einer Liste mit Ontologien, die sich auf das Fachgebiet Industrie beziehen\footnote{Für weitere Informationen siehe vorheriges Kapitel zur thematischen Einordnung}.
 Die folgenden Forschungsfragen sollten damit beantwortet werden:
 
 \begin{enumerate}
@@ -258,6 +262,8 @@ Diese Forschungsfragen ermöglichen einen neutralen Blick auf die vorhandenen On
 Eine Wertung nach Inhalten, Lizenzen oder ähnlichem fand nicht statt.
 Die Einbeziehung der letzten, dokumentierten Aktivität einer Ontologie erlaubt eine Abschätzung, ob weitere Untersuchungen sinnvoll sind.
 Die explizite Nennung genutzter Top-Level-Ontologien soll unterstreichen, welche formalen Grundlagen jede Ontologie hat.
+
+TODO: Hin- und Her-Bouncing erklären? Ausgangspunkt > schauen was es an Ontologien gibt > Kriterien verfeinern > ...
 
 \subsection{Literatur- und Internetrecherche}
 
@@ -306,6 +312,12 @@ TODO: Warum wurden diese gewählt? => dezidiert für Publikation solcher Ontolog
 Konkret: Einordnung als "\textbf{ontology library} as a Web-based system that provides access to an
 extensible collection of ontologies with the primary purpose of enabling users to find and
 use one or several ontologies from this collection"
+
+\subsection{Weitere Quellen}
+
+- Es wurden auch Ontologien anhand ihrer Nutzung in OWL:Import Statements geprüft
+
+- Manuelle Durchsicht der Liste https://basic-formal-ontology.org/users.html
 
 \subsection{Aufnahme einer Ontologie}
 
@@ -379,6 +391,24 @@ Im Folgenden eine Auflistung aller Ontology Design Pattern.
 
 \subsection{Ontologien}
 
+\subsubsection{Additive manufacturing ???}
+
+Paper "A product life cycle ontology for additive manufacturing": https://philarchive.org/archive/ALIAPLv1
+
+Gibt es dazu noch irgendwo die öffentlich zugänglichen RDF Daten?
+
+
+ODER
+
+Prüfe, ob sie zu folgender Publikation Rohdaten finden lassen:
+
+A Design for Additive Manufacturing Ontology:
+\url{https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=b18539e972dfd14782d6a907dd04d1b91819e8b2}
+
+\subsubsection{Additive manufacturing ontology (AMontology)}
+
+https://github.com/iassouroko/AMontology
+
 \subsubsection{Battery Interface Ontology (BattINFO)}
 
 https://big-map.github.io/BattINFO/about.html
@@ -446,6 +476,12 @@ Auf der Projektseite \url{https://github.com/srfiorini/IEEE1872-owl} findet man 
 
 https://github.com/emmo-repo/domain-crystallography
 
+\subsubsection{Defection Ontology (DefectOnt)}
+
+\url{https://www.researchgate.net/publication/364530871_An_Ontology_for_Defect_Detection_in_Metal_Additive_Manufacturing}
+
+https://github.com/AndreaMazzullo/DefectOnt (kleine OWL Datei, aber womöglich brauchbar und erwähnenswert)
+
 \subsubsection{Digital Construction Energy Ontology}
 
 https://digitalconstruction.github.io/Energy/v/0.5/
@@ -472,7 +508,7 @@ https://iesnaola.github.io/eepsa/EEPSA/index-en.html
 
 Verwendet Semantic Sensor Network Ontology
 
-\subsubsection{European Materials \& Modelling Ontolog (EMMO)}
+\subsubsection{European Materials \& Modelling Ontology (EMMO)}
 
 TODO: https://github.com/emmo-repo/ + https://emmc.eu/news/emmo-1-0-0-alpha-release/
 
@@ -496,6 +532,25 @@ GoodRelations wurde 2012 als E-Commerce Kern in das Vokabular schema.org aufgeno
 Damit gingen alle Klassen und Properties in das schema.org Vokabular über und wurden darin integriert\footnote{Beispiel: Klasse Product \url{https://schema.org/Product}}.
 Für Zugriff auf die maschinenlesbaren Daten bitte im Kapitel für schema.org schauen.
 
+\subsubsection{IFC4\_ADD1}
+
+"The IFC4\_ADD1 ontology specifies in OWL the Industry Foundational Classes (IFC) conceptual data schema and exchange file format for Building Information Model (BIM) data; Creators: Pieter Pauwels (pipauwel.pauwels@ugent.be) and Walter Terkaj (walter.terkaj@itia.cnr.it); Reference: http://www.w3.org/community/lbd/ifcowl/; Based on IFC schema http://www.buildingsmart-tech.org/ifc/IFC4/final/html/"
+
+\url{https://ontohub.org/spaceportal/IFC%20OWL/IFC4_ADD1///symbols?kind=ObjectProperty}
+
+\url{https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL/index.html}
+
+https://technical.buildingsmart.org/standards/ifc/ifc-schema-specifications/
+
+https://github.com/buildingSMART/ifcOWL
+
+Prüfen, ob das noch für uns passt, weil inhaltlicher Fokus eher Bauwirtschaft ist
+
+\subsubsection{Industrial Data Ontology}
+
+https://rds.posccaesar.org/ontology/lis14/ont/core/
+
+Die Verknüpfung mit dem Standard ISO 15926-2:2003 macht sie interessant
 
 \subsubsection{Industrial Ontologies Foundry Core Ontology}
 
@@ -530,6 +585,12 @@ https://github.com/2kunal6/OntologyWebform/tree/master
 
 https://bimerr.iot.linkeddata.es/def/key-performance-indicator/
 
+\subsubsection{Maintenance Activity Ontology}
+
+https://www.semantic-web-journal.net/system/files/swj3067.pdf
+
+\url{https://github.com/uwasystemhealth/Paper_Archive_Maintenance_Activity}
+
 \subsubsection{Manufacturing Failure Prediction Ontology (MFPO)}
 
 https://data.ontocommons.linkeddata.es/vocabulary/ManufacturingFailurePredictionOntology(mfpo)
@@ -545,6 +606,12 @@ https://github.com/emmo-repo/domain-mappings
 \subsubsection{Material properties ontology}
 
 https://bimerr.iot.linkeddata.es/def/material-properties/
+
+\subsubsection{Material Science and Engineering Ontology (MSEO)}
+
+"MSEO utilizes the Common Core Ontology stack giving materials scientists and engineers the ability to represent their experiments and resulting data. The goal is to create machine and human readable sematic data which can be easily digested by other science domains. It is a product of the joint venture Materials Open Lab Project between the Bundesanstalt für Materialforschung und -prüfung (BAM) and the Fraunhofer Group MATERIALS and used the BWMD ontology created by Fraunhofer IWM as a starting point."
+
+https://matportal.org/ontologies/MSEO
 
 \subsubsection{Materials And Molecules Basic Ontology (MAMBO)}
 
@@ -611,13 +678,30 @@ https://re.public.polimi.it/bitstream/11311/1193315/6/IRIS-ORMA-post-print.pdf
 
 \cite{kumar2019ontologies}
 
-
 \subsubsection{Ontology of units of Measure (OM)}
 
 Die Ontology of units of Measure (OM) wurde von dem Wissenschaftler Hajo Rijgersberg im Rahmen seiner Tätigkeit in der Abteilung Computer-Science der Universität Wageningen (Niederlande) entwickelt, als integrativer Teil einer größeren Ontologie\cite{rijgersberg2013ontology}, der Ontology of Quantitative Research (OQR).
 Die OM Ontologie versucht die Konzepte der Domäne von Maßen und Einheiten umfassend abzubilden, welche in Teilen bei anderen Ontologien fehlen. Dies betrifft z.B. die Konzepte Quantity und Prefix. Die OM Ontologie bezieht sich dabei in Teilen auf die QUDT Ontologie und kommt in verschiedenen Ontologie-Projekten, wie z.B dem Bioportal\cite{OM_BioPortal}.
 
 Auf der Projektseite \url{https://github.com/HajoRijgersberg/OM} steht die Ontologie in der Version 2.0 zur Verfügung. Die Ontologie wird aktiv betreut, so ist z.B. der letzte Commit im Repository vom 08.02.2024.
+
+\subsubsection{Open Energy Ontology}
+
+Achtung, enthält mehrere TeilOntologien
+
+https://openenergy-platform.org/ontology/oeo/
+
+https://github.com/OpenEnergyPlatform/ontology
+
+Grund für mögliche Relevanz: Im OEO-Physical Teil geht es u.a. um Kraftwerke, Generatoren etc. welche im Rahmen der Industrie eine wichtige Rolle spielen.
+
+\subsubsection{ORMA+ Ontology}
+
+"Zero Defect Manufacturing in the Digital Twin Framework"
+
+\url{https://www.politesi.polimi.it/bitstream/10589/195722/3/2022_10_Ghedini.pdf}
+
+Prüfe, ob es hierfür öffentlich zugängliche RDF Daten gibt. Im Paper konnte ich auf die schnelle nichts finden, jedoch zeigen sie darin Protégé Screenshots
 
 \subsubsection{Position Ontology (POS)}
 
@@ -629,6 +713,19 @@ Dafür wurden u.a. die folgenden Konzepte eingeführt: position, PositionCoordin
 Diese und andere Konzepte und Properties erlauben die Modellierung von Positionen in einem Koordinatensystem sowie die relative Positionierung.
 
 Auf der Projektseite \url{https://github.com/srfiorini/IEEE1872-owl} findet man neben der OWL Spezifikation von CORA auch die von POS. Der letzte Commit im Repository ist vom 21.10.2020, weshalb man annehmen kann, dass das Projekt nicht mehr aktiv betreut wird.
+
+\subsubsection{Product Lifecycle Management Ontology???}
+
+https://rds.posccaesar.org/ontology/plm/
+
+Prüfe, ob hierfür noch passende Dokumentation vorhanden ist. Es scheint auf jeden Fall RDF-Daten vorhanden zu sein
+
+\subsubsection{Production Equipment ontology ???}
+
+"Core Ontology for Describing Production Equipment According to Intelligent Production":
+https://www.mdpi.com/2571-5577/5/5/98
+
+Prüfe, ob es dafür öffentlich zugängliche RDF Daten gibt
 
 \subsubsection{Product Ontology}
 
@@ -651,6 +748,22 @@ QUDT wird eingesetzt in Luft- und Raumfahrt, Industrieproduktion, sowie Energie-
 
 TODO: Projektseite und letzte Aktivität
 
+\subsubsection{RealEstateCore Ontology (REC)}
+
+https://www.diva-portal.org/smash/get/diva2:1362356/FULLTEXT01.pdf
+
+https://doc.realestatecore.io/3.0/full.html\#
+
+Aufgenommen aufgrund des Papers, darin werden die folgenden Schlüsselwörter verwendet:  ontology, smart buildings, building automation, IoT, energy optimization
+
+Prüfe, ob es noch in den Scope passt
+
+\subsubsection{Reference Generalized Ontological Model (RGOM)}
+
+Paper: https://www.mdpi.com/2076-3417/11/11/5110/pdf
+
+https://github.com/MuhammadYahta/rgom/tree/main
+
 \subsubsection{Reified Requirements Ontology}
 
 https://data.ontocommons.linkeddata.es/vocabulary/ReifiedRequirementsOntology
@@ -658,6 +771,12 @@ https://data.ontocommons.linkeddata.es/vocabulary/ReifiedRequirementsOntology
 https://data.dnv.com/ontology/requirement-ontology/documentation/req-ont.pdf
 
 Konnte keine RDF-Dateien finden, hier nochmal schauen
+
+\subsubsection{RFID System Configuration Ontology (RDFID SCO)}
+
+"Enhancing RFID system configuration through semantic modelling": \url{https://repository.lboro.ac.uk/articles/journal_contribution/Enhancing_RFID_system_configuration_through_semantic_modelling/14805819/1/files/28480563.pdf}
+
+\url{https://github.com/eleniTsalapati/ONTOLOGIES/blob/master/RFID_SCO.owl}
 
 \subsubsection{RPARTS Ontology}
 
@@ -759,7 +878,12 @@ Der Eintrag wurde jedoch am 3. Februar 2020 erstellt und repräsentiert auch die
 
 [...]
 
-TODO: Erwähnung KI-Werk Projekt
+\subsection{Beobachtungen}
+
+- Publikationen, welche jedoch auf nicht mehr erreichbare Projektseiten/RDF-Daten verlinken (link rot)
+
+
+\textbf{TODO: Erwähnung KI-Werk Projekt}
 
 
 
