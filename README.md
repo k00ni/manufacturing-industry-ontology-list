@@ -6,6 +6,7 @@
 * [ ] Align all licenses (like CC-BY 4.0)
 * [ ] Create at least 1 image which shows ALL ontologies and their relation
 * [ ] Remove obsolete entries from paper.bib
+* [ ] Mention Graphviz config + image somewhere in the documentation (and paper)
 * Find further ontology candidates:
   * [ ] Check https://github.com/search?q=topic%3Aontology+manufacturing&type=repositories&ref=advsearch
   * [ ] Check https://bartoc.org/
