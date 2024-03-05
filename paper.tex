@@ -129,6 +129,13 @@ TODO: Passt das?
 
 https://standards.buildingsmart.org/IFC/RELEASE/IFC4/ADD1/HTML/
 
+\subsection{Lizenzinformationen}
+
+\textbf{TODO}
+
+z.B. Creative Commons, wie https://creativecommons.org/licenses/by/4.0/
+
+
 \section{Verwandte Arbeiten (Related Work)}
 
 - Welche Untersuchungen wurden bereits dahingehend unternommen?
@@ -236,7 +243,7 @@ In diesem Zusammenhang spielen auch die Themen wie Wartung (Maintenance) eine wi
 
 Cyber-physische Systeme sind Systeme, bei denen informations- und softwaretechnische mit mechanischen Komponenten verbunden sind, wobei Datentransfer und -austausch sowie Kontrolle bzw. Steuerung über ein Netzwerk (z.B. Internet) in Echtzeit erfolgen.
 Wesentliche Bestandteile sind mobile und bewegliche Einrichtungen, Geräte und Maschinen (darunter auch Roboter), eingebettete und vernetzte Systeme (Internet der Dinge).
-Sensoren registrieren und verarbeiten Daten aus der physikalischen Welt, Aktoren (Antriebselemente) wirken auf die physikalische Welt ein, sodass z.B. Weichen gestellt, Schleusen geöffnet, Fenster und Türen geschlossen, Produktionsvorgänge begonnen, geändert und angehalten werden \cite{GablerCPS2024}.
+Sensoren registrieren und verarbeiten Daten aus der physikalischen Welt, Aktoren (Antriebselemente) wirken auf die physikalische Welt ein, sodass z.B. Weichen gestellt, Schleusen geöffnet, Fenster und Türen geschlossen, Produktionsvorgänge begonnen, geändert und angehalten werden \footnote{\url{https://wirtschaftslexikon.gabler.de/definition/cyberphysische-systeme-54077}}.
 
 \subsubsection{Supply Chain Management}
 
@@ -276,7 +283,8 @@ Im Rahmen der Literatur- und Internetrecherche wurde eine Ontologie selektiert, 
 
 \textbf{TODO: Schlüsselwort => Thema hier angemessen oder sollte das extra behandelt werden?}
 
-Jede selektierte Ontologie wurde anschließend auf eine Reihe von objektiven Angaben hin untersucht.
+Bei jeder selektierten Ontologie wurde anschließend eine Reihe von objektiven Angaben ergänzt.
+Eine Bewertung der Inhalte (wie RDF-Daten, genutzte Lizenzen o.ä.) fand nicht statt.
 Sie helfen dabei, einen neutralen Blick auf die vorliegenden Industrie-Ontologien zu erhalten.
 Im Folgenden die Angaben mit einer kurzen Erklärung:
 
@@ -287,11 +295,10 @@ Im Folgenden die Angaben mit einer kurzen Erklärung:
     \item \textbf{Autor(en)} - Eine Liste von Namen der Autoren oder beteiligten Gruppen/Unternehmen.
     \item \textbf{Projektseite oder Publikation} - Eine URL auf die Projektseite, falls vorhanden. Alternativ eine URL zur zugehörigen Publikation.
     \item \textbf{Link zu Rohdaten (RDF- oder KIF-Format)}: Eine URL zu einer oder mehreren Dateien mit den Rohdaten im RDF- oder KIF-Format.
-    \item \textbf{Neuste Version} - Falls vorhanden, eine Angabe zur neusten Version der Rohdaten.
-    \item \textbf{Datum der neusten, dokumentierten Änderung} - Eine Datumsangabe der neusten und dokumentierten Änderung an den Rohdaten.
-    \item \textbf{Lizenz} - Falls vorhanden, eine Angabe zu den verwendeten Lizenzen.
+    \item \textbf{Neuste Version} - Falls vorhanden, eine Angabe zur neusten Version der Rohdaten. Die neuste Version und das Datum der neusten, dokumentierten Änderung hängen nicht zusammen und können vollkommen verschiedene zeitliche Bezüge haben.
+    \item \textbf{Datum der neusten, dokumentierten Änderung} - Eine Datumsangabe der neusten und dokumentierten Änderung an den Rohdaten. Die Änderung kann, muss aber nicht zeitlich mit der neusten Version zusammenfallen.
+    \item \textbf{Lizenz} - Falls vorhanden, eine Angabe zu der/den verwendeten Lizenz(en).
 \end{itemize}
-
 
 \section{Rechercheergebnisse}
 
@@ -301,9 +308,40 @@ Im Folgenden die Angaben mit einer kurzen Erklärung:
 
 \textbf{TODO: Zusammenfassung der Rechercherergebnisse}
 
-Weiterführende Metadaten zu den Ontologien finden Sie in unseren Rohdaten, welche in Form einer CSV-Datei öffentlich zur Verfügung stehen.
+- Publikationen, welche jedoch auf nicht mehr erreichbare Projektseiten/RDF-Daten verlinken (link rot)
 
-\textbf{TODO Link zu }
+- Es gab Referenzen auf Ontologien, die nicht mehr (in der genutzten Form) existieren (z.B. GoodRelations => gehört nun zu schema.org)
+
+- Manche Ontologien besitzen nur ungenügend Dokumentation zur Herkunft und Autorenschaft: daher Schwierigkeiten herauszufinden, welchen Daten man vertrauen kann
+
+%----------------------------------------
+% eingeschlossenen Textblock kürzen
+%
+
+  - Beispiel Volkswagen Vehicles Ontology: Aufgrund fehlender Originalquelle (z.B. wiss. Publikation oder Projektseite) und der unterschiedlichen Dokumentation zur Volkswagen Vehicles Ontology, werden die aktuellen Funde im Folgenden einzeln dargelegt.
+
+Die Ontologie wird in einer Untersuchung namens "Case Study: Contextual Search for Volkswagen and the Automotive Industry" des W3C aus dem Jahre 2011 erwähnt (\cite{greenly2011case}, S. 2).
+In der Studie ging es u.a. um die Verbesserung der Suche für Nutzer in digitalen Quellen.
+In diesem Zuge wurde u.a. die Volkswagen Vehicles Ontology entwickelt, um Volkswagen-spezifische Konzepte bei Fahrzeugen beschreiben zu können.
+Der Autor der Ontologie war Martin Hepp.
+Man nutzte diese und andere Vokabulare/Ontologien, um die eigenen Daten anzureichern, um kontextbasierte Suchanfragen zu ermöglichen.
+Die URL http://purl.org/vvo/ns wird als Quelle für die Ontologie angegeben, jedoch gelangt man darüber am Ende nur zu https://www.volkswagen.co.uk/en.html, welches keine weiteren Informationen bereitstellt.
+Weitere Details zur Ontologie selbst wurden nicht genannt.
+
+Der Link https://industryportal.enit.fr/ontologies/VVO führt zu einem Projekteintrag auf IndustryPortal.
+Als Autor wird Abdelouadoud Rasmi angegeben, der jedoch keine ersichtliche Verbindung zu Volkswagen hat.
+In der zugehörigen OWL-Datei\footnote{https://data.industryportal.enit.fr/ontologies/VVO/submissions/1/downloadapikey=019adb70-1d64-41b7-8f6e-8f7e5eb54942} findet man jedoch im Abschnitt Autor auch Martin Hepp und bei Beitragende (contributors) u.a. den Erstautor der oben genannten W3C Studie William Greenly.
+Aufgrund dieses und anderer Gemeinsamkeiten, z.B. gleicher Name (Volkswagen Vehicles Ontology) und XML-Namensraum (http://purl.org/vvo/ns\#), wird angenommen, dass es sich um die gleiche Ontologie handelt. Die Ontologie auf IndustryPortal hat als Veröffentlichungsdatum den 2. November 2022, wobei als Veröffentlichungsdatum bei der Version der 12. Oktober 2010 genannt wird.
+Es liegen keine Informationen vor, dass zwischen diesen Daten weitere Veränderungen an der Ontologie vorgenommen wurden.
+Ich gehe daher davon aus, dass es sich hier lediglich um einen erneuten Upload der Version von 2010 handelt.
+
+%----------------------------------------
+
+
+
+Weiterführende Metadaten zu den Ontologien finden Sie in unseren Rohdaten, welche in Form einer CSV-Datei öffentlich zur Verfügung stehen. \textbf{TODO Link zu Github Repository}
+
+Im Anhang ist eine Tabelle aller selektierten Ontologien in Form einer Tabelle zu finden.
 
 \subsection{Referenzierte Ontologien}
 
@@ -327,6 +365,16 @@ GoodRelations wurde 2012 als E-Commerce Kern in das Vokabular schema.org aufgeno
 Damit gingen alle Klassen und Properties in das schema.org Vokabular über und wurden darin integriert\footnote{Beispiel: Klasse Product \url{https://schema.org/Product}}.
 Die Ontologie existiert seit der Aufnahme in Schema.org faktisch nicht mehr und wird hier nur noch erwähnt, weil sie in manchen Ontologie-Publikationen explizit erwähnt wird.
 
+\subsubsection{Ontology of units of Measure (OM)}
+
+Die Ontology of units of Measure (OM) wurde von Hajo Rijgersberg im Rahmen seiner Tätigkeit in der Abteilung Computer-Science der Universität Wageningen (Niederlande) entwickelt.
+Sie ist integrativer Teil der größeren Ontologie der Ontology of Quantitative Research (OQR)\cite{rijgersberg2013ontology}.
+Die OM Ontologie bildet die Konzepte der Domäne von Maßen und Einheiten ab, welche in Teilen bei anderen Ontologien fehlen (z.B. die Konzepte Quantity und Prefix).
+Sie bezieht sich dabei in Teilen auf die QUDT Ontologie und kommt in verschiedenen Ontologie-Projekten, wie z.B dem BioPortal\footnote{\url{https://bioportal.bioontology.org}}, zum Einsatz.
+Auf der Projektseite\footnote{\url{https://github.com/HajoRijgersberg/OM}} steht die Ontologie in der Version 2.0 zur Verfügung.
+Die Ontologie ist unter den Bedingungen der CC-BY 4.0 lizensiert.
+Der neuste Commit im Repository ist vom 08.02.2024, daher kann die Ontologie als aktiv betreut angesehen werden.
+
 \subsubsection{Quantities, Units, Dimensions and Types ontology (QUDT)}
 
 \textbf{TODO: Text glattziehen, Projektseite und letzte Aktivität}
@@ -339,9 +387,9 @@ Die Ontologie basiert auf dem internationalen Standard der SI-Unit (franz. Syst�
 QUDT wird eingesetzt in Luft- und Raumfahrt, Industrieproduktion, sowie Energie- und Wasserversorgung.
 Ein Beispiel ist die Verwendung von QUDT innerhalb der Systems-Architecture-Ontology (SAO) für Cyber-Physical-Systems.
 
-\subsubsection{schema.org Vocabulary}
+\subsubsection{Schema.org}
 
-Schema.org\footnote{\url{https://www.schema.org}} ist eine von Firmen und Freiwilligen gepflegte quelloffene Ontologie, mit deren Hilfe man Daten auf Webseiten auszeichnen kann.
+Schema.org\footnote{\url{https://www.schema.org}} ist eine von verschiedenen Unternehmen und Freiwilligen gepflegte quelloffene Ontologie, mit deren Hilfe man Daten auf Webseiten auszeichnen kann.
 Das Ziel ist es, Suchmaschinen zusätzliche Metadaten über die Webseiteninhalte bereitstellen zu können.
 Auf einer dezidierten Entwickler-Seite\footnote{\url{https://schema.org/docs/developers.html}} findet man u.a. weiterführende Links (z.B. FAQ) und einen Bereich, wo man sich die Rohdaten in verschiedenen RDF-Dialekten herunterladen kann.
 
@@ -354,508 +402,10 @@ Laut eigener Aussage wird sie für die Forschung und Entwicklung von Anwendungen
 Die KIF-Dateien des Projektes sind thematisch aufgeteilt (z.B. Anatomy.kif für Anatomie, Military.kif für Militärisches) und in einem Github-Repository\footnote{\url{https://github.com/ontologyportal/sumo}} zu finden.
 Das Projekt scheint weiterhin gepflegt zu werden, denn der letzte Commit ist vom 4. März 2024\footnote{\url{https://github.com/ontologyportal/sumo/commit/596147ccc5636e20441875a6a29158d8567d7f80}}.
 
-\subsection{Ontologien}
-
-\subsubsection{Additive manufacturing ???}
-
-Paper "A product life cycle ontology for additive manufacturing": https://philarchive.org/archive/ALIAPLv1
-
-Gibt es dazu noch irgendwo die öffentlich zugänglichen RDF Daten?
-
-
-ODER
-
-Prüfe, ob sie zu folgender Publikation Rohdaten finden lassen:
-
-A Design for Additive Manufacturing Ontology:
-\url{https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=b18539e972dfd14782d6a907dd04d1b91819e8b2}
-
-\subsubsection{Additive manufacturing ontology (AMontology)}
-
-https://github.com/iassouroko/AMontology
-
-\subsubsection{Automotive Industry Ontology}
-
-Automotive Industry Ontology
-
-https://github.com/iurianu/auto-ontology/tree/master
-
-Frage an Autor ob Projekt noch forgesetzt wird: https://github.com/iurianu/auto-ontology/issues/1
-
-\subsubsection{Battery Interface Ontology (BattINFO)}
-
-https://big-map.github.io/BattINFO/about.html
-
-https://github.com/BIG-MAP/BattINFO?tab=readme-ov-file
-
-https://www.big-map.eu/dissemination/battinfo
-
-Passend?
-
-\subsubsection{Battery Value Chain Ontology (BVCO)}
-
-https://gitlab.cc-asp.fraunhofer.de/ISC-Public/ISC-Digital/ontology/bvco
-
-\subsubsection{Building ontology}
-
-https://bimerr.iot.linkeddata.es/def/building/
-
-\subsubsection{Car Options Ontology}
-
-Die Car Options Ontology (COO)\footnote{Entsprechender Eintrag bei Linked Open Vocabularies: \url{https://lov.linkeddata.es/dataset/lov/vocabs/coo}} stellt ein Vokabular zur Beschreibung von Konfigurationsoptionen in Fahrzeugen bereit.
-Dabei können ebenso Abhängigkeiten und Kompatibilitäten zwischen Konfigurationen modelliert werden.
-Der Autor der Ontologie ist Martin Hepp.
-Sie verwendet Inhalte aus der GoodRelations Ontologie, die nun Teil von Schema.org ist.
-Die ursprüngliche Projektseite \url{http://www.volkswagen.co.uk/vocabularies/coo/ns} leitet zu \url{https://www.volkswagen.co.uk/en.html} weiter.
-Es konnten keine Anzeichen für eine aktive Betreuung der Ontologie gefunden werden.
-Auf Linked Open Vocabularies kann eine nutzbare RDF-Version heruntergeladen werden\footnote{\url{https://lov.linkeddata.es/dataset/lov/vocabs/coo/versions/2010-10-12.n3}}.
-
-\subsubsection{Capability and Skill Ontology (CaSk)}
-
-"OWL ontology to describe capabilities and skills of things. [...] In the context of automated production, Capabilities and Skills are terms that are used to refer to machine functions."
-
-https://github.com/CaSkade-Automation/CaSk
-
-\subsubsection{COGITO Safety Ontology}
-
-https://github.com/oeg-upm/cogito-safety-ontology/tree/main
-
-Prüfe, ob das für uns relevant ist. Projekt fiel mit im Kontext von https://github.com/mahsa-teimourikia/Safety-Ontology auf.
-
-\subsubsection{Collaborative Manufacturing Services Ontology}
-
-https://data.ontocommons.linkeddata.es/vocabulary/CollaborativeManufacturingServicesOntology
-
-PDF: https://www.sciencedirect.com/science/article/pii/S2405896318314472
-
-\subsubsection{Context Aware System Observation Ontology}
-
-https://irstea.github.io/caso/OnToology/ontology/caso.owl/documentation/index-en.html
-
-Verwendet Semantic Sensor Network Ontology
-
-\subsubsection{CORA Ontology}
-
-% https://repositorio.ipcb.pt/bitstream/10400.11/2815/1/proceedings_IROS2014_workshop_IEEE_ORA.pdf#page=13
-
-Die Core Ontology for Robotics and Automation (abgekürzt: CORA) \cite{prestes2014core} wurde von der IEEE RAS Ontology for Robotics and Automation Working Group (IEEE RAS ORA WG) entwickelt und ist ein Ansatz zur Standardisierung der vorhandenen Robotik-Terminologie.
-Diese Entwicklung war Teil einer Initiative zur Schärfung der Terminologien u.a. in den folgenden Themengebieten: Industrieroboter (Industrial Robotics), Roboter-assistierte Chirugie (Surgical Robotics) and Service Roboter (Service Robotics).
-Mit CORA soll definiert werden, was ein Roboter ist, daher werden u.a. die Konzepte Roboter (robot), Robotisches System (robotic system) und Bestandteil eines Roboters (robotic part) näher beschrieben.
-Im Rahmen der Initiative wurden weitere Ontologien entwickelt, die auf CORA aufbauen.
-CORA nimmt dabei eine Vermittlerrolle ein, sodass darauf aufbauende Ontologien konsistente Konzepte verwenden können, was zu langfristiger Kompatibilität beitragen kann.
-Die Ontologie baut dabei der auf der Top-Level Ontologie SUMO auf, wobei weitere Unterontologien von CORA entwickelt wurden, um semantische Lücken zwischen SUMO und CORA zu überbrücken (siehe Unterkapitel für CORAX, POS und RPARTS).
-
-Auf der Projektseite \url{https://github.com/srfiorini/IEEE1872-owl} findet man die OWL Spezifikation von CORA und anderen Ontologien hinter dem IEEE 1872-2015 Standard\footnote{\url{https://standards.ieee.org/ieee/1872/5354/}}. Der letzte Commit im Repository ist vom 21.10.2020\footnote{\url{https://github.com/srfiorini/IEEE1872-owl/commit/ffb6613350b28c3a710f8daf2a1e9e953ded7ed8}}, weshalb man annehmen kann, dass das Projekt nicht mehr aktiv betreut wird.
-
-\subsubsection{CORAX Ontology}
-
-% PDF: https://www.sciencedirect.com/science/article/am/pii/S0736584514000659
-
-Die CORAX Ontologie wurde im Rahmen der CORA Ontologie entwickelt, mit dem Ziel notwendige Konzepte zu definieren, die für die CORA zu allgemein waren, aber in der Top-Level Ontologie SUMO nicht existierten (\cite{fiorini2015extensions}, S. 3).
-Dazu gehören Definitionen zu den Konzepten Design (design, im Sinne von Produktdesign), physische Umgebung (physikal environment), Interaktion (interaction) und Künstliches System (artifical system).
-So wurde zum Beispiel zwischen SUMO:Artificat und CORA:Robotic System das Konzept CORAX:Artificial System (CORAX) eingeführt (\cite{fiorini2015extensions}, S. 6 ff.).
-
-Auf der Projektseite \url{https://github.com/srfiorini/IEEE1872-owl} findet man neben der OWL Spezifikation von CORA auch die von CORAX. Der letzte Commit im Repository ist vom 21.10.2020, weshalb man annehmen kann, dass das Projekt nicht mehr aktiv betreut wird.
-
-\subsubsection{Crystallography Domain Ontology}
-
-https://github.com/emmo-repo/domain-crystallography
-
-\subsubsection{Defection Ontology (DefectOnt)}
-
-\url{https://www.researchgate.net/publication/364530871_An_Ontology_for_Defect_Detection_in_Metal_Additive_Manufacturing}
-
-https://github.com/AndreaMazzullo/DefectOnt (kleine OWL Datei, aber womöglich brauchbar und erwähnenswert)
-
-\subsubsection{Digital Construction Energy Ontology}
-
-https://digitalconstruction.github.io/Energy/v/0.5/
-
-\subsubsection{Digital Construction Entities Ontology}
-
-https://digitalconstruction.github.io/Entities/v/0.5/
-
-\subsubsection{Digital Construction Materials}
-
-https://digitalconstruction.github.io/Materials/v/0.5/
-
-\subsubsection{Domain ontology for atomistic and electronic modelling}
-
-https://github.com/emmo-repo/domain-atomistic
-
-\subsubsection{Elementary Multiperspective Material Ontology (EMMO)}
-
-https://github.com/emmo-repo/EMMO
-
-\subsubsection{Energy Efficiency Prediction Semantic Assistant Ontology (EEPSA)}
-
-https://iesnaola.github.io/eepsa/EEPSA/index-en.html
-
-Verwendet Semantic Sensor Network Ontology
-
-\subsubsection{European Materials \& Modelling Ontology (EMMO)}
-
-TODO: https://github.com/emmo-repo/ + https://emmc.eu/news/emmo-1-0-0-alpha-release/
-
-\subsubsection{Extruder Ontology (ExtruOnt)}
-
-https://data.ontocommons.linkeddata.es/vocabulary/Extruont
-
-zugehöriges Paper: https://www.semantic-web-journal.net/system/files/swj2317.pdf
-
-\subsubsection{General Process Ontology (GPO)}
-
-https://gitlab.cc-asp.fraunhofer.de/ISC-Public/ISC-Digital/ontology/gpo
-
-Ontologie ist noch WIP
-
-\subsubsection{ifcOWL}
-
-"The IFC4\_ADD1 ontology specifies in OWL the Industry Foundational Classes (IFC) conceptual data schema and exchange file format for Building Information Model (BIM) data; Creators: Pieter Pauwels (pipauwel.pauwels@ugent.be) and Walter Terkaj (walter.terkaj@itia.cnr.it); Reference: http://www.w3.org/community/lbd/ifcowl/; Based on IFC schema http://www.buildingsmart-tech.org/ifc/IFC4/final/html/"
-
-\url{https://ontohub.org/spaceportal/IFC%20OWL/IFC4_ADD1///symbols?kind=ObjectProperty}
-
-\url{https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL/index.html}
-
-https://technical.buildingsmart.org/standards/ifc/ifc-schema-specifications/
-
-https://github.com/buildingSMART/ifcOWL
-
-Prüfen, ob das noch für uns passt, weil inhaltlicher Fokus eher Bauwirtschaft ist
-
-\subsubsection{Industrial Data Ontology}
-
-https://rds.posccaesar.org/ontology/lis14/ont/core/
-
-Die Verknüpfung mit dem Standard ISO 15926-2:2003 macht sie interessant
-
-\subsubsection{Industrial Ontologies Foundry Core Ontology}
-
-IOF = The Industrial Ontologies Foundry
-
-TODO: \cite{kulvatunyou2022}
-
-\subsubsection{Industrial Ontologies Foundry Supply Chain Reference Ontology}
-
-Die Supply-Chain-Reference-Ontology (IOF-SCRO) wurde als eine Referenz-Ontologie für die Domänen Lieferketten-Management (Supply Chain Management) und Logistik entwickelt\cite{ameri2020towards}.
-Die Autoren sind Teil der Industrial Ontologies Foundry (IOF) Supply Chain Working Group unter Leitung von Farhad Ameri\footnote{\url{https://oagi.org/pages/supply-chain-working-group}}.
-Die primären Anwendungsfälle der Ontologie sind Lieferkettenverfolgung (Traceability Use-Case) und Lieferantenermittlung (Supplier-Discovery), wofür sie entsprechende Inhalte bereitstellt.
-Sie wurde mit dem Ziel entwickelt, eine ontologische Basis bereitzustellen, um die Konsistenz und Interoperabilität zwischen Ontologien aus der Logistik und dem Lieferketten-Management zu unterstützen.
-Man nutzt die BFO als Top-Level-Ontologie genutzt und verwendet weiterhin Teile der IOF Core Ontology\cite{Kulvatunyou2022}.
-Die Projektseite\footnote{\url{https://spec.industrialontologies.org/iof/ontology/supplychain/SupplyChainReferenceOntology/}} der Ontologie beinhaltet weitere Referenzen und Angaben zum Projekt (z.B. Lizenz, Autoren).
-Die Ontologie ist auch auf anderen Portalen zu finden, z.B. dem IndustryPortal\footnote{\url{https://industryportal.enit.fr/ontologies/IOF-SCRO}}.
-Das Projekt scheint noch aktiv gepflegt zu werden, denn die neuste Veröffentlichung der Ontologie ist vom 01.01.2023\footnote{Anhand von \url{https://industryportal.enit.fr/ontologies/IOF-SCRO}, Bereich Submissions}.
-
-\subsubsection{isa\_tab\_ontology}
-
-Wird bei OntoCommons genannt, es ist jedoch noch nicht ersichtlich, ob das für uns passt.
-Es geht hierbei scheinbar um ISA-Tab:
-- https://www.dcc.ac.uk/resources/metadata-standards/isa-tab
-- https://isa-tools.org/index.html
-
-https://data.ontocommons.linkeddata.es/vocabulary/Isa\_tab\_ontology
-
-https://github.com/2kunal6/OntologyWebform/tree/master
-
-
-\subsubsection{Key Performance Indicator ontology}
-
-https://bimerr.iot.linkeddata.es/def/key-performance-indicator/
-
-\subsubsection{Maintenance Activity Ontology}
-
-https://www.semantic-web-journal.net/system/files/swj3067.pdf
-
-\url{https://github.com/uwasystemhealth/Paper_Archive_Maintenance_Activity}
-
-\subsubsection{Manufacturing Failure Prediction Ontology (MFPO)}
-
-https://data.ontocommons.linkeddata.es/vocabulary/ManufacturingFailurePredictionOntology(mfpo)
-
-https://www.sciencedirect.com/science/article/pii/S1877050919314024/pdf?md5=221db728bbcefb3d067b0b8cabac8cec\&pid=1-s2.0-S1877050919314024-main.pdf
-
-RDF-Datei vorhanden?
-
-\subsubsection{Mappings Ontology}
-
-https://github.com/emmo-repo/domain-mappings
-
-\subsubsection{Material properties ontology}
-
-https://bimerr.iot.linkeddata.es/def/material-properties/
-
-\subsubsection{Material Science and Engineering Ontology (MSEO)}
-
-"MSEO utilizes the Common Core Ontology stack giving materials scientists and engineers the ability to represent their experiments and resulting data. The goal is to create machine and human readable sematic data which can be easily digested by other science domains. It is a product of the joint venture Materials Open Lab Project between the Bundesanstalt für Materialforschung und -prüfung (BAM) and the Fraunhofer Group MATERIALS and used the BWMD ontology created by Fraunhofer IWM as a starting point."
-
-https://matportal.org/ontologies/MSEO
-
-\subsubsection{Materials And Molecules Basic Ontology (MAMBO)}
-
-Paper: https://arxiv.org/pdf/2111.02482.pdf
-
-https://github.com/daimoners/MAMBO
-
-\subsubsection{Materials Design Ontology}
-
-https://github.com/LiUSemWeb/Materials-Design-Ontology
-
-Ist nicht von OntoCommons, aber wurde in einer ihrer verlinkten Ontologies erwähnt.
-Könnte auch bei uns reinpassen, weil die abgedrehte Materialwissenschaften machen.
-
-könnte zugehöriges Paper sein: https://arxiv.org/abs/2006.07712
-
-\subsubsection{Mechanical Testing Ontology}
-
-https://github.com/emmo-repo/domain-mechanical-testing
-
-\subsubsection{Microstructure Domain Ontology}
-
-https://github.com/emmo-repo/domain-microstructure
-
-\subsubsection{MPFQ Ontology (Material-Process-Function-Quality)}
-
-https://data.ontocommons.linkeddata.es/vocabulary/MpfqOntology(material-process-function-quality)
-
-Könnte passen, jedoch hab ich auf die schnelle keine Literatur/Doc dazu gefunden.
-
-\subsubsection{Ontology for Autonomous Robotics (ROA / ORA)}
-
-TODO lesen: https://www.aolivaresalarcos.com/pdf/2017-roman.pdf
-cite \cite{olszewska2017ontology}
-
-\subsubsection{Ontology for Industry 4.0 (O4I4)}
-
-\cite{kumar2019ontologies}
-
-Grafik machen: O4I4 nutzt CORA, ROA/ORA und ORArch (\cite{kumar2019ontologies}, S. 7)
-
-\subsubsection{Ontology for manufacturing and logistics (OFM)}
-
-https://data.ontocommons.linkeddata.es/vocabulary/ManufacturingSystemOntology
-
-Wird bei OntoCommons anders genannt als im Github-Repository
-
-https://github.com/enegri/OFM/blob/master/README.pdf
-
-\subsubsection{Ontology for Reliability-centred MAintenance (ORMA)}
-
-Ontology-augmented Prognostics and Health Management for shopfloor-synchronised joint
-maintenance and production management decisions
-
-https://re.public.polimi.it/bitstream/11311/1193315/6/IRIS-ORMA-post-print.pdf
-
-\textbf{TODO}
-
-\subsubsection{Ontology for Robotic Architecture (ORArch)}
-
-\cite{kumar2019ontologies}
-
-\subsubsection{Ontology of units of Measure (OM)}
-
-Die Ontology of units of Measure (OM) wurde von dem Wissenschaftler Hajo Rijgersberg im Rahmen seiner Tätigkeit in der Abteilung Computer-Science der Universität Wageningen (Niederlande) entwickelt, als integrativer Teil einer größeren Ontologie\cite{rijgersberg2013ontology}, der Ontology of Quantitative Research (OQR).
-Die OM Ontologie versucht die Konzepte der Domäne von Maßen und Einheiten umfassend abzubilden, welche in Teilen bei anderen Ontologien fehlen.
-Dies betrifft z.B. die Konzepte Quantity und Prefix.
-Die OM Ontologie bezieht sich dabei in Teilen auf die QUDT Ontologie und kommt in verschiedenen Ontologie-Projekten, wie z.B dem Bioportal\cite{OM_BioPortal}.
-
-Auf der Projektseite \url{https://github.com/HajoRijgersberg/OM} steht die Ontologie in der Version 2.0 zur Verfügung.
-Die Ontologie wird aktiv betreut, denn der letzte Commit im Repository is vom 08.02.2024.
-
-\subsubsection{Ontology-based Customization and Visualization of Information Flow control in an Industry 4.0 scenario ????}
-
-Könnte relevant sein, weil auf der README ein paar Ontologien im Kontext von Industrie 4.0 erwähnt werden: \url{https://github.com/ko3n1g/Ontology-based-InformationFlow-Industry-4.0?tab=readme-ov-file#ontologies}
-
-\subsubsection{Open Energy Ontology}
-
-Achtung, enthält mehrere TeilOntologien
-
-https://openenergy-platform.org/ontology/oeo/
-
-https://github.com/OpenEnergyPlatform/ontology
-
-Grund für mögliche Relevanz: Im OEO-Physical Teil geht es u.a. um Kraftwerke, Generatoren etc. welche im Rahmen der Industrie eine wichtige Rolle spielen.
-
-\subsubsection{ORMA+ Ontology}
-
-"Zero Defect Manufacturing in the Digital Twin Framework"
-
-\url{https://www.politesi.polimi.it/bitstream/10589/195722/3/2022_10_Ghedini.pdf}
-
-Prüfe, ob es hierfür öffentlich zugängliche RDF Daten gibt. Im Paper konnte ich auf die schnelle nichts finden, jedoch zeigen sie darin Protégé Screenshots
-
-\subsubsection{Position Ontology (POS)}
-
-% PDF: https://www.sciencedirect.com/science/article/am/pii/S0736584514000659
-
-Die Position Ontology (POS) wurde als Erweiterung der SUMO Ontologie im Rahmen des CORA Projektes entwickelt (\cite{fiorini2015extensions}, S. 17 ff).
-Sie komplementiert die CORA Ontologie mit neuen Konzepten zur Positionierung und Orientierung, was insbesondere bei der Modellierung von Informationen über Roboter und ihre Umgebung wichtig ist.
-Dafür wurden u.a. die folgenden Konzepte eingeführt: position, PositionCoordinateSystem, PositionPoint.
-Diese und andere Konzepte und Properties erlauben die Modellierung von Positionen in einem Koordinatensystem sowie die relative Positionierung.
-
-Auf der Projektseite \url{https://github.com/srfiorini/IEEE1872-owl} findet man neben der OWL Spezifikation von CORA auch die von POS. Der letzte Commit im Repository ist vom 21.10.2020, weshalb man annehmen kann, dass das Projekt nicht mehr aktiv betreut wird.
-
-\subsubsection{Product Lifecycle Management Ontology???}
-
-https://rds.posccaesar.org/ontology/plm/
-
-Prüfe, ob hierfür noch passende Dokumentation vorhanden ist. Es scheint auf jeden Fall RDF-Daten vorhanden zu sein
-
-\subsubsection{Production Equipment ontology ???}
-
-"Core Ontology for Describing Production Equipment According to Intelligent Production":
-https://www.mdpi.com/2571-5577/5/5/98
-
-Prüfe, ob es dafür öffentlich zugängliche RDF Daten gibt
-
-\subsubsection{Product Ontology}
-
-http://www.productontology.org/ (nutzt GoodRElations)
-
-[...]
-
-\subsubsection{Product Ontology (PRONTO)}
-
-https://ri.conicet.gov.ar/bitstream/handle/11336/13365/CONICET\_Digital\_Nro.16500.pdf?sequence=1
-
-https://data.ontocommons.linkeddata.es/vocabulary/ProductOntology(pronto)
-
-Konnte keine RDF-Dateien finden, hier nochmal schauen
-
-\subsubsection{RealEstateCore Ontology (REC)}
-
-https://www.diva-portal.org/smash/get/diva2:1362356/FULLTEXT01.pdf
-
-https://doc.realestatecore.io/3.0/full.html\#
-
-Aufgenommen aufgrund des Papers, darin werden die folgenden Schlüsselwörter verwendet:  ontology, smart buildings, building automation, IoT, energy optimization
-
-Prüfe, ob es noch in den Scope passt
-
-\subsubsection{Reference Generalized Ontological Model (RGOM)}
-
-Paper: https://www.mdpi.com/2076-3417/11/11/5110/pdf
-
-https://github.com/MuhammadYahta/rgom/tree/main
-
-\subsubsection{Reified Requirements Ontology}
-
-https://data.ontocommons.linkeddata.es/vocabulary/ReifiedRequirementsOntology
-
-https://data.dnv.com/ontology/requirement-ontology/documentation/req-ont.pdf
-
-Konnte keine RDF-Dateien finden, hier nochmal schauen
-
-\subsubsection{RFID System Configuration Ontology (RDFID SCO)}
-
-"Enhancing RFID system configuration through semantic modelling": \url{https://repository.lboro.ac.uk/articles/journal_contribution/Enhancing_RFID_system_configuration_through_semantic_modelling/14805819/1/files/28480563.pdf}
-
-\url{https://github.com/eleniTsalapati/ONTOLOGIES/blob/master/RFID_SCO.owl}
-
-\subsubsection{RPARTS Ontology}
-
-% PDF: https://www.sciencedirect.com/science/article/am/pii/S0736584514000659
-
-Die RPARTS Ontology ist eine Teil-Ontologie der CORA Ontology, welche zur Modellierung von Bestandteilen von Robotern verwednet werden kann. (\cite{fiorini2015extensions}, S. 14 ff).
-Der zugrundeliegende Ansatz ist, dass Roboter (\textit{devices}) immer aus Bestandteilen (anderen \textit{devices}) bestehen.
-Man unterscheidet zwischen Roboter-Bestandteilen zur Kommunikation (\textit{Robot communicating part}), Verarbeitung (\textit{Robot processing part}), Sensorik (\textit{Robot sensing part}) und Handlung (\textit{Robot actuating part}).
-[...]?
-
-Auf der Projektseite \url{https://github.com/srfiorini/IEEE1872-owl} findet man neben der OWL Spezifikation von CORA auch die von POS. Der letzte Commit im Repository ist vom 21.10.2020, weshalb man annehmen kann, dass das Projekt nicht mehr aktiv betreut wird.
-
-\subsubsection{Safety Ontology}
-
-"This is an ontology for extracting the safety knowledge in industry 4.0."
-
-https://github.com/mahsa-teimourikia/Safety-Ontology
-
-\subsubsection{Semantic Sensor Network (SSN) ontology}
-
-https://w3.org/TR/vocab-ssn/
-
-Im Kontext mit SOSA
-
-\subsubsection{Sensor Data ontology}
-
-https://bimerr.iot.linkeddata.es/def/sensor-data/
-
-\subsubsection{Sensor, Observation, Sample, and Actuator Ontology (SOSA)}
-
-https://w3.org/TR/vocab-ssn/
-
-Semantic CPPS in Industry 4.0 >> https://arxiv.org/pdf/2011.11395.pdf
-
-Im Kontext mit SSN
-
-\subsubsection{Smart Applications Reference Ontology (SAREF)}
-
-https://saref.etsi.org/
-
-\subsubsection{Smart Applications Reference Ontology extension for building (SAREF4BLDG)}
-
-https://saref.etsi.org/saref4bldg
-
-Ist eine Erweiterung der SAREF Ontology.
-
-\subsubsection{Smart Applications Reference Ontology extension for industry and manufacturing (SAREF4INMA)}
-
-https://saref.etsi.org/saref4inma
-
-Ist eine Erweiterung der SAREF Ontology.
-
-\subsubsection{Vehicle Sales Ontology (VSO)}
-
-Quelle: https://www.heppnetz.de/ontologies/vso/ns
-
-Wird genutzt von VVO (IndustryPortal)
-
-nutzt GoodRelations Vokabular
-
-\subsubsection{Versioning Ontology (VERONTO)}
-
-https://ontohub.org/repositories/veronto
-
-https://ri.conicet.gov.ar/bitstream/handle/11336/6899/CONICET\_Digital\_Nro.9341\_A.pdf?sequence=2
-
-\subsubsection{VICINITY project}
-
-https://vicinity2020.eu/vicinity/node/446
-
-https://github.com/mariapoveda/vicinity-ontology-core
-
-Projekt könnte von Interesse sein, weil: "Open virtual neighbourhood network to connect IoT infrastructures and smart objects"
-
-\subsubsection{Volkswagen Vehicles Ontology (VVO)}
-
-Aufgrund fehlender Originalquelle (z.B. wiss. Publikation oder Projektseite) und der unterschiedlichen Dokumentation zur Volkswagen Vehicles Ontology, werden die aktuellen Funde im Folgenden einzeln dargelegt.
-
-Die Ontologie wird in einer Untersuchung namens "Case Study: Contextual Search for Volkswagen and the Automotive Industry" des W3C aus dem Jahre 2011 erwähnt (\cite{greenly2011case}, S. 2).
-In der Studie ging es u.a. um die Verbesserung der Suche für Nutzer in digitalen Quellen.
-In diesem Zuge wurde u.a. die Volkswagen Vehicles Ontology entwickelt, um Volkswagen-spezifische Konzepte bei Fahrzeugen beschreiben zu können.
-Der Autor der Ontologie war Martin Hepp.
-Man nutzte diese und andere Vokabulare/Ontologien, um die eigenen Daten anzureichern, um kontextbasierte Suchanfragen zu ermöglichen.
-Die URL \url{http://purl.org/vvo/ns} wird als Quelle für die Ontologie angegeben, jedoch gelangt man darüber am Ende nur zu \url{https://www.volkswagen.co.uk/en.html}, welches keine weiteren Informationen bereitstellt.
-Weitere Details zur Ontologie selbst wurden nicht genannt.
-
-Der Link \url{https://industryportal.enit.fr/ontologies/VVO} führt zu einem Projekteintrag auf IndustryPortal.
-Als Autor wird Abdelouadoud Rasmi angegeben, der jedoch keine ersichtliche Verbindung zu Volkswagen hat.
-In der zugehörigen OWL-Datei\footnote{https://data.industryportal.enit.fr/ontologies/VVO/submissions/1/download?apikey=019adb70-1d64-41b7-8f6e-8f7e5eb54942} findet man jedoch im Abschnitt Autor auch Martin Hepp und bei Beitragende (contributors) u.a. den Erstautor der oben genannten W3C Studie William Greenly.
-Aufgrund dieses und anderer Gemeinsamkeiten, z.B. gleicher Name (Volkswagen Vehicles Ontology) und XML-Namensraum (http://purl.org/vvo/ns\#), wird angenommen, dass es sich um die gleiche Ontologie handelt. Die Ontologie auf IndustryPortal hat als Veröffentlichungsdatum den 2. November 2022, wobei als Veröffentlichungsdatum bei der Version der 12. Oktober 2010 genannt wird.
-Es liegen keine Informationen vor, dass zwischen diesen Daten weitere Veränderungen an der Ontologie vorgenommen wurden.
-Ich gehe daher davon aus, dass es sich hier lediglich um einen erneuten Upload der Version von 2010 handelt.
-
-Für die Ontologie existiert auch auf DataScientia ein Eintrag unter \url{http://liveschema.eu/dataset/lov\_vvo}.
-Als Autor wird wieder Martin Hepp angegeben.
-Der Eintrag wurde jedoch am 3. Februar 2020 erstellt und repräsentiert auch die Version 1.0 vom 12. Oktober 2010.
-
 
 \section{Fazit und weitere Arbeiten}
 
 [...]
-
-\subsection{Beobachtungen}
-
-- Publikationen, welche jedoch auf nicht mehr erreichbare Projektseiten/RDF-Daten verlinken (link rot)
-
 
 \textbf{TODO: Erwähnung KI-Werk Projekt}
 
