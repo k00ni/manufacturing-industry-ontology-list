@@ -6,6 +6,9 @@
 * [ ] Align all licenses (like CC-BY 4.0)
 * [ ] Create at least 1 image which shows ALL ontologies and their relation
 * [ ] Remove obsolete entries from paper.bib
+* Find further ontology candidates:
+  * [ ] Check https://github.com/search?q=topic%3Aontology+manufacturing&type=repositories&ref=advsearch
+  * [ ] Check https://bartoc.org/
 
 Check and if matching, work in the following ontologies:
 
