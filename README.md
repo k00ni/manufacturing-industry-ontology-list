@@ -1,5 +1,5 @@
-# Arbeitsrepository: Liste mit Industrieontologien
+# Working repository: List of industry ontologies
 
-## Übersicht Ontologien und Ontology Design Pattern
+## TODOs
 
-![](./ontology-map.svg)
+...
