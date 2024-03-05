@@ -16,4 +16,4 @@ jobs:
       - name: Run csv-lint
         uses: blackstar257/docker-csvlint@master
         env:
-          ACTION_STATE_NAME: "ontologies-and-ontology-pattern-vocabularies.csv"
+          ACTION_STATE_NAME: "ontologies.csv"
