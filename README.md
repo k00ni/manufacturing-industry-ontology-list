@@ -71,6 +71,7 @@ Check and if matching, work in the following ontologies:
   * Könnte passen, jedoch hab ich auf die schnelle keine Literatur/Doc dazu gefunden.
 * [ ] **Ontology for Autonomous Robotics (ROA / ORA)** - TODO lesen: https://www.aolivaresalarcos.com/pdf/2017-roman.pdf - \cite{olszewska2017ontology}
 * [ ] **Ontology for Industry 4.0 (O4I4)**
+* [x] **Ontology for Maintenance Procedure Documentation - Static Procedure Ontology (OMPD-SPO)**
 * [ ] **Ontology for manufacturing and logistics (OFM)** - https://data.ontocommons.linkeddata.es/vocabulary/ManufacturingSystemOntology
   * Wird bei OntoCommons anders genannt als im Github-Repository: https://github.com/enegri/OFM/blob/master/README.pdf
 * [ ] **Ontology for Reliability-centred MAintenance (ORMA)** - Ontology-augmented Prognostics and Health Management for shopfloor-synchronised joint
