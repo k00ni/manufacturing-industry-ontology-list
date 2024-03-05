@@ -5,6 +5,7 @@
 * [x] Check if there is still a need for column "ontology type" in CSV
 * [ ] Align all licenses (like CC-BY 4.0)
 * [ ] Create at least 1 image which shows ALL ontologies and their relation
+* [ ] Remove obsolete entries from paper.bib
 
 Check and if matching, work in the following ontologies:
 
