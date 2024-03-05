@@ -271,8 +271,10 @@ Im Rahmen der Literatur- und Internetrecherche wurde eine Ontologie selektiert, 
     \item Die Ontologie besitzt eine URL zu einer Textdatei, welche in einer formalen Sprache (RDF/OWL oder KIF) vorliegt.
     \item Die Ontologie stellt ein Vokabular zur Beschreibung des Fachgebietes bereit.
     \item Der Ontologie liegt eine logische Theorie (z.B. in Form von Axiomen, Regeln, Hierarchien) über das Fachgebiet zugrunde, die auf das Vokabular zurückgreift.
-    \item Die Inhalte der Ontologie haben einen direkten thematischen Bezug zu den vorher genannten Schlüsselwörtern.
+    \item Die Inhalte der Ontologie haben einen direkten thematischen Bezug zu den vorher genannten Schlüsselwörtern bzw. den damit zusammenhängenden Themen.
 \end{enumerate}
+
+\textbf{TODO: Schlüsselwort => Thema hier angemessen oder sollte das extra behandelt werden?}
 
 Jede selektierte Ontologie wurde anschließend auf eine Reihe von objektiven Angaben hin untersucht.
 Sie helfen dabei, einen neutralen Blick auf die vorliegenden Industrie-Ontologien zu erhalten.
@@ -317,16 +319,40 @@ Die BFO teilt die Realität in zwei Hauptzweige ein: in Kontinuanten (Entitäten
 BFO wird von verschiedenen (wissenschaftlichen) Gemeinschaften verwendet, um domänenspezifische Ontologien zu erstellen und zu harmonisieren, z.B. in der Biomedizin, der Geographie, der Soziologie, etc.
 Die Ontologie wird stetig weiterentwickelt und liegt aktuell in Version 2.0 vor\footnote{Quelle: \url{https://github.com/BFO-ontology/BFO?tab=readme-ov-file\#implementations}}.
 
+\subsubsection{GoodRelations Ontologie}
+
+Die GoodRelations-Ontologie\footnote{https://www.heppnetz.de/ontologies/goodrelations/v1.html} istlaut Aussage ihres Autores Martin Hepp ein Vokabular zur Modellierung von Daten im E-Commerce Bereich (z.B. Produkte, Dienstleistungen oder Unternehmen).
+Sie wurde mit dem Ziel entwickelt, Produkte und Dienstleistungen auf E-Commerce-Webseiten mit zusätzlichen Metadaten auszuzeichnen, um die Sichtbarkeit in Suchmaschinen zu erhöhen.
+GoodRelations wurde 2012 als E-Commerce Kern in das Vokabular schema.org aufgenommen\footnote{\url{http://blog.schema.org/2012/11/good-relations-and-schemaorg.html}}.
+Damit gingen alle Klassen und Properties in das schema.org Vokabular über und wurden darin integriert\footnote{Beispiel: Klasse Product \url{https://schema.org/Product}}.
+Die Ontologie existiert seit der Aufnahme in Schema.org faktisch nicht mehr und wird hier nur noch erwähnt, weil sie in manchen Ontologie-Publikationen explizit erwähnt wird.
+
+\subsubsection{Quantities, Units, Dimensions and Types ontology (QUDT)}
+
+\textbf{TODO: Text glattziehen, Projektseite und letzte Aktivität}
+
+Unit-Measure-Ontologien stellen eine konzeptuelle Repräsentation von Quantitäten, Quantitätsarten und Einheiten dar.
+Der bekannteste und weitläufig eingesetzte Vertreter, ist die von der NASA entwickelte QUDT\cite{QUDTOntology}.
+Innerhalb dieser Ontologie werden im Kern die Konzepte physikalischer Quantitäten.
+Quantitätsarten, Einheiten und Dimensionen, sowie Datentypen repräsentiert.
+Die Ontologie basiert auf dem internationalen Standard der SI-Unit (franz. Système international d'unités) und liegt im OWL-Format vor. Ein Hauptanwendungszeck einer solchen Ontologien, ist das Konvertieren von physikalischen  Einheiten unter Berücksichtigung der Dimensionalität.
+QUDT wird eingesetzt in Luft- und Raumfahrt, Industrieproduktion, sowie Energie- und Wasserversorgung.
+Ein Beispiel ist die Verwendung von QUDT innerhalb der Systems-Architecture-Ontology (SAO) für Cyber-Physical-Systems.
+
+\subsubsection{schema.org Vocabulary}
+
+Schema.org\footnote{\url{https://www.schema.org}} ist eine von Firmen und Freiwilligen gepflegte quelloffene Ontologie, mit deren Hilfe man Daten auf Webseiten auszeichnen kann.
+Das Ziel ist es, Suchmaschinen zusätzliche Metadaten über die Webseiteninhalte bereitstellen zu können.
+Auf einer dezidierten Entwickler-Seite\footnote{\url{https://schema.org/docs/developers.html}} findet man u.a. weiterführende Links (z.B. FAQ) und einen Bereich, wo man sich die Rohdaten in verschiedenen RDF-Dialekten herunterladen kann.
+
 \subsubsection{Suggested Upper Merged Ontology (SUMO)}
 
 Die SUMO\footnote{Projektseite: \url{https://www.ontologyportal.org/index.html}} Ontologie ist eine Top-Level Ontologie, deren Entwicklung laut Projektseite von Adam Pease (technical editor) geleitet wird.
-Die Ontologie ist in der Sprache Standard Upper Ontology Knowledge Interchange Format (SUO-KIF) geschrieben\footnote{\url{https://github.com/ontologyportal/sigmakee/blob/master/suo-kif.pdf}} und
-bestand anfangs aus Ontologie-Beiträgen auf einer Mailing-Liste, die jedoch mit der Zeit stark erweitert wurden (\cite{niles2001towards}, S. 2 ff.).
-SUMO stellt Definitionen für sehr allgemeine Begriffe bereit, welche für aufbauende Kernontologien wiederverwendet werden können.
-Mit diesen Begriffen werden häufig verwendete Teile unserer Realität beschrieben, z.B. Objekte und Prozesse.
-Laut eigener Aussage wird sie für die Forschung und Entwicklung von Anwendungen aus den Bereichen Suche, Linguistik und Reasoning verwendet\footnote{Zitat "\textit{The Suggested Upper Merged Ontology (SUMO) and its domain ontologies form the largest formal public ontology in existence today. They are being used for research and applications in search, linguistics and reasoning.}" von Projektseite: \url{https://www.ontologyportal.org/index.html}}.
-Auf \url{https://github.com/ontologyportal/sumo} findet man die KIF-Dateien des Projektes, welche die einzelnen Ontologie-Bestandteile repräsentieren (z.B. Anatomy.kif, Military.kif).
-Das Projekt scheint weiterhin gepflegt zu werden, der letzte Commit auf Github ist ca. 3 Wochen alt\footnote{\url{https://github.com/ontologyportal/sumo/commit/69f22dc041ae5f307279134968a740ff74c04ff2}}.
+Die Ontologie ist in der Sprache "Standard Upper Ontology Knowledge Interchange Format" (SUO-KIF) geschrieben\footnote{\url{https://github.com/ontologyportal/sigmakee/blob/master/suo-kif.pdf}} und bestand anfangs aus Ontologie-Beiträgen auf einer Mailing-Liste, die jedoch mit der Zeit stark erweitert wurden (\cite{niles2001towards}, S. 2 ff.).
+SUMO stellt Definitionen für sehr allgemeine Begriffe bereit, welche für abgeleitete Kern-Ontologien verwendet werden können.
+Laut eigener Aussage wird sie für die Forschung und Entwicklung von Anwendungen aus den Bereichen Suche, Linguistik und Reasoning verwendet \footnote{Quelle: \url{https://www.ontologyportal.org/index.html}}.
+Die KIF-Dateien des Projektes sind thematisch aufgeteilt (z.B. Anatomy.kif für Anatomie, Military.kif für Militärisches) und in einem Github-Repository\footnote{\url{https://github.com/ontologyportal/sumo}} zu finden.
+Das Projekt scheint weiterhin gepflegt zu werden, denn der letzte Commit ist vom 4. März 2024\footnote{\url{https://github.com/ontologyportal/sumo/commit/596147ccc5636e20441875a6a29158d8567d7f80}}.
 
 \subsection{Ontologien}
 
@@ -483,14 +509,6 @@ https://gitlab.cc-asp.fraunhofer.de/ISC-Public/ISC-Digital/ontology/gpo
 
 Ontologie ist noch WIP
 
-\subsubsection{GoodRelations Vokabular}
-
-Das GoodRelations\footnote{https://www.heppnetz.de/ontologies/goodrelations/v1.html} Vokabular ist laut eigener Aussage ein Vokabular zur Modellierung Daten im E-Commerce Bereich (z.B. Produkte, Dienstleistungen oder Unternehmen).
-Es wurde von Martin Hepp u.a. mit dem Ziel entwickelt, Produkte und Dienstleistungen auf E-Commerce-Webseiten mit zusätzlichen Metadaten auszuzeichnen, um die Sichtbarkeit in Suchmaschinen zu erhöhen.
-GoodRelations wurde 2012 als E-Commerce Kern in das Vokabular schema.org aufgenommen\footnote{\url{http://blog.schema.org/2012/11/good-relations-and-schemaorg.html}}.
-Damit gingen alle Klassen und Properties in das schema.org Vokabular über und wurden darin integriert\footnote{Beispiel: Klasse Product \url{https://schema.org/Product}}.
-Für Zugriff auf die maschinenlesbaren Daten bitte im Kapitel für schema.org schauen.
-
 \subsubsection{ifcOWL}
 
 "The IFC4\_ADD1 ontology specifies in OWL the Industry Foundational Classes (IFC) conceptual data schema and exchange file format for Building Information Model (BIM) data; Creators: Pieter Pauwels (pipauwel.pauwels@ugent.be) and Walter Terkaj (walter.terkaj@itia.cnr.it); Reference: http://www.w3.org/community/lbd/ifcowl/; Based on IFC schema http://www.buildingsmart-tech.org/ifc/IFC4/final/html/"
@@ -610,10 +628,6 @@ cite \cite{olszewska2017ontology}
 
 \cite{kumar2019ontologies}
 
-\subsubsection{Ontology for Industry 4.0 (O4I4)}
-
-\cite{kumar2019ontologies}
-
 Grafik machen: O4I4 nutzt CORA, ROA/ORA und ORArch (\cite{kumar2019ontologies}, S. 7)
 
 \subsubsection{Ontology for manufacturing and logistics (OFM)}
@@ -640,9 +654,12 @@ https://re.public.polimi.it/bitstream/11311/1193315/6/IRIS-ORMA-post-print.pdf
 \subsubsection{Ontology of units of Measure (OM)}
 
 Die Ontology of units of Measure (OM) wurde von dem Wissenschaftler Hajo Rijgersberg im Rahmen seiner Tätigkeit in der Abteilung Computer-Science der Universität Wageningen (Niederlande) entwickelt, als integrativer Teil einer größeren Ontologie\cite{rijgersberg2013ontology}, der Ontology of Quantitative Research (OQR).
-Die OM Ontologie versucht die Konzepte der Domäne von Maßen und Einheiten umfassend abzubilden, welche in Teilen bei anderen Ontologien fehlen. Dies betrifft z.B. die Konzepte Quantity und Prefix. Die OM Ontologie bezieht sich dabei in Teilen auf die QUDT Ontologie und kommt in verschiedenen Ontologie-Projekten, wie z.B dem Bioportal\cite{OM_BioPortal}.
+Die OM Ontologie versucht die Konzepte der Domäne von Maßen und Einheiten umfassend abzubilden, welche in Teilen bei anderen Ontologien fehlen.
+Dies betrifft z.B. die Konzepte Quantity und Prefix.
+Die OM Ontologie bezieht sich dabei in Teilen auf die QUDT Ontologie und kommt in verschiedenen Ontologie-Projekten, wie z.B dem Bioportal\cite{OM_BioPortal}.
 
-Auf der Projektseite \url{https://github.com/HajoRijgersberg/OM} steht die Ontologie in der Version 2.0 zur Verfügung. Die Ontologie wird aktiv betreut, so ist z.B. der letzte Commit im Repository vom 08.02.2024.
+Auf der Projektseite \url{https://github.com/HajoRijgersberg/OM} steht die Ontologie in der Version 2.0 zur Verfügung.
+Die Ontologie wird aktiv betreut, denn der letzte Commit im Repository is vom 08.02.2024.
 
 \subsubsection{Ontology-based Customization and Visualization of Information Flow control in an Industry 4.0 scenario ????}
 
@@ -704,13 +721,6 @@ https://data.ontocommons.linkeddata.es/vocabulary/ProductOntology(pronto)
 
 Konnte keine RDF-Dateien finden, hier nochmal schauen
 
-\subsubsection{Quantities, Units, Dimensions and Types ontology (QUDT)}
-
-Unit-Measure-Ontologien stellen eine konzeptuelle Repräsentation von Quantitäten , Quantitätsarten, Einheiten dar. Der bekannteste und weitläufig eingesetzte Vertreter, ist die von der NASA entwickelte QUDT\cite{QUDTOntology}. Innerhalb dieser Ontologie werden im Kern die Konzepte physikalischer Quantitäten. Quantitätsarten, Einheiten und Dimensionen, sowie Datentypen repräsentiert. Die Ontologie basiert auf dem internationalen Standard der SI-Unit (franz. Système international d'unités) und liegt im OWL-Format vor. Ein Hauptanwendungszeck einer solchen Ontologien, ist das Konvertieren von physikalischen  Einheiten unter Berücksichtigung der Dimensionalität.
-QUDT wird eingesetzt in Luft- und Raumfahrt, Industrieproduktion, sowie Energie- und Wasserversorgung. Ein Beispiel ist die Verwendung von QUDT innerhalb der Systems-Architecture-Ontology (SAO) für Cyber-Physical-Systems.
-
-TODO: Projektseite und letzte Aktivität
-
 \subsubsection{RealEstateCore Ontology (REC)}
 
 https://www.diva-portal.org/smash/get/diva2:1362356/FULLTEXT01.pdf
@@ -757,11 +767,6 @@ Auf der Projektseite \url{https://github.com/srfiorini/IEEE1872-owl} findet man 
 "This is an ontology for extracting the safety knowledge in industry 4.0."
 
 https://github.com/mahsa-teimourikia/Safety-Ontology
-
-\subsubsection{schema.org Vocabulary}
-
-Schema.org\footnote{\url{https://www.schema.org}} ist eine von Firmen und Freiwilligen gepflegte quelloffene Ontologie (bzw. Vokabular) zur Auszeichnung von Daten auf Webseiten.
-Das Ziel für dessen Entwicklung ist es, Suchmaschinen zusätzliche Metadaten über die Webseiteninhalte bereitstellen zu können.
 
 \subsubsection{Semantic Sensor Network (SSN) ontology}
 
