@@ -4,7 +4,8 @@ digraph regexp {
     fontname="Helvetica,Arial,sans-serif"
     node [fontname="Helvetica,Arial,sans-serif"]
     edge [fontname="Helvetica,Arial,sans-serif"]
-    // ontologies
+    //
+    additive_manufacturing_ontology [label="Additive Manufacturing Ontology (AMOntology)"]
     car_options_ontology [label="Car Options Ontology (COO)"];
     cora [label="Core Ontology for Robotics and Automation (CORA)"];
     corax [label="CORAX"];
