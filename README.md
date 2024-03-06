@@ -116,3 +116,12 @@ maintenance and production management decisions
 * [ ] **Versioning Ontology (VERONTO)** - https://ontohub.org/repositories/veronto, https://ri.conicet.gov.ar/bitstream/handle/11336/6899/CONICET\_Digital\_Nro.9341\_A.pdfsequence=2
 * [ ] **VICINITY project** - https://vicinity2020.eu/vicinity/node/446, https://github.com/mariapoveda/vicinity-ontology-core
   * Projekt könnte von Interesse sein, weil: "Open virtual neighbourhood network to connect IoT infrastructures and smart objects"
+
+
+## Misc
+
+Script to build yuml configuration for graph visualization:
+
+> docker run -it --rm --name build-gv-js -v "$PWD":/usr/src/myapp -w /usr/src/myapp php:8.2-cli php generate-yuml-diagram-config > yuml-diagram-config.txt
+
+Insert the generate config here: https://yuml.me/diagram/scruffy/class/draw

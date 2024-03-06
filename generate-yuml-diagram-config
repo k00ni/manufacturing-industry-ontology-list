@@ -1,0 +1,103 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+// which ontology is conntected to which other?
+// also pre-define a few entry, because these prefixes are not used commonly
+$simplifiedOntologyList = [
+    'dc' => [
+        'abbreviation' => 'dcterms',
+        'key' => 'dublin_core_metadata_terms',
+        'rdf_file' => 'https://raw.githubusercontent.com/dcmi/vocabtool/master/build/dcelements.ttl',
+    ],
+    'dct' => [
+        'abbreviation' => 'dcterms',
+        'key' => 'dublin_core_metadata_terms',
+        'rdf_file' => 'https://raw.githubusercontent.com/dcmi/vocabtool/master/build/dcelements.ttl',
+    ],
+    'dcterms' => [
+        'abbreviation' => 'dcterms',
+        'key' => 'dublin_core_metadata_terms',
+        'rdf_file' => 'https://raw.githubusercontent.com/dcmi/vocabtool/master/build/dcelements.ttl',
+    ],
+    'terms' => [
+        'abbreviation' => 'dcterms',
+        'key' => 'dublin_core_metadata_terms',
+        'rdf_file' => 'https://raw.githubusercontent.com/dcmi/vocabtool/master/build/dcelements.ttl',
+    ],
+];
+
+// load CSV file and build simplified ontology list
+foreach (array_map('str_getcsv', file('ontologies.csv')) as $line => $entry) {
+    if (0 == $line) {
+        continue;
+    }
+
+    // build line with entry ID and label
+    $key = strtolower($entry[0]);
+    $key = str_replace(' ', '_', $key);
+    $key = str_replace('-', '', $key);
+
+    // abbreviation
+    $abbreviation = strtolower($entry[2]);
+    $abbreviation = str_replace('-', '', $abbreviation);
+
+    // related RDF file
+    $rdfFile = (string) $entry[7];
+
+    if (0 == strlen($rdfFile)) {
+        // throw new Exception($title.' has no RDF file URL');
+        continue;
+    }
+
+    $simplifiedOntologyList[$abbreviation] = [
+        'abbreviation' => $abbreviation,
+        'key' => $key,
+        'rdf_file' => $rdfFile,
+    ];
+}
+
+foreach ($simplifiedOntologyList as $entry) {
+    if (str_contains($entry['rdf_file'], 'No valid RDF file available')) {
+        continue;
+    } else {
+        // download file and read content
+        $rdfFileContent = file_get_contents($entry['rdf_file']);
+    }
+
+    // assume its RDF/Turtle
+    if (
+        str_contains($entry['rdf_file'], '.n3')
+        || str_contains($entry['rdf_file'], '.ttl')
+    ) {
+        $regex = '/@prefix\s+([a-z]+):/msi';
+    } else {
+        // XML file
+        $regex = '/xmlns:([a-z]+)/smi';
+    }
+
+    if (0 < preg_match_all($regex, $rdfFileContent, $namespaces)) {
+        $list = [];
+
+        foreach ($namespaces[1] as $nsEntry) {
+            $list[] = $nsEntry;
+        }
+
+        sort($list);
+
+        foreach ($list as $prefix) {
+            if ($prefix !== $entry['abbreviation']) {
+                if (isset($simplifiedOntologyList[$prefix])) {
+                    $prefix = $simplifiedOntologyList[$prefix]['key'];
+                }
+
+                echo '['.strtolower($entry['key']).']->['.strtolower($prefix).']'.PHP_EOL;
+            }
+        }
+    } else {
+        throw new Exception($entry['key'].': No related namespaces found!');
+    }
+}
+
+echo PHP_EOL;
