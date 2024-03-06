@@ -345,9 +345,9 @@ Im Anhang ist eine Tabelle aller selektierten Ontologien in Form einer Tabelle z
 
 \subsection{Referenzierte Ontologien}
 
-In diesem Kapitel werden alle Ontologien aufgelistet, die keinen thematischen Bezug zur Industrie haben, jedoch von manchen Ontologien mit Industrie-Bezug verwendet werden.
+In diesem Kapitel werden alle Ontologien aufgelistet, die keinen thematischen Bezug zur Industrie haben, jedoch von den Ontologien mit Industrie-Bezug verwendet werden.
 Die Einträge sind alphabetisch sortiert und unter ihnen befinden sich Top-Level- und Kern-Ontologien.
-Jede Ontologie wird im Rahmen einer kurzen Zusammenfassung vorgestellt.
+Jede Ontologie wird mit einer kurzen Zusammenfassung vorgestellt.
 
 \subsubsection{Basic Formal Ontology (BFO)}
 
@@ -357,20 +357,17 @@ Die BFO teilt die Realität in zwei Hauptzweige ein: in Kontinuanten (Entitäten
 BFO wird von verschiedenen (wissenschaftlichen) Gemeinschaften verwendet, um domänenspezifische Ontologien zu erstellen und zu harmonisieren, z.B. in der Biomedizin, der Geographie, der Soziologie, etc.
 Die Ontologie wird stetig weiterentwickelt und liegt aktuell in Version 2.0 vor\footnote{Quelle: \url{https://github.com/BFO-ontology/BFO?tab=readme-ov-file\#implementations}}.
 
-\subsubsection{DCElements + DCTerms}
+\subsubsection{Data Catalog Vocabulary (DCAT)}
 
-TODO:
+Das Data Catalog Vocabulary (DCAT) ist ein RDF-Vokabular welches mit dem Ziel entwickelt wurde, die Interoperabilität zwischen Datenkatalogen im Internet zu verbessern\footnote{\url{https://www.w3.org/TR/vocab-dcat-2/}}.
+DCAT wird u.a. im Schema.org Vokabular verwendet um Datensätze semantisch auszuzeichnen.
 
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix void: <http://rdfs.org/ns/void#> .
+\subsubsection{Friend of a Friend (FOAF)}
+
+Die Friend of a Friend Ontologie (FOAF) stellt Klassen und Properties zur maschinenlesbaren Modellierung von Beziehungen zwischen Personen über das Internet bereit\footnote{\url{http://xmlns.com/foaf/spec/}}.
+Es wird häufig zur Modellierung von personenbezogenen Daten, wie Namen oder Beziehungen, verwendet.
+FOAF wird u.a. im Schema.org Vokabular genutzt, in dem die Klasse Person in beiden Vokabularen verknüpft werden.
+
 
 \subsubsection{GoodRelations Ontologie}
 
