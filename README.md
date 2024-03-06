@@ -73,7 +73,6 @@ Check and if matching, work in the following ontologies:
 * [ ] **Microstructure Domain Ontology** - https://github.com/emmo-repo/domain-microstructure
 * [ ] **MPFQ Ontology (Material-Process-Function-Quality)** - https://data.ontocommons.linkeddata.es/vocabulary/MpfqOntology(material-process-function-quality)
   * Könnte passen, jedoch hab ich auf die schnelle keine Literatur/Doc dazu gefunden.
-* [ ] **Ontology for Autonomous Robotics (ROA / ORA)** - TODO lesen: https://www.aolivaresalarcos.com/pdf/2017-roman.pdf - \cite{olszewska2017ontology}
 * [ ] **Ontology for Industry 4.0 (O4I4)**
 * [x] **Ontology for Maintenance Procedure Documentation - Static Procedure Ontology (OMPD-SPO)**
 * [ ] **Ontology for manufacturing and logistics (OFM)** - https://data.ontocommons.linkeddata.es/vocabulary/ManufacturingSystemOntology
@@ -81,7 +80,6 @@ Check and if matching, work in the following ontologies:
 * [ ] **Ontology for Reliability-centred MAintenance (ORMA)** - Ontology-augmented Prognostics and Health Management for shopfloor-synchronised joint
 maintenance and production management decisions
   * https://re.public.polimi.it/bitstream/11311/1193315/6/IRIS-ORMA-post-print.pdf
-* [ ] **Ontology for Robotic Architecture (ORArch)**  \cite{kumar2019ontologies}
 * [ ] **Ontology-based Customization and Visualization of Information Flow control in an Industry 4.0 scenario** - Könnte relevant sein, weil auf der README ein paar Ontologien im Kontext von Industrie 4.0 erwähnt werden: https://github.com/ko3n1g/Ontology-based-InformationFlow-Industry-4.0tab=readme-ov-file#ontologies
 * [ ] **Open Energy Ontology** - Achtung, enthält mehrere TeilOntologien
   * https://openenergy-platform.org/ontology/oeo/
