@@ -56,6 +56,12 @@ Die erstellten Forschungsdaten stehen in einem Github-Repository für die Öffen
 
 \textbf{TODO:} Die Inhalte unterliegen dabei den Bedingungen der Creative Commons BY 4.0.
 
+\subsubsection{Graph Visualisierung}
+
+Skript: generate-yuml-diagram-config
+
+- Vereinheitlichung der Prefixe bei den RDF-Daten (z.B. dc vs dcterms vs dcelements oder prov vs. prov\_namespace)
+
 \section{Fachlicher Hintergrund}
 
 In diesem Kapitel werden die notwendige Vorkenntnise für diese Arbeit kurz zusammengefasst.
@@ -345,9 +351,9 @@ Im Anhang ist eine Tabelle aller selektierten Ontologien in Form einer Tabelle z
 
 \subsection{Referenzierte Ontologien}
 
-In diesem Kapitel werden alle Ontologien aufgelistet, die keinen thematischen Bezug zur Industrie haben, jedoch von manchen Ontologien mit Industrie-Bezug verwendet werden.
+In diesem Kapitel werden alle Ontologien aufgelistet, die keinen thematischen Bezug zur Industrie haben, jedoch von den Ontologien mit Industrie-Bezug verwendet werden.
 Die Einträge sind alphabetisch sortiert und unter ihnen befinden sich Top-Level- und Kern-Ontologien.
-Jede Ontologie wird im Rahmen einer kurzen Zusammenfassung vorgestellt.
+Jede Ontologie wird mit einer kurzen Zusammenfassung vorgestellt.
 
 \subsubsection{Basic Formal Ontology (BFO)}
 
@@ -357,20 +363,28 @@ Die BFO teilt die Realität in zwei Hauptzweige ein: in Kontinuanten (Entitäten
 BFO wird von verschiedenen (wissenschaftlichen) Gemeinschaften verwendet, um domänenspezifische Ontologien zu erstellen und zu harmonisieren, z.B. in der Biomedizin, der Geographie, der Soziologie, etc.
 Die Ontologie wird stetig weiterentwickelt und liegt aktuell in Version 2.0 vor\footnote{Quelle: \url{https://github.com/BFO-ontology/BFO?tab=readme-ov-file\#implementations}}.
 
-\subsubsection{DCElements + DCTerms}
+\subsubsection{Data Catalog Vocabulary (DCAT)}
 
-TODO:
+Das Data Catalog Vocabulary (DCAT) ist ein RDF-Vokabular welches mit dem Ziel entwickelt wurde, die Interoperabilität zwischen Datenkatalogen im Internet zu verbessern\footnote{\url{https://www.w3.org/TR/vocab-dcat-2/}}.
+DCAT wird u.a. im Schema.org Vokabular verwendet um Datensätze semantisch auszuzeichnen.
 
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix void: <http://rdfs.org/ns/void#> .
+\subsubsection{Dublin Core Metadata Initiative (DC Terms, DC Elements)}
+
+Bei Dublin Core handelt es sich um eine Sammlung einfacher und standardisierter Konventionen zur Beschreibung von Dokumenten und anderen Objekte im Internet mithilfe von Metadaten\footnote{\url{https://www.dublincore.org/specifications/dublin-core/dcmi-terms/}}.
+
+\subsubsection{Extensible Markup Language (XML)}
+
+Die Extensible Markup Language (XML) ist eine Auszeichnungssprache, die Regeln zum Definieren beliebiger Daten in Textdateien bereitstellt\footnote{\url{https://www.w3.org/XML/}}.
+
+\subsubsection{Extensible Markup Language Schema (XSD, XML Schema)}
+
+Das Extensible Markup Language Schema (oder XML Schema oder XML Schema Definition) ist eine W3C-Empfehlung zum Definieren von Strukturen für XML-Dokumente\footnote{\url{http://www.w3.org/TR/xmlschema11-1/} und \url{http://www.w3.org/TR/xmlschema11-2/}}.
+
+\subsubsection{Friend of a Friend (FOAF)}
+
+Die Friend of a Friend Ontologie (FOAF) stellt Klassen und Properties zur maschinenlesbaren Modellierung von Beziehungen zwischen Personen über das Internet bereit\footnote{\url{http://xmlns.com/foaf/spec/}}.
+Es wird häufig zur Modellierung von personenbezogenen Daten, wie Namen oder Beziehungen, verwendet.
+FOAF wird u.a. im Schema.org Vokabular genutzt, in dem die Klasse Person in beiden Vokabularen verknüpft werden.
 
 \subsubsection{GoodRelations Ontologie}
 
@@ -380,15 +394,9 @@ GoodRelations wurde 2012 als E-Commerce Kern in das Vokabular schema.org aufgeno
 Damit gingen alle Klassen und Properties in das schema.org Vokabular über und wurden darin integriert\footnote{Beispiel: Klasse Product \url{https://schema.org/Product}}.
 Die Ontologie existiert seit der Aufnahme in Schema.org faktisch nicht mehr und wird hier nur noch erwähnt, weil sie in manchen Ontologie-Publikationen explizit erwähnt wird.
 
-\subsubsection{Ontology of units of Measure (OM)}
+\subsubsection{Provenance Ontology (PROV)}
 
-Die Ontology of units of Measure (OM) wurde von Hajo Rijgersberg im Rahmen seiner Tätigkeit in der Abteilung Computer-Science der Universität Wageningen (Niederlande) entwickelt.
-Sie ist integrativer Teil der größeren Ontologie der Ontology of Quantitative Research (OQR)\cite{rijgersberg2013ontology}.
-Die OM Ontologie bildet die Konzepte der Domäne von Maßen und Einheiten ab, welche in Teilen bei anderen Ontologien fehlen (z.B. die Konzepte Quantity und Prefix).
-Sie bezieht sich dabei in Teilen auf die QUDT Ontologie und kommt in verschiedenen Ontologie-Projekten, wie z.B dem BioPortal\footnote{\url{https://bioportal.bioontology.org}}, zum Einsatz.
-Auf der Projektseite\footnote{\url{https://github.com/HajoRijgersberg/OM}} steht die Ontologie in der Version 2.0 zur Verfügung.
-Die Ontologie ist unter den Bedingungen der CC-BY 4.0 lizensiert.
-Der neuste Commit im Repository ist vom 08.02.2024, daher kann die Ontologie als aktiv betreut angesehen werden.
+Die Provenance Ontology\footnote{\url{https://www.w3.org/TR/2013/REC-prov-o-20130430/}} wurde mit dem Ziel entwickelt, verschiedene Informationen zur Herkunft von Dingen oder Daten zu modellieren und zwischen Systemen und im Internet auszutauschen.
 
 \subsubsection{Quantities, Units, Dimensions and Types ontology (QUDT)}
 
@@ -402,11 +410,23 @@ Die Ontologie basiert auf dem internationalen Standard der SI-Unit (franz. Syst�
 QUDT wird eingesetzt in Luft- und Raumfahrt, Industrieproduktion, sowie Energie- und Wasserversorgung.
 Ein Beispiel ist die Verwendung von QUDT innerhalb der Systems-Architecture-Ontology (SAO) für Cyber-Physical-Systems.
 
+\subsubsection{Resource Description Framework Concepts Vocabulary (RDF)}
+
+Das Resource Description Framework Concepts Vocabulary ist eine W3C Empfehlung und stellt ein Triple-basiertes Datenmodell für Metadaten bereit\footnote{\url{https://www.w3.org/TR/rdf11-concepts/}}.
+
+\subsubsection{Resource Description Framework Schema Vocabulary (RDFS)}
+
+Das Resource Description Framework Schema Vocabulary ist eine W3C Empfehlung und eine Sammlung von Klassen und Properties, die zur Beschreibung von Ontologie verwendet werden können\footnote{\url{https://www.w3.org/TR/rdf11-schema/}}.
+
 \subsubsection{Schema.org}
 
 Schema.org\footnote{\url{https://www.schema.org}} ist eine von verschiedenen Unternehmen und Freiwilligen gepflegte quelloffene Ontologie, mit deren Hilfe man Daten auf Webseiten auszeichnen kann.
 Das Ziel ist es, Suchmaschinen zusätzliche Metadaten über die Webseiteninhalte bereitstellen zu können.
 Auf einer dezidierten Entwickler-Seite\footnote{\url{https://schema.org/docs/developers.html}} findet man u.a. weiterführende Links (z.B. FAQ) und einen Bereich, wo man sich die Rohdaten in verschiedenen RDF-Dialekten herunterladen kann.
+
+\subsubsection{Simple Knowledge Organization System (SKOS)}
+
+Das Simple Knowledge Organization System ist eine RDF-basierte formale Sprache zur Kodierung von Dokumentationssprachen wie Thesauri, Klassifikationen oder anderen kontrollierten Vokabularen\footnote{\url{https://www.w3.org/2004/02/skos/}}.
 
 \subsubsection{Suggested Upper Merged Ontology (SUMO)}
 
@@ -417,6 +437,9 @@ Laut eigener Aussage wird sie für die Forschung und Entwicklung von Anwendungen
 Die KIF-Dateien des Projektes sind thematisch aufgeteilt (z.B. Anatomy.kif für Anatomie, Military.kif für Militärisches) und in einem Github-Repository\footnote{\url{https://github.com/ontologyportal/sumo}} zu finden.
 Das Projekt scheint weiterhin gepflegt zu werden, denn der letzte Commit ist vom 4. März 2024\footnote{\url{https://github.com/ontologyportal/sumo/commit/596147ccc5636e20441875a6a29158d8567d7f80}}.
 
+\subsubsection{Web Ontology Language (OWL)}
+
+Die Web Ontology Language ist eine von der W3C empfohlene Spezifikation um Ontologien anhand einer formalen Beschreibungssprache erstellen, publizieren und verteilen zu können\footnote{\url{https://www.w3.org/TR/owl2-overview/}}.
 
 \section{Fazit und weitere Arbeiten}
 
