@@ -20,8 +20,8 @@ Check and if matching, work in the following ontologies:
 * [ ] **Additive manufacturing ontology (AMontology)** - https://github.com/iassouroko/AMontology
 * [ ] **Automotive Industry Ontology** - Automotive Industry Ontology, https://github.com/iurianu/auto-ontology/tree/master, Frage an Autor ob Projekt noch forgesetzt wird: https://github.com/iurianu/auto-ontology/issues/1
 * [ ] **Battery Interface Ontology (BattINFO)** - Is it a fit
-  * https://big-map.github.io/BattINFO/about.html
-  * https://github.com/BIG-MAP/BattINFOtab=readme-ov-file
+  * Xhttps://big-map.github.io/BattINFO/about.html
+  * https://github.com/BIG-MAP/BattINFO
   * https://www.big-map.eu/dissemination/battinfo
 * [ ] **Battery Value Chain Ontology (BVCO)** - https://gitlab.cc-asp.fraunhofer.de/ISC-Public/ISC-Digital/ontology/bvco
 * [ ] **Building ontology** - https://bimerr.iot.linkeddata.es/def/building/
