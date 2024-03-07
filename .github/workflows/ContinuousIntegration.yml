@@ -9,16 +9,16 @@ jobs:
         php:
           - "8.3"
       steps:
-      - name: "Checkout"
-        uses: "actions/checkout@v3"
+        - name: "Checkout"
+          uses: "actions/checkout@v3"
 
-      - name: "Install PHP"
-        uses: "shivammathur/setup-php@v2"
-        with:
-          php-version: "${{ matrix.php }}"
-          coverage: "none"
-      - name: "Run checks"
-        run: "make prepare"
+        - name: "Install PHP"
+          uses: "shivammathur/setup-php@v2"
+          with:
+            php-version: "${{ matrix.php }}"
+            coverage: "none"
+        - name: "Run checks"
+          run: "make prepare"
 
   check_latext_csv:
     runs-on: ubuntu-latest
