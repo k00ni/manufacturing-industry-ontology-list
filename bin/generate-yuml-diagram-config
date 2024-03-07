@@ -25,6 +25,11 @@ $simplifiedOntologyList = [
         'key' => 'dublin_core_metadata_terms',
         'rdf_file' => 'https://raw.githubusercontent.com/dcmi/vocabtool/master/build/dcelements.ttl',
     ],
+    'obo' => [
+        'abbreviation' => 'iao',
+        'key' => 'information_artifact_ontology',
+        'rdf_file' => 'http://purl.obolibrary.org/obo/iao.owl',
+    ],
     'terms' => [
         'abbreviation' => 'dcterms',
         'key' => 'dublin_core_metadata_terms',
