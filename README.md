@@ -122,4 +122,5 @@ Script to build yuml configuration for graph visualization:
 
 > docker run -it --rm --name build-gv-js -v "$PWD":/usr/src/myapp -w /usr/src/myapp php:8.2-cli php generate-yuml-diagram-config > yuml-diagram-config.txt
 
-Insert the generate config here: https://yuml.me/diagram/scruffy/class/draw
+File [yuml-diagram-config.txt](./yuml-diagram-config.txt) contains the generated config code afterwards.
+Insert it here to generate a visualization: https://yuml.me/diagram/scruffy/class/draw
