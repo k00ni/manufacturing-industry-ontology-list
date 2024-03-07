@@ -111,7 +111,7 @@ maintenance and production management decisions
 * [ ] **Smart Applications Reference Ontology extension for building (SAREF4BLDG)** - https://saref.etsi.org/saref4bldg, ist eine Erweiterung der SAREF Ontology.
 * [ ] **Smart Applications Reference Ontology extension for industry and manufacturing (SAREF4INMA)** - https://saref.etsi.org/saref4inma, ist eine Erweiterung der SAREF Ontology.
 * [ ] **Vehicle Sales Ontology (VSO)** - Quelle: https://www.heppnetz.de/ontologies/vso/ns, wird genutzt von VVO (IndustryPortal), nutzt GoodRelations Vokabular
-* [ ] **Versioning Ontology (VERONTO)** - https://ontohub.org/repositories/veronto, https://ri.conicet.gov.ar/bitstream/handle/11336/6899/CONICET\_Digital\_Nro.9341\_A.pdfsequence=2
+* [x] **Versioning Ontology (VERONTO)** - https://ontohub.org/repositories/veronto, https://data.ontocommons.linkeddata.es/vocabulary/VersioningOntology(veronto)
 * [x] **VICINITY project** - https://vicinity2020.eu/vicinity/node/446, https://github.com/mariapoveda/vicinity-ontology-core
   * Projekt könnte von Interesse sein, weil: "Open virtual neighbourhood network to connect IoT infrastructures and smart objects"
 
