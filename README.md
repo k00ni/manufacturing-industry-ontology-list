@@ -25,7 +25,7 @@ Check and if matching, work in the following ontologies:
   * https://www.big-map.eu/dissemination/battinfo
 * [ ] **Battery Value Chain Ontology (BVCO)** - https://gitlab.cc-asp.fraunhofer.de/ISC-Public/ISC-Digital/ontology/bvco
 * [ ] **Building ontology** - https://bimerr.iot.linkeddata.es/def/building/
-* [ ] **Capability and Skill Ontology (CaSk)** - *"OWL ontology to describe capabilities and skills of things. [...] In the context of automated production, Capabilities and Skills are terms that are used to refer to machine functions."*
+* [x] **Capability and Skill Ontology (CaSk)** - *"OWL ontology to describe capabilities and skills of things. [...] In the context of automated production, Capabilities and Skills are terms that are used to refer to machine functions."*
   * https://github.com/CaSkade-Automation/CaSk
 * [ ] **COGITO Safety Ontology** - https://github.com/oeg-upm/cogito-safety-ontology/tree/main
   * Prüfe, ob das für uns relevant ist. Projekt fiel mit im Kontext von https://github.com/mahsa-teimourikia/Safety-Ontology auf.
