@@ -62,6 +62,14 @@ foreach (array_map('str_getcsv', file(__DIR__.'/../ontologies.csv')) as $line =>
     ];
 }
 
+// ignore SSL problems in https-based connections
+$context = stream_context_create([
+    'ssl' => [
+      'verify_peer' => false,
+      'verify_peer_name' => false,
+    ]
+]);
+
 $fileContent = '';
 
 foreach ($simplifiedOntologyList as $entry) {
@@ -69,7 +77,7 @@ foreach ($simplifiedOntologyList as $entry) {
         continue;
     } else {
         // download file and read content
-        $rdfFileContent = file_get_contents($entry['rdf_file']);
+        $rdfFileContent = file_get_contents($entry['rdf_file'], false, $context);
     }
 
     // assume its RDF/Turtle
