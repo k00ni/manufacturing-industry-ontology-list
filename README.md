@@ -106,8 +106,7 @@ maintenance and production management decisions
 * [x] **Semantic Sensor Network (SSN) ontology** - https://w3.org/TR/vocab-ssn/, Im Kontext mit SOSA
 * [x] **Semantically Integrated Manufacturing Planning Model (SIMPM)**
 * [x] **Sensor Data ontology** - https://bimerr.iot.linkeddata.es/def/sensor-data/
-* [ ] **Sensor, Observation, Sample, and Actuator Ontology (SOSA)** - https://w3.org/TR/vocab-ssn/, Semantic CPPS in Industry 4.0 >> https://arxiv.org/pdf/2011.11395.pdf
-  * Im Kontext mit SSN
+* [x] **Sensor, Observation, Sample, and Actuator Ontology (SOSA)** - https://w3.org/TR/vocab-ssn/, Semantic CPPS in Industry 4.0 >> https://arxiv.org/pdf/2011.11395.pdf
 * [x] **Smart Applications Reference Ontology (SAREF)** - https://saref.etsi.org/core/
 * **Smart Applications Reference Ontology extensions**:
   * [x] SAREF4AUTO: SAREF extension for the Automotive domain (under development)
