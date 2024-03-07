@@ -102,7 +102,7 @@ maintenance and production management decisions
 * [ ] **RFID System Configuration Ontology (RDFID SCO)** - *"Enhancing RFID system configuration through semantic modelling"*: https://repository.lboro.ac.uk/articles/journal_contribution/Enhancing_RFID_system_configuration_through_semantic_modelling/14805819/1/files/28480563.pdf
   * https://github.com/eleniTsalapati/ONTOLOGIES/blob/master/RFID_SCO.owl
 * [ ] **Safety Ontology** - *"This is an ontology for extracting the safety knowledge in industry 4.0."* - https://github.com/mahsa-teimourikia/Safety-Ontology
-* [ ] **Semantic Sensor Network (SSN) ontology** - https://w3.org/TR/vocab-ssn/, Im Kontext mit SOSA
+* [x] **Semantic Sensor Network (SSN) ontology** - https://w3.org/TR/vocab-ssn/, Im Kontext mit SOSA
 * [x] **Semantically Integrated Manufacturing Planning Model (SIMPM)**
 * [ ] **Sensor Data ontology** - https://bimerr.iot.linkeddata.es/def/sensor-data/
 * [ ] **Sensor, Observation, Sample, and Actuator Ontology (SOSA)** - https://w3.org/TR/vocab-ssn/, Semantic CPPS in Industry 4.0 >> https://arxiv.org/pdf/2011.11395.pdf
