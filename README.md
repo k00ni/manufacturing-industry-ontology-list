@@ -73,6 +73,7 @@ Check and if matching, work in the following ontologies:
 * [ ] **Microstructure Domain Ontology** - https://github.com/emmo-repo/domain-microstructure
 * [ ] **MPFQ Ontology (Material-Process-Function-Quality)** - https://data.ontocommons.linkeddata.es/vocabulary/MpfqOntology(material-process-function-quality)
   * Könnte passen, jedoch hab ich auf die schnelle keine Literatur/Doc dazu gefunden.
+* [x] **oneM2M Base Ontology** - https://www.onem2m.org/technical/onem2m-ontologies?jjj=1709820482525
 * [ ] **Ontology for Industry 4.0 (O4I4)**
 * [x] **Ontology for Maintenance Procedure Documentation - Static Procedure Ontology (OMPD-SPO)**
 * [ ] **Ontology for manufacturing and logistics (OFM)** - https://data.ontocommons.linkeddata.es/vocabulary/ManufacturingSystemOntology
