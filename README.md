@@ -108,8 +108,13 @@ maintenance and production management decisions
 * [ ] **Sensor, Observation, Sample, and Actuator Ontology (SOSA)** - https://w3.org/TR/vocab-ssn/, Semantic CPPS in Industry 4.0 >> https://arxiv.org/pdf/2011.11395.pdf
   * Im Kontext mit SSN
 * [x] **Smart Applications Reference Ontology (SAREF)** - https://saref.etsi.org/core/
-* [ ] **Smart Applications Reference Ontology extension for building (SAREF4BLDG)** - https://saref.etsi.org/saref4bldg, ist eine Erweiterung der SAREF Ontology.
-* [ ] **Smart Applications Reference Ontology extension for industry and manufacturing (SAREF4INMA)** - https://saref.etsi.org/saref4inma, ist eine Erweiterung der SAREF Ontology.
+* **Smart Applications Reference Ontology extensions**:
+  * [x] SAREF4AUTO: SAREF extension for the Automotive domain (under development)
+  * [x] SAREF4BLDG: SAREF extension for the Building domain
+  * [x] SAREF4ENER: SAREF extension for the Energy domain
+  * [x] SAREF4GRID: SAREF extension for the Smart Grid domain
+  * [x] SAREF4INMA: SAREF extension for the Industry and Manufacturing domains
+  * [x] SAREF4LIFT: SAREF extension for the Smart Lifts domain
 * [x] **Versioning Ontology (VERONTO)** - https://ontohub.org/repositories/veronto, https://data.ontocommons.linkeddata.es/vocabulary/VersioningOntology(veronto)
 * [x] **VICINITY project** - https://vicinity2020.eu/vicinity/node/446, https://github.com/mariapoveda/vicinity-ontology-core
   * Projekt könnte von Interesse sein, weil: "Open virtual neighbourhood network to connect IoT infrastructures and smart objects"
