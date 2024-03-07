@@ -1,6 +1,10 @@
 #!/usr/bin/env php
 <?php
 
+/**
+ * This file generates config code for graph visualization on yuml.me.
+ */
+
 declare(strict_types=1);
 
 // which ontology is conntected to which other?
@@ -29,7 +33,7 @@ $simplifiedOntologyList = [
 ];
 
 // load CSV file and build simplified ontology list
-foreach (array_map('str_getcsv', file('ontologies.csv')) as $line => $entry) {
+foreach (array_map('str_getcsv', file(__DIR__.'/../ontologies.csv')) as $line => $entry) {
     if (0 == $line) {
         continue;
     }
@@ -57,6 +61,8 @@ foreach (array_map('str_getcsv', file('ontologies.csv')) as $line => $entry) {
         'rdf_file' => $rdfFile,
     ];
 }
+
+$fileContent = '';
 
 foreach ($simplifiedOntologyList as $entry) {
     if (str_contains($entry['rdf_file'], 'No valid RDF file available')) {
@@ -92,10 +98,12 @@ foreach ($simplifiedOntologyList as $entry) {
                     $prefix = $simplifiedOntologyList[$prefix]['key'];
                 }
 
-                echo '['.strtolower($entry['key']).']->['.strtolower($prefix).']'.PHP_EOL;
+                $fileContent .= '['.strtolower($entry['key']).']->['.strtolower($prefix).']'.PHP_EOL;
             }
         }
     } else {
         throw new Exception($entry['key'].': No related namespaces found!');
     }
 }
+
+file_put_contents(__DIR__.'/../yuml-diagram-config.txt', $fileContent, );

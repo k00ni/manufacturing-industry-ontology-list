@@ -2,7 +2,25 @@
 name: Continuous Integration
 on: [push]
 jobs:
-  build_latex:
+  align_csv_gen_graph_vi:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php:
+          - "8.3"
+      steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v3"
+
+      - name: "Install PHP"
+        uses: "shivammathur/setup-php@v2"
+        with:
+          php-version: "${{ matrix.php }}"
+          coverage: "none"
+      - name: "Run checks"
+        run: "make prepare"
+
+  check_latext_csv:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository

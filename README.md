@@ -118,9 +118,6 @@ maintenance and production management decisions
 
 ## Misc
 
-Script to build yuml configuration for graph visualization:
-
-> docker run -it --rm --name build-gv-js -v "$PWD":/usr/src/myapp -w /usr/src/myapp php:8.2-cli php generate-yuml-diagram-config > yuml-diagram-config.txt
-
-File [yuml-diagram-config.txt](./yuml-diagram-config.txt) contains the generated config code afterwards.
+File [yuml-diagram-config.txt](./yuml-diagram-config.txt) contains config code for graph visualization (yuml.me).
+It is generated via `make` command.
 Insert it here to generate a visualization: https://yuml.me/diagram/scruffy/class/draw
