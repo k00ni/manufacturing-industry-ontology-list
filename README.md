@@ -19,8 +19,8 @@ Check and if matching, work in the following ontologies:
     * Prüfe, ob sie zu folgender Publikation Rohdaten finden lassen: A Design for Additive Manufacturing Ontology: https://citeseerx.ist.psu.edu/documentrepid=rep1&type=pdf&doi=b18539e972dfd14782d6a907dd04d1b91819e8b2
 * [ ] **Additive manufacturing ontology (AMontology)** - https://github.com/iassouroko/AMontology
 * [ ] **Automotive Industry Ontology** - Automotive Industry Ontology, https://github.com/iurianu/auto-ontology/tree/master, Frage an Autor ob Projekt noch forgesetzt wird: https://github.com/iurianu/auto-ontology/issues/1
-* [ ] **Battery Interface Ontology (BattINFO)** - Is it a fit
-  * Xhttps://big-map.github.io/BattINFO/about.html
+* [x] **Battery Interface Ontology (BattINFO)** - Is it a fit
+  * https://big-map.github.io/BattINFO/about.html
   * https://github.com/BIG-MAP/BattINFO
   * https://www.big-map.eu/dissemination/battinfo
 * [ ] **Battery Value Chain Ontology (BVCO)** - https://gitlab.cc-asp.fraunhofer.de/ISC-Public/ISC-Digital/ontology/bvco
