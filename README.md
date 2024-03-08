@@ -73,6 +73,7 @@ Check and if matching, work in the following ontologies:
 * [ ] **Microstructure Domain Ontology** - https://github.com/emmo-repo/domain-microstructure
 * [ ] **MPFQ Ontology (Material-Process-Function-Quality)** - https://data.ontocommons.linkeddata.es/vocabulary/MpfqOntology(material-process-function-quality)
   * Könnte passen, jedoch hab ich auf die schnelle keine Literatur/Doc dazu gefunden.
+* [x] **oneM2M Base Ontology** - https://www.onem2m.org/technical/onem2m-ontologies?jjj=1709820482525
 * [ ] **Ontology for Industry 4.0 (O4I4)**
 * [x] **Ontology for Maintenance Procedure Documentation - Static Procedure Ontology (OMPD-SPO)**
 * [ ] **Ontology for manufacturing and logistics (OFM)** - https://data.ontocommons.linkeddata.es/vocabulary/ManufacturingSystemOntology
@@ -102,24 +103,25 @@ maintenance and production management decisions
 * [ ] **RFID System Configuration Ontology (RDFID SCO)** - *"Enhancing RFID system configuration through semantic modelling"*: https://repository.lboro.ac.uk/articles/journal_contribution/Enhancing_RFID_system_configuration_through_semantic_modelling/14805819/1/files/28480563.pdf
   * https://github.com/eleniTsalapati/ONTOLOGIES/blob/master/RFID_SCO.owl
 * [ ] **Safety Ontology** - *"This is an ontology for extracting the safety knowledge in industry 4.0."* - https://github.com/mahsa-teimourikia/Safety-Ontology
-* [ ] **Semantic Sensor Network (SSN) ontology** - https://w3.org/TR/vocab-ssn/, Im Kontext mit SOSA
+* [x] **Semantic Sensor Network (SSN) ontology** - https://w3.org/TR/vocab-ssn/, Im Kontext mit SOSA
 * [x] **Semantically Integrated Manufacturing Planning Model (SIMPM)**
-* [ ] **Sensor Data ontology** - https://bimerr.iot.linkeddata.es/def/sensor-data/
-* [ ] **Sensor, Observation, Sample, and Actuator Ontology (SOSA)** - https://w3.org/TR/vocab-ssn/, Semantic CPPS in Industry 4.0 >> https://arxiv.org/pdf/2011.11395.pdf
-  * Im Kontext mit SSN
-* [ ] **Smart Applications Reference Ontology (SAREF)** - https://saref.etsi.org/
-* [ ] **Smart Applications Reference Ontology extension for building (SAREF4BLDG)** - https://saref.etsi.org/saref4bldg, ist eine Erweiterung der SAREF Ontology.
-* [ ] **Smart Applications Reference Ontology extension for industry and manufacturing (SAREF4INMA)** - https://saref.etsi.org/saref4inma, ist eine Erweiterung der SAREF Ontology.
-* [ ] **Vehicle Sales Ontology (VSO)** - Quelle: https://www.heppnetz.de/ontologies/vso/ns, wird genutzt von VVO (IndustryPortal), nutzt GoodRelations Vokabular
-* [ ] **Versioning Ontology (VERONTO)** - https://ontohub.org/repositories/veronto, https://ri.conicet.gov.ar/bitstream/handle/11336/6899/CONICET\_Digital\_Nro.9341\_A.pdfsequence=2
-* [ ] **VICINITY project** - https://vicinity2020.eu/vicinity/node/446, https://github.com/mariapoveda/vicinity-ontology-core
+* [x] **Sensor Data ontology** - https://bimerr.iot.linkeddata.es/def/sensor-data/
+* [x] **Sensor, Observation, Sample, and Actuator Ontology (SOSA)** - https://w3.org/TR/vocab-ssn/, Semantic CPPS in Industry 4.0 >> https://arxiv.org/pdf/2011.11395.pdf
+* [x] **Smart Applications Reference Ontology (SAREF)** - https://saref.etsi.org/core/
+* **Smart Applications Reference Ontology extensions**:
+  * [x] SAREF4AUTO: SAREF extension for the Automotive domain (under development)
+  * [x] SAREF4BLDG: SAREF extension for the Building domain
+  * [x] SAREF4ENER: SAREF extension for the Energy domain
+  * [x] SAREF4GRID: SAREF extension for the Smart Grid domain
+  * [x] SAREF4INMA: SAREF extension for the Industry and Manufacturing domains
+  * [x] SAREF4LIFT: SAREF extension for the Smart Lifts domain
+* [x] **Versioning Ontology (VERONTO)** - https://ontohub.org/repositories/veronto, https://data.ontocommons.linkeddata.es/vocabulary/VersioningOntology(veronto)
+* [x] **VICINITY project** - https://vicinity2020.eu/vicinity/node/446, https://github.com/mariapoveda/vicinity-ontology-core
   * Projekt könnte von Interesse sein, weil: "Open virtual neighbourhood network to connect IoT infrastructures and smart objects"
 
 
 ## Misc
 
-Script to build yuml configuration for graph visualization:
-
-> docker run -it --rm --name build-gv-js -v "$PWD":/usr/src/myapp -w /usr/src/myapp php:8.2-cli php generate-yuml-diagram-config > yuml-diagram-config.txt
-
-Insert the generate config here: https://yuml.me/diagram/scruffy/class/draw
+File [yuml-diagram-config.txt](./yuml-diagram-config.txt) contains config code for graph visualization (yuml.me).
+It is generated via `make` command.
+Insert it here to generate a visualization: https://yuml.me/diagram/scruffy/class/draw

@@ -1,6 +1,10 @@
 #!/usr/bin/env php
 <?php
 
+/**
+ * This file generates config code for graph visualization on yuml.me.
+ */
+
 declare(strict_types=1);
 
 // which ontology is conntected to which other?
@@ -21,6 +25,11 @@ $simplifiedOntologyList = [
         'key' => 'dublin_core_metadata_terms',
         'rdf_file' => 'https://raw.githubusercontent.com/dcmi/vocabtool/master/build/dcelements.ttl',
     ],
+    'obo' => [
+        'abbreviation' => 'iao',
+        'key' => 'information_artifact_ontology',
+        'rdf_file' => 'http://purl.obolibrary.org/obo/iao.owl',
+    ],
     'terms' => [
         'abbreviation' => 'dcterms',
         'key' => 'dublin_core_metadata_terms',
@@ -29,15 +38,16 @@ $simplifiedOntologyList = [
 ];
 
 // load CSV file and build simplified ontology list
-foreach (array_map('str_getcsv', file('ontologies.csv')) as $line => $entry) {
+foreach (array_map('str_getcsv', file(__DIR__.'/../ontologies.csv')) as $line => $entry) {
     if (0 == $line) {
         continue;
     }
 
     // build line with entry ID and label
     $key = strtolower($entry[0]);
-    $key = str_replace(' ', '_', $key);
-    $key = str_replace('-', '', $key);
+    $key = str_replace([' ', '.'], '_', $key);
+    $key = str_replace(',', '', $key);
+    $key = str_replace('-', '_', $key);
 
     // abbreviation
     $abbreviation = strtolower($entry[2]);
@@ -58,12 +68,22 @@ foreach (array_map('str_getcsv', file('ontologies.csv')) as $line => $entry) {
     ];
 }
 
+// ignore SSL problems in https-based connections
+$context = stream_context_create([
+    'ssl' => [
+      'verify_peer' => false,
+      'verify_peer_name' => false,
+    ]
+]);
+
+$fileContent = '';
+
 foreach ($simplifiedOntologyList as $entry) {
     if (str_contains($entry['rdf_file'], 'No valid RDF file available')) {
         continue;
     } else {
         // download file and read content
-        $rdfFileContent = file_get_contents($entry['rdf_file']);
+        $rdfFileContent = file_get_contents($entry['rdf_file'], false, $context);
     }
 
     // assume its RDF/Turtle
@@ -92,7 +112,7 @@ foreach ($simplifiedOntologyList as $entry) {
                     $prefix = $simplifiedOntologyList[$prefix]['key'];
                 }
 
-                echo '['.strtolower($entry['key']).']->['.strtolower($prefix).']'.PHP_EOL;
+                $fileContent .= '['.strtolower($entry['key']).']->['.strtolower($prefix).']'.PHP_EOL;
             }
         }
     } else {
@@ -100,4 +120,4 @@ foreach ($simplifiedOntologyList as $entry) {
     }
 }
 
-echo PHP_EOL;
+file_put_contents(__DIR__.'/../yuml-diagram-config.txt', $fileContent, );

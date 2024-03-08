@@ -231,6 +231,10 @@ In der Regel basierte eine vorgestellte Ontologie auf weiteren Ontologien, welch
 Es wurden ausschließlich englischsprachige Suchbegriffe verwendet, die relevant für das Fachgebiet Industrie sind.
 Im Folgenden ist eine Auflistung aller genutzter Suchbegriffe:
 
+\textbf{TODO: Folgende Suchbegriffe vielleicht eher als thematische Schwerpunkte bezeichnen?}
+
+\textbf{Suchbegriffe je Plattform als stumpfe Liste aufzählen?}
+
 \subsubsection{Industry Ontology}
 
 Eine damit gekennzeichnete Publikation beschreibt eine Ontologie mit direktem Bezug zur Industrie.
@@ -285,6 +289,7 @@ Im Rahmen der Literatur- und Internetrecherche wurde eine Ontologie selektiert, 
     \item Die Ontologie stellt ein Vokabular zur Beschreibung des Fachgebietes bereit.
     \item Der Ontologie liegt eine logische Theorie (z.B. in Form von Axiomen, Regeln, Hierarchien) über das Fachgebiet zugrunde, die auf das Vokabular zurückgreift.
     \item Die Inhalte der Ontologie haben einen direkten thematischen Bezug zu den vorher genannten Schlüsselwörtern bzw. den damit zusammenhängenden Themen.
+    \item Die Ontologie wurde explizit in einer kuratierten Ontologie-Bibliothek aufgelistet (z.B. OntoCommons ontology catalogue). Es wird in diesem Fall angenommen, dass jemand mit fachlichem Hintergrund die Ontologie bewusst thematisch eingeordnet hat. (TODO)
 \end{enumerate}
 
 \textbf{TODO: Schlüsselwort => Thema hier angemessen oder sollte das extra behandelt werden?}
@@ -319,6 +324,8 @@ Im Folgenden die Angaben mit einer kurzen Erklärung:
 - Es gab Referenzen auf Ontologien, die nicht mehr (in der genutzten Form) existieren (z.B. GoodRelations => gehört nun zu schema.org)
 
 - Manche Ontologien besitzen nur ungenügend Dokumentation zur Herkunft und Autorenschaft: daher Schwierigkeiten herauszufinden, welchen Daten man vertrauen kann
+
+- Manche Ontologien nutzen nicht auflösbare Präfixe, z.B. "Semantically Integrated Planning Model (SIMPM)" nutzt "metadata" > http://data.bioontology.org/metadata/
 
 %----------------------------------------
 % eingeschlossenen Textblock kürzen
@@ -355,38 +362,77 @@ In diesem Kapitel werden alle Ontologien aufgelistet, die keinen thematischen Be
 Die Einträge sind alphabetisch sortiert und unter ihnen befinden sich Top-Level- und Kern-Ontologien.
 Jede Ontologie wird mit einer kurzen Zusammenfassung vorgestellt.
 
-\subsubsection{Basic Formal Ontology (BFO)}
+\subsubsection{Top-Level Ontologien}
 
-Die Basic Formal Ontology (BFO)\footnote{Projektseite: \url{https://basic-formal-ontology.org/}} ist eine Top-Level Ontologie, welche initial 2002 im Rahmen von BFO Project von Barry Smith und Pierre Grenon entwickelt wurde.
+\paragraph{Basic Formal Ontology (BFO)} Die Basic Formal Ontology (BFO)\footnote{Projektseite: \url{https://basic-formal-ontology.org/}} ist eine Top-Level Ontologie, welche initial 2002 im Rahmen von BFO Project von Barry Smith und Pierre Grenon entwickelt wurde.
 Sie eignet sich theoretisch für den Einsatz in beliebigen Fachgebieten, weil sie nur sehr allgemeine Begriffe (und deren Beziehungen untereinander) zur Beschreibung der Realität definiert.
 Die BFO teilt die Realität in zwei Hauptzweige ein: in Kontinuanten (Entitäten, die ohne zeitlichen Bezug existieren) und Okkurrenten (Entitäten, die eine zeitliche Ausdehnung haben).
 BFO wird von verschiedenen (wissenschaftlichen) Gemeinschaften verwendet, um domänenspezifische Ontologien zu erstellen und zu harmonisieren, z.B. in der Biomedizin, der Geographie, der Soziologie, etc.
 Die Ontologie wird stetig weiterentwickelt und liegt aktuell in Version 2.0 vor\footnote{Quelle: \url{https://github.com/BFO-ontology/BFO?tab=readme-ov-file\#implementations}}.
 
-\subsubsection{Data Catalog Vocabulary (DCAT)}
+\paragraph{Suggested Upper Merged Ontology (SUMO)}
+
+Die SUMO\footnote{Projektseite: \url{https://www.ontologyportal.org/index.html}} Ontologie ist eine Top-Level Ontologie, deren Entwicklung laut Projektseite von Adam Pease (technical editor) geleitet wird.
+Die Ontologie ist in der Sprache "Standard Upper Ontology Knowledge Interchange Format" (SUO-KIF) geschrieben\footnote{\url{https://github.com/ontologyportal/sigmakee/blob/master/suo-kif.pdf}} und bestand anfangs aus Ontologie-Beiträgen auf einer Mailing-Liste, die jedoch mit der Zeit stark erweitert wurden (\cite{niles2001towards}, S. 2 ff.).
+SUMO stellt Definitionen für sehr allgemeine Begriffe bereit, welche für abgeleitete Kern-Ontologien verwendet werden können.
+Laut eigener Aussage wird sie für die Forschung und Entwicklung von Anwendungen aus den Bereichen Suche, Linguistik und Reasoning verwendet \footnote{Quelle: \url{https://www.ontologyportal.org/index.html}}.
+Die KIF-Dateien des Projektes sind thematisch aufgeteilt (z.B. Anatomy.kif für Anatomie, Military.kif für Militärisches) und in einem Github-Repository\footnote{\url{https://github.com/ontologyportal/sumo}} zu finden.
+Das Projekt scheint weiterhin gepflegt zu werden, denn der letzte Commit ist vom 4. März 2024\footnote{\url{https://github.com/ontologyportal/sumo/commit/596147ccc5636e20441875a6a29158d8567d7f80}}.
+
+\subsubsection{W3C Ontologien und Empfehlungen}
+
+\textbf{TODO}
+
+\paragraph{Extensible Markup Language (XML)}
+
+Die Extensible Markup Language (XML) ist eine Auszeichnungssprache, die Regeln zum Definieren beliebiger Daten in Textdateien bereitstellt\footnote{\url{https://www.w3.org/XML/}}.
+
+\paragraph{Extensible Markup Language Schema (XSD, XML Schema)}
+
+Das Extensible Markup Language Schema (oder XML Schema oder XML Schema Definition) ist eine W3C-Empfehlung zum Definieren von Strukturen für XML-Dokumente\footnote{\url{http://www.w3.org/TR/xmlschema11-1/} und \url{http://www.w3.org/TR/xmlschema11-2/}}.
+
+\paragraph{OWL-Time} Die OWL-Time ist eine OWL-2 DL Ontologie, die temporale Konzepte bereitstellt\footnote{\url{https://www.w3.org/TR/owl-time/}}.
+
+\paragraph{Provenance Ontology (PROV)}
+
+Die Provenance Ontology\footnote{\url{https://www.w3.org/TR/2013/REC-prov-o-20130430/}} wurde mit dem Ziel entwickelt, verschiedene Informationen zur Herkunft von Dingen oder Daten zu modellieren und zwischen Systemen und im Internet auszutauschen.
+
+\paragraph{Resource Description Framework Concepts Vocabulary (RDF)}
+
+Das Resource Description Framework Concepts Vocabulary ist eine W3C Empfehlung und stellt ein Triple-basiertes Datenmodell für Metadaten bereit\footnote{\url{https://www.w3.org/TR/rdf11-concepts/}}.
+
+\paragraph{Resource Description Framework Schema Vocabulary (RDFS)}
+
+Das Resource Description Framework Schema Vocabulary ist eine W3C Empfehlung und eine Sammlung von Klassen und Properties, die zur Beschreibung von Ontologie verwendet werden können\footnote{\url{https://www.w3.org/TR/rdf11-schema/}}.
+
+\paragraph{VANN (VANN)}
+
+VANN ist ein von dem W3C empfohlenes Vokabular zur Annotierung von Beschreibungen anderer Vokabulare\footnote{\url{https://vocab.org/vann/}}.
+
+\paragraph{Web Ontology Language (OWL)}
+
+Die Web Ontology Language ist eine von dem W3C empfohlene Spezifikation um Ontologien anhand einer formalen Beschreibungssprache erstellen, publizieren und verteilen zu können\footnote{\url{https://www.w3.org/TR/owl2-overview/}}.
+
+\subsubsection{Sonstige Ontologien}
+
+\textbf{TODO}
+
+\paragraph{Data Catalog Vocabulary (DCAT)}
 
 Das Data Catalog Vocabulary (DCAT) ist ein RDF-Vokabular welches mit dem Ziel entwickelt wurde, die Interoperabilität zwischen Datenkatalogen im Internet zu verbessern\footnote{\url{https://www.w3.org/TR/vocab-dcat-2/}}.
 DCAT wird u.a. im Schema.org Vokabular verwendet um Datensätze semantisch auszuzeichnen.
 
-\subsubsection{Dublin Core Metadata Initiative (DC Terms, DC Elements)}
+\paragraph{Dublin Core Metadata Initiative (DC Terms, DC Elements)}
 
 Bei Dublin Core handelt es sich um eine Sammlung einfacher und standardisierter Konventionen zur Beschreibung von Dokumenten und anderen Objekte im Internet mithilfe von Metadaten\footnote{\url{https://www.dublincore.org/specifications/dublin-core/dcmi-terms/}}.
 
-\subsubsection{Extensible Markup Language (XML)}
-
-Die Extensible Markup Language (XML) ist eine Auszeichnungssprache, die Regeln zum Definieren beliebiger Daten in Textdateien bereitstellt\footnote{\url{https://www.w3.org/XML/}}.
-
-\subsubsection{Extensible Markup Language Schema (XSD, XML Schema)}
-
-Das Extensible Markup Language Schema (oder XML Schema oder XML Schema Definition) ist eine W3C-Empfehlung zum Definieren von Strukturen für XML-Dokumente\footnote{\url{http://www.w3.org/TR/xmlschema11-1/} und \url{http://www.w3.org/TR/xmlschema11-2/}}.
-
-\subsubsection{Friend of a Friend (FOAF)}
+\paragraph{Friend of a Friend (FOAF)}
 
 Die Friend of a Friend Ontologie (FOAF) stellt Klassen und Properties zur maschinenlesbaren Modellierung von Beziehungen zwischen Personen über das Internet bereit\footnote{\url{http://xmlns.com/foaf/spec/}}.
 Es wird häufig zur Modellierung von personenbezogenen Daten, wie Namen oder Beziehungen, verwendet.
 FOAF wird u.a. im Schema.org Vokabular genutzt, in dem die Klasse Person in beiden Vokabularen verknüpft werden.
 
-\subsubsection{GoodRelations Ontologie}
+\paragraph{GoodRelations Ontologie}
 
 Die GoodRelations-Ontologie\footnote{https://www.heppnetz.de/ontologies/goodrelations/v1.html} istlaut Aussage ihres Autores Martin Hepp ein Vokabular zur Modellierung von Daten im E-Commerce Bereich (z.B. Produkte, Dienstleistungen oder Unternehmen).
 Sie wurde mit dem Ziel entwickelt, Produkte und Dienstleistungen auf E-Commerce-Webseiten mit zusätzlichen Metadaten auszuzeichnen, um die Sichtbarkeit in Suchmaschinen zu erhöhen.
@@ -394,11 +440,7 @@ GoodRelations wurde 2012 als E-Commerce Kern in das Vokabular schema.org aufgeno
 Damit gingen alle Klassen und Properties in das schema.org Vokabular über und wurden darin integriert\footnote{Beispiel: Klasse Product \url{https://schema.org/Product}}.
 Die Ontologie existiert seit der Aufnahme in Schema.org faktisch nicht mehr und wird hier nur noch erwähnt, weil sie in manchen Ontologie-Publikationen explizit erwähnt wird.
 
-\subsubsection{Provenance Ontology (PROV)}
-
-Die Provenance Ontology\footnote{\url{https://www.w3.org/TR/2013/REC-prov-o-20130430/}} wurde mit dem Ziel entwickelt, verschiedene Informationen zur Herkunft von Dingen oder Daten zu modellieren und zwischen Systemen und im Internet auszutauschen.
-
-\subsubsection{Quantities, Units, Dimensions and Types ontology (QUDT)}
+\paragraph{Quantities, Units, Dimensions and Types ontology (QUDT)}
 
 \textbf{TODO: Text glattziehen, Projektseite und letzte Aktivität}
 
@@ -410,36 +452,17 @@ Die Ontologie basiert auf dem internationalen Standard der SI-Unit (franz. Syst�
 QUDT wird eingesetzt in Luft- und Raumfahrt, Industrieproduktion, sowie Energie- und Wasserversorgung.
 Ein Beispiel ist die Verwendung von QUDT innerhalb der Systems-Architecture-Ontology (SAO) für Cyber-Physical-Systems.
 
-\subsubsection{Resource Description Framework Concepts Vocabulary (RDF)}
-
-Das Resource Description Framework Concepts Vocabulary ist eine W3C Empfehlung und stellt ein Triple-basiertes Datenmodell für Metadaten bereit\footnote{\url{https://www.w3.org/TR/rdf11-concepts/}}.
-
-\subsubsection{Resource Description Framework Schema Vocabulary (RDFS)}
-
-Das Resource Description Framework Schema Vocabulary ist eine W3C Empfehlung und eine Sammlung von Klassen und Properties, die zur Beschreibung von Ontologie verwendet werden können\footnote{\url{https://www.w3.org/TR/rdf11-schema/}}.
-
-\subsubsection{Schema.org}
+\paragraph{Schema.org}
 
 Schema.org\footnote{\url{https://www.schema.org}} ist eine von verschiedenen Unternehmen und Freiwilligen gepflegte quelloffene Ontologie, mit deren Hilfe man Daten auf Webseiten auszeichnen kann.
 Das Ziel ist es, Suchmaschinen zusätzliche Metadaten über die Webseiteninhalte bereitstellen zu können.
 Auf einer dezidierten Entwickler-Seite\footnote{\url{https://schema.org/docs/developers.html}} findet man u.a. weiterführende Links (z.B. FAQ) und einen Bereich, wo man sich die Rohdaten in verschiedenen RDF-Dialekten herunterladen kann.
 
-\subsubsection{Simple Knowledge Organization System (SKOS)}
+\paragraph{Simple Knowledge Organization System (SKOS)}
 
 Das Simple Knowledge Organization System ist eine RDF-basierte formale Sprache zur Kodierung von Dokumentationssprachen wie Thesauri, Klassifikationen oder anderen kontrollierten Vokabularen\footnote{\url{https://www.w3.org/2004/02/skos/}}.
 
-\subsubsection{Suggested Upper Merged Ontology (SUMO)}
 
-Die SUMO\footnote{Projektseite: \url{https://www.ontologyportal.org/index.html}} Ontologie ist eine Top-Level Ontologie, deren Entwicklung laut Projektseite von Adam Pease (technical editor) geleitet wird.
-Die Ontologie ist in der Sprache "Standard Upper Ontology Knowledge Interchange Format" (SUO-KIF) geschrieben\footnote{\url{https://github.com/ontologyportal/sigmakee/blob/master/suo-kif.pdf}} und bestand anfangs aus Ontologie-Beiträgen auf einer Mailing-Liste, die jedoch mit der Zeit stark erweitert wurden (\cite{niles2001towards}, S. 2 ff.).
-SUMO stellt Definitionen für sehr allgemeine Begriffe bereit, welche für abgeleitete Kern-Ontologien verwendet werden können.
-Laut eigener Aussage wird sie für die Forschung und Entwicklung von Anwendungen aus den Bereichen Suche, Linguistik und Reasoning verwendet \footnote{Quelle: \url{https://www.ontologyportal.org/index.html}}.
-Die KIF-Dateien des Projektes sind thematisch aufgeteilt (z.B. Anatomy.kif für Anatomie, Military.kif für Militärisches) und in einem Github-Repository\footnote{\url{https://github.com/ontologyportal/sumo}} zu finden.
-Das Projekt scheint weiterhin gepflegt zu werden, denn der letzte Commit ist vom 4. März 2024\footnote{\url{https://github.com/ontologyportal/sumo/commit/596147ccc5636e20441875a6a29158d8567d7f80}}.
-
-\subsubsection{Web Ontology Language (OWL)}
-
-Die Web Ontology Language ist eine von der W3C empfohlene Spezifikation um Ontologien anhand einer formalen Beschreibungssprache erstellen, publizieren und verteilen zu können\footnote{\url{https://www.w3.org/TR/owl2-overview/}}.
 
 \section{Fazit und weitere Arbeiten}
 
