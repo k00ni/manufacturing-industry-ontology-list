@@ -7,33 +7,74 @@
 
 declare(strict_types=1);
 
-// which ontology is conntected to which other?
-// also pre-define a few entry, because these prefixes are not used commonly
+/**
+ * Saves information about ontologies and their interrelations.
+ *
+ * @var array<string,array<mixed>>
+ */
 $simplifiedOntologyList = [
-    'dc' => [
-        'abbreviation' => 'dcterms',
-        'key' => 'dublin_core_metadata_terms',
-        'rdf_file' => 'https://raw.githubusercontent.com/dcmi/vocabtool/master/build/dcelements.ttl',
+    // could not found related ontology for this ontology IRI
+    // BioPortal support contacted about the URL
+    'http://data.bioontology.org/metadata/' => [
+        'abbreviation' => 'obo',
+        'key' => 'open_biological_and_biomedical_ontology_foundry',
+        'rdf_file' => null,
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+        'ontology_iri' => 'http://purl.obolibrary.org/obo/',
     ],
-    'dct' => [
-        'abbreviation' => 'dcterms',
-        'key' => 'dublin_core_metadata_terms',
-        'rdf_file' => 'https://raw.githubusercontent.com/dcmi/vocabtool/master/build/dcelements.ttl',
+    // could not found related ontology for this ontology IRI
+    'http://www.ontologyrepository.com/CommonCoreOntologies/' => [
+        'abbreviation' => '?',
+        'key' => 'ontology_repository_common_core_ontologies',
+        'rdf_file' => null,
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+        'ontology_iri' => 'http://www.ontologyrepository.com/CommonCoreOntologies/',
     ],
-    'dcterms' => [
-        'abbreviation' => 'dcterms',
-        'key' => 'dublin_core_metadata_terms',
-        'rdf_file' => 'https://raw.githubusercontent.com/dcmi/vocabtool/master/build/dcelements.ttl',
+    // added because it doesn't reference a certain ontology, but seems to be a placeholder
+    // which points to a list of ontologies (https://obofoundry.org/).
+    // in RDF data you might see entries like "obo:RO_0001900" which point to an entry in
+    // https://obofoundry.org/ontology/ro.html, which has http://purl.obolibrary.org/obo/ro.owl#
+    // as ontology IRI.
+    'http://purl.obolibrary.org/obo/' => [
+        'abbreviation' => 'obo',
+        'key' => 'open_biological_and_biomedical_ontology_foundry',
+        'rdf_file' => null,
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+        'ontology_iri' => 'http://purl.obolibrary.org/obo/',
     ],
-    'obo' => [
-        'abbreviation' => 'iao',
-        'key' => 'information_artifact_ontology',
-        'rdf_file' => 'http://purl.obolibrary.org/obo/iao.owl',
+    // all Dublin Core IRIs (e.g. http://purl.org/dc/terms/, http://purl.org/dc/dcam/) point/redirect to
+    // https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
+    // both DCTerms and DCElements also reference the same terms/elements
+    'http://purl.org/dc/dcmitype/' => [
+        'abbreviation' => 'dcmitype',
+        'key' => 'dcmi_type',
+        'rdf_file' => null,
+        'ontology_iri' => 'http://purl.org/dc/dcmitype/',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
-    'terms' => [
-        'abbreviation' => 'dcterms',
-        'key' => 'dublin_core_metadata_terms',
-        'rdf_file' => 'https://raw.githubusercontent.com/dcmi/vocabtool/master/build/dcelements.ttl',
+    'http://purl.org/dc/dcam/' => [
+        'abbreviation' => 'dcam',
+        'key' => 'dcam',
+        'rdf_file' => null,
+        'ontology_iri' => 'http://purl.org/dc/dcam/',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // GoodRelations vocabulary was merged into schema.org in 2012 and no longer has a RDF file of its own
+    'http://purl.org/goodrelations/v1#' => [
+        'abbreviation' => 'GR',
+        'key' => 'good_relations_ontology',
+        'rdf_file' => null,
+        'ontology_iri' => 'http://purl.org/goodrelations/v1#',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // Sometimes authors use https://schema.org/ instead of the original URL http://schema.org/
+    // this entry is only for easing data management
+    'https://schema.org/' => [
+        'abbreviation' => 'Schema.org',
+        'key' => 'schema_org',
+        'rdf_file' => null,
+        'ontology_iri' => 'https://schema.org/',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
 ];
 
@@ -54,17 +95,27 @@ foreach (array_map('str_getcsv', file(__DIR__.'/../ontologies.csv')) as $line =>
     $abbreviation = str_replace('-', '', $abbreviation);
 
     // related RDF file
-    $rdfFile = (string) $entry[7];
+    $ontologyIRI = $entry[7];
+    if (false === str_starts_with($entry[7], 'http')) {
+        // if ontology IRI isn't starting with http, therefore its not an URI
+        // in this case use RDF file instead
+        $ontologyIRI = $entry[6];
+    }
+
+    // related RDF file
+    $rdfFile = (string) $entry[8];
 
     if (0 == strlen($rdfFile)) {
         // throw new Exception($title.' has no RDF file URL');
         continue;
     }
 
-    $simplifiedOntologyList[$abbreviation] = [
+    $simplifiedOntologyList[$ontologyIRI] = [
         'abbreviation' => $abbreviation,
         'key' => $key,
         'rdf_file' => $rdfFile,
+        'ontology_iri' => $ontologyIRI,
+        'ignore_it' => false,
     ];
 }
 
@@ -78,8 +129,13 @@ $context = stream_context_create([
 
 $fileContent = '';
 
-foreach ($simplifiedOntologyList as $entry) {
-    if (str_contains($entry['rdf_file'], 'No valid RDF file available')) {
+var_dump($simplifiedOntologyList);
+
+foreach ($simplifiedOntologyList as $iri => $entry) {
+    if (true === $entry['ignore_it']) {
+        // ignore this entry (for reasons look above)
+        continue;
+    } elseif (str_contains($entry['rdf_file'], 'Information not available')) {
         continue;
     } else {
         // download file and read content
@@ -91,28 +147,28 @@ foreach ($simplifiedOntologyList as $entry) {
         str_contains($entry['rdf_file'], '.n3')
         || str_contains($entry['rdf_file'], '.ttl')
     ) {
-        $regex = '/@prefix\s+([a-z]+):/msi';
+        $regex = '/@prefix\s+[a-z]+:\s*<(.*?)>/msi';
     } else {
         // XML file
-        $regex = '/xmlns:([a-z]+)/smi';
+        $regex = '/xmlns:[a-z]+="(.*?)"/smi';
     }
 
-    if (0 < preg_match_all($regex, $rdfFileContent, $namespaces)) {
+    if (0 < preg_match_all($regex, $rdfFileContent, $namespaceIRIs)) {
         $list = [];
 
-        foreach ($namespaces[1] as $nsEntry) {
-            $list[] = $nsEntry;
-        }
+        // go through the list of namespace IRIs
+        foreach ($namespaceIRIs[1] as $iri) {
+            // get related ontology title
+            if (isset($simplifiedOntologyList[$iri])) {
+                // current ontology
+                $from = strtolower($entry['key']);
+                // referenced ontology
+                $to = strtolower($simplifiedOntologyList[$iri]['key']);
 
-        sort($list);
-
-        foreach ($list as $prefix) {
-            if ($prefix !== $entry['abbreviation']) {
-                if (isset($simplifiedOntologyList[$prefix])) {
-                    $prefix = $simplifiedOntologyList[$prefix]['key'];
-                }
-
-                $fileContent .= '['.strtolower($entry['key']).']->['.strtolower($prefix).']'.PHP_EOL;
+                // add line to file content
+                $fileContent .= '['.$from.']->['.$to.']'.PHP_EOL;
+            } else {
+                echo PHP_EOL.'In '. $entry['key'].' found unknown namespace IRI: '.$iri;
             }
         }
     } else {
@@ -120,4 +176,6 @@ foreach ($simplifiedOntologyList as $entry) {
     }
 }
 
-file_put_contents(__DIR__.'/../yuml-diagram-config.txt', $fileContent, );
+file_put_contents(__DIR__.'/../yuml-diagram-config.txt', $fileContent);
+
+echo PHP_EOL;

@@ -3,13 +3,16 @@
 ## TODOs
 
 * [x] Check if there is still a need for column "ontology type" in CSV
+* [ ] Remove KIF related content, because its more clear when there is only RDF (e.g. ontology relations)
 * [ ] Align all licenses (like CC-BY 4.0)
 * [ ] Create at least 1 image which shows ALL ontologies and their relation
 * [ ] Remove obsolete entries from paper.bib
+* [ ] ontologies.csv: add note somewhere about `#.ttl` additions in rdf file column
 * [ ] Mention Graphviz config + image somewhere in the documentation (and paper)
 * Find further ontology candidates:
   * [ ] Check https://github.com/search?q=topic%3Aontology+manufacturing&type=repositories&ref=advsearch
   * [ ] Check https://bartoc.org/
+  * [ ] Check BioPortal
 
 Check and if matching, work in the following ontologies:
 

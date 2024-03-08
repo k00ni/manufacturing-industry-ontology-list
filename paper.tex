@@ -278,6 +278,8 @@ Zur Internetrecherche wurden die folgenden Webseiten genutzt:
 
 TODO: Hin- und Her-Bouncing erklären? Ausgangspunkt > schauen was es an Ontologien gibt > Kriterien verfeinern > ...
 
+\textbf{Auf Hilfsskripte eingehen: cleaning CSV file; finde referenzierte Namespaces/Ontologien; liste noch nicht erfasste, aber referenzierte Ontologien aus ontologies.csv auf}
+
 Weiterhin wurden die Import-Statements in den RDF-Daten der Ontologien manuell geprüft und etwaige Verlinkungen in die Recherche aufgenommen.
 
 \subsection{Selektion einer Ontologie}
@@ -301,15 +303,29 @@ Im Folgenden die Angaben mit einer kurzen Erklärung:
 
 \begin{itemize}
     \item \textbf{Name der Ontologie} - Der Name der Ontologie, der in den RDF-Daten bzw. der zugehörigen Dokumentation zu finden ist.
+    \item \textbf{Ist Industry related?} - TODO
     \item \textbf{Abkürzung} - Falls vorhanden, die Abkürzung des Namens der Ontologie. Wird häufig als Prefix in den RDF-Daten verwendet.
     \item \textbf{Kurzbeschreibung} - Eine kurze, prägnante Beschreibung über den Inhalt der Ontologie.
     \item \textbf{Autor(en)} - Eine Liste von Namen der Autoren oder beteiligten Gruppen/Unternehmen.
     \item \textbf{Projektseite oder Publikation} - Eine URL auf die Projektseite, falls vorhanden. Alternativ eine URL zur zugehörigen Publikation.
-    \item \textbf{Link zu Rohdaten (RDF- oder KIF-Format)}: Eine URL zu einer oder mehreren Dateien mit den Rohdaten im RDF- oder KIF-Format.
+    \item \textbf{Ontologie IRI} - TODO
+    \item \textbf{Link zu Rohdaten (RDF-Datei)}: Eine URL zu einer oder mehreren Dateien mit den Rohdaten im RDF-Format.
     \item \textbf{Neuste Version} - Falls vorhanden, eine Angabe zur neusten Version der Rohdaten. Die neuste Version und das Datum der neusten, dokumentierten Änderung hängen nicht zusammen und können vollkommen verschiedene zeitliche Bezüge haben.
     \item \textbf{Datum der neusten, dokumentierten Änderung} - Eine Datumsangabe der neusten und dokumentierten Änderung an den Rohdaten. Die Änderung kann, muss aber nicht zeitlich mit der neusten Version zusammenfallen.
     \item \textbf{Lizenz} - Falls vorhanden, eine Angabe zu der/den verwendeten Lizenz(en).
 \end{itemize}
+
+\textbf{TODO:} sofern vorhanden wurde die RDF-Datei im Turtle Format heruntergeladen (leichte Lesbarkeit), ansonsten RDF/XML oder was noch verfügbar war.
+
+\textbf{TODO einarbeiten:} es wurde ein Hilfsskript gebaut, um referenzierte Ontologien/Namespaces zu finden. Dabei sah man, dass auch veraltete Namespaces verwendet werden.
+- car options ontology nutzt goodrelations (http://purl.org/goodrelations/v1#) - Legacy Liste mit diesen Ontologien im PHP-Code (TODO: Liste nennen)
+
+Für nicht RDF-Namespaces wie XML wurde versucht anhand des Kontextes die passende Namespace IRI zu ermitteln
+
+Es gab Ontologien (Information Artifact Ontology aus "Open Biological and Biomedical Ontology Foundry"\footnote{\url{https://obofoundry.org/}}) welche Namespaces auf eine Art verwendeten, deren Zurückverfolgbarkeit unmöglich machte.
+So wurde obo:http://purl.obolibrary.org/obo/ verwendet, in den Rohdaten (https://raw.githubusercontent.com/information-artifact-ontology/IAO/master/iao.owl) wurden dann jedoch Einträge wie obo:RO_0001900 verwendet, welche auf eine Subontology https://obofoundry.org/ontology/ro.html verweisen.
+Das ist an sich kein fehlerhaftes Verhalten und mag aus Datenmodellierungssicht Sinn ergeben.
+Jedoch erschwert das die Nachverfolgbarkeit und Einordnung der referenzierten Ontologien, wenn statt der eigentlich Ontologie IRI eine IRI auf die Hauptontologie (?) verwendet wird.
 
 \section{Rechercheergebnisse}
 
@@ -325,7 +341,11 @@ Im Folgenden die Angaben mit einer kurzen Erklärung:
 
 - Manche Ontologien besitzen nur ungenügend Dokumentation zur Herkunft und Autorenschaft: daher Schwierigkeiten herauszufinden, welchen Daten man vertrauen kann
 
-- Manche Ontologien nutzen nicht auflösbare Präfixe, z.B. "Semantically Integrated Planning Model (SIMPM)" nutzt "metadata" > http://data.bioontology.org/metadata/
+- Manche Ontologien nutzen nicht auflösbare Präfixe, z.B. "Semantically Integrated Planning Model (SIMPM)" nutzt "metadata" > http://data.bioontology.org/metadata/ (gesamte Liste nennen)
+
+- Manche Ontologien haben keine Ontology IRI (z.B. IMAMO)
+
+- Manche Ontologie-Dateien besaßen SSL-Zertifikatsprobleme (alle über industryportal)
 
 %----------------------------------------
 % eingeschlossenen Textblock kürzen
