@@ -318,12 +318,12 @@ Im Folgenden die Angaben mit einer kurzen Erklärung:
 \textbf{TODO:} sofern vorhanden wurde die RDF-Datei im Turtle Format heruntergeladen (leichte Lesbarkeit), ansonsten RDF/XML oder was noch verfügbar war.
 
 \textbf{TODO einarbeiten:} es wurde ein Hilfsskript gebaut, um referenzierte Ontologien/Namespaces zu finden. Dabei sah man, dass auch veraltete Namespaces verwendet werden.
-- car options ontology nutzt goodrelations (http://purl.org/goodrelations/v1#) - Legacy Liste mit diesen Ontologien im PHP-Code (TODO: Liste nennen)
+- car options ontology nutzt goodrelations (http://purl.org/goodrelations/v1\#) - Legacy Liste mit diesen Ontologien im PHP-Code (TODO: Liste nennen)
 
 Für nicht RDF-Namespaces wie XML wurde versucht anhand des Kontextes die passende Namespace IRI zu ermitteln
 
 Es gab Ontologien (Information Artifact Ontology aus "Open Biological and Biomedical Ontology Foundry"\footnote{\url{https://obofoundry.org/}}) welche Namespaces auf eine Art verwendeten, deren Zurückverfolgbarkeit unmöglich machte.
-So wurde obo:http://purl.obolibrary.org/obo/ verwendet, in den Rohdaten (https://raw.githubusercontent.com/information-artifact-ontology/IAO/master/iao.owl) wurden dann jedoch Einträge wie obo:RO_0001900 verwendet, welche auf eine Subontology https://obofoundry.org/ontology/ro.html verweisen.
+So wurde obo:http://purl.obolibrary.org/obo/ verwendet, in den Rohdaten (https://raw.githubusercontent.com/information-artifact-ontology/IAO/master/iao.owl) wurden dann jedoch Einträge wie obo:RO\_0001900 verwendet, welche auf eine Subontology https://obofoundry.org/ontology/ro.html verweisen.
 Das ist an sich kein fehlerhaftes Verhalten und mag aus Datenmodellierungssicht Sinn ergeben.
 Jedoch erschwert das die Nachverfolgbarkeit und Einordnung der referenzierten Ontologien, wenn statt der eigentlich Ontologie IRI eine IRI auf die Hauptontologie (?) verwendet wird.
 
@@ -346,6 +346,14 @@ Jedoch erschwert das die Nachverfolgbarkeit und Einordnung der referenzierten On
 - Manche Ontologien haben keine Ontology IRI (z.B. IMAMO)
 
 - Manche Ontologie-Dateien besaßen SSL-Zertifikatsprobleme (alle über industryportal)
+
+- Manche Ontologien besitzen nicht auflösbare IRI (AMontology): https://github.com/iassouroko/AMontology/blob/master/AMOntology-vFinal1.owl
+
+- Nutzung von Namespaces die nicht verwendet wurden und auch auf keine Ontologien zeigten, z.B. Vehicle Sales Ontology zeigt auf http://dbpedia.org/resource/, ohne jedoch nie zu verwenden
+
+- Manchmal wurde die https statt http Version einer ontology IRI verwendet (z.B. Spin Spif => OWL, RDFS)
+
+- Vehicles Sales Ontology nutzt Namespaces wie http://en.wikipedia.org/wiki/, die jedoch weder verwendet werden noch auf gültige Ontologie verweisen
 
 %----------------------------------------
 % eingeschlossenen Textblock kürzen

@@ -10,6 +10,8 @@ declare(strict_types=1);
 /**
  * Saves information about ontologies and their interrelations.
  *
+ * There are some predefined entries which do point to either no valid ontologies or redirect to correct URLs.
+ *
  * @var array<string,array<mixed>>
  */
 $simplifiedOntologyList = [
@@ -21,6 +23,30 @@ $simplifiedOntologyList = [
         'rdf_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
         'ontology_iri' => 'http://purl.obolibrary.org/obo/',
+    ],
+    // not a real ontology
+    'http://dbpedia.org/resource/' => [
+        'abbreviation' => 'dbpedia_org_resource',
+        'key' => 'dbpedia_org_resource',
+        'rdf_file' => null,
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+        'ontology_iri' => 'http://dbpedia.org/resource/',
+    ],
+    // not a real ontology
+    'http://en.wikipedia.org/wiki/' => [
+        'abbreviation' => 'obo',
+        'key' => 'en_wikipedia_org_wiki',
+        'rdf_file' => null,
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+        'ontology_iri' => 'http://en.wikipedia.org/wiki/',
+    ],
+    // not a real ontology
+    'http://jena.hpl.hp.com/ARQ/function#' => [
+        'abbreviation' => '?',
+        'key' => 'jena_hpl_hp_com_arq_function',
+        'rdf_file' => null,
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+        'ontology_iri' => 'http://jena.hpl.hp.com/ARQ/function#',
     ],
     // could not found related ontology for this ontology IRI
     'http://www.ontologyrepository.com/CommonCoreOntologies/' => [
@@ -38,6 +64,16 @@ $simplifiedOntologyList = [
         'rdf_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
         'ontology_iri' => 'http://open.vocab.org/terms/',
+    ],
+    // could not found related ontology for this ontology IRI
+    // redirects to:
+    // https://www1.owl-ontologies.com/?tm=1&subid4=170990725http://www.owl-ontologies.com/2005/08/07/xsp.owl#5.0125660000&KW1=Semantic%20Data%20Model%20Ontology&KW2=Data%20Analytics%20Database&KW3=Human%20Disease%20Document%20Management%20Software&searchbox=0&domainname=0&backfill=0
+    'http://www.owl-ontologies.com/2005/08/07/xsp.owl#' => [
+        'abbreviation' => '?',
+        'key' => 'owl_ontologies_com_xsp_owl',
+        'rdf_file' => null,
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+        'ontology_iri' => 'http://www.owl-ontologies.com/2005/08/07/xsp.owl#',
     ],
     // added because it doesn't reference a certain ontology, but seems to be a placeholder
     // which points to a list of ontologies (https://obofoundry.org/).
@@ -84,13 +120,103 @@ $simplifiedOntologyList = [
         'ontology_iri' => 'http://purl.org/net/vocab/2004/03/label#',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
+    // could not found related ontology for this ontology IRI
+    'http://purl.org/obo/owl/' => [
+        'abbreviation' => '?',
+        'key' => 'obo_owl',
+        'rdf_file' => null,
+        'ontology_iri' => 'http://purl.org/obo/owl/',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // could not found related ontology for this ontology IRI
+    'http://purl.org/obo/oban/' => [
+        'abbreviation' => '?',
+        'key' => 'obo_oban',
+        'rdf_file' => null,
+        'ontology_iri' => 'http://purl.org/obo/oban/',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
     // Sometimes authors use https://schema.org/ instead of the original URL http://schema.org/
     // this entry is only for easing data management
     'https://schema.org/' => [
-        'abbreviation' => 'Schema.org',
+        'abbreviation' => 'sdo',
         'key' => 'schema_org',
         'rdf_file' => null,
         'ontology_iri' => 'https://schema.org/',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // could not found related ontology for this ontology IRI
+    'http://spinrdf.org/arg#' => [
+        'abbreviation' => '?',
+        'key' => 'spinrdf_org_arg',
+        'rdf_file' => null,
+        'ontology_iri' => 'http://spinrdf.org/arg#',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // just a redirect
+    'https://www.w3.org/2002/07/owl#' => [
+        'abbreviation' => 'owl',
+        'key' => 'web_ontology_language',
+        'rdf_file' => null,
+        'ontology_iri' => 'http://www.w3.org/2002/07/owl#',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // just a redirect
+    'https://www.w3.org/1999/02/22-rdf-syntax-ns#' => [
+        'abbreviation' => 'rdf',
+        'key' => 'resource_description_framework',
+        'rdf_file' => null,
+        'ontology_iri' => 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // just a redirect
+    'https://www.w3.org/2000/01/rdf-schema#' => [
+        'abbreviation' => 'rdfs',
+        'key' => 'resource_description_framework_schema_vocabulary',
+        'rdf_file' => null,
+        'ontology_iri' => 'http://www.w3.org/2000/01/rdf-schema#',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // just a redirect
+    'https://www.w3.org/2001/XMLSchema#' => [
+        'abbreviation' => 'xsd',
+        'key' => 'extensible_markup_language_schema',
+        'rdf_file' => null,
+        'ontology_iri' => 'http://www.w3.org/2001/XMLSchema#',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // could not found related ontology for this ontology IRI
+    'http://www.w3.org/2003/11/swrl#' => [
+        'abbreviation' => 'owl',
+        'key' => 'semantic_Web_rule_language',
+        'rdf_file' => null,
+        'ontology_iri' => 'http://www.w3.org/2003/11/swrl#',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // could not found related ontology for this ontology IRI
+    'http://www.w3.org/2003/11/swrlb#' => [
+        'abbreviation' => '?',
+        'key' => 'swrl_b',
+        'rdf_file' => null,
+        'ontology_iri' => 'http://www.w3.org/2003/11/swrlb#',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // could not found related ontology for this ontology IRI
+    // https://www.w3.org/2003/g/data-view#
+    'http://www.w3.org/2003/g/data-view#' => [
+        'abbreviation' => '?',
+        'key' => 'grddl_data_views',
+        'rdf_file' => null,
+        'ontology_iri' => 'http://www.w3.org/2003/g/data-view#',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // could not found related ontology for this ontology IRI
+    // http://www.w3.org/2005/xpath-functions#
+    'http://www.w3.org/2005/xpath-functions#' => [
+        'abbreviation' => 'fn',
+        'key' => 'xpath_functions',
+        'rdf_file' => null,
+        'ontology_iri' => 'http://www.w3.org/2005/xpath-functions#',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
 ];
@@ -145,8 +271,6 @@ $context = stream_context_create([
 ]);
 
 $fileContent = '';
-
-var_dump($simplifiedOntologyList);
 
 foreach ($simplifiedOntologyList as $iri => $entry) {
     if (true === $entry['ignore_it']) {
