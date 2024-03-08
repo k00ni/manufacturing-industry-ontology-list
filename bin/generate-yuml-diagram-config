@@ -30,6 +30,15 @@ $simplifiedOntologyList = [
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
         'ontology_iri' => 'http://www.ontologyrepository.com/CommonCoreOntologies/',
     ],
+    // could not found related ontology for this ontology IRI
+    // http://vocab.org does not have an appropriate entry
+    'http://open.vocab.org/terms/' => [
+        'abbreviation' => '?',
+        'key' => 'open_vocab_org_terms',
+        'rdf_file' => null,
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+        'ontology_iri' => 'http://open.vocab.org/terms/',
+    ],
     // added because it doesn't reference a certain ontology, but seems to be a placeholder
     // which points to a list of ontologies (https://obofoundry.org/).
     // in RDF data you might see entries like "obo:RO_0001900" which point to an entry in
@@ -67,6 +76,14 @@ $simplifiedOntologyList = [
         'ontology_iri' => 'http://purl.org/goodrelations/v1#',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
+    // could not found related ontology for this ontology IRI
+    'http://purl.org/net/vocab/2004/03/label#' => [
+        'abbreviation' => '?',
+        'key' => 'purl_net_vocab_2004_03_label',
+        'rdf_file' => null,
+        'ontology_iri' => 'http://purl.org/net/vocab/2004/03/label#',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
     // Sometimes authors use https://schema.org/ instead of the original URL http://schema.org/
     // this entry is only for easing data management
     'https://schema.org/' => [
@@ -86,7 +103,7 @@ foreach (array_map('str_getcsv', file(__DIR__.'/../ontologies.csv')) as $line =>
 
     // build line with entry ID and label
     $key = strtolower($entry[0]);
-    $key = str_replace([' ', '.'], '_', $key);
+    $key = str_replace([' ', '.', ':'], '_', $key);
     $key = str_replace(',', '', $key);
     $key = str_replace('-', '_', $key);
 
@@ -147,7 +164,7 @@ foreach ($simplifiedOntologyList as $iri => $entry) {
         str_contains($entry['rdf_file'], '.n3')
         || str_contains($entry['rdf_file'], '.ttl')
     ) {
-        $regex = '/@prefix\s+[a-z]+:\s*<(.*?)>/msi';
+        $regex = '/[@prefix]+\s+[a-z]+:\s*<(.*?)>/msi';
     } else {
         // XML file
         $regex = '/xmlns:[a-z]+="(.*?)"/smi';
