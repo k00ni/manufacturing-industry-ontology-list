@@ -103,9 +103,9 @@ maintenance and production management decisions
 * [ ] **Reference Generalized Ontological Model (RGOM)** - Paper: https://www.mdpi.com/2076-3417/11/11/5110/pdf, https://github.com/MuhammadYahta/rgom/tree/main
 * [ ] **Reified Requirements Ontology** - https://data.ontocommons.linkeddata.es/vocabulary/ReifiedRequirementsOntology, https://data.dnv.com/ontology/requirement-ontology/documentation/req-ont.pdf
   * Konnte keine RDF-Dateien finden, hier nochmal schauen
-* [ ] **RFID System Configuration Ontology (RDFID SCO)** - *"Enhancing RFID system configuration through semantic modelling"*: https://repository.lboro.ac.uk/articles/journal_contribution/Enhancing_RFID_system_configuration_through_semantic_modelling/14805819/1/files/28480563.pdf
+* [x] **RFID System Configuration Ontology (RDFID SCO)** - *"Enhancing RFID system configuration through semantic modelling"*: https://repository.lboro.ac.uk/articles/journal_contribution/Enhancing_RFID_system_configuration_through_semantic_modelling/14805819/1/files/28480563.pdf
   * https://github.com/eleniTsalapati/ONTOLOGIES/blob/master/RFID_SCO.owl
-* [ ] **Safety Ontology** - *"This is an ontology for extracting the safety knowledge in industry 4.0."* - https://github.com/mahsa-teimourikia/Safety-Ontology
+* [x] **Safety Ontology** - *"This is an ontology for extracting the safety knowledge in industry 4.0."* - https://github.com/mahsa-teimourikia/Safety-Ontology
 * [x] **Semantic Sensor Network (SSN) ontology** - https://w3.org/TR/vocab-ssn/, Im Kontext mit SOSA
 * [x] **Semantically Integrated Manufacturing Planning Model (SIMPM)**
 * [x] **Sensor Data ontology** - https://bimerr.iot.linkeddata.es/def/sensor-data/
