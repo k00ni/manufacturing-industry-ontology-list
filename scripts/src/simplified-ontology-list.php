@@ -6,6 +6,14 @@
  * @var array<string,array<mixed>>
  */
 return [
+    // redirect fails and it seems not to be in use
+    'https://big-map.github.io/BattINFO/ontology/electrochemistry#' => [
+        'abbreviation' => 'Information not available',
+        'key' => 'battinfo_electrochemistry',
+        'rdf_file' => null,
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+        'ontology_iri' => 'https://big-map.github.io/BattINFO/ontology/electrochemistry#',
+    ],
     // could not found related ontology for this ontology IRI
     // BioPortal support contacted about the URL
     'http://data.bioontology.org/metadata/' => [
@@ -23,17 +31,33 @@ return [
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
         'ontology_iri' => 'http://dbpedia.org/resource/',
     ],
+    // failing redirect reported: https://github.com/emmo-repo/EMMO/issues/285
+    'http://emmo.info/emmo/middle/isq#' => [
+        'abbreviation' => 'Information not available',
+        'key' => 'international_system_of_quantities',
+        'rdf_file' => null,
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+        'ontology_iri' => 'http://emmo.info/emmo/middle/isq#',
+    ],
     // not a real ontology
     'http://en.wikipedia.org/wiki/' => [
-        'abbreviation' => 'obo',
+        'abbreviation' => 'wiki',
         'key' => 'en_wikipedia_org_wiki',
         'rdf_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
         'ontology_iri' => 'http://en.wikipedia.org/wiki/',
     ],
+    // redirection fails
+    'https://gpo.ontology.link/' => [
+        'abbreviation' => 'Information not available',
+        'key' => 'gpo_ontology_link',
+        'rdf_file' => null,
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+        'ontology_iri' => 'https://gpo.ontology.link/',
+    ],
     // not a real ontology
     'http://jena.hpl.hp.com/ARQ/function#' => [
-        'abbreviation' => '?',
+        'abbreviation' => 'Information not available',
         'key' => 'jena_hpl_hp_com_arq_function',
         'rdf_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
@@ -41,7 +65,7 @@ return [
     ],
     // could not found related ontology for this ontology IRI
     'http://www.ontologyrepository.com/CommonCoreOntologies/' => [
-        'abbreviation' => '?',
+        'abbreviation' => 'Information not available',
         'key' => 'ontology_repository_common_core_ontologies',
         'rdf_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
@@ -50,7 +74,7 @@ return [
     // could not found related ontology for this ontology IRI
     // http://vocab.org does not have an appropriate entry
     'http://open.vocab.org/terms/' => [
-        'abbreviation' => '?',
+        'abbreviation' => 'Information not available',
         'key' => 'open_vocab_org_terms',
         'rdf_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
@@ -60,7 +84,7 @@ return [
     // redirects to:
     // https://www1.owl-ontologies.com/?tm=1&subid4=170990725http://www.owl-ontologies.com/2005/08/07/xsp.owl#5.0125660000&KW1=Semantic%20Data%20Model%20Ontology&KW2=Data%20Analytics%20Database&KW3=Human%20Disease%20Document%20Management%20Software&searchbox=0&domainname=0&backfill=0
     'http://www.owl-ontologies.com/2005/08/07/xsp.owl#' => [
-        'abbreviation' => '?',
+        'abbreviation' => 'Information not available',
         'key' => 'owl_ontologies_com_xsp_owl',
         'rdf_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
@@ -105,7 +129,7 @@ return [
     ],
     // could not found related ontology for this ontology IRI
     'http://purl.org/net/vocab/2004/03/label#' => [
-        'abbreviation' => '?',
+        'abbreviation' => 'Information not available',
         'key' => 'purl_net_vocab_2004_03_label',
         'rdf_file' => null,
         'ontology_iri' => 'http://purl.org/net/vocab/2004/03/label#',
@@ -113,7 +137,7 @@ return [
     ],
     // could not found related ontology for this ontology IRI
     'http://purl.org/obo/owl/' => [
-        'abbreviation' => '?',
+        'abbreviation' => 'Information not available',
         'key' => 'obo_owl',
         'rdf_file' => null,
         'ontology_iri' => 'http://purl.org/obo/owl/',
@@ -121,7 +145,7 @@ return [
     ],
     // could not found related ontology for this ontology IRI
     'http://purl.org/obo/oban/' => [
-        'abbreviation' => '?',
+        'abbreviation' => 'Information not available',
         'key' => 'obo_oban',
         'rdf_file' => null,
         'ontology_iri' => 'http://purl.org/obo/oban/',
@@ -138,7 +162,7 @@ return [
     ],
     // could not found related ontology for this ontology IRI
     'http://spinrdf.org/arg#' => [
-        'abbreviation' => '?',
+        'abbreviation' => 'Information not available',
         'key' => 'spinrdf_org_arg',
         'rdf_file' => null,
         'ontology_iri' => 'http://spinrdf.org/arg#',
@@ -150,6 +174,22 @@ return [
         'key' => 'elemental_multiperspective_material_ontology',
         'rdf_file' => null,
         'ontology_iri' => 'http://emmo.info/emmo#',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    'https://w3id.org/emmo/top/annotations#' => [
+        'abbreviation' => 'owl',
+        'key' => 'elemental_multiperspective_material_ontology_annotation',
+        'rdf_file' => null,
+        'ontology_iri' => 'https://w3id.org/emmo/top/annotations#',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // points to a valid RDF file (with statements about 1 ontology and 1 property)
+    // ontology is not actively used
+    'https://w3id.org/obda/vocabulary#' => [
+        'abbreviation' => 'Information not available',
+        'key' => 'ontology_based_data_access',
+        'rdf_file' => null,
+        'ontology_iri' => 'https://w3id.org/obda/vocabulary#',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
     // just a redirect
@@ -194,7 +234,7 @@ return [
     ],
     // could not found related ontology for this ontology IRI
     'http://www.w3.org/2003/11/swrlb#' => [
-        'abbreviation' => '?',
+        'abbreviation' => 'Information not available',
         'key' => 'swrl_b',
         'rdf_file' => null,
         'ontology_iri' => 'http://www.w3.org/2003/11/swrlb#',
@@ -203,7 +243,7 @@ return [
     // could not found related ontology for this ontology IRI
     // https://www.w3.org/2003/g/data-view#
     'http://www.w3.org/2003/g/data-view#' => [
-        'abbreviation' => '?',
+        'abbreviation' => 'Information not available',
         'key' => 'grddl_data_views',
         'rdf_file' => null,
         'ontology_iri' => 'http://www.w3.org/2003/g/data-view#',

@@ -24,6 +24,27 @@ foreach (array_map('str_getcsv', file('ontologies.csv')) as $rawEntry) {
     $alignedData[] = $alignedEntry;
 }
 
+// check for doublings in abbreviation column
+$abbreviations = [];
+foreach ($alignedData as $entry) {
+    if (
+        in_array($entry[2], $abbreviations, true)
+        && 'Information not available' !== $entry[2]
+    ) {
+        echo PHP_EOL;
+        echo 'Abbreviation doubling found: '.$entry[2].' (used again in '. $entry[0].')';
+        echo PHP_EOL;
+        return;
+    } else {
+        $abbreviations[] = $entry[2];
+    }
+}
+
+// self check to avoid false positive
+if (0 == count($abbreviations)) {
+    throw new Exception('$abbreviations is empty');
+}
+
 // write aligned data back to ontologies.csv
 $path = __DIR__.'/../../ontologies.csv';
 $fp = fopen($path, 'w'); // open in write only mode (write at the start of the file)
@@ -31,3 +52,5 @@ foreach ($alignedData as $row) {
     fputcsv($fp, $row);
 }
 fclose($fp);
+
+echo PHP_EOL;

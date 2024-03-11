@@ -18,6 +18,9 @@ if (false === str_starts_with($ontologyURIOrRdfFileURL, 'http')) {
     return;
 }
 
+// RDF serialization
+$type = (string) ($argv[2] ?? 'turtle');
+
 // ignore SSL problems in https-based connections
 $context = stream_context_create([
     'ssl' => [
@@ -27,7 +30,7 @@ $context = stream_context_create([
 ]);
 
 // download file and read content
-$ontology = Graph::newAndLoad($ontologyURIOrRdfFileURL, 'turtle');
+$ontology = Graph::newAndLoad($ontologyURIOrRdfFileURL, $type);
 
 $ontologies = $ontology->allOfType('owl:Ontology');
 if (1 == count($ontologies)) {

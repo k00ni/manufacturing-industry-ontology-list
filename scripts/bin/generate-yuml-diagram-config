@@ -59,9 +59,9 @@ foreach (array_map('str_getcsv', file(__DIR__.'/../../ontologies.csv')) as $line
     ];
 }
 
-foreach ($simplifiedOntologyList as $iri => $entry) {
-    $fileContent = '';
+$fileContent = '';
 
+foreach ($simplifiedOntologyList as $iri => $entry) {
     if (true === $entry['ignore_it']) {
         // ignore this entry (for reasons look above)
         continue;

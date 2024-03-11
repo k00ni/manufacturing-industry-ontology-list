@@ -95,6 +95,10 @@ Diese Arbeiten wurden aus den folgenden Gründen ignoriert:
 Im Kontext dieser Arbeit bezeichnet der Begriff Ontologie auch Vokabulare.
 Der Grund für diese Festlegung sind die Rechercheergebnisse, die zeigen, dass die Autoren häufig ihre eigenen Arbeiten entweder als Ontologie oder Vokabular, oder beides, bezeichneten\footnote{Zum Beispiel bezeichnet Martin Hepp GoodRelations als standardisiertes Vokabular für Produkte, Preise und Unternehmensdaten, nutzt jedoch Ontologie als Quasi-Synonym, Zitat: "GoodRelations is a standardized vocabulary (also known as "schema", "data dictionary", or "ontology") for product, price, store, and company data that can [...]", Quelle: \url{https://www.heppnetz.de/ontologies/goodrelations/v1.html}}.
 
+\subsubsection{Ontology Design Pattern (ODP)}
+
+\textbf{TODO}
+
 \subsection{Ontologiearten}
 
 \textbf{TODO: baue Grafik mit Darstellung der Arten und Mapping der Dreiteilung und Fünfteilung}
@@ -286,6 +290,7 @@ TODO: Hin- und Her-Bouncing erklären? Ausgangspunkt > schauen was es an Ontolog
 Weiterhin wurden die Import-Statements in den RDF-Daten der Ontologien manuell geprüft und etwaige Verlinkungen in die Recherche aufgenommen.
 - Ontologien wie EMMO (http://emmo.info/) haben eine hohe Modularisierung, daher müssen die owl:import Statements genutzt werden, um an alle referenzierten OWL-Daten zu kommen. Die Top- und Mid-Level-Ontologien sind nur "leere" Hüllen.
 
+- Autorenschaft wurde teilweise anhand der Git-Commits ermitteln (z.B. VDI3682), weil direkt in Metadaten und Projektbeschreibung nicht ersichtlich
 
 \subsection{Selektion einer Ontologie}
 
@@ -353,6 +358,7 @@ Jedoch erschwert das die Nachverfolgbarkeit und Einordnung der referenzierten On
 - Manche Ontologie-Dateien besaßen SSL-Zertifikatsprobleme (alle über industryportal)
 
 - Manche Ontologien besitzen eine IRI, die zu einem 404 Fehler führt, z.B. AMontology > https://github.com/iassouroko/AMontology/blob/master/AMOntology-vFinal1.owl nutzt http://www.semanticweb.org/ina3/ontologies/2016/2/untitled-ontology-122\#
+  - oder http://emmo.info/emmo/middle/isq (hier gemeldet: https://github.com/emmo-repo/EMMO/issues/285)
 
 - Nutzung von Namespaces die nicht verwendet wurden und auch auf keine Ontologien zeigten, z.B. Vehicle Sales Ontology zeigt auf http://dbpedia.org/resource/, ohne jedoch nie zu verwenden
 

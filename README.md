@@ -126,7 +126,7 @@ maintenance and production management decisions
   * [x] SAREF4GRID: SAREF extension for the Smart Grid domain
   * [x] SAREF4INMA: SAREF extension for the Industry and Manufacturing domains
   * [x] SAREF4LIFT: SAREF extension for the Smart Lifts domain
-* [ ] **VDI 2860 Ontology-Design-Pattern** - https://github.com/hsu-aut/IndustrialStandard-ODP-VDI2860
+* [x] **VDI 2860 Ontology-Design-Pattern** - https://github.com/hsu-aut/IndustrialStandard-ODP-VDI2860
 * [x] **Versioning Ontology (VERONTO)** - https://ontohub.org/repositories/veronto, https://data.ontocommons.linkeddata.es/vocabulary/VersioningOntology(veronto)
 * [x] **VICINITY project** - https://vicinity2020.eu/vicinity/node/446, https://github.com/mariapoveda/vicinity-ontology-core
   * Projekt könnte von Interesse sein, weil: "Open virtual neighbourhood network to connect IoT infrastructures and smart objects"
