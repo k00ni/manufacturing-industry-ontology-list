@@ -43,11 +43,11 @@ Check and if matching, work in the following ontologies:
 * [ ] **Digital Construction Entities Ontology** - https://digitalconstruction.github.io/Entities/v/0.5/
 * [ ] **Digital Construction Materials** - https://digitalconstruction.github.io/Materials/v/0.5/
 * [ ] **Domain ontology for atomistic and electronic modelling** - https://github.com/emmo-repo/domain-atomistic
-* [ ] **Elementary Multiperspective Material Ontology (EMMO)** - https://github.com/emmo-repo/EMMO
+* [x] **Elementary Multiperspective Material Ontology (EMMO)** - https://github.com/emmo-repo/EMMO
   * [x] EMMO Annotations - http://emmo.info/emmo/top/annotations#
 * [ ] **Energy Efficiency Prediction Semantic Assistant Ontology (EEPSA)** - https://iesnaola.github.io/eepsa/EEPSA/index-en.html, Verwendet Semantic Sensor Network Ontology
 * [ ] **European Materials \& Modelling Ontology (EMMO)** - https://github.com/emmo-repo/ + https://emmc.eu/news/emmo-1-0-0-alpha-release/
-* [ ] **Extruder Ontology (ExtruOnt)** - https://data.ontocommons.linkeddata.es/vocabulary/Extruont, zugehöriges Paper: https://www.semantic-web-journal.net/system/files/swj2317.pdf
+* [x] **Extruder Ontology (ExtruOnt)** - https://data.ontocommons.linkeddata.es/vocabulary/Extruont, zugehöriges Paper: https://www.semantic-web-journal.net/system/files/swj2317.pdf
 * [ ] **General Process Ontology (GPO)** - https://gitlab.cc-asp.fraunhofer.de/ISC-Public/ISC-Digital/ontology/gpo, Ontologie ist noch WIP
 * [ ] **ifcOWL** - *"The IFC4\_ADD1 ontology specifies in OWL the Industry Foundational Classes (IFC) conceptual data schema and exchange file format for Building Information Model (BIM) data; Creators: Pieter Pauwels (pipauwel.pauwels@ugent.be) and Walter Terkaj (walter.terkaj@itia.cnr.it); Reference: http://www.w3.org/community/lbd/ifcowl/; Based on IFC schema http://www.buildingsmart-tech.org/ifc/IFC4/final/html/"*
   * https://ontohub.org/spaceportal/IFC%20OWL/IFC4_ADD1///symbolskind=ObjectProperty
@@ -104,8 +104,8 @@ maintenance and production management decisions
 * [ ] **RealEstateCore Ontology (REC)** - https://www.diva-portal.org/smash/get/diva2:1362356/FULLTEXT01.pdf, https://doc.realestatecore.io/3.0/full.html\#
   * Aufgenommen aufgrund des Papers, darin werden die folgenden Schlüsselwörter verwendet:  ontology, smart buildings, building automation, IoT, energy optimization
   * Prüfe, ob es noch in den Scope passt
-* [ ] **Reference Generalized Ontological Model (RGOM)** - Paper: https://www.mdpi.com/2076-3417/11/11/5110/pdf, https://github.com/MuhammadYahta/rgom/tree/main
-* [ ] **Reified Requirements Ontology** - https://data.ontocommons.linkeddata.es/vocabulary/ReifiedRequirementsOntology, https://data.dnv.com/ontology/requirement-ontology/documentation/req-ont.pdf
+* [x] **Reference Generalized Ontological Model (RGOM)** - Paper: https://www.mdpi.com/2076-3417/11/11/5110/pdf, https://github.com/MuhammadYahta/rgom/tree/main
+* [x] **Reified Requirements Ontology** - https://data.ontocommons.linkeddata.es/vocabulary/ReifiedRequirementsOntology, https://data.dnv.com/ontology/requirement-ontology/documentation/req-ont.pdf
   * Konnte keine RDF-Dateien finden, hier nochmal schauen
 * [x] **RFID System Configuration Ontology (RDFID SCO)** - *"Enhancing RFID system configuration through semantic modelling"*: https://repository.lboro.ac.uk/articles/journal_contribution/Enhancing_RFID_system_configuration_through_semantic_modelling/14805819/1/files/28480563.pdf
   * https://github.com/eleniTsalapati/ONTOLOGIES/blob/master/RFID_SCO.owl

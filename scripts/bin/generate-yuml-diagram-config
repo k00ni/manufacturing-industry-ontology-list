@@ -26,9 +26,7 @@ foreach (array_map('str_getcsv', file(__DIR__.'/../../ontologies.csv')) as $line
 
     // build line with entry ID and label
     $key = strtolower($entry[0]);
-    $key = str_replace([' ', '.', ':'], '_', $key);
-    $key = str_replace(',', '', $key);
-    $key = str_replace('-', '_', $key);
+    $key = str_replace([' ', '.', ':', ',', '-'], '_', $key);
 
     // abbreviation
     $abbreviation = strtolower($entry[2]);

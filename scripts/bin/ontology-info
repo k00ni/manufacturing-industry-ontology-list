@@ -4,6 +4,7 @@
 declare(strict_types=1);
 
 use EasyRdf\Graph;
+use EasyRdf\Resource;
 
 /**
  * This file extracts all available information about an ontology from a given file/URL.
@@ -34,13 +35,18 @@ $ontology = Graph::newAndLoad($ontologyURIOrRdfFileURL, $type);
 
 $ontologies = $ontology->allOfType('owl:Ontology');
 if (1 == count($ontologies)) {
+    /** @var \EasyRdf\Resource */
     $ontologyResource = $ontologies[0];
 
     // contains data for CSV line in the end
     $dataArray = [];
 
-    // dcterms:title
-    $dataArray[] = $ontologyResource->get('dcterms:title')->getValue();
+    // title (e.g. dcterms:title)
+    if ($ontologyResource->get('dcterms:title') instanceof Resource) {
+        $dataArray[] = $ontologyResource->get('dcterms:title')->getValue();
+    } else if ($ontologyResource->get('rdfs:label') instanceof Resource) {
+        $dataArray[] = $ontologyResource->get('rdfs:label')->getValue();
+    }
 
     // is industry related
     $dataArray[] = 'TODO';
@@ -48,11 +54,20 @@ if (1 == count($ontologies)) {
     // abbreviation
     $dataArray[] = 'Information not available';
 
-    // dcterms:abstract (but only take first sentence)
-    $abstract = $ontologyResource->get('dcterms:abstract')->getValue();
-    $abstract = substr($abstract, 0, strpos($abstract, '.')+1);
-    $abstract = preg_replace('/\n|\n\r/smi', '', $abstract);
-    $abstract = trim($abstract);
+    // abstract (e.g. dcterms:abstract), but only take first sentence
+    $abstract = null;
+    if ($ontologyResource->get('dcterms:abstract') instanceof Resource) {
+        $abstract = $ontologyResource->get('dcterms:abstract')->getValue();
+    } elseif ($ontologyResource->get('dc:description') instanceof Resource) {
+        $abstract = $ontologyResource->get('dc:description')->getValue();
+    }
+
+    if (null != $abstract) {
+        $abstract = substr($abstract, 0, strpos($abstract, '.')+1);
+        $abstract = preg_replace('/\n|\n\r/smi', '', $abstract);
+        $abstract = trim($abstract);
+    }
+
     $dataArray[] = $abstract;
 
     // latest version

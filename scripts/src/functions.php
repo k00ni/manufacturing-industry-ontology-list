@@ -19,6 +19,8 @@ function getLicenseShortcut(string $value): string
 {
     if ('https://creativecommons.org/licenses/by/4.0/legalcode' == $value) {
         return 'CC-BY 4.0';
+    } elseif ('https://creativecommons.org/licenses/by-sa/4.0/' == $value) {
+        return 'CC-BY-SA 4.0';
     }
 
     return 'Information not available';

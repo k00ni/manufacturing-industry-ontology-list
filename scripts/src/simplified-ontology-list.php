@@ -6,6 +6,14 @@
  * @var array<string,array<mixed>>
  */
 return [
+    // just a redirect (related ontology is in CSV file)
+    'http://bdi.si.ehu.es/bdi/ontologies/ExtruOnt/components4ExtruOnt#' => [
+        'abbreviation' => 'Information not available',
+        'key' => 'components4ExtruOnt',
+        'rdf_file' => null,
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+        'ontology_iri' => 'http://bdi.si.ehu.es/bdi/ontologies/ExtruOnt/components4ExtruOnt#',
+    ],
     // redirect fails and it seems not to be in use
     'https://big-map.github.io/BattINFO/ontology/electrochemistry#' => [
         'abbreviation' => 'Information not available',
@@ -55,6 +63,14 @@ return [
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
         'ontology_iri' => 'https://gpo.ontology.link/',
     ],
+    // probably not a real ontology, leads to 404 page
+    'http://infoneer.txstate.edu/ontology/' => [
+        'abbreviation' => 'Information not available',
+        'key' => 'infoneer_txstate_edu_ontology',
+        'rdf_file' => null,
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+        'ontology_iri' => 'http://infoneer.txstate.edu/ontology/',
+    ],
     // not a real ontology
     'http://jena.hpl.hp.com/ARQ/function#' => [
         'abbreviation' => 'Information not available',
@@ -62,14 +78,6 @@ return [
         'rdf_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
         'ontology_iri' => 'http://jena.hpl.hp.com/ARQ/function#',
-    ],
-    // could not found related ontology for this ontology IRI
-    'http://www.ontologyrepository.com/CommonCoreOntologies/' => [
-        'abbreviation' => 'Information not available',
-        'key' => 'ontology_repository_common_core_ontologies',
-        'rdf_file' => null,
-        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
-        'ontology_iri' => 'http://www.ontologyrepository.com/CommonCoreOntologies/',
     ],
     // could not found related ontology for this ontology IRI
     // http://vocab.org does not have an appropriate entry
@@ -80,15 +88,13 @@ return [
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
         'ontology_iri' => 'http://open.vocab.org/terms/',
     ],
-    // could not found related ontology for this ontology IRI
-    // redirects to:
-    // https://www1.owl-ontologies.com/?tm=1&subid4=170990725http://www.owl-ontologies.com/2005/08/07/xsp.owl#5.0125660000&KW1=Semantic%20Data%20Model%20Ontology&KW2=Data%20Analytics%20Database&KW3=Human%20Disease%20Document%20Management%20Software&searchbox=0&domainname=0&backfill=0
-    'http://www.owl-ontologies.com/2005/08/07/xsp.owl#' => [
+    // redirects to https://www.w3.org/2005/Incubator/ssn/ssnx/ssn
+    'http://purl.oclc.org/NET/ssnx/ssn#' => [
         'abbreviation' => 'Information not available',
-        'key' => 'owl_ontologies_com_xsp_owl',
+        'key' => 'purl_oclc_org_ssnx_ssn',
         'rdf_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
-        'ontology_iri' => 'http://www.owl-ontologies.com/2005/08/07/xsp.owl#',
+        'ontology_iri' => 'http://purl.oclc.org/NET/ssnx/ssn#',
     ],
     // added because it doesn't reference a certain ontology, but seems to be a placeholder
     // which points to a list of ontologies (https://obofoundry.org/).
@@ -101,6 +107,14 @@ return [
         'rdf_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
         'ontology_iri' => 'http://purl.obolibrary.org/obo/',
+    ],
+    // just a redirect to https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
+    'http://purl.org/dc/elements/1.1#' => [
+        'abbreviation' => 'Information not available',
+        'key' => 'purl_org_dc_elements_1_1',
+        'rdf_file' => null,
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+        'ontology_iri' => 'http://purl.org/dc/elements/1.1#',
     ],
     // all Dublin Core IRIs (e.g. http://purl.org/dc/terms/, http://purl.org/dc/dcam/) point/redirect to
     // https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
@@ -151,6 +165,14 @@ return [
         'ontology_iri' => 'http://purl.org/obo/oban/',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
+    // just another IRI for the already known ontology (CiTO)
+    'http://purl.org/spar/cito/cito:' => [
+        'abbreviation' => 'Information not available',
+        'key' => 'purl_spar_cito_dd',
+        'rdf_file' => null,
+        'ontology_iri' => 'http://purl.org/spar/cito/cito:',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
     // Sometimes authors use https://schema.org/ instead of the original URL http://schema.org/
     // this entry is only for easing data management
     'https://schema.org/' => [
@@ -183,14 +205,6 @@ return [
         'ontology_iri' => 'https://w3id.org/emmo/top/annotations#',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
-    // just a redirect
-    'http://www.w3id.org/hsu-aut/css#' => [
-        'abbreviation' => 'css',
-        'key' => 'capability_skill_and_service_ontology',
-        'rdf_file' => null,
-        'ontology_iri' => 'http://www.w3id.org/hsu-aut/css',
-        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
-    ],
     // points to a valid RDF file (with statements about 1 ontology and 1 property)
     // ontology is not actively used
     'https://w3id.org/obda/vocabulary#' => [
@@ -200,12 +214,22 @@ return [
         'ontology_iri' => 'https://w3id.org/obda/vocabulary#',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
-    // just a redirect
-    'https://www.w3.org/2002/07/owl#' => [
-        'abbreviation' => 'owl',
-        'key' => 'web_ontology_language',
+    // link leads to 404 page
+    // seems to be an ontology, but no RDf data found
+    'https://w3id.org/requirement-ontology/rdl/' => [
+        'abbreviation' => 'Information not available',
+        'key' => 'w3id_requirement_ontoloy',
         'rdf_file' => null,
-        'ontology_iri' => 'http://www.w3.org/2002/07/owl#',
+        'ontology_iri' => 'https://w3id.org/requirement-ontology/rdl/',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // just a redirect, because sometimes people use
+    // https://w3id.org/spar/cito without the / at the end
+    'https://w3id.org/spar/cito' => [
+        'abbreviation' => 'cito',
+        'key' => 'w3id_cito',
+        'rdf_file' => null,
+        'ontology_iri' => 'https://w3id.org/spar/cito',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
     // link broken, but it references https://raw.githubusercontent.com/OntoUA/ua-nodeset-core-ont/master/owl/OpcUaNodeSet2.owl
@@ -214,6 +238,56 @@ return [
         'key' => 'opc_ua_node_set_2',
         'rdf_file' => null,
         'ontology_iri' => 'http://www.fortiss.org/kb/opcua/OpcUaNodeSet2.owl#',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // could not find related ontology design pattern
+    'http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#' => [
+        'abbreviation' => 'Information not available',
+        'key' => 'odp_cpannotationschema',
+        'rdf_file' => null,
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+        'ontology_iri' => 'http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#',
+    ],
+    // just a redirect (related ontoloy is used without #)
+    'http://www.ontologydesignpatterns.org/cp/owl/situation.owl#' => [
+        'abbreviation' => 'Information not available',
+        'key' => 'odp_situation',
+        'rdf_file' => null,
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+        'ontology_iri' => 'http://www.ontologydesignpatterns.org/cp/owl/situation.owl#',
+    ],
+    // could not found related ontology for this ontology IRI
+    'http://www.ontologyrepository.com/CommonCoreOntologies/' => [
+        'abbreviation' => 'Information not available',
+        'key' => 'ontology_repository_common_core_ontologies',
+        'rdf_file' => null,
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+        'ontology_iri' => 'http://www.ontologyrepository.com/CommonCoreOntologies/',
+    ],
+    // could not found related ontology for this ontology IRI
+    // redirects to:
+    // https://www1.owl-ontologies.com/?tm=1&subid4=170990725http://www.owl-ontologies.com/2005/08/07/xsp.owl#5.0125660000&KW1=Semantic%20Data%20Model%20Ontology&KW2=Data%20Analytics%20Database&KW3=Human%20Disease%20Document%20Management%20Software&searchbox=0&domainname=0&backfill=0
+    'http://www.owl-ontologies.com/2005/08/07/xsp.owl#' => [
+        'abbreviation' => 'Information not available',
+        'key' => 'owl_ontologies_com_xsp_owl',
+        'rdf_file' => null,
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+        'ontology_iri' => 'http://www.owl-ontologies.com/2005/08/07/xsp.owl#',
+    ],
+    // leads to 404 page
+    'http://semanticscience.org/resource/' => [
+        'abbreviation' => 'Information not available',
+        'key' => 'semanticscience_resource',
+        'rdf_file' => null,
+        'ontology_iri' => 'http://semanticscience.org/resource/',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // just a redirect
+    'https://www.w3.org/2002/07/owl#' => [
+        'abbreviation' => 'owl',
+        'key' => 'web_ontology_language',
+        'rdf_file' => null,
+        'ontology_iri' => 'http://www.w3.org/2002/07/owl#',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
     // just a redirect
@@ -272,6 +346,31 @@ return [
         'key' => 'xpath_functions',
         'rdf_file' => null,
         'ontology_iri' => 'http://www.w3.org/2005/xpath-functions#',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // sosa ontology in CSV, this is just to avoid warnings
+    'http://www.w3.org/ns/sosa#' => [
+        'abbreviation' => 'sosa',
+        'key' => 'w3c_sosa',
+        'rdf_file' => null,
+        'ontology_iri' => 'http://www.w3.org/ns/sosa#',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // just a redirect
+    'http://www.w3id.org/hsu-aut/css#' => [
+        'abbreviation' => 'css',
+        'key' => 'capability_skill_and_service_ontology',
+        'rdf_file' => null,
+        'ontology_iri' => 'http://www.w3id.org/hsu-aut/css',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // redirects to http://www.foodvoc.org/page/WV which is an empty page
+    // related ontology not found
+    'http://www.wurvoc.org/vocabularies/WV/' => [
+        'abbreviation' => 'Information not available',
+        'key' => 'wurvoc_mv',
+        'rdf_file' => null,
+        'ontology_iri' => 'http://www.wurvoc.org/vocabularies/WV',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
 ];
