@@ -29,7 +29,7 @@ Check and if matching, work in the following ontologies:
 * [x] **Battery Value Chain Ontology (BVCO)** - https://gitlab.cc-asp.fraunhofer.de/ISC-Public/ISC-Digital/ontology/bvco
 * [x] **Building ontology** - https://bimerr.iot.linkeddata.es/def/building/
 * [ ] https://github.com/CaSkade-Automation/CaSkMan
-* [ ] **Capability and Skill Ontology (CaSk)** - *"OWL ontology to describe capabilities and skills of things. [...] In the context of automated production, Capabilities and Skills are terms that are used to refer to machine functions."*
+* [x] **Capability and Skill Ontology (CaSk)** - *"OWL ontology to describe capabilities and skills of things. [...] In the context of automated production, Capabilities and Skills are terms that are used to refer to machine functions."*
   * https://github.com/CaSkade-Automation/CaSk
 * [ ] **COGITO Safety Ontology** - https://github.com/oeg-upm/cogito-safety-ontology/tree/main
   * Prüfe, ob das für uns relevant ist. Projekt fiel mit im Kontext von https://github.com/mahsa-teimourikia/Safety-Ontology auf.
@@ -110,6 +110,7 @@ maintenance and production management decisions
   * Konnte keine RDF-Dateien finden, hier nochmal schauen
 * [x] **RFID System Configuration Ontology (RDFID SCO)** - *"Enhancing RFID system configuration through semantic modelling"*: https://repository.lboro.ac.uk/articles/journal_contribution/Enhancing_RFID_system_configuration_through_semantic_modelling/14805819/1/files/28480563.pdf
   * https://github.com/eleniTsalapati/ONTOLOGIES/blob/master/RFID_SCO.owl
+* [ ] **RoboCaSk - An Ontology for Capabilities and Skills of Heterogeneous Autonomous Robots** - https://github.com/Miguel2617/robocap
 * [x] **Safety Ontology** - *"This is an ontology for extracting the safety knowledge in industry 4.0."* - https://github.com/mahsa-teimourikia/Safety-Ontology
 * [x] **Semantic Sensor Network (SSN) ontology** - https://w3.org/TR/vocab-ssn/, Im Kontext mit SOSA
 * [x] **Semantically Integrated Manufacturing Planning Model (SIMPM)**
