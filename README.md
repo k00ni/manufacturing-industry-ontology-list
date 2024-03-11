@@ -10,7 +10,6 @@
 * [ ] ontologies.csv: add note somewhere about `#.ttl` additions in rdf file column
 * [ ] Mention Graphviz config + image somewhere in the documentation (and paper)
 * Find further ontology candidates:
-  * [ ] Check https://github.com/search?q=topic%3Aontology+manufacturing&type=repositories&ref=advsearch
   * [ ] Check https://bartoc.org/
   * [ ] Check BioPortal
 
@@ -21,6 +20,7 @@ Check and if matching, work in the following ontologies:
   * ODER
     * Prüfe, ob sie zu folgender Publikation Rohdaten finden lassen: A Design for Additive Manufacturing Ontology: https://citeseerx.ist.psu.edu/documentrepid=rep1&type=pdf&doi=b18539e972dfd14782d6a907dd04d1b91819e8b2
 * [ ] **Additive manufacturing ontology (AMontology)** - https://github.com/iassouroko/AMontology
+* [ ] **Additive Manufacturing and Maintenance Operations Ontology (AMMO)** - https://github.com/LA3D/ammo
 * [ ] **Automotive Industry Ontology** - Automotive Industry Ontology, https://github.com/iurianu/auto-ontology/tree/master, Frage an Autor ob Projekt noch forgesetzt wird: https://github.com/iurianu/auto-ontology/issues/1
 * [ ] **Battery Interface Ontology (BattINFO)** - Is it a fit
   * https://big-map.github.io/BattINFO/about.html
@@ -28,6 +28,7 @@ Check and if matching, work in the following ontologies:
   * https://www.big-map.eu/dissemination/battinfo
 * [ ] **Battery Value Chain Ontology (BVCO)** - https://gitlab.cc-asp.fraunhofer.de/ISC-Public/ISC-Digital/ontology/bvco
 * [ ] **Building ontology** - https://bimerr.iot.linkeddata.es/def/building/
+* [ ] https://github.com/CaSkade-Automation/CaSkMan
 * [ ] **Capability and Skill Ontology (CaSk)** - *"OWL ontology to describe capabilities and skills of things. [...] In the context of automated production, Capabilities and Skills are terms that are used to refer to machine functions."*
   * https://github.com/CaSkade-Automation/CaSk
 * [ ] **COGITO Safety Ontology** - https://github.com/oeg-upm/cogito-safety-ontology/tree/main
@@ -40,6 +41,7 @@ Check and if matching, work in the following ontologies:
 * [ ] **Digital Construction Energy Ontology** - https://digitalconstruction.github.io/Energy/v/0.5/
 * [ ] **Digital Construction Entities Ontology** - https://digitalconstruction.github.io/Entities/v/0.5/
 * [ ] **Digital Construction Materials** - https://digitalconstruction.github.io/Materials/v/0.5/
+* [ ] **DIN8580 Ontology-Design-Pattern** - https://github.com/hsu-aut/IndustrialStandard-ODP-DIN8580
 * [ ] **Domain ontology for atomistic and electronic modelling** - https://github.com/emmo-repo/domain-atomistic
 * [ ] **Elementary Multiperspective Material Ontology (EMMO)** - https://github.com/emmo-repo/EMMO
 * [ ] **Energy Efficiency Prediction Semantic Assistant Ontology (EEPSA)** - https://iesnaola.github.io/eepsa/EEPSA/index-en.html, Verwendet Semantic Sensor Network Ontology
@@ -60,6 +62,7 @@ Check and if matching, work in the following ontologies:
   * https://isa-tools.org/index.html
   * https://data.ontocommons.linkeddata.es/vocabulary/Isa\_tab\_ontology
   * https://github.com/2kunal6/OntologyWebform/tree/master
+* [ ] **ISO 22400-2 Ontology-Design-Pattern** - https://github.com/hsu-aut/IndustrialStandard-ODP-ISO22400-2
 * [ ] **Key Performance Indicator ontology** - https://bimerr.iot.linkeddata.es/def/key-performance-indicator/
 * [ ] **Maintenance Activity Ontology** - https://www.semantic-web-journal.net/system/files/swj3067.pdf, https://github.com/uwasystemhealth/Paper_Archive_Maintenance_Activity
 * [ ] **Manufacturing Failure Prediction Ontology (MFPO)** - https://data.ontocommons.linkeddata.es/vocabulary/ManufacturingFailurePredictionOntology(mfpo), https://www.sciencedirect.com/science/article/pii/S1877050919314024/pdfmd5=221db728bbcefb3d067b0b8cabac8cec\&pid=1-s2.0-S1877050919314024-main.pdf
@@ -76,6 +79,7 @@ Check and if matching, work in the following ontologies:
 * [ ] **Microstructure Domain Ontology** - https://github.com/emmo-repo/domain-microstructure
 * [ ] **MPFQ Ontology (Material-Process-Function-Quality)** - https://data.ontocommons.linkeddata.es/vocabulary/MpfqOntology(material-process-function-quality)
   * Könnte passen, jedoch hab ich auf die schnelle keine Literatur/Doc dazu gefunden.
+* [ ] Open Digital Twins ontology for the Industrie 4.0 Asset Administration Shell - https://github.com/JMayrbaeurl/opendigitaltwins-assetadminstrationshell
 * [x] **oneM2M Base Ontology** - https://www.onem2m.org/technical/onem2m-ontologies?jjj=1709820482525
 * [ ] **Ontology for Industry 4.0 (O4I4)**
 * [x] **Ontology for Maintenance Procedure Documentation - Static Procedure Ontology (OMPD-SPO)**
@@ -91,6 +95,7 @@ maintenance and production management decisions
   * Grund für mögliche Relevanz: Im OEO-Physical Teil geht es u.a. um Kraftwerke, Generatoren etc. welche im Rahmen der Industrie eine wichtige Rolle spielen.
 * [ ] **ORMA+ Ontology** - *"Zero Defect Manufacturing in the Digital Twin Framework"* - https://www.politesi.polimi.it/bitstream/10589/195722/3/2022_10_Ghedini.pdf
   * Prüfe, ob es hierfür öffentlich zugängliche RDF Daten gibt. Im Paper konnte ich auf die schnelle nichts finden, jedoch zeigen sie darin Protégé Screenshots
+* [ ] **PackML StateMachine: Ontology-Design-Pattern** - https://github.com/hsu-aut/IndustrialStandard-ODP-PackML
 * [ ] **Product Lifecycle Management Ontology** - https://rds.posccaesar.org/ontology/plm/, Prüfe, ob hierfür noch passende Dokumentation vorhanden ist. Es scheint auf jeden Fall RDF-Daten vorhanden zu sein
 * [ ] **Production Equipment ontology** - *"Core Ontology for Describing Production Equipment According to Intelligent Production"*: https://www.mdpi.com/2571-5577/5/5/98
   * Prüfe, ob es dafür öffentlich zugängliche RDF Daten gibt
@@ -118,6 +123,7 @@ maintenance and production management decisions
   * [x] SAREF4GRID: SAREF extension for the Smart Grid domain
   * [x] SAREF4INMA: SAREF extension for the Industry and Manufacturing domains
   * [x] SAREF4LIFT: SAREF extension for the Smart Lifts domain
+* [ ] **VDI 2860 Ontology-Design-Pattern** - https://github.com/hsu-aut/IndustrialStandard-ODP-VDI2860
 * [x] **Versioning Ontology (VERONTO)** - https://ontohub.org/repositories/veronto, https://data.ontocommons.linkeddata.es/vocabulary/VersioningOntology(veronto)
 * [x] **VICINITY project** - https://vicinity2020.eu/vicinity/node/446, https://github.com/mariapoveda/vicinity-ontology-core
   * Projekt könnte von Interesse sein, weil: "Open virtual neighbourhood network to connect IoT infrastructures and smart objects"
