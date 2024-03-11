@@ -14,6 +14,9 @@ foreach (array_map('str_getcsv', file('ontologies.csv')) as $rawEntry) {
     foreach ($rawEntry as $key => $value) {
         // replace multiple whitespaces with 1 whitespace
         $value = preg_replace('/\s+/', ' ', $value);
+
+        $value = str_replace([', ', ' ,'], ',', $value);
+
         // remove trailing whitespaces
         $alignedEntry[$key] = trim($value);
     }
