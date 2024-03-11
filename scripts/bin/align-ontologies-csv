@@ -21,6 +21,11 @@ foreach (array_map('str_getcsv', file('ontologies.csv')) as $rawEntry) {
         $alignedEntry[$key] = trim($value);
     }
 
+    // short description must end with a dot
+    if ('.' != mb_substr($rawEntry[3], -1)) {
+        $rawEntry[3] .= '.';
+    }
+
     $alignedData[] = $alignedEntry;
 }
 
