@@ -1,3 +1,6 @@
 default:
-	php bin/generate-yuml-diagram-config
-	php bin/align-ontologies-csv
+	php scripts/bin/generate-yuml-diagram-config
+	php scripts/bin/align-ontologies-csv
+
+composer:
+	cd scripts && composer update

@@ -1,0 +1,97 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use EasyRdf\Graph;
+
+/**
+ * This file extracts all available information about an ontology from a given file/URL.
+ */
+
+require __DIR__.'/../vendor/autoload.php';
+
+// ontology URI or RDF file URL
+$ontologyURIOrRdfFileURL = (string) ($argv[1] ?? '');
+if (false === str_starts_with($ontologyURIOrRdfFileURL, 'http')) {
+    echo PHP_EOL.'Please provide an URI or link to an ontology'.PHP_EOL;
+    return;
+}
+
+// ignore SSL problems in https-based connections
+$context = stream_context_create([
+    'ssl' => [
+      'verify_peer' => false,
+      'verify_peer_name' => false,
+    ]
+]);
+
+// download file and read content
+$ontology = Graph::newAndLoad($ontologyURIOrRdfFileURL, 'turtle');
+
+$ontologies = $ontology->allOfType('owl:Ontology');
+if (1 == count($ontologies)) {
+    $ontologyResource = $ontologies[0];
+
+    // contains data for CSV line in the end
+    $dataArray = [];
+
+    // dcterms:title
+    $dataArray[] = $ontologyResource->get('dcterms:title')->getValue();
+
+    // is industry related
+    $dataArray[] = 'TODO';
+
+    // abbreviation
+    $dataArray[] = 'Information not available';
+
+    // dcterms:abstract (but only take first sentence)
+    $abstract = $ontologyResource->get('dcterms:abstract')->getValue();
+    $abstract = substr($abstract, 0, strpos($abstract, '.')+1);
+    $abstract = preg_replace('/\n|\n\r/smi', '', $abstract);
+    $abstract = trim($abstract);
+    $dataArray[] = $abstract;
+
+    // latest version
+    $version = $ontologyResource->get('owl:versionInfo')->getValue();
+    $dataArray[] = trim($version);
+
+    // latest change
+    $dataArray[] = 'TODO';
+
+    // project page
+    $dataArray[] = 'TODO';
+
+    // ontology IRI
+    $dataArray[] = $ontologyResource->getUri();
+
+    // rdf file
+    $dataArray[] = $ontologyURIOrRdfFileURL;
+
+    // dcterms:creator
+    $creators = [];
+    foreach ($ontologyResource->all('dcterms:creator') as $creator) {
+        $creators[] = trim($creator->getValue());
+    }
+    $dataArray[] = implode(',', $creators);
+
+    // license
+    $license = getLicenseShortcut($ontologyResource->get('dcterms:license')->getValue());
+    $dataArray[] = $license;
+
+    echo PHP_EOL.'"'.implode('","', $dataArray).'"'.PHP_EOL;
+
+    // owl:imports
+
+    echo PHP_EOL;
+
+} elseif (1 < count($ontologies)) {
+    echo PHP_EOL.'More than 1 ontology found:';
+    foreach ($ontologies as $entry) {
+        echo PHP_EOL.'- '. $entry->getUri();
+    }
+} else {
+    echo PHP_EOL.'No ontology found using owl:Ontology as rdf:type';
+}
+
+echo PHP_EOL;

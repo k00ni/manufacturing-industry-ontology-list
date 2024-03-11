@@ -1,20 +1,11 @@
-#!/usr/bin/env php
 <?php
 
 /**
- * This file generates config code for graph visualization on yuml.me.
- */
-
-declare(strict_types=1);
-
-/**
- * Saves information about ontologies and their interrelations.
- *
- * There are some predefined entries which do point to either no valid ontologies or redirect to correct URLs.
+ * List either contains URIs of non-existing ontologies or redirects.
  *
  * @var array<string,array<mixed>>
  */
-$simplifiedOntologyList = [
+return [
     // could not found related ontology for this ontology IRI
     // BioPortal support contacted about the URL
     'http://data.bioontology.org/metadata/' => [
@@ -154,6 +145,14 @@ $simplifiedOntologyList = [
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
     // just a redirect
+    'https://w3id.org/emmo#' => [
+        'abbreviation' => 'owl',
+        'key' => 'elemental_multiperspective_material_ontology',
+        'rdf_file' => null,
+        'ontology_iri' => 'http://emmo.info/emmo#',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // just a redirect
     'https://www.w3.org/2002/07/owl#' => [
         'abbreviation' => 'owl',
         'key' => 'web_ontology_language',
@@ -220,103 +219,3 @@ $simplifiedOntologyList = [
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
 ];
-
-// load CSV file and build simplified ontology list
-foreach (array_map('str_getcsv', file(__DIR__.'/../ontologies.csv')) as $line => $entry) {
-    if (0 == $line) {
-        continue;
-    }
-
-    // build line with entry ID and label
-    $key = strtolower($entry[0]);
-    $key = str_replace([' ', '.', ':'], '_', $key);
-    $key = str_replace(',', '', $key);
-    $key = str_replace('-', '_', $key);
-
-    // abbreviation
-    $abbreviation = strtolower($entry[2]);
-    $abbreviation = str_replace('-', '', $abbreviation);
-
-    // related RDF file
-    $ontologyIRI = $entry[7];
-    if (false === str_starts_with($entry[7], 'http')) {
-        // if ontology IRI isn't starting with http, therefore its not an URI
-        // in this case use RDF file instead
-        $ontologyIRI = $entry[6];
-    }
-
-    // related RDF file
-    $rdfFile = (string) $entry[8];
-
-    if (0 == strlen($rdfFile)) {
-        // throw new Exception($title.' has no RDF file URL');
-        continue;
-    }
-
-    $simplifiedOntologyList[$ontologyIRI] = [
-        'abbreviation' => $abbreviation,
-        'key' => $key,
-        'rdf_file' => $rdfFile,
-        'ontology_iri' => $ontologyIRI,
-        'ignore_it' => false,
-    ];
-}
-
-// ignore SSL problems in https-based connections
-$context = stream_context_create([
-    'ssl' => [
-      'verify_peer' => false,
-      'verify_peer_name' => false,
-    ]
-]);
-
-$fileContent = '';
-
-foreach ($simplifiedOntologyList as $iri => $entry) {
-    if (true === $entry['ignore_it']) {
-        // ignore this entry (for reasons look above)
-        continue;
-    } elseif (str_contains($entry['rdf_file'], 'Information not available')) {
-        continue;
-    } else {
-        // download file and read content
-        $rdfFileContent = file_get_contents($entry['rdf_file'], false, $context);
-    }
-
-    // assume its RDF/Turtle
-    if (
-        str_contains($entry['rdf_file'], '.n3')
-        || str_contains($entry['rdf_file'], '.ttl')
-    ) {
-        $regex = '/[@prefix]+\s+[a-z]+:\s*<(.*?)>/msi';
-    } else {
-        // XML file
-        $regex = '/xmlns:[a-z]+="(.*?)"/smi';
-    }
-
-    if (0 < preg_match_all($regex, $rdfFileContent, $namespaceIRIs)) {
-        $list = [];
-
-        // go through the list of namespace IRIs
-        foreach ($namespaceIRIs[1] as $iri) {
-            // get related ontology title
-            if (isset($simplifiedOntologyList[$iri])) {
-                // current ontology
-                $from = strtolower($entry['key']);
-                // referenced ontology
-                $to = strtolower($simplifiedOntologyList[$iri]['key']);
-
-                // add line to file content
-                $fileContent .= '['.$from.']->['.$to.']'.PHP_EOL;
-            } else {
-                echo PHP_EOL.'In '. $entry['key'].' found unknown namespace IRI: '.$iri;
-            }
-        }
-    } else {
-        throw new Exception($entry['key'].': No related namespaces found!');
-    }
-}
-
-file_put_contents(__DIR__.'/../yuml-diagram-config.txt', $fileContent);
-
-echo PHP_EOL;

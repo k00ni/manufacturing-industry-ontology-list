@@ -9,3 +9,5 @@
 /paper.out
 /paper.run.xml
 /paper.synctex.gz
+/scripts/composer.lock
+/scripts/vendor

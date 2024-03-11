@@ -1,0 +1,111 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * This file generates config code for graph visualization on yuml.me.
+ */
+
+declare(strict_types=1);
+
+require __DIR__.'/../vendor/autoload.php';
+
+/**
+ * Saves information about ontologies and their interrelations.
+ *
+ * There are some predefined entries which do point to either no valid ontologies or redirect to correct URLs.
+ *
+ * @var array<string,array<mixed>>
+ */
+$simplifiedOntologyList = require __DIR__.'/../src/simplified-ontology-list.php';
+
+// load CSV file and build simplified ontology list
+foreach (array_map('str_getcsv', file(__DIR__.'/../../ontologies.csv')) as $line => $entry) {
+    if (0 == $line) {
+        continue;
+    }
+
+    // build line with entry ID and label
+    $key = strtolower($entry[0]);
+    $key = str_replace([' ', '.', ':'], '_', $key);
+    $key = str_replace(',', '', $key);
+    $key = str_replace('-', '_', $key);
+
+    // abbreviation
+    $abbreviation = strtolower($entry[2]);
+    $abbreviation = str_replace('-', '', $abbreviation);
+
+    // related RDF file
+    $ontologyIRI = $entry[7];
+    if (false === str_starts_with($entry[7], 'http')) {
+        // if ontology IRI isn't starting with http, therefore its not an URI
+        // in this case use RDF file instead
+        $ontologyIRI = $entry[6];
+    }
+
+    // related RDF file
+    $rdfFile = (string) $entry[8];
+
+    if (0 == strlen($rdfFile)) {
+        // throw new Exception($title.' has no RDF file URL');
+        continue;
+    }
+
+    $simplifiedOntologyList[$ontologyIRI] = [
+        'abbreviation' => $abbreviation,
+        'key' => $key,
+        'rdf_file' => $rdfFile,
+        'ontology_iri' => $ontologyIRI,
+        'ignore_it' => false,
+    ];
+}
+
+foreach ($simplifiedOntologyList as $iri => $entry) {
+    $fileContent = '';
+
+    if (true === $entry['ignore_it']) {
+        // ignore this entry (for reasons look above)
+        continue;
+    } elseif (str_contains($entry['rdf_file'], 'Information not available')) {
+        continue;
+    } else {
+        // download file and read content
+        $rdfFileContent = getContentOfRdfFile($entry['rdf_file']);
+    }
+
+    // assume its RDF/Turtle
+    if (
+        str_contains($entry['rdf_file'], '.n3')
+        || str_contains($entry['rdf_file'], '.ttl')
+    ) {
+        $type = 'turtle';
+    } else {
+        // XML file
+        $type = 'xml';
+    }
+
+    // go through the list of namespace IRIs
+    $namespaceIris = getNamespaceUriListUsedInRdfFile($rdfFileContent, $type);
+
+    foreach ($namespaceIris as $iri) {
+        // get related ontology title
+        if (isset($simplifiedOntologyList[$iri])) {
+            // current ontology
+            $from = strtolower($entry['key']);
+            // referenced ontology
+            $to = strtolower($simplifiedOntologyList[$iri]['key']);
+
+            // add line to file content
+            $fileContent .= '['.$from.']->['.$to.']'.PHP_EOL;
+        } else {
+            echo PHP_EOL.'In '. $entry['key'].' found unknown namespace IRI: '.$iri;
+        }
+    }
+
+    if (0 == count($namespaceIris)) {
+        throw new Exception($entry['key'].': No related namespaces found!');
+    }
+}
+
+file_put_contents(__DIR__.'/../../yuml-diagram-config.txt', $fileContent);
+
+echo PHP_EOL;

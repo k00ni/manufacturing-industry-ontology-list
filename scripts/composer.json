@@ -1,0 +1,10 @@
+{
+    "require": {
+        "sweetrdf/easyrdf": "*"
+    },
+    "autoload": {
+        "files": [
+            "src/functions.php"
+        ]
+    }
+}

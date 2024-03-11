@@ -25,7 +25,7 @@ foreach (array_map('str_getcsv', file('ontologies.csv')) as $rawEntry) {
 }
 
 // write aligned data back to ontologies.csv
-$path = __DIR__.'/../ontologies.csv';
+$path = __DIR__.'/../../ontologies.csv';
 $fp = fopen($path, 'w'); // open in write only mode (write at the start of the file)
 foreach ($alignedData as $row) {
     fputcsv($fp, $row);
