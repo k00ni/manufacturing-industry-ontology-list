@@ -15,9 +15,9 @@ return [
         'ontology_iri' => 'https://big-map.github.io/BattINFO/ontology/electrochemistry#',
     ],
     // could not found related ontology for this ontology IRI
-    // BioPortal support contacted about the URL
+    // BioPortal support says: only used for internal references, no actual ontology
     'http://data.bioontology.org/metadata/' => [
-        'abbreviation' => 'obo',
+        'abbreviation' => 'Information not available',
         'key' => 'open_biological_and_biomedical_ontology_foundry',
         'rdf_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
@@ -25,7 +25,7 @@ return [
     ],
     // not a real ontology
     'http://dbpedia.org/resource/' => [
-        'abbreviation' => 'dbpedia_org_resource',
+        'abbreviation' => 'Information not available',
         'key' => 'dbpedia_org_resource',
         'rdf_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
@@ -170,17 +170,25 @@ return [
     ],
     // just a redirect
     'https://w3id.org/emmo#' => [
-        'abbreviation' => 'owl',
+        'abbreviation' => 'emmo',
         'key' => 'elemental_multiperspective_material_ontology',
         'rdf_file' => null,
         'ontology_iri' => 'http://emmo.info/emmo#',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
     'https://w3id.org/emmo/top/annotations#' => [
-        'abbreviation' => 'owl',
+        'abbreviation' => 'Information not available',
         'key' => 'elemental_multiperspective_material_ontology_annotation',
         'rdf_file' => null,
         'ontology_iri' => 'https://w3id.org/emmo/top/annotations#',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // just a redirect
+    'http://www.w3id.org/hsu-aut/css#' => [
+        'abbreviation' => 'css',
+        'key' => 'capability_skill_and_service_ontology',
+        'rdf_file' => null,
+        'ontology_iri' => 'http://www.w3id.org/hsu-aut/css',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
     // points to a valid RDF file (with statements about 1 ontology and 1 property)
@@ -198,6 +206,14 @@ return [
         'key' => 'web_ontology_language',
         'rdf_file' => null,
         'ontology_iri' => 'http://www.w3.org/2002/07/owl#',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // link broken, but it references https://raw.githubusercontent.com/OntoUA/ua-nodeset-core-ont/master/owl/OpcUaNodeSet2.owl
+    'http://www.fortiss.org/kb/opcua/OpcUaNodeSet2.owl#' => [
+        'abbreviation' => 'Information not available',
+        'key' => 'opc_ua_node_set_2',
+        'rdf_file' => null,
+        'ontology_iri' => 'http://www.fortiss.org/kb/opcua/OpcUaNodeSet2.owl#',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
     // just a redirect
@@ -226,7 +242,7 @@ return [
     ],
     // could not found related ontology for this ontology IRI
     'http://www.w3.org/2003/11/swrl#' => [
-        'abbreviation' => 'owl',
+        'abbreviation' => 'swrl',
         'key' => 'semantic_Web_rule_language',
         'rdf_file' => null,
         'ontology_iri' => 'http://www.w3.org/2003/11/swrl#',
