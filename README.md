@@ -42,7 +42,6 @@ Check and if matching, work in the following ontologies:
 * [ ] **Digital Construction Energy Ontology** - https://digitalconstruction.github.io/Energy/v/0.5/
 * [ ] **Digital Construction Entities Ontology** - https://digitalconstruction.github.io/Entities/v/0.5/
 * [ ] **Digital Construction Materials** - https://digitalconstruction.github.io/Materials/v/0.5/
-* [ ] **DIN8580 Ontology-Design-Pattern** - https://github.com/hsu-aut/IndustrialStandard-ODP-DIN8580
 * [ ] **Domain ontology for atomistic and electronic modelling** - https://github.com/emmo-repo/domain-atomistic
 * [ ] **Elementary Multiperspective Material Ontology (EMMO)** - https://github.com/emmo-repo/EMMO
   * [x] EMMO Annotations - http://emmo.info/emmo/top/annotations#
