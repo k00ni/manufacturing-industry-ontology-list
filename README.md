@@ -63,7 +63,6 @@ Check and if matching, work in the following ontologies:
   * https://isa-tools.org/index.html
   * https://data.ontocommons.linkeddata.es/vocabulary/Isa\_tab\_ontology
   * https://github.com/2kunal6/OntologyWebform/tree/master
-* [ ] **ISO 22400-2 Ontology-Design-Pattern** - https://github.com/hsu-aut/IndustrialStandard-ODP-ISO22400-2
 * [ ] **Key Performance Indicator ontology** - https://bimerr.iot.linkeddata.es/def/key-performance-indicator/
 * [ ] **Maintenance Activity Ontology** - https://www.semantic-web-journal.net/system/files/swj3067.pdf, https://github.com/uwasystemhealth/Paper_Archive_Maintenance_Activity
 * [ ] **Manufacturing Failure Prediction Ontology (MFPO)** - https://data.ontocommons.linkeddata.es/vocabulary/ManufacturingFailurePredictionOntology(mfpo), https://www.sciencedirect.com/science/article/pii/S1877050919314024/pdfmd5=221db728bbcefb3d067b0b8cabac8cec\&pid=1-s2.0-S1877050919314024-main.pdf
@@ -96,7 +95,6 @@ maintenance and production management decisions
   * Grund für mögliche Relevanz: Im OEO-Physical Teil geht es u.a. um Kraftwerke, Generatoren etc. welche im Rahmen der Industrie eine wichtige Rolle spielen.
 * [ ] **ORMA+ Ontology** - *"Zero Defect Manufacturing in the Digital Twin Framework"* - https://www.politesi.polimi.it/bitstream/10589/195722/3/2022_10_Ghedini.pdf
   * Prüfe, ob es hierfür öffentlich zugängliche RDF Daten gibt. Im Paper konnte ich auf die schnelle nichts finden, jedoch zeigen sie darin Protégé Screenshots
-* [ ] **PackML StateMachine: Ontology-Design-Pattern** - https://github.com/hsu-aut/IndustrialStandard-ODP-PackML
 * [ ] **Product Lifecycle Management Ontology** - https://rds.posccaesar.org/ontology/plm/, Prüfe, ob hierfür noch passende Dokumentation vorhanden ist. Es scheint auf jeden Fall RDF-Daten vorhanden zu sein
 * [ ] **Production Equipment ontology** - *"Core Ontology for Describing Production Equipment According to Intelligent Production"*: https://www.mdpi.com/2571-5577/5/5/98
   * Prüfe, ob es dafür öffentlich zugängliche RDF Daten gibt
