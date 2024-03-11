@@ -8,6 +8,7 @@
 * [ ] Create at least 1 image which shows ALL ontologies and their relation
 * [ ] Remove obsolete entries from paper.bib
 * [ ] ontologies.csv: add note somewhere about `#.ttl` additions in rdf file column
+* [ ] Align Github links to raw files (https://raw.githubusercontent.com/srfiorini/IEEE1872-owl/master/corax.owl vs. https://github.com/Battery-Value-Chain-Ontology/ontology/raw/master/BVCO.ttl)
 * [ ] Mention Graphviz config + image somewhere in the documentation (and paper)
 * Find further ontology candidates:
   * [ ] Check https://bartoc.org/
@@ -44,6 +45,7 @@ Check and if matching, work in the following ontologies:
 * [ ] **DIN8580 Ontology-Design-Pattern** - https://github.com/hsu-aut/IndustrialStandard-ODP-DIN8580
 * [ ] **Domain ontology for atomistic and electronic modelling** - https://github.com/emmo-repo/domain-atomistic
 * [ ] **Elementary Multiperspective Material Ontology (EMMO)** - https://github.com/emmo-repo/EMMO
+  * [x] EMMO Annotations - http://emmo.info/emmo/top/annotations#
 * [ ] **Energy Efficiency Prediction Semantic Assistant Ontology (EEPSA)** - https://iesnaola.github.io/eepsa/EEPSA/index-en.html, Verwendet Semantic Sensor Network Ontology
 * [ ] **European Materials \& Modelling Ontology (EMMO)** - https://github.com/emmo-repo/ + https://emmc.eu/news/emmo-1-0-0-alpha-release/
 * [ ] **Extruder Ontology (ExtruOnt)** - https://data.ontocommons.linkeddata.es/vocabulary/Extruont, zugehöriges Paper: https://www.semantic-web-journal.net/system/files/swj2317.pdf

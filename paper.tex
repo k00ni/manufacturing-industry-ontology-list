@@ -278,9 +278,14 @@ Zur Internetrecherche wurden die folgenden Webseiten genutzt:
 
 TODO: Hin- und Her-Bouncing erklären? Ausgangspunkt > schauen was es an Ontologien gibt > Kriterien verfeinern > ...
 
-\textbf{Auf Hilfsskripte eingehen: cleaning CSV file; finde referenzierte Namespaces/Ontologien; liste noch nicht erfasste, aber referenzierte Ontologien aus ontologies.csv auf}
+\textbf{TODO:}Auf Hilfsskripte eingehen: cleaning CSV file; finde referenzierte Namespaces/Ontologien; liste noch nicht erfasste, aber referenzierte Ontologien aus ontologies.csv auf
+
+\textbf{TODO} Manche Einträge in ontologies.csv wurden inhaltlich angepasst, weil sonst missverständlich, z.B. http://emmo.info/emmo/top/annotations# hat als Titel "Annotations", bezieht sich aber auf EMMO Ontologie Annotations
+- Weiterhin wurde versucht, so wenig wie möglich Abkürzungen zu verwenden
 
 Weiterhin wurden die Import-Statements in den RDF-Daten der Ontologien manuell geprüft und etwaige Verlinkungen in die Recherche aufgenommen.
+- Ontologien wie EMMO (http://emmo.info/) haben eine hohe Modularisierung, daher müssen die owl:import Statements genutzt werden, um an alle referenzierten OWL-Daten zu kommen. Die Top- und Mid-Level-Ontologien sind nur "leere" Hüllen.
+
 
 \subsection{Selektion einer Ontologie}
 
