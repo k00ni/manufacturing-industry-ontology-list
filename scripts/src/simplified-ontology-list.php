@@ -204,15 +204,6 @@ return [
         'ontology_iri' => 'http://purl.org/spar/cito/cito:',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
-    // http://www.w3id.org/hsu-aut/cask imports this IRI instead of using the appropriate ontology IRI
-    'https://raw.githubusercontent.com/hsu-aut/IndustrialStandard-ODP-DINEN61360/v1.4.2/DINEN61360.owl' => [
-        'abbreviation' => 'Information not available',
-        'key' => '',
-        'rdfxml_file' => null,
-        'turtle_file' => null,
-        'ontology_iri' => 'https://raw.githubusercontent.com/hsu-aut/IndustrialStandard-ODP-DINEN61360/v1.4.2/DINEN61360.owl',
-        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
-    ],
     // related Github repository redirects to https://github.com/hsu-aut/IndustrialStandard-ODP-PackML
     // PackML is known
     'https://raw.githubusercontent.com/hsu-aut/IndustrialStandard-ODP-ISA88/v2.0.0/ISA88.owl' => [
@@ -220,16 +211,7 @@ return [
         'key' => '',
         'rdfxml_file' => null,
         'turtle_file' => null,
-        'ontology_iri' => 'https://raw.githubusercontent.com/hsu-aut/IndustrialStandard-ODP-ISA88/v2.0.0/ISA88.owl',
-        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
-    ],
-    // points to certain version file of known "VDI 2206 Ontology-Design-Pattern"
-    'https://raw.githubusercontent.com/hsu-aut/IndustrialStandard-ODP-VDI2206/v1.4.2/VDI2206.owl' => [
-        'abbreviation' => 'Information not available',
-        'key' => '',
-        'rdfxml_file' => null,
-        'turtle_file' => null,
-        'ontology_iri' => 'https://raw.githubusercontent.com/hsu-aut/IndustrialStandard-ODP-VDI2206/v1.4.2/VDI2206.owl',
+        'ontology_iri' => 'http://www.hsu-ifa.de/ontologies/ISA-TR88',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
     // Sometimes authors use https://schema.org/ instead of the original URL http://schema.org/
@@ -307,14 +289,25 @@ return [
         'ontology_iri' => 'http://www.fortiss.org/kb/opcua/OpcUaNodeSet2.owl#',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
-    // older version of http://www.w3id.org/hsu-aut/DINEN61360
-    // source https://raw.githubusercontent.com/hsu-aut/IndustrialStandard-ODP-DINEN61360/master/DINEN61360.owl
+    // points to an outdated version of the ontology (1.4.2)
+    // 2.0.0 is the latest, https://github.com/hsu-aut/IndustrialStandard-ODP-DINEN61360/blob/master/DINEN61360.owl
+    // 2.0.0 also uses a different ontology IRI
     'http://www.hsu-ifa.de/ontologies/DINEN61360' => [
         'abbreviation' => 'Information not available',
         'key' => '',
         'rdfxml_file' => null,
         'turtle_file' => null,
         'ontology_iri' => 'http://www.hsu-ifa.de/ontologies/DINEN61360',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // related Github repository redirects to https://github.com/hsu-aut/IndustrialStandard-ODP-PackML
+    // PackML is known
+    'http://www.hsu-ifa.de/ontologies/ISA-TR88' => [
+        'abbreviation' => 'Information not available',
+        'key' => '',
+        'rdfxml_file' => null,
+        'turtle_file' => null,
+        'ontology_iri' => 'http://www.hsu-ifa.de/ontologies/ISA-TR88',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
     // could not find related ontology design pattern

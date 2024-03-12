@@ -16,7 +16,11 @@ require __DIR__.'/../src/bootstrap.php';
 
 $unknownOntologies = [];
 
+echo PHP_EOL;
+
 foreach ($simplifiedOntologyList as $iri => $entry) {
+    echo '.';
+
     if (true === $entry['ignore_it']) {
         // ignore this entry (for reasons look into scripts/src/simplified-ontology-list)
         continue;
@@ -73,38 +77,59 @@ foreach ($simplifiedOntologyList as $iri => $entry) {
         getOwlImportIris($store)
     );
 
-    foreach ($iris as $unknownOntologyUri) {
-        // get related ontology title
-        if (isOntologyIriAlreadyKnown($unknownOntologyUri) || isset($unknownOntologies[$unknownOntologyUri])) {
-            // is known
-        } else {
-            $unknownOntologies[$unknownOntologyUri] = $unknownOntologyUri;
+    foreach ($iris as $referencedOntologyFileUrl) {
+        echo ',';
 
-            $data = getContentOfRdfFile($unknownOntologyUri);
-            $format = guessFormat($data);
-            if (null == $format) {
-                // echo PHP_EOL.$ontologyIri.' its neither RDF/XML nor Turtle > IGNORE'.PHP_EOL;
-                continue;
+        $data = getContentOfRdfFile($referencedOntologyFileUrl);
+        $format = guessFormat($data);
+        if (null == $format) {
+            // echo PHP_EOL.$ontologyIri.' its neither RDF/XML nor Turtle > IGNORE'.PHP_EOL;
+            continue;
+        }
+
+        // parse RDF data to get ontology IRI
+        $iterator = Util::parse($data, $dataFactory, $format);
+        $i = 0;
+        $relevantQuads = [];
+        foreach ($iterator as $item) {
+            $relevantQuads[] = $item;
+            if ($i++ > 2000) {
+                // only take a limit amount to avoid the script run too long
+                break;
             }
+        }
 
-            echo PHP_EOL;
-            echo '#############################################################################################';
-            echo PHP_EOL.'UNKNOWN: '.$unknownOntologyUri.PHP_EOL;
-            echo 'used in: '.$iri.PHP_EOL;
-            echo '#############################################################################################';
-            echo PHP_EOL;
+        // read file content into in-memory SPARQL store
+        $store = InMemoryStoreSqlite::createInstance();
+        $store->addQuads($relevantQuads);
 
-            $iterator = Util::parse($data, $dataFactory, $format);
-            // read file content into in-memory SPARQL store
-            $store = InMemoryStoreSqlite::createInstance();
-            $store->addQuads($iterator);
+        $result = $store->query('SELECT ?iri WHERE {?iri a owl:Ontology.}');
 
-            echo PHP_EOL;
-            echo getCSVLineForOntology($unknownOntologyUri, $store, $format);
-            echo PHP_EOL;
-            echo PHP_EOL;
+        if (1 == count($result['result']['rows'])) {
+            $ontologyIRI = $result['result']['rows'][0]['iri'];
 
-            return 1;
+            // get related ontology title
+            if (isOntologyIriAlreadyKnown($ontologyIRI) || isset($unknownOntologies[$ontologyIRI])) {
+                // is known
+            } else {
+                $unknownOntologies[$ontologyIRI] = $ontologyIRI;
+
+                echo PHP_EOL;
+                echo '#############################################################################################';
+                echo PHP_EOL.'UNKNOWN: '.$ontologyIRI.PHP_EOL;
+                echo 'used in: '.$iri.PHP_EOL;
+                echo '#############################################################################################';
+                echo PHP_EOL;
+
+                echo PHP_EOL;
+                echo getCSVLineForOntology($referencedOntologyFileUrl, $store, $format);
+                echo PHP_EOL;
+                echo PHP_EOL;
+
+                return 1;
+            }
+        } else {
+            continue;
         }
     }
 
