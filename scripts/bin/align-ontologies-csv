@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 $alignedData = [];
 
-foreach (array_map('str_getcsv', file('ontologies.csv')) as $rawEntry) {
+foreach (array_map('str_getcsv', file(__DIR__.'/../../ontologies.csv')) as $rawEntry) {
     $alignedEntry = [];
     foreach ($rawEntry as $key => $value) {
         // replace multiple whitespaces with 1 whitespace

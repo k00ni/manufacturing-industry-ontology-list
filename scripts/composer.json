@@ -1,6 +1,10 @@
 {
     "require": {
-        "sweetrdf/easyrdf": "*"
+        "php-curl-class/php-curl-class": "^9.19",
+        "sweetrdf/in-memory-store-sqlite": "^1.1.1",
+        "sweetrdf/quick-rdf": "^2.0",
+        "sweetrdf/quick-rdf-io": "^1.0",
+        "symfony/cache": "^7.0"
     },
     "autoload": {
         "files": [

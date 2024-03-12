@@ -1,0 +1,122 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * This file generates config code for graph visualization on yuml.me.
+ */
+
+declare(strict_types=1);
+
+use quickRdf\DataFactory;
+use quickRdfIo\RdfIoException;
+use quickRdfIo\Util;
+use sweetrdf\InMemoryStoreSqlite\Store\InMemoryStoreSqlite;
+
+require __DIR__.'/../src/bootstrap.php';
+
+$unknownOntologies = [];
+
+foreach ($simplifiedOntologyList as $iri => $entry) {
+    if (true === $entry['ignore_it']) {
+        // ignore this entry (for reasons look into scripts/src/simplified-ontology-list)
+        continue;
+    } elseif (0 == strlen($entry['rdfxml_file']) && 0 == strlen($entry['turtle_file'])) {
+        continue;
+    }
+
+    // download file and read content
+    if (0 < strlen($entry['rdfxml_file'])) {
+        $format = 'rdf';
+        $rdfFileContent = getContentOfRdfFile($entry['rdfxml_file']);
+    } else {
+        $format = 'turtle';
+        $rdfFileContent = getContentOfRdfFile($entry['turtle_file']);
+    }
+
+    if (
+        0 === strlen($rdfFileContent)
+        || '404: Not Found' == $rdfFileContent
+        || str_contains($rdfFileContent, '<html ')
+    ) {
+        echo PHP_EOL.$iri.' > no data or 404 > IGNORED';
+        continue;
+    } elseif (null === guessFormat($rdfFileContent)) {
+        echo PHP_EOL.$iri.' > it neither RDF/XML nor Turtle data > IGNORED';
+        continue;
+    }
+
+    $dataFactory = new DataFactory();
+
+    $relevantQuads = [];
+    try {
+        // parse a file
+        $iterator = Util::parse($rdfFileContent, $dataFactory, $format);
+        $i = 0;
+        foreach ($iterator as $item) {
+            $relevantQuads[] = $item;
+            if ($i++ > 2000) {
+                // only take a limit amount to avoid the script run too long
+                break;
+            }
+        }
+    } catch (RdfIoException $e) {
+        echo PHP_EOL.' > Exception while parsing: '.$e->getMessage();
+        continue;
+    }
+
+    $store = InMemoryStoreSqlite::createInstance();
+    $store->addQuads($relevantQuads);
+
+    // go through the list of namespace IRIs and owl:imports
+    $iris = array_merge(
+        getNamespaceUriListUsedInRdfFile($rdfFileContent, $format),
+        getOwlImportIris($store)
+    );
+
+    foreach ($iris as $unknownOntologyUri) {
+        // get related ontology title
+        if (isOntologyIriAlreadyKnown($unknownOntologyUri) || isset($unknownOntologies[$unknownOntologyUri])) {
+            // is known
+        } else {
+            $unknownOntologies[$unknownOntologyUri] = $unknownOntologyUri;
+
+            $data = getContentOfRdfFile($unknownOntologyUri);
+            $format = guessFormat($data);
+            if (null == $format) {
+                // echo PHP_EOL.$ontologyIri.' its neither RDF/XML nor Turtle > IGNORE'.PHP_EOL;
+                continue;
+            }
+
+            echo PHP_EOL;
+            echo '#############################################################################################';
+            echo PHP_EOL.'UNKNOWN: '.$unknownOntologyUri.PHP_EOL;
+            echo 'used in: '.$iri.PHP_EOL;
+            echo '#############################################################################################';
+            echo PHP_EOL;
+
+            $iterator = Util::parse($data, $dataFactory, $format);
+            // read file content into in-memory SPARQL store
+            $store = InMemoryStoreSqlite::createInstance();
+            $store->addQuads($iterator);
+
+            echo PHP_EOL;
+            echo getCSVLineForOntology($unknownOntologyUri, $store, $format);
+            echo PHP_EOL;
+            echo PHP_EOL;
+
+            return 1;
+        }
+    }
+
+    if (0 == count($iris)) {
+        throw new Exception($entry['key'].': No related namespaces and owl:imports found!');
+    }
+}
+
+echo PHP_EOL;
+
+if (0 < count($unknownOntologies)) {
+    return 1;
+} else {
+    return 0;
+}

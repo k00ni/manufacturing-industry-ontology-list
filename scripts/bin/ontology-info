@@ -3,14 +3,15 @@
 
 declare(strict_types=1);
 
-use EasyRdf\Graph;
-use EasyRdf\Resource;
+use quickRdf\DataFactory;
+use quickRdfIo\Util;
+use sweetrdf\InMemoryStoreSqlite\Store\InMemoryStoreSqlite;
+
+require __DIR__.'/../src/bootstrap.php';
 
 /**
  * This file extracts all available information about an ontology from a given file/URL.
  */
-
-require __DIR__.'/../vendor/autoload.php';
 
 // ontology URI or RDF file URL
 $ontologyURIOrRdfFileURL = (string) ($argv[1] ?? '');
@@ -20,96 +21,74 @@ if (false === str_starts_with($ontologyURIOrRdfFileURL, 'http')) {
 }
 
 // RDF serialization
-$type = (string) ($argv[2] ?? 'turtle');
+$format = (string) ($argv[2] ?? 'turtle');
 
-// ignore SSL problems in https-based connections
-$context = stream_context_create([
-    'ssl' => [
-      'verify_peer' => false,
-      'verify_peer_name' => false,
-    ]
-]);
+// load RDF file content (its cached)
+$data = getContentOfRdfFile($ontologyURIOrRdfFileURL);
+if (str_contains($data, '404: Not Found')) {
+    echo PHP_EOL;
+    echo 'URL returned 404 error. Stopping here';
+    echo PHP_EOL;
+    return;
+} elseif (null === guessFormat($data)) {
+    echo PHP_EOL.'It is neither RDF/XML nor Turtle data > IGNORED';
+    echo PHP_EOL;
+    return;
+}
 
-// download file and read content
-$ontology = Graph::newAndLoad($ontologyURIOrRdfFileURL, $type);
+$dataFactory = new DataFactory();
 
-$ontologies = $ontology->allOfType('owl:Ontology');
-if (1 == count($ontologies)) {
-    /** @var \EasyRdf\Resource */
-    $ontologyResource = $ontologies[0];
+// generate a Graph instance, which helps us interacting with RDF data more easily
+$iterator = Util::parse($data, $dataFactory, $format);
 
-    // contains data for CSV line in the end
-    $dataArray = [];
+// read file content into in-memory SPARQL store
+$store = InMemoryStoreSqlite::createInstance();
+$store->addQuads($iterator);
 
-    // title (e.g. dcterms:title)
-    if ($ontologyResource->get('dcterms:title') instanceof Resource) {
-        $dataArray[] = $ontologyResource->get('dcterms:title')->getValue();
-    } else if ($ontologyResource->get('rdfs:label') instanceof Resource) {
-        $dataArray[] = $ontologyResource->get('rdfs:label')->getValue();
-    }
+// generate CSV file line for given ontology
+echo PHP_EOL;
+if (isOntologyIriAlreadyKnown($ontologyURIOrRdfFileURL)) {
+    echo 'Ontology is already known ('.$ontologyURIOrRdfFileURL.')';
+} else {
+    echo getCSVLineForOntology($ontologyURIOrRdfFileURL, $store, $format);
+}
 
-    // is industry related
-    $dataArray[] = 'TODO';
+// if there are owl:imports being used
+$iris = array_merge(
+    getNamespaceUriListUsedInRdfFile($data, $format),
+    getOwlImportIris($store)
+);
 
-    // abbreviation
-    $dataArray[] = 'Information not available';
-
-    // abstract (e.g. dcterms:abstract), but only take first sentence
-    $abstract = null;
-    if ($ontologyResource->get('dcterms:abstract') instanceof Resource) {
-        $abstract = $ontologyResource->get('dcterms:abstract')->getValue();
-    } elseif ($ontologyResource->get('dc:description') instanceof Resource) {
-        $abstract = $ontologyResource->get('dc:description')->getValue();
-    }
-
-    if (null != $abstract) {
-        $abstract = substr($abstract, 0, strpos($abstract, '.')+1);
-        $abstract = preg_replace('/\n|\n\r/smi', '', $abstract);
-        $abstract = trim($abstract);
-    }
-
-    $dataArray[] = $abstract;
-
-    // latest version
-    $version = $ontologyResource->get('owl:versionInfo')->getValue();
-    $dataArray[] = trim($version);
-
-    // latest change
-    $dataArray[] = 'TODO';
-
-    // project page
-    $dataArray[] = 'TODO';
-
-    // ontology IRI
-    $dataArray[] = $ontologyResource->getUri();
-
-    // rdf file
-    $dataArray[] = $ontologyURIOrRdfFileURL;
-
-    // dcterms:creator
-    $creators = [];
-    foreach ($ontologyResource->all('dcterms:creator') as $creator) {
-        $creators[] = trim($creator->getValue());
-    }
-    $dataArray[] = implode(',', $creators);
-
-    // license
-    $license = getLicenseShortcut($ontologyResource->get('dcterms:license')->getValue());
-    $dataArray[] = $license;
-
-    echo PHP_EOL.'"'.implode('","', $dataArray).'"'.PHP_EOL;
-
-    // owl:imports
-
+if (0 < count($iris)) {
+    echo PHP_EOL;
+    echo PHP_EOL;
+    echo 'CSV file lines for UNKNOWN ontologies referend in owl:import statements:';
     echo PHP_EOL;
 
-} elseif (1 < count($ontologies)) {
-    echo PHP_EOL.'More than 1 ontology found:';
-    foreach ($ontologies as $entry) {
-        echo PHP_EOL.'- '. $entry->getUri();
+    foreach ($iris as $ontologyIri) {
+        // if ontology IRI is unknown
+        if (false === isOntologyIriAlreadyKnown($ontologyIri)) {
+            $data = getContentOfRdfFile($ontologyIri);
+            $format = guessFormat($data);
+            if (null == $format) {
+                echo PHP_EOL;
+                echo $ontologyIri.' its neither RDF/XML nor Turtle > IGNORE';
+                echo PHP_EOL;
+                continue;
+            }
+
+            $iterator = Util::parse($data, $dataFactory, $format);
+            // read file content into in-memory SPARQL store
+            $store = InMemoryStoreSqlite::createInstance();
+            $store->addQuads($iterator);
+
+            echo PHP_EOL;
+            echo getCSVLineForOntology($ontologyIri, $store, $format);
+            echo PHP_EOL;
+        }
     }
 } else {
-    echo PHP_EOL.'No ontology found using owl:Ontology as rdf:type';
+    echo PHP_EOL.'No owl:imports on ontology found.';
 }
 
 echo PHP_EOL;

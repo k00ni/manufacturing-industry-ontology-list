@@ -1,7 +1,9 @@
 <?php
 
 /**
- * List either contains URIs of non-existing ontologies or redirects.
+ * List of URIs of non-existing ontologies and redirects.
+ * Some ontologies use uncommon namespace URIs which lead to broken links.
+ * These are also part of the list to avoid false positive errors.
  *
  * @var array<string,array<mixed>>
  */
@@ -10,7 +12,8 @@ return [
     'http://bdi.si.ehu.es/bdi/ontologies/ExtruOnt/components4ExtruOnt#' => [
         'abbreviation' => 'Information not available',
         'key' => 'components4ExtruOnt',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
         'ontology_iri' => 'http://bdi.si.ehu.es/bdi/ontologies/ExtruOnt/components4ExtruOnt#',
     ],
@@ -18,7 +21,8 @@ return [
     'https://big-map.github.io/BattINFO/ontology/electrochemistry#' => [
         'abbreviation' => 'Information not available',
         'key' => 'battinfo_electrochemistry',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
         'ontology_iri' => 'https://big-map.github.io/BattINFO/ontology/electrochemistry#',
     ],
@@ -27,7 +31,8 @@ return [
     'http://data.bioontology.org/metadata/' => [
         'abbreviation' => 'Information not available',
         'key' => 'open_biological_and_biomedical_ontology_foundry',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
         'ontology_iri' => 'http://purl.obolibrary.org/obo/',
     ],
@@ -35,23 +40,35 @@ return [
     'http://dbpedia.org/resource/' => [
         'abbreviation' => 'Information not available',
         'key' => 'dbpedia_org_resource',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
         'ontology_iri' => 'http://dbpedia.org/resource/',
     ],
-    // failing redirect reported: https://github.com/emmo-repo/EMMO/issues/285
-    'http://emmo.info/emmo/middle/isq#' => [
+    // just a redirect
+    'http://emmo.info/emmo/1.0.0-beta4' => [
         'abbreviation' => 'Information not available',
-        'key' => 'international_system_of_quantities',
-        'rdf_file' => null,
+        'key' => '',
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
-        'ontology_iri' => 'http://emmo.info/emmo/middle/isq#',
+        'ontology_iri' => 'http://emmo.info/emmo/1.0.0-beta4',
+    ],
+    // just a redirect
+    'http://emmo.info/emmo/1.0.0-beta/middle' => [
+        'abbreviation' => 'Information not available',
+        'key' => '',
+        'rdfxml_file' => null,
+        'turtle_file' => null,
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+        'ontology_iri' => 'http://emmo.info/emmo/1.0.0-beta/middle',
     ],
     // not a real ontology
     'http://en.wikipedia.org/wiki/' => [
         'abbreviation' => 'wiki',
         'key' => 'en_wikipedia_org_wiki',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
         'ontology_iri' => 'http://en.wikipedia.org/wiki/',
     ],
@@ -59,7 +76,8 @@ return [
     'https://gpo.ontology.link/' => [
         'abbreviation' => 'Information not available',
         'key' => 'gpo_ontology_link',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
         'ontology_iri' => 'https://gpo.ontology.link/',
     ],
@@ -67,7 +85,8 @@ return [
     'http://infoneer.txstate.edu/ontology/' => [
         'abbreviation' => 'Information not available',
         'key' => 'infoneer_txstate_edu_ontology',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
         'ontology_iri' => 'http://infoneer.txstate.edu/ontology/',
     ],
@@ -75,7 +94,8 @@ return [
     'http://jena.hpl.hp.com/ARQ/function#' => [
         'abbreviation' => 'Information not available',
         'key' => 'jena_hpl_hp_com_arq_function',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
         'ontology_iri' => 'http://jena.hpl.hp.com/ARQ/function#',
     ],
@@ -84,7 +104,8 @@ return [
     'http://open.vocab.org/terms/' => [
         'abbreviation' => 'Information not available',
         'key' => 'open_vocab_org_terms',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
         'ontology_iri' => 'http://open.vocab.org/terms/',
     ],
@@ -92,7 +113,8 @@ return [
     'http://purl.oclc.org/NET/ssnx/ssn#' => [
         'abbreviation' => 'Information not available',
         'key' => 'purl_oclc_org_ssnx_ssn',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
         'ontology_iri' => 'http://purl.oclc.org/NET/ssnx/ssn#',
     ],
@@ -104,7 +126,8 @@ return [
     'http://purl.obolibrary.org/obo/' => [
         'abbreviation' => 'obo',
         'key' => 'open_biological_and_biomedical_ontology_foundry',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
         'ontology_iri' => 'http://purl.obolibrary.org/obo/',
     ],
@@ -112,7 +135,8 @@ return [
     'http://purl.org/dc/elements/1.1#' => [
         'abbreviation' => 'Information not available',
         'key' => 'purl_org_dc_elements_1_1',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
         'ontology_iri' => 'http://purl.org/dc/elements/1.1#',
     ],
@@ -122,14 +146,16 @@ return [
     'http://purl.org/dc/dcmitype/' => [
         'abbreviation' => 'dcmitype',
         'key' => 'dcmi_type',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'http://purl.org/dc/dcmitype/',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
     'http://purl.org/dc/dcam/' => [
         'abbreviation' => 'dcam',
         'key' => 'dcam',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'http://purl.org/dc/dcam/',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
@@ -137,7 +163,8 @@ return [
     'http://purl.org/goodrelations/v1#' => [
         'abbreviation' => 'GR',
         'key' => 'good_relations_ontology',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'http://purl.org/goodrelations/v1#',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
@@ -145,7 +172,8 @@ return [
     'http://purl.org/net/vocab/2004/03/label#' => [
         'abbreviation' => 'Information not available',
         'key' => 'purl_net_vocab_2004_03_label',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'http://purl.org/net/vocab/2004/03/label#',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
@@ -153,7 +181,8 @@ return [
     'http://purl.org/obo/owl/' => [
         'abbreviation' => 'Information not available',
         'key' => 'obo_owl',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'http://purl.org/obo/owl/',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
@@ -161,7 +190,8 @@ return [
     'http://purl.org/obo/oban/' => [
         'abbreviation' => 'Information not available',
         'key' => 'obo_oban',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'http://purl.org/obo/oban/',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
@@ -169,8 +199,37 @@ return [
     'http://purl.org/spar/cito/cito:' => [
         'abbreviation' => 'Information not available',
         'key' => 'purl_spar_cito_dd',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'http://purl.org/spar/cito/cito:',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // http://www.w3id.org/hsu-aut/cask imports this IRI instead of using the appropriate ontology IRI
+    'https://raw.githubusercontent.com/hsu-aut/IndustrialStandard-ODP-DINEN61360/v1.4.2/DINEN61360.owl' => [
+        'abbreviation' => 'Information not available',
+        'key' => '',
+        'rdfxml_file' => null,
+        'turtle_file' => null,
+        'ontology_iri' => 'https://raw.githubusercontent.com/hsu-aut/IndustrialStandard-ODP-DINEN61360/v1.4.2/DINEN61360.owl',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // related Github repository redirects to https://github.com/hsu-aut/IndustrialStandard-ODP-PackML
+    // PackML is known
+    'https://raw.githubusercontent.com/hsu-aut/IndustrialStandard-ODP-ISA88/v2.0.0/ISA88.owl' => [
+        'abbreviation' => 'Information not available',
+        'key' => '',
+        'rdfxml_file' => null,
+        'turtle_file' => null,
+        'ontology_iri' => 'https://raw.githubusercontent.com/hsu-aut/IndustrialStandard-ODP-ISA88/v2.0.0/ISA88.owl',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // points to certain version file of known "VDI 2206 Ontology-Design-Pattern"
+    'https://raw.githubusercontent.com/hsu-aut/IndustrialStandard-ODP-VDI2206/v1.4.2/VDI2206.owl' => [
+        'abbreviation' => 'Information not available',
+        'key' => '',
+        'rdfxml_file' => null,
+        'turtle_file' => null,
+        'ontology_iri' => 'https://raw.githubusercontent.com/hsu-aut/IndustrialStandard-ODP-VDI2206/v1.4.2/VDI2206.owl',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
     // Sometimes authors use https://schema.org/ instead of the original URL http://schema.org/
@@ -178,7 +237,8 @@ return [
     'https://schema.org/' => [
         'abbreviation' => 'sdo',
         'key' => 'schema_org',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'https://schema.org/',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
@@ -186,7 +246,8 @@ return [
     'http://spinrdf.org/arg#' => [
         'abbreviation' => 'Information not available',
         'key' => 'spinrdf_org_arg',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'http://spinrdf.org/arg#',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
@@ -194,14 +255,16 @@ return [
     'https://w3id.org/emmo#' => [
         'abbreviation' => 'emmo',
         'key' => 'elemental_multiperspective_material_ontology',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'http://emmo.info/emmo#',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
     'https://w3id.org/emmo/top/annotations#' => [
         'abbreviation' => 'Information not available',
         'key' => 'elemental_multiperspective_material_ontology_annotation',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'https://w3id.org/emmo/top/annotations#',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
@@ -210,7 +273,8 @@ return [
     'https://w3id.org/obda/vocabulary#' => [
         'abbreviation' => 'Information not available',
         'key' => 'ontology_based_data_access',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'https://w3id.org/obda/vocabulary#',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
@@ -219,7 +283,8 @@ return [
     'https://w3id.org/requirement-ontology/rdl/' => [
         'abbreviation' => 'Information not available',
         'key' => 'w3id_requirement_ontoloy',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'https://w3id.org/requirement-ontology/rdl/',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
@@ -228,7 +293,8 @@ return [
     'https://w3id.org/spar/cito' => [
         'abbreviation' => 'cito',
         'key' => 'w3id_cito',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'https://w3id.org/spar/cito',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
@@ -236,15 +302,27 @@ return [
     'http://www.fortiss.org/kb/opcua/OpcUaNodeSet2.owl#' => [
         'abbreviation' => 'Information not available',
         'key' => 'opc_ua_node_set_2',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'http://www.fortiss.org/kb/opcua/OpcUaNodeSet2.owl#',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // older version of http://www.w3id.org/hsu-aut/DINEN61360
+    // source https://raw.githubusercontent.com/hsu-aut/IndustrialStandard-ODP-DINEN61360/master/DINEN61360.owl
+    'http://www.hsu-ifa.de/ontologies/DINEN61360' => [
+        'abbreviation' => 'Information not available',
+        'key' => '',
+        'rdfxml_file' => null,
+        'turtle_file' => null,
+        'ontology_iri' => 'http://www.hsu-ifa.de/ontologies/DINEN61360',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
     // could not find related ontology design pattern
     'http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#' => [
         'abbreviation' => 'Information not available',
         'key' => 'odp_cpannotationschema',
-        'rdf_file' => null,
+        'rdfxml_file' => 'http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl',
+        'turtle_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
         'ontology_iri' => 'http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#',
     ],
@@ -252,7 +330,8 @@ return [
     'http://www.ontologydesignpatterns.org/cp/owl/situation.owl#' => [
         'abbreviation' => 'Information not available',
         'key' => 'odp_situation',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
         'ontology_iri' => 'http://www.ontologydesignpatterns.org/cp/owl/situation.owl#',
     ],
@@ -260,7 +339,8 @@ return [
     'http://www.ontologyrepository.com/CommonCoreOntologies/' => [
         'abbreviation' => 'Information not available',
         'key' => 'ontology_repository_common_core_ontologies',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
         'ontology_iri' => 'http://www.ontologyrepository.com/CommonCoreOntologies/',
     ],
@@ -270,7 +350,8 @@ return [
     'http://www.owl-ontologies.com/2005/08/07/xsp.owl#' => [
         'abbreviation' => 'Information not available',
         'key' => 'owl_ontologies_com_xsp_owl',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
         'ontology_iri' => 'http://www.owl-ontologies.com/2005/08/07/xsp.owl#',
     ],
@@ -278,7 +359,8 @@ return [
     'http://semanticscience.org/resource/' => [
         'abbreviation' => 'Information not available',
         'key' => 'semanticscience_resource',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'http://semanticscience.org/resource/',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
@@ -286,7 +368,8 @@ return [
     'https://www.w3.org/2002/07/owl#' => [
         'abbreviation' => 'owl',
         'key' => 'web_ontology_language',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'http://www.w3.org/2002/07/owl#',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
@@ -294,7 +377,8 @@ return [
     'https://www.w3.org/1999/02/22-rdf-syntax-ns#' => [
         'abbreviation' => 'rdf',
         'key' => 'resource_description_framework',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
@@ -302,7 +386,8 @@ return [
     'https://www.w3.org/2000/01/rdf-schema#' => [
         'abbreviation' => 'rdfs',
         'key' => 'resource_description_framework_schema_vocabulary',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'http://www.w3.org/2000/01/rdf-schema#',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
@@ -310,15 +395,26 @@ return [
     'https://www.w3.org/2001/XMLSchema#' => [
         'abbreviation' => 'xsd',
         'key' => 'extensible_markup_language_schema',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'http://www.w3.org/2001/XMLSchema#',
+        'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
+    ],
+    // just a redirect
+    'http://www.w3.org/2002/07/owl#' => [
+        'abbreviation' => 'owl',
+        'key' => 'owl',
+        'rdfxml_file' => null,
+        'turtle_file' => 'http://www.w3.org/2002/07/owl#',
+        'ontology_iri' => 'http://www.w3.org/2002/07/owl#',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
     // could not found related ontology for this ontology IRI
     'http://www.w3.org/2003/11/swrl#' => [
         'abbreviation' => 'swrl',
         'key' => 'semantic_Web_rule_language',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'http://www.w3.org/2003/11/swrl#',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
@@ -326,7 +422,8 @@ return [
     'http://www.w3.org/2003/11/swrlb#' => [
         'abbreviation' => 'Information not available',
         'key' => 'swrl_b',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'http://www.w3.org/2003/11/swrlb#',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
@@ -335,7 +432,8 @@ return [
     'http://www.w3.org/2003/g/data-view#' => [
         'abbreviation' => 'Information not available',
         'key' => 'grddl_data_views',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'http://www.w3.org/2003/g/data-view#',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
@@ -344,7 +442,8 @@ return [
     'http://www.w3.org/2005/xpath-functions#' => [
         'abbreviation' => 'fn',
         'key' => 'xpath_functions',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'http://www.w3.org/2005/xpath-functions#',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
@@ -352,7 +451,8 @@ return [
     'http://www.w3.org/ns/sosa#' => [
         'abbreviation' => 'sosa',
         'key' => 'w3c_sosa',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'http://www.w3.org/ns/sosa#',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
@@ -360,7 +460,8 @@ return [
     'http://www.w3id.org/hsu-aut/css#' => [
         'abbreviation' => 'css',
         'key' => 'capability_skill_and_service_ontology',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'http://www.w3id.org/hsu-aut/css',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],
@@ -369,7 +470,8 @@ return [
     'http://www.wurvoc.org/vocabularies/WV/' => [
         'abbreviation' => 'Information not available',
         'key' => 'wurvoc_mv',
-        'rdf_file' => null,
+        'rdfxml_file' => null,
+        'turtle_file' => null,
         'ontology_iri' => 'http://www.wurvoc.org/vocabularies/WV',
         'ignore_it' => true, // if true, it will be ignored when loading RDF file later on
     ],

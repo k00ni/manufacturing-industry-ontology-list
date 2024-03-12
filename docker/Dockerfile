@@ -1,7 +1,7 @@
 FROM php:8.3-cli
 
 RUN apt-get update && \
-    apt-get install -y git libicu-dev libzip-dev make nano net-tools wget zip zlib1g-dev
+    apt-get install -y git libicu-dev libzip-dev make nano net-tools raptor2-utils wget zip zlib1g-dev
 
 RUN docker-php-ext-install intl zip && docker-php-ext-enable intl zip
 
