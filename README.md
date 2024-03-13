@@ -5,6 +5,9 @@
 * [x] Check if there is still a need for column "ontology type" in CSV
 * [ ] Remove KIF related content, because its more clear when there is only RDF (e.g. ontology relations)
 * [ ] Align all licenses (like CC-BY 4.0)
+* Validate ontologies.csv
+  * [ ] by loading each referenced RDF file and try to find ontology IRI
+  * [ ] no TODO in any column
 * [ ] Create at least 1 image which shows ALL ontologies and their relation
 * [ ] Remove obsolete entries from paper.bib
 * [ ] ontologies.csv: add note somewhere about `#.ttl` additions in rdf file column
@@ -101,6 +104,7 @@ maintenance and production management decisions
 * [ ] **Product Ontology** - http://www.productontology.org/ (nutzt GoodRElations)
 * [ ] **Product Ontology (PRONTO)** - https://ri.conicet.gov.ar/bitstream/handle/11336/13365/CONICET\_Digital\_Nro.16500.pdfsequence=1, https://data.ontocommons.linkeddata.es/vocabulary/ProductOntology(pronto)
   * Konnte keine RDF-Dateien finden, hier nochmal schauen
+* [ ] Project Haystack - über IoT und Standardkompatibilität - Frage von mir wo RDF Daten: https://github.com/Project-Haystack/haystack-defs/issues/17
 * [x] **RealEstateCore Ontology (REC)** - https://www.diva-portal.org/smash/get/diva2:1362356/FULLTEXT01.pdf, https://doc.realestatecore.io/3.0/full.html\#
   * Aufgenommen aufgrund des Papers, darin werden die folgenden Schlüsselwörter verwendet:  ontology, smart buildings, building automation, IoT, energy optimization
   * Prüfe, ob es noch in den Scope passt
