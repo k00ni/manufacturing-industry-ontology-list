@@ -101,7 +101,7 @@ maintenance and production management decisions
 * [ ] **Product Ontology** - http://www.productontology.org/ (nutzt GoodRElations)
 * [ ] **Product Ontology (PRONTO)** - https://ri.conicet.gov.ar/bitstream/handle/11336/13365/CONICET\_Digital\_Nro.16500.pdfsequence=1, https://data.ontocommons.linkeddata.es/vocabulary/ProductOntology(pronto)
   * Konnte keine RDF-Dateien finden, hier nochmal schauen
-* [ ] **RealEstateCore Ontology (REC)** - https://www.diva-portal.org/smash/get/diva2:1362356/FULLTEXT01.pdf, https://doc.realestatecore.io/3.0/full.html\#
+* [x] **RealEstateCore Ontology (REC)** - https://www.diva-portal.org/smash/get/diva2:1362356/FULLTEXT01.pdf, https://doc.realestatecore.io/3.0/full.html\#
   * Aufgenommen aufgrund des Papers, darin werden die folgenden Schlüsselwörter verwendet:  ontology, smart buildings, building automation, IoT, energy optimization
   * Prüfe, ob es noch in den Scope passt
 * [x] **Reference Generalized Ontological Model (RGOM)** - Paper: https://www.mdpi.com/2076-3417/11/11/5110/pdf, https://github.com/MuhammadYahta/rgom/tree/main
