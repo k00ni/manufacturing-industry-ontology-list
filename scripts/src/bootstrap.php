@@ -8,18 +8,9 @@ global $simplifiedOntologyList;
 /**
  * Saves information about ontologies and their interrelations.
  *
- * There are some predefined entries which do point to either no valid ontologies or redirect to correct URLs.
- *
- * @var array<string,array{
- *  abbreviation:string,
- *  key:string,
- *  rdfxml_file:string|null,
- *  turtle_file:string|null,
- *  ontology_iri:string,
- *  ignore_it:bool
- * }>
+ * @var array<string,array{abbreviation:string,rdfxml_file:string|null,turtle_file:string|null,ontology_iri:string}>
  */
-$simplifiedOntologyList = require __DIR__.'/simplified-ontology-list.php';
+$simplifiedOntologyList = [];
 
 // load CSV file and build simplified ontology list
 foreach (array_map('str_getcsv', file(__DIR__.'/../../ontologies.csv')) as $line => $entry) {
@@ -27,23 +18,12 @@ foreach (array_map('str_getcsv', file(__DIR__.'/../../ontologies.csv')) as $line
         continue;
     }
 
-    // build line with entry ID and label
-    $key = strtolower($entry[0]);
-    $key = str_replace([' ', '.', ':', ',', '-'], '_', $key);
-
     // abbreviation
     $abbreviation = strtolower($entry[2]);
     $abbreviation = str_replace('-', '', $abbreviation);
 
-    // related RDF file
+    // ontology IRI
     $ontologyIRI = $entry[7];
-    if (
-        false === str_starts_with($entry[7], 'http')
-    ) {
-        // if ontology IRI isn't starting with http, therefore its not an URI
-        // in this case use RDF file instead
-        $ontologyIRI = $entry[6];
-    }
 
     // related RDF file(s)
     $rdfXmlFile = empty($entry[8]) ? '' : $entry[8];
@@ -56,10 +36,23 @@ foreach (array_map('str_getcsv', file(__DIR__.'/../../ontologies.csv')) as $line
 
     $simplifiedOntologyList[$ontologyIRI] = [
         'abbreviation' => $abbreviation,
-        'key' => $key,
         'rdfxml_file' => $rdfXmlFile,
         'turtle_file' => $turtleFile,
         'ontology_iri' => $ontologyIRI,
-        'ignore_it' => false,
+    ];
+}
+
+global $brokenLinksRedirects;
+$brokenLinksRedirects = [];
+
+// load CSV file and build simplified ontology list
+foreach (array_map('str_getcsv', file(__DIR__.'/../../broken-links-redirects.csv')) as $line => $entry) {
+    if (0 == $line) {
+        continue;
+    }
+
+    $brokenLinksRedirects[$entry[0]] = [
+        'url' => $entry[0],
+        'comment' => $entry[1],
     ];
 }

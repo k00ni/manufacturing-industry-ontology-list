@@ -250,17 +250,24 @@ function guessFormat(string $data): string|null
     return null;
 }
 
+/**
+ * Checks if a given ontology IRI is already known, which means its either part of
+ * the ontologies.csv or broken-links-redirects.csv.
+ */
 function isOntologyIriAlreadyKnown(string $ontologyIri): bool
 {
-    global $simplifiedOntologyList;
+    global $brokenLinksRedirects, $simplifiedOntologyList;
 
-    $iris = array_keys($simplifiedOntologyList);
+    $irisToCheck = array_merge(
+        array_keys($simplifiedOntologyList),
+        array_keys($brokenLinksRedirects),
+    );
 
     if (
-        in_array($ontologyIri, $iris, true)
-        || in_array($ontologyIri.'/', $iris, true)
-        || in_array($ontologyIri.'#', $iris, true)
-        || in_array(str_replace('#', '', $ontologyIri), $iris, true) // IRI without # at the end
+        in_array($ontologyIri, $irisToCheck, true)
+        || in_array($ontologyIri.'/', $irisToCheck, true)
+        || in_array($ontologyIri.'#', $irisToCheck, true)
+        || in_array(str_replace('#', '', $ontologyIri), $irisToCheck, true) // IRI without # at the end
     ) {
         return true;
     } else {
