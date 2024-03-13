@@ -72,10 +72,19 @@ function getCSVLineForOntology(
         $dataArray = [];
 
         // title (e.g. dcterms:title)
-        if (isset($ontologyData['http://purl.org/dc/terms/title'])) {
-            $dataArray[] = $ontologyData['http://purl.org/dc/terms/title'];
-        } elseif (isset($ontologyData['http://www.w3.org/2000/01/rdf-schema#label'])) {
-            $dataArray[] = $ontologyData['http://www.w3.org/2000/01/rdf-schema#label'];
+        $title = null;
+        foreach ([
+            'http://purl.org/dc/elements/1.1/title',
+            'http://purl.org/dc/terms/title',
+            'http://www.w3.org/2000/01/rdf-schema#label',
+        ] as $property) {
+            if (isset($ontologyData[$property])) {
+                $title = $ontologyData[$property];
+                break;
+            }
+        }
+        if (null !== $title) {
+            $dataArray[] = $title;
         } else {
             $dataArray[] = 'TODO no title property';
         }
@@ -84,21 +93,25 @@ function getCSVLineForOntology(
         $dataArray[] = 'TODO';
 
         // abbreviation
-        $dataArray[] = 'Information not available';
+        $dataArray[] = 'TODO';
 
         // abstract (e.g. dcterms:abstract), but only take first sentence
-        $abstract = null;
-        if (isset($ontologyData['http://purl.org/dc/terms/abstract'])) {
-            $abstract = $ontologyData['http://purl.org/dc/terms/abstract'];
-        } elseif (isset($ontologyData['http://purl.org/dc/terms/description'])) {
-            $abstract = $ontologyData['http://purl.org/dc/terms/description'];
-        } elseif (isset($ontologyData['http://www.w3.org/2000/01/rdf-schema#comment'])) {
-            $abstract = $ontologyData['http://www.w3.org/2000/01/rdf-schema#comment'];
-        }
-        if (null != $abstract) {
-            $abstract = substr($abstract, 0, strpos($abstract, '.')+1);
-            $abstract = preg_replace('/\n|\n\r/smi', '', $abstract);
-            $abstract = trim($abstract);
+        $abstract = 'TODO';
+        foreach ([
+            'http://purl.org/dc/elements/1.1/description',
+            'http://purl.org/dc/terms/abstract',
+            'http://purl.org/dc/terms/description',
+            'http://www.w3.org/2000/01/rdf-schema#comment',
+        ] as $property) {
+            if (isset($ontologyData[$property])) {
+                $abstract = $ontologyData[$property];
+                if (false !== strpos($abstract, '.')) {
+                    $abstract = substr($abstract, 0, strpos($abstract, '.')+1);
+                }
+                $abstract = preg_replace('/\n|\n\r/smi', '', $abstract);
+                $abstract = trim($abstract);
+                break;
+            }
         }
         $dataArray[] = $abstract;
 
@@ -121,8 +134,18 @@ function getCSVLineForOntology(
 
         // project page
         $projectPage = 'TODO';
-        if (isset($ontologyData['http://www.w3.org/2000/01/rdf-schema#seeAlso'])) {
-            $projectPage = $ontologyData['http://www.w3.org/2000/01/rdf-schema#seeAlso'];
+        foreach ([
+            'http://www.w3.org/2000/01/rdf-schema#seeAlso'
+        ] as $property) {
+            if (isset($ontologyData[$property])) {
+                if (is_array($ontologyData[$property])) {
+                    $projectPage = array_values($ontologyData[$property])[0];
+                } else {
+                    $projectPage = $ontologyData[$property];
+                }
+
+                break;
+            }
         }
         $dataArray[] = $projectPage;
 
@@ -138,11 +161,19 @@ function getCSVLineForOntology(
             $dataArray[] = '';
         }
 
-        // dcterms:creator
+        // creator
         $creators = [];
-        if (isset($ontologyData['http://purl.org/dc/terms/creator'])) {
-            foreach ($ontologyData['http://purl.org/dc/terms/creator'] as $creator) {
-                $creators[] = trim($creator);
+        foreach ([
+            'http://purl.org/dc/elements/1.1/creator',
+            'http://purl.org/dc/terms/creator',
+        ] as $property) {
+            if (isset($ontologyData[$property])) {
+                if (is_string($ontologyData[$property])) {
+                    $ontologyData[$property] = [$ontologyData[$property]];
+                }
+                foreach ($ontologyData[$property] as $creator) {
+                    $creators[] = trim($creator);
+                }
             }
         }
         $dataArray[] = implode(',', $creators);
@@ -177,9 +208,11 @@ function getCSVLineForOntology(
  */
 function getLicenseShortcut(string $value): string
 {
-    if ('https://creativecommons.org/licenses/by/4.0/legalcode' == $value) {
+    if (str_contains($value, 'http://purl.org/NET/rdflicense/cc-by3.0')) {
+        return 'CC-BY 3.0';
+    } elseif (str_contains($value, 'https://creativecommons.org/licenses/by/4.0/')) {
         return 'CC-BY 4.0';
-    } elseif ('https://creativecommons.org/licenses/by-sa/4.0/' == $value) {
+    } elseif (str_contains($value, 'https://creativecommons.org/licenses/by-sa/4.0/')) {
         return 'CC-BY-SA 4.0';
     }
 

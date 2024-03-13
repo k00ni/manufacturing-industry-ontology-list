@@ -21,10 +21,7 @@ echo PHP_EOL;
 foreach ($simplifiedOntologyList as $iri => $entry) {
     echo '.';
 
-    if (true === $entry['ignore_it']) {
-        // ignore this entry (for reasons look into scripts/src/simplified-ontology-list)
-        continue;
-    } elseif (0 == strlen($entry['rdfxml_file']) && 0 == strlen($entry['turtle_file'])) {
+    if (0 == strlen($entry['rdfxml_file']) && 0 == strlen($entry['turtle_file'])) {
         continue;
     }
 
@@ -93,8 +90,8 @@ foreach ($simplifiedOntologyList as $iri => $entry) {
         $relevantQuads = [];
         foreach ($iterator as $item) {
             $relevantQuads[] = $item;
-            if ($i++ > 2000) {
-                // only take a limit amount to avoid the script run too long
+            if ($i++ > 1000) {
+                // only take a limit amount to avoid the script run for too long
                 break;
             }
         }
@@ -111,6 +108,7 @@ foreach ($simplifiedOntologyList as $iri => $entry) {
             // get related ontology title
             if (isOntologyIriAlreadyKnown($ontologyIRI) || isset($unknownOntologies[$ontologyIRI])) {
                 // is known
+                continue;
             } else {
                 $unknownOntologies[$ontologyIRI] = $ontologyIRI;
 
@@ -134,7 +132,7 @@ foreach ($simplifiedOntologyList as $iri => $entry) {
     }
 
     if (0 == count($iris)) {
-        throw new Exception($entry['key'].': No related namespaces and owl:imports found!');
+        throw new Exception($entry['ontology_iri'].': No related namespaces and owl:imports found!');
     }
 }
 

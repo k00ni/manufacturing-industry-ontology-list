@@ -30,8 +30,8 @@ foreach (array_map('str_getcsv', file(__DIR__.'/../../ontologies.csv')) as $line
     $turtleFile = empty($entry[9]) ? '' : $entry[9];
 
     if (0 == strlen($rdfXmlFile) && 0 == strlen($turtleFile)) {
-        // throw new Exception($title.' has no RDF file URL');
-        continue;
+        var_dump($entry);
+        throw new Exception($ontologyIRI.' has neither a RDF/XML nor Turtle file!');
     }
 
     $simplifiedOntologyList[$ontologyIRI] = [
@@ -43,6 +43,11 @@ foreach (array_map('str_getcsv', file(__DIR__.'/../../ontologies.csv')) as $line
 }
 
 global $brokenLinksRedirects;
+/**
+ * Build a simple array which contains information about broken links and redirects.
+ *
+ * @var array<string,array{url:string,comment:string}>
+ */
 $brokenLinksRedirects = [];
 
 // load CSV file and build simplified ontology list
