@@ -29,11 +29,6 @@ foreach (array_map('str_getcsv', file(__DIR__.'/../../ontologies.csv')) as $line
     $rdfXmlFile = empty($entry[8]) ? '' : $entry[8];
     $turtleFile = empty($entry[9]) ? '' : $entry[9];
 
-    if (0 == strlen($rdfXmlFile) && 0 == strlen($turtleFile)) {
-        var_dump($entry);
-        throw new Exception($ontologyIRI.' has neither a RDF/XML nor Turtle file!');
-    }
-
     $simplifiedOntologyList[$ontologyIRI] = [
         'abbreviation' => $abbreviation,
         'rdfxml_file' => $rdfXmlFile,

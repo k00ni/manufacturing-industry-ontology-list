@@ -14,12 +14,13 @@ use sweetrdf\InMemoryStoreSqlite\Store\InMemoryStoreSqlite;
 
 require __DIR__.'/../src/bootstrap.php';
 
+$dataFactory = new DataFactory();
 $unknownOntologies = [];
 
 echo PHP_EOL;
 
 foreach ($simplifiedOntologyList as $iri => $entry) {
-    echo '.';
+    echo PHP_EOL.'.';
 
     if (0 == strlen($entry['rdfxml_file']) && 0 == strlen($entry['turtle_file'])) {
         continue;
@@ -42,11 +43,9 @@ foreach ($simplifiedOntologyList as $iri => $entry) {
         echo PHP_EOL.$iri.' > no data or 404 > IGNORED';
         continue;
     } elseif (null === guessFormat($rdfFileContent)) {
-        echo PHP_EOL.$iri.' > it neither RDF/XML nor Turtle data > IGNORED';
+        echo PHP_EOL.$iri.' > it neither RDF/XML nor Turtle data > IGNORED'.PHP_EOL;
         continue;
     }
-
-    $dataFactory = new DataFactory();
 
     $relevantQuads = [];
     try {
@@ -55,13 +54,13 @@ foreach ($simplifiedOntologyList as $iri => $entry) {
         $i = 0;
         foreach ($iterator as $item) {
             $relevantQuads[] = $item;
-            if ($i++ > 2000) {
+            if ($i++ > 500) {
                 // only take a limit amount to avoid the script run too long
                 break;
             }
         }
     } catch (RdfIoException $e) {
-        echo PHP_EOL.' > Exception while parsing: '.$e->getMessage();
+        echo PHP_EOL.' > Exception while parsing content for IRI ('.$iri.'): '.$e->getMessage();
         continue;
     }
 
@@ -85,15 +84,20 @@ foreach ($simplifiedOntologyList as $iri => $entry) {
         }
 
         // parse RDF data to get ontology IRI
-        $iterator = Util::parse($data, $dataFactory, $format);
-        $i = 0;
-        $relevantQuads = [];
-        foreach ($iterator as $item) {
-            $relevantQuads[] = $item;
-            if ($i++ > 1000) {
-                // only take a limit amount to avoid the script run for too long
-                break;
+        try {
+            $iterator = Util::parse($data, $dataFactory, $format);
+            $i = 0;
+            $relevantQuads = [];
+            foreach ($iterator as $item) {
+                $relevantQuads[] = $item;
+                if ($i++ > 300) {
+                    // only take a limit amount to avoid the script run for too long
+                    break;
+                }
             }
+        } catch (RdfIoException $e) {
+            echo PHP_EOL.' > Exception while parsing content for IRI ('.$referencedOntologyFileUrl.'): '.$e->getMessage();
+            continue;
         }
 
         // read file content into in-memory SPARQL store

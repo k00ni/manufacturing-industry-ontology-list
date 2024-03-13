@@ -9,7 +9,7 @@ use Symfony\Contracts\Cache\ItemInterface;
 
 function getContentOfRdfFile(string $link): string
 {
-    $cache = new FilesystemAdapter('ind_ontos', 3600, __DIR__.'/../../cache');
+    $cache = new FilesystemAdapter('ind_ontos', 0, __DIR__.'/../../cache');
 
     $key = md5($link);
 
@@ -105,6 +105,10 @@ function getCSVLineForOntology(
         ] as $property) {
             if (isset($ontologyData[$property])) {
                 $abstract = $ontologyData[$property];
+                if (is_array($abstract)) {
+                    $abstract = implode('', $abstract);
+                }
+
                 if (false !== strpos($abstract, '.')) {
                     $abstract = substr($abstract, 0, strpos($abstract, '.')+1);
                 }
@@ -128,7 +132,11 @@ function getCSVLineForOntology(
         // latest change
         $latestChange = 'TODO';
         if (isset($ontologyData['http://purl.org/dc/terms/modified'])) {
-            $latestChange = $ontologyData['http://purl.org/dc/terms/modified'];
+            if (is_array($ontologyData['http://purl.org/dc/terms/modified'])) {
+                $latestChange = implode('', $ontologyData['http://purl.org/dc/terms/modified']);
+            } else {
+                $latestChange = $ontologyData['http://purl.org/dc/terms/modified'];
+            }
         }
         $dataArray[] = $latestChange;
 
@@ -166,6 +174,7 @@ function getCSVLineForOntology(
         foreach ([
             'http://purl.org/dc/elements/1.1/creator',
             'http://purl.org/dc/terms/creator',
+            'http://xmlns.com/foaf/0.1/maker',
         ] as $property) {
             if (isset($ontologyData[$property])) {
                 if (is_string($ontologyData[$property])) {
@@ -210,10 +219,14 @@ function getLicenseShortcut(string $value): string
 {
     if (str_contains($value, 'http://purl.org/NET/rdflicense/cc-by3.0')) {
         return 'CC-BY 3.0';
+    } elseif (str_contains($value, 'http://purl.org/NET/rdflicense/cc-by4.0')) {
+        return 'CC-BY 4.0';
     } elseif (str_contains($value, 'https://creativecommons.org/licenses/by/4.0/')) {
         return 'CC-BY 4.0';
     } elseif (str_contains($value, 'https://creativecommons.org/licenses/by-sa/4.0/')) {
         return 'CC-BY-SA 4.0';
+    } elseif (str_contains($value, 'http://opensource.org/licenses/MIT')) {
+        return 'MIT';
     }
 
     return 'Information not available';
@@ -276,7 +289,7 @@ function guessFormat(string $data): string|null
 
     if (str_contains($subStr, '@prefix')) {
         return 'turtle';
-    } elseif (str_contains($subStr, '<rdf:RDF xmlns=')) {
+    } elseif (str_contains($subStr, '<rdf:RDF ')) {
         return 'rdf';
     }
 
