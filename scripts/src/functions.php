@@ -206,9 +206,9 @@ function getValidLicenses(): array
 function getNamespaceUriListUsedInRdfFile(string $rdfFileContent, string $type): array
 {
     if ('turtle' == $type) {
-        $regex = '/[@prefix]+\s+[a-z]+:\s*<(.*?)>/msi';
+        $regex = '/[@prefix]+\s+[a-z\-]+:\s*<(.*?)>/msi';
     } else { // == RDF/XML
-        $regex = '/xmlns:[a-z]+="(.*?)"/smi';
+        $regex = '/xmlns:[a-z\-]+="(.*?)"/smi';
     }
 
     $list = [];
