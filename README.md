@@ -13,6 +13,9 @@
 * Find further ontology candidates:
   * [ ] Check https://bartoc.org/
   * [ ] Check BioPortal
+* [ ] Stats:
+  * [ ] Number of owl Imports + Namespaces checked
+  * [ ] Amount of each license used
 
 Check and if matching, work in the following ontologies:
 
@@ -77,19 +80,16 @@ Check and if matching, work in the following ontologies:
   * könnte zugehöriges Paper sein: https://arxiv.org/abs/2006.07712
 * [ ] **Mechanical Testing Ontology** - https://github.com/emmo-repo/domain-mechanical-testing
 * [ ] **Microstructure Domain Ontology** - https://github.com/emmo-repo/domain-microstructure
-* [ ] **MPFQ Ontology (Material-Process-Function-Quality)** - https://data.ontocommons.linkeddata.es/vocabulary/MpfqOntology(material-process-function-quality)
   * Könnte passen, jedoch hab ich auf die schnelle keine Literatur/Doc dazu gefunden.
-* [ ] Open Digital Twins ontology for the Industrie 4.0 Asset Administration Shell - https://github.com/JMayrbaeurl/opendigitaltwins-assetadminstrationshell
 * [x] **oneM2M Base Ontology** - https://www.onem2m.org/technical/onem2m-ontologies?jjj=1709820482525
-* [ ] **Ontology for Industry 4.0 (O4I4)**
 * [x] **Ontology for Maintenance Procedure Documentation - Static Procedure Ontology (OMPD-SPO)**
-* [ ] **Ontology for manufacturing and logistics (OFM)** - https://data.ontocommons.linkeddata.es/vocabulary/ManufacturingSystemOntology
+* [x] **Ontology for manufacturing and logistics (OFM)** - https://data.ontocommons.linkeddata.es/vocabulary/ManufacturingSystemOntology
   * Wird bei OntoCommons anders genannt als im Github-Repository: https://github.com/enegri/OFM/blob/master/README.pdf
-* [ ] **Ontology for Reliability-centred MAintenance (ORMA)** - Ontology-augmented Prognostics and Health Management for shopfloor-synchronised joint
+* [x] **Ontology for Reliability-centred MAintenance (ORMA)** - Ontology-augmented Prognostics and Health Management for shopfloor-synchronised joint
 maintenance and production management decisions
   * https://re.public.polimi.it/bitstream/11311/1193315/6/IRIS-ORMA-post-print.pdf
-* [ ] **Ontology-based Customization and Visualization of Information Flow control in an Industry 4.0 scenario** - Könnte relevant sein, weil auf der README ein paar Ontologien im Kontext von Industrie 4.0 erwähnt werden: https://github.com/ko3n1g/Ontology-based-InformationFlow-Industry-4.0tab=readme-ov-file#ontologies
-* [ ] **Open Energy Ontology** - Achtung, enthält mehrere TeilOntologien
+* [x] **Ontology-based Customization and Visualization of Information Flow control in an Industry 4.0 scenario** - Könnte relevant sein, weil auf der README ein paar Ontologien im Kontext von Industrie 4.0 erwähnt werden: https://github.com/ko3n1g/Ontology-based-InformationFlow-Industry-4.0tab=readme-ov-file#ontologies
+* [x] **Open Energy Ontology** - Achtung, enthält mehrere TeilOntologien
   * https://openenergy-platform.org/ontology/oeo/
   * https://github.com/OpenEnergyPlatform/ontology
   * Grund für mögliche Relevanz: Im OEO-Physical Teil geht es u.a. um Kraftwerke, Generatoren etc. welche im Rahmen der Industrie eine wichtige Rolle spielen.
