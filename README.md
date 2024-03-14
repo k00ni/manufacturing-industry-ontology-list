@@ -32,7 +32,7 @@ Check and if matching, work in the following ontologies:
 * [ ] https://github.com/CaSkade-Automation/CaSkMan
 * [x] **Capability and Skill Ontology (CaSk)** - *"OWL ontology to describe capabilities and skills of things. [...] In the context of automated production, Capabilities and Skills are terms that are used to refer to machine functions."*
   * https://github.com/CaSkade-Automation/CaSk
-* [ ] **COGITO Safety Ontology** - https://github.com/oeg-upm/cogito-safety-ontology/tree/main
+* [x] **COGITO Safety Ontology** - https://github.com/oeg-upm/cogito-safety-ontology/tree/main
   * Prüfe, ob das für uns relevant ist. Projekt fiel mit im Kontext von https://github.com/mahsa-teimourikia/Safety-Ontology auf.
 * [ ] **Collaborative Manufacturing Services Ontology** - https://data.ontocommons.linkeddata.es/vocabulary/CollaborativeManufacturingServicesOntology
   * PDF: https://www.sciencedirect.com/science/article/pii/S2405896318314472
