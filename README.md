@@ -2,16 +2,13 @@
 
 ## TODOs
 
-* [x] Check if there is still a need for column "ontology type" in CSV
 * [ ] Remove KIF related content, because its more clear when there is only RDF (e.g. ontology relations)
-* [ ] Align all licenses (like CC-BY 4.0)
 * Validate ontologies.csv
   * [ ] by loading each referenced RDF file and try to find ontology IRI
   * [ ] no TODO in any column
+  * [ ] Align Github links to raw files (https://raw.githubusercontent.com/srfiorini/IEEE1872-owl/master/corax.owl vs. https://github.com/Battery-Value-Chain-Ontology/ontology/raw/master/BVCO.ttl)
 * [ ] Create at least 1 image which shows ALL ontologies and their relation
 * [ ] Remove obsolete entries from paper.bib
-* [ ] ontologies.csv: add note somewhere about `#.ttl` additions in rdf file column
-* [ ] Align Github links to raw files (https://raw.githubusercontent.com/srfiorini/IEEE1872-owl/master/corax.owl vs. https://github.com/Battery-Value-Chain-Ontology/ontology/raw/master/BVCO.ttl)
 * [ ] Mention Graphviz config + image somewhere in the documentation (and paper)
 * Find further ontology candidates:
   * [ ] Check https://bartoc.org/
@@ -96,13 +93,9 @@ maintenance and production management decisions
   * https://openenergy-platform.org/ontology/oeo/
   * https://github.com/OpenEnergyPlatform/ontology
   * Grund für mögliche Relevanz: Im OEO-Physical Teil geht es u.a. um Kraftwerke, Generatoren etc. welche im Rahmen der Industrie eine wichtige Rolle spielen.
-* [ ] **ORMA+ Ontology** - *"Zero Defect Manufacturing in the Digital Twin Framework"* - https://www.politesi.polimi.it/bitstream/10589/195722/3/2022_10_Ghedini.pdf
-  * Prüfe, ob es hierfür öffentlich zugängliche RDF Daten gibt. Im Paper konnte ich auf die schnelle nichts finden, jedoch zeigen sie darin Protégé Screenshots
-* [ ] **Product Lifecycle Management Ontology** - https://rds.posccaesar.org/ontology/plm/, Prüfe, ob hierfür noch passende Dokumentation vorhanden ist. Es scheint auf jeden Fall RDF-Daten vorhanden zu sein
-* [ ] **Production Equipment ontology** - *"Core Ontology for Describing Production Equipment According to Intelligent Production"*: https://www.mdpi.com/2571-5577/5/5/98
-  * Prüfe, ob es dafür öffentlich zugängliche RDF Daten gibt
-* [ ] **Product Ontology** - http://www.productontology.org/ (nutzt GoodRElations)
-* [ ] **Product Ontology (PRONTO)** - https://ri.conicet.gov.ar/bitstream/handle/11336/13365/CONICET\_Digital\_Nro.16500.pdfsequence=1, https://data.ontocommons.linkeddata.es/vocabulary/ProductOntology(pronto)
+* [x] **Product Lifecycle Management Ontology** - https://rds.posccaesar.org/ontology/plm/, Prüfe, ob hierfür noch passende Dokumentation vorhanden ist. Es scheint auf jeden Fall RDF-Daten vorhanden zu sein
+* [x] **Product Ontology (PRONTO)** - https://ri.conicet.gov.ar/bitstream/handle/11336/13365/CONICET\_Digital\_Nro.16500.pdfsequence=1, https://data.ontocommons.linkeddata.es/vocabulary/ProductOntology(pronto)
+* [x] **Product Types Ontology** - http://www.productontology.org/ (nutzt GoodRElations)
   * Konnte keine RDF-Dateien finden, hier nochmal schauen
 * [ ] Project Haystack - über IoT und Standardkompatibilität - Frage von mir wo RDF Daten: https://github.com/Project-Haystack/haystack-defs/issues/17
 * [x] **RealEstateCore Ontology (REC)** - https://www.diva-portal.org/smash/get/diva2:1362356/FULLTEXT01.pdf, https://doc.realestatecore.io/3.0/full.html\#
