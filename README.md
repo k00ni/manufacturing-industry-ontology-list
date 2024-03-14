@@ -71,15 +71,15 @@ Check and if matching, work in the following ontologies:
 * [ ] **Manufacturing Failure Prediction Ontology (MFPO)** - https://data.ontocommons.linkeddata.es/vocabulary/ManufacturingFailurePredictionOntology(mfpo), https://www.sciencedirect.com/science/article/pii/S1877050919314024/pdfmd5=221db728bbcefb3d067b0b8cabac8cec\&pid=1-s2.0-S1877050919314024-main.pdf
   * RDF-Datei vorhanden
 * [ ] **Mappings Ontology** - https://github.com/emmo-repo/domain-mappings
-* [ ] **Material properties ontology** - https://bimerr.iot.linkeddata.es/def/material-properties/
-* [ ] **Material Science and Engineering Ontology (MSEO)** - *"MSEO utilizes the Common Core Ontology stack giving materials scientists and engineers the ability to represent their experiments and resulting data. The goal is to create machine and human readable sematic data which can be easily digested by other science domains. It is a product of the joint venture Materials Open Lab Project between the Bundesanstalt für Materialforschung und -prüfung (BAM) and the Fraunhofer Group MATERIALS and used the BWMD ontology created by Fraunhofer IWM as a starting point."*
+* [x] **Material properties ontology** - https://bimerr.iot.linkeddata.es/def/material-properties/
+* [x] **Material Science and Engineering Ontology (MSEO)** - *"MSEO utilizes the Common Core Ontology stack giving materials scientists and engineers the ability to represent their experiments and resulting data. The goal is to create machine and human readable sematic data which can be easily digested by other science domains. It is a product of the joint venture Materials Open Lab Project between the Bundesanstalt für Materialforschung und -prüfung (BAM) and the Fraunhofer Group MATERIALS and used the BWMD ontology created by Fraunhofer IWM as a starting point."*
   * https://matportal.org/ontologies/MSEO
-* [ ] **Materials And Molecules Basic Ontology (MAMBO)** - Paper: https://arxiv.org/pdf/2111.02482.pdf, https://github.com/daimoners/MAMBO
-* [ ] **Materials Design Ontology** - https://github.com/LiUSemWeb/Materials-Design-Ontology
+* [x] **Materials And Molecules Basic Ontology (MAMBO)** - Paper: https://arxiv.org/pdf/2111.02482.pdf, https://github.com/daimoners/MAMBO
+* [x] **Materials Design Ontology** - https://github.com/LiUSemWeb/Materials-Design-Ontology
   * Ist nicht von OntoCommons, aber wurde in einer ihrer verlinkten Ontologies erwähnt. Könnte auch bei uns reinpassen, weil die abgedrehte Materialwissenschaften machen.
   * könnte zugehöriges Paper sein: https://arxiv.org/abs/2006.07712
-* [ ] **Mechanical Testing Ontology** - https://github.com/emmo-repo/domain-mechanical-testing
-* [ ] **Microstructure Domain Ontology** - https://github.com/emmo-repo/domain-microstructure
+* [x] **Mechanical Testing Ontology** - https://github.com/emmo-repo/domain-mechanical-testing
+* [x] **Microstructure Domain Ontology** - https://github.com/emmo-repo/domain-microstructure
   * Könnte passen, jedoch hab ich auf die schnelle keine Literatur/Doc dazu gefunden.
 * [x] **oneM2M Base Ontology** - https://www.onem2m.org/technical/onem2m-ontologies?jjj=1709820482525
 * [x] **Ontology for Maintenance Procedure Documentation - Static Procedure Ontology (OMPD-SPO)**

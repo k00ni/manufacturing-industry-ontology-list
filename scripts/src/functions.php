@@ -162,7 +162,7 @@ function getCSVLineForOntology(
         if (isset(getValidLicenses()[$ontologyData['http://purl.org/dc/terms/license']])) {
             $license = getValidLicenses()[$ontologyData['http://purl.org/dc/terms/license']];
         } else {
-            throw new Exception('Unknown license: '. $ontologyData['http://purl.org/dc/terms/license']);
+            $license = 'TODO ('.$ontologyData['http://purl.org/dc/terms/license'].')';
         }
     }
     $dataArray[] = $license;

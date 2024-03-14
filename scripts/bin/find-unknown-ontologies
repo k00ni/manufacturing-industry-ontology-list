@@ -90,7 +90,7 @@ foreach ($simplifiedOntologyList as $iri => $entry) {
     }
 
     if (0 == count($iris)) {
-        throw new Exception($entry['ontology_iri'].': No related namespaces and owl:imports found!');
+        throw new Exception($entry['ontology_iri'].': No related namespaces and owl:imports found (format='.$format.')!');
     }
 }
 
