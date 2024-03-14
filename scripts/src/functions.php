@@ -344,7 +344,7 @@ function isOntologyIriAlreadyKnown(string $ontologyIri): bool
         || in_array($ontologyIri.'#', $irisToCheck, true)
         || in_array(str_replace('#', '', $ontologyIri), $irisToCheck, true) // IRI without # at the end
         || in_array(str_replace('https://', 'http://', $ontologyIri), $irisToCheck, true) // https vs http
-        || in_array(str_replace('http://', 'https://', $ontologyIri), $irisToCheck, true) // https vs http
+        || in_array(str_replace('http://', 'https://', $ontologyIri), $irisToCheck, true) // http vs https
     ) {
         return true;
     } else {

@@ -8,9 +8,6 @@
 declare(strict_types=1);
 
 use quickRdf\DataFactory;
-use quickRdfIo\RdfIoException;
-use quickRdfIo\Util;
-use sweetrdf\InMemoryStoreSqlite\Store\InMemoryStoreSqlite;
 
 require __DIR__.'/../src/bootstrap.php';
 
@@ -73,7 +70,8 @@ foreach ($simplifiedOntologyList as $iri => $entry) {
                 echo PHP_EOL;
                 echo '#############################################################################################';
                 echo PHP_EOL.'UNKNOWN: '.$ontologyIRI.PHP_EOL;
-                echo 'used in: '.$iri.PHP_EOL;
+                echo 'Namespace/owl:import reference: '.$iri.PHP_EOL;
+                echo 'Related RDF file URL: '.$referencedOntologyFileUrl.PHP_EOL;
                 echo '#############################################################################################';
                 echo PHP_EOL;
 

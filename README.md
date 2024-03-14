@@ -67,10 +67,8 @@ Check and if matching, work in the following ontologies:
   * https://data.ontocommons.linkeddata.es/vocabulary/Isa\_tab\_ontology
   * https://github.com/2kunal6/OntologyWebform/tree/master
 * [ ] **Key Performance Indicator ontology** - https://bimerr.iot.linkeddata.es/def/key-performance-indicator/
-* [ ] **Maintenance Activity Ontology** - https://www.semantic-web-journal.net/system/files/swj3067.pdf, https://github.com/uwasystemhealth/Paper_Archive_Maintenance_Activity
-* [ ] **Manufacturing Failure Prediction Ontology (MFPO)** - https://data.ontocommons.linkeddata.es/vocabulary/ManufacturingFailurePredictionOntology(mfpo), https://www.sciencedirect.com/science/article/pii/S1877050919314024/pdfmd5=221db728bbcefb3d067b0b8cabac8cec\&pid=1-s2.0-S1877050919314024-main.pdf
-  * RDF-Datei vorhanden
-* [ ] **Mappings Ontology** - https://github.com/emmo-repo/domain-mappings
+* [x] **Maintenance Activity Ontology** - https://www.semantic-web-journal.net/system/files/swj3067.pdf, https://github.com/uwasystemhealth/Paper_Archive_Maintenance_Activity
+* [x] **Mappings Ontology** - https://github.com/emmo-repo/domain-mappings
 * [x] **Material properties ontology** - https://bimerr.iot.linkeddata.es/def/material-properties/
 * [x] **Material Science and Engineering Ontology (MSEO)** - *"MSEO utilizes the Common Core Ontology stack giving materials scientists and engineers the ability to represent their experiments and resulting data. The goal is to create machine and human readable sematic data which can be easily digested by other science domains. It is a product of the joint venture Materials Open Lab Project between the Bundesanstalt für Materialforschung und -prüfung (BAM) and the Fraunhofer Group MATERIALS and used the BWMD ontology created by Fraunhofer IWM as a starting point."*
   * https://matportal.org/ontologies/MSEO

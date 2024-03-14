@@ -47,10 +47,6 @@ $brokenLinksRedirects = [];
 
 // load CSV file and build simplified ontology list
 foreach (array_map('str_getcsv', file(__DIR__.'/../../broken-links-redirects.csv')) as $line => $entry) {
-    if (0 == $line) {
-        continue;
-    }
-
     $brokenLinksRedirects[$entry[0]] = [
         'url' => $entry[0],
         'comment' => $entry[1],
