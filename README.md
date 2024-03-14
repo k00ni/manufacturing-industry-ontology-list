@@ -98,8 +98,8 @@ maintenance and production management decisions
 * [ ] **Product Lifecycle Management Ontology** - https://rds.posccaesar.org/ontology/plm/, Prüfe, ob hierfür noch passende Dokumentation vorhanden ist. Es scheint auf jeden Fall RDF-Daten vorhanden zu sein
 * [ ] **Production Equipment ontology** - *"Core Ontology for Describing Production Equipment According to Intelligent Production"*: https://www.mdpi.com/2571-5577/5/5/98
   * Prüfe, ob es dafür öffentlich zugängliche RDF Daten gibt
-* [ ] **Product Ontology** - http://www.productontology.org/ (nutzt GoodRElations)
-* [ ] **Product Ontology (PRONTO)** - https://ri.conicet.gov.ar/bitstream/handle/11336/13365/CONICET\_Digital\_Nro.16500.pdfsequence=1, https://data.ontocommons.linkeddata.es/vocabulary/ProductOntology(pronto)
+* [x] **Product Ontology (PRONTO)** - https://ri.conicet.gov.ar/bitstream/handle/11336/13365/CONICET\_Digital\_Nro.16500.pdfsequence=1, https://data.ontocommons.linkeddata.es/vocabulary/ProductOntology(pronto)
+* [x] **Product Types Ontology** - http://www.productontology.org/ (nutzt GoodRElations)
   * Konnte keine RDF-Dateien finden, hier nochmal schauen
 * [x] **RealEstateCore Ontology (REC)** - https://www.diva-portal.org/smash/get/diva2:1362356/FULLTEXT01.pdf, https://doc.realestatecore.io/3.0/full.html\#
   * Aufgenommen aufgrund des Papers, darin werden die folgenden Schlüsselwörter verwendet:  ontology, smart buildings, building automation, IoT, energy optimization
