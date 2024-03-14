@@ -58,70 +58,9 @@ Check and if matching, work in the following ontologies:
   * https://technical.buildingsmart.org/standards/ifc/ifc-schema-specifications/
   * https://github.com/buildingSMART/ifcOWL
   * **Prüfen, ob das noch für uns passt, weil inhaltlicher Fokus eher Bauwirtschaft ist**
-* [ ] **Industrial Data Ontology** - https://rds.posccaesar.org/ontology/lis14/ont/core/
-  * Die Verknüpfung mit dem Standard ISO 15926-2:2003 macht sie interessant
-* [x] **Industrial Ontologies Foundry Core Ontology** - The Industrial Ontologies Foundry TODO: \cite{kulvatunyou2022}
-* [ ] **isa\_tab\_ontology** - Wird bei OntoCommons genannt, es ist jedoch noch nicht ersichtlich, ob das für uns passt. Bitte prüfen
-  * Es geht hierbei scheinbar um ISA-Tab: https://www.dcc.ac.uk/resources/metadata-standards/isa-tab
-  * https://isa-tools.org/index.html
-  * https://data.ontocommons.linkeddata.es/vocabulary/Isa\_tab\_ontology
-  * https://github.com/2kunal6/OntologyWebform/tree/master
-* [ ] **Key Performance Indicator ontology** - https://bimerr.iot.linkeddata.es/def/key-performance-indicator/
-* [x] **Maintenance Activity Ontology** - https://www.semantic-web-journal.net/system/files/swj3067.pdf, https://github.com/uwasystemhealth/Paper_Archive_Maintenance_Activity
-* [x] **Mappings Ontology** - https://github.com/emmo-repo/domain-mappings
-* [x] **Material properties ontology** - https://bimerr.iot.linkeddata.es/def/material-properties/
-* [x] **Material Science and Engineering Ontology (MSEO)** - *"MSEO utilizes the Common Core Ontology stack giving materials scientists and engineers the ability to represent their experiments and resulting data. The goal is to create machine and human readable sematic data which can be easily digested by other science domains. It is a product of the joint venture Materials Open Lab Project between the Bundesanstalt für Materialforschung und -prüfung (BAM) and the Fraunhofer Group MATERIALS and used the BWMD ontology created by Fraunhofer IWM as a starting point."*
-  * https://matportal.org/ontologies/MSEO
-* [x] **Materials And Molecules Basic Ontology (MAMBO)** - Paper: https://arxiv.org/pdf/2111.02482.pdf, https://github.com/daimoners/MAMBO
-* [x] **Materials Design Ontology** - https://github.com/LiUSemWeb/Materials-Design-Ontology
-  * Ist nicht von OntoCommons, aber wurde in einer ihrer verlinkten Ontologies erwähnt. Könnte auch bei uns reinpassen, weil die abgedrehte Materialwissenschaften machen.
-  * könnte zugehöriges Paper sein: https://arxiv.org/abs/2006.07712
-* [x] **Mechanical Testing Ontology** - https://github.com/emmo-repo/domain-mechanical-testing
-* [x] **Microstructure Domain Ontology** - https://github.com/emmo-repo/domain-microstructure
-  * Könnte passen, jedoch hab ich auf die schnelle keine Literatur/Doc dazu gefunden.
-* [x] **oneM2M Base Ontology** - https://www.onem2m.org/technical/onem2m-ontologies?jjj=1709820482525
-* [x] **Ontology for Maintenance Procedure Documentation - Static Procedure Ontology (OMPD-SPO)**
-* [x] **Ontology for manufacturing and logistics (OFM)** - https://data.ontocommons.linkeddata.es/vocabulary/ManufacturingSystemOntology
-  * Wird bei OntoCommons anders genannt als im Github-Repository: https://github.com/enegri/OFM/blob/master/README.pdf
-* [x] **Ontology for Reliability-centred MAintenance (ORMA)** - Ontology-augmented Prognostics and Health Management for shopfloor-synchronised joint
-maintenance and production management decisions
-  * https://re.public.polimi.it/bitstream/11311/1193315/6/IRIS-ORMA-post-print.pdf
-* [x] **Ontology-based Customization and Visualization of Information Flow control in an Industry 4.0 scenario** - Könnte relevant sein, weil auf der README ein paar Ontologien im Kontext von Industrie 4.0 erwähnt werden: https://github.com/ko3n1g/Ontology-based-InformationFlow-Industry-4.0tab=readme-ov-file#ontologies
-* [x] **Open Energy Ontology** - Achtung, enthält mehrere TeilOntologien
-  * https://openenergy-platform.org/ontology/oeo/
-  * https://github.com/OpenEnergyPlatform/ontology
-  * Grund für mögliche Relevanz: Im OEO-Physical Teil geht es u.a. um Kraftwerke, Generatoren etc. welche im Rahmen der Industrie eine wichtige Rolle spielen.
 * [x] **Product Lifecycle Management Ontology** - https://rds.posccaesar.org/ontology/plm/, Prüfe, ob hierfür noch passende Dokumentation vorhanden ist. Es scheint auf jeden Fall RDF-Daten vorhanden zu sein
-* [x] **Product Ontology (PRONTO)** - https://ri.conicet.gov.ar/bitstream/handle/11336/13365/CONICET\_Digital\_Nro.16500.pdfsequence=1, https://data.ontocommons.linkeddata.es/vocabulary/ProductOntology(pronto)
-* [x] **Product Types Ontology** - http://www.productontology.org/ (nutzt GoodRElations)
-  * Konnte keine RDF-Dateien finden, hier nochmal schauen
-* [x] **RealEstateCore Ontology (REC)** - https://www.diva-portal.org/smash/get/diva2:1362356/FULLTEXT01.pdf, https://doc.realestatecore.io/3.0/full.html\#
-  * Aufgenommen aufgrund des Papers, darin werden die folgenden Schlüsselwörter verwendet:  ontology, smart buildings, building automation, IoT, energy optimization
-  * Prüfe, ob es noch in den Scope passt
-* [x] **Reference Generalized Ontological Model (RGOM)** - Paper: https://www.mdpi.com/2076-3417/11/11/5110/pdf, https://github.com/MuhammadYahta/rgom/tree/main
-* [x] **Reified Requirements Ontology** - https://data.ontocommons.linkeddata.es/vocabulary/ReifiedRequirementsOntology, https://data.dnv.com/ontology/requirement-ontology/documentation/req-ont.pdf
-  * Konnte keine RDF-Dateien finden, hier nochmal schauen
-* [x] **RFID System Configuration Ontology (RDFID SCO)** - *"Enhancing RFID system configuration through semantic modelling"*: https://repository.lboro.ac.uk/articles/journal_contribution/Enhancing_RFID_system_configuration_through_semantic_modelling/14805819/1/files/28480563.pdf
-  * https://github.com/eleniTsalapati/ONTOLOGIES/blob/master/RFID_SCO.owl
-* [ ] **RoboCaSk - An Ontology for Capabilities and Skills of Heterogeneous Autonomous Robots** - https://github.com/Miguel2617/robocap
-* [x] **Safety Ontology** - *"This is an ontology for extracting the safety knowledge in industry 4.0."* - https://github.com/mahsa-teimourikia/Safety-Ontology
-* [x] **Semantic Sensor Network (SSN) ontology** - https://w3.org/TR/vocab-ssn/, Im Kontext mit SOSA
-* [x] **Semantically Integrated Manufacturing Planning Model (SIMPM)**
-* [x] **Sensor Data ontology** - https://bimerr.iot.linkeddata.es/def/sensor-data/
-* [x] **Sensor, Observation, Sample, and Actuator Ontology (SOSA)** - https://w3.org/TR/vocab-ssn/, Semantic CPPS in Industry 4.0 >> https://arxiv.org/pdf/2011.11395.pdf
-* [x] **Smart Applications Reference Ontology (SAREF)** - https://saref.etsi.org/core/
-* **Smart Applications Reference Ontology extensions**:
-  * [x] SAREF4AUTO: SAREF extension for the Automotive domain (under development)
-  * [x] SAREF4BLDG: SAREF extension for the Building domain
-  * [x] SAREF4ENER: SAREF extension for the Energy domain
-  * [x] SAREF4GRID: SAREF extension for the Smart Grid domain
-  * [x] SAREF4INMA: SAREF extension for the Industry and Manufacturing domains
-  * [x] SAREF4LIFT: SAREF extension for the Smart Lifts domain
-* [x] **VDI 2860 Ontology-Design-Pattern** - https://github.com/hsu-aut/IndustrialStandard-ODP-VDI2860
-* [x] **Versioning Ontology (VERONTO)** - https://ontohub.org/repositories/veronto, https://data.ontocommons.linkeddata.es/vocabulary/VersioningOntology(veronto)
-* [x] **VICINITY project** - https://vicinity2020.eu/vicinity/node/446, https://github.com/mariapoveda/vicinity-ontology-core
-  * Projekt könnte von Interesse sein, weil: "Open virtual neighbourhood network to connect IoT infrastructures and smart objects"
-
+  * [ ] PLM ChEBI	http://rds.posccaesar.org/ontology/plm/ont/chebi-adapt - http://rds.posccaesar.org/ontology/plm/ont/chebi-adapt/0.9.0
+  * [ ] PLM collect	https://rds.posccaesar.org/ontology/plm/ont/core-collect - http://rds.posccaesar.org/ontology/plm/ont/core-collect/0.9.0
 
 ## Misc
 
