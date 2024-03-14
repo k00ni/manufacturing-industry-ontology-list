@@ -20,7 +20,9 @@ $unknownOntologies = [];
 echo PHP_EOL;
 
 foreach ($simplifiedOntologyList as $iri => $entry) {
-    echo PHP_EOL.'.';
+    echo PHP_EOL;
+    echo PHP_EOL.$iri;
+    echo PHP_EOL;
 
     if (0 == strlen($entry['rdfxml_file']) && 0 == strlen($entry['turtle_file'])) {
         continue;
@@ -30,79 +32,31 @@ foreach ($simplifiedOntologyList as $iri => $entry) {
     if (0 < strlen($entry['rdfxml_file'])) {
         $format = 'rdf';
         $rdfFileContent = getContentOfRdfFile($entry['rdfxml_file']);
+        $store = loadQuadsIntoInMemoryStore($entry['rdfxml_file'], 300);
     } else {
         $format = 'turtle';
         $rdfFileContent = getContentOfRdfFile($entry['turtle_file']);
+        $store = loadQuadsIntoInMemoryStore($entry['turtle_file'], 300);
     }
 
-    if (
-        0 === strlen($rdfFileContent)
-        || '404: Not Found' == $rdfFileContent
-        || str_contains($rdfFileContent, '<html ')
-    ) {
-        echo PHP_EOL.$iri.' > no data or 404 > IGNORED';
-        continue;
-    } elseif (null === guessFormat($rdfFileContent)) {
-        echo PHP_EOL.$iri.' > it neither RDF/XML nor Turtle data > IGNORED'.PHP_EOL;
-        continue;
+    $owlImportIris = [];
+    if (null !== $store) {
+        $owlImportIris = getOwlImportIris($store);
     }
-
-    $relevantQuads = [];
-    try {
-        // parse a file
-        $iterator = Util::parse($rdfFileContent, $dataFactory, $format);
-        $i = 0;
-        foreach ($iterator as $item) {
-            $relevantQuads[] = $item;
-            if ($i++ > 500) {
-                // only take a limit amount to avoid the script run too long
-                break;
-            }
-        }
-    } catch (RdfIoException $e) {
-        echo PHP_EOL.' > Exception while parsing content for IRI ('.$iri.'): '.$e->getMessage();
-        continue;
-    }
-
-    $store = InMemoryStoreSqlite::createInstance();
-    $store->addQuads($relevantQuads);
 
     // go through the list of namespace IRIs and owl:imports
     $iris = array_merge(
         getNamespaceUriListUsedInRdfFile($rdfFileContent, $format),
-        getOwlImportIris($store)
+        $owlImportIris
     );
 
     foreach ($iris as $referencedOntologyFileUrl) {
         echo ',';
 
-        $data = getContentOfRdfFile($referencedOntologyFileUrl);
-        $format = guessFormat($data);
-        if (null == $format) {
-            // echo PHP_EOL.$ontologyIri.' its neither RDF/XML nor Turtle > IGNORE'.PHP_EOL;
+        $store = loadQuadsIntoInMemoryStore($referencedOntologyFileUrl, 300);
+        if (null == $store) {
             continue;
         }
-
-        // parse RDF data to get ontology IRI
-        try {
-            $iterator = Util::parse($data, $dataFactory, $format);
-            $i = 0;
-            $relevantQuads = [];
-            foreach ($iterator as $item) {
-                $relevantQuads[] = $item;
-                if ($i++ > 300) {
-                    // only take a limit amount to avoid the script run for too long
-                    break;
-                }
-            }
-        } catch (RdfIoException $e) {
-            echo PHP_EOL.' > Exception while parsing content for IRI ('.$referencedOntologyFileUrl.'): '.$e->getMessage();
-            continue;
-        }
-
-        // read file content into in-memory SPARQL store
-        $store = InMemoryStoreSqlite::createInstance();
-        $store->addQuads($relevantQuads);
 
         $result = $store->query('SELECT ?iri WHERE {?iri a owl:Ontology.}');
 

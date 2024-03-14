@@ -176,8 +176,10 @@ function getValidLicenses(): array
         'http://purl.org/NET/rdflicense/cc-by3.0' => 'CC-BY 3.0',
         'http://purl.org/NET/rdflicense/cc-by4.0' => 'CC-BY 4.0',
         'https://creativecommons.org/licenses/by/4.0/' => 'CC-BY 4.0',
+        'https://creativecommons.org/licenses/by/4.0/legalcode' => 'CC-BY 4.0',
         'https://creativecommons.org/licenses/by-sa/4.0/' => 'CC-BY-SA 4.0',
-        'http://opensource.org/licenses/MIT' => 'MIT'
+        'http://opensource.org/licenses/MIT' => 'MIT',
+        'http://www.opendatacommons.org/licenses/pddl/1.0/' => 'PDDL 1.0',
     ];
 
     // licenses with no related URL
@@ -190,7 +192,6 @@ function getValidLicenses(): array
     $list[] = 'GPL-3.0';
     $list[] = 'Information not available';
     $list[] = 'OGC Document License Agreement';
-    $list[] = 'PDDL 1.0';
     $list[] = 'W3C Document License (2023)';
 
     return $list;
@@ -334,6 +335,8 @@ function isOntologyIriAlreadyKnown(string $ontologyIri): bool
         || in_array($ontologyIri.'/', $irisToCheck, true)
         || in_array($ontologyIri.'#', $irisToCheck, true)
         || in_array(str_replace('#', '', $ontologyIri), $irisToCheck, true) // IRI without # at the end
+        || in_array(str_replace('https://', 'http://', $ontologyIri), $irisToCheck, true) // https vs http
+        || in_array(str_replace('http://', 'https://', $ontologyIri), $irisToCheck, true) // https vs http
     ) {
         return true;
     } else {
@@ -351,7 +354,6 @@ function isOntologyIriAlreadyKnown(string $ontologyIri): bool
 }
 
 function loadQuadsIntoInMemoryStore(
-    string $ontologyIri,
     string $rdfFileUrl,
     int $maxQuadAmount
 ): InMemoryStoreSqlite|null {
@@ -363,10 +365,10 @@ function loadQuadsIntoInMemoryStore(
         || '404: Not Found' == $rdfFileContent
         || str_contains($rdfFileContent, '<html ')
     ) {
-        // echo PHP_EOL.$ontologyIri.' > no data or 404 > IGNORED';
+        // echo PHP_EOL.$rdfFileUrl.' > no data or 404 > IGNORED';
         return null;
     } elseif (null === guessFormat($rdfFileContent)) {
-        // echo PHP_EOL.$ontologyIri.' > it neither RDF/XML nor Turtle data > IGNORED'.PHP_EOL;
+        // echo PHP_EOL.$rdfFileUrl.' > it neither RDF/XML nor Turtle data > IGNORED'.PHP_EOL;
         return null;
     }
 
@@ -383,7 +385,7 @@ function loadQuadsIntoInMemoryStore(
             }
         }
     } catch (RdfIoException $e) {
-        echo PHP_EOL.' > Exception while parsing content for IRI ('.$ontologyIri.'): '.$e->getMessage();
+        echo PHP_EOL.' > Exception while parsing content for IRI ('.$rdfFileUrl.'): '.$e->getMessage();
         return null;
     }
 

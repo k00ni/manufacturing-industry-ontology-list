@@ -60,7 +60,7 @@ foreach ($alignedData as $line => $entry) {
 
     $rdfFileUrl = $rdfXmlFile ?? $turtleFile;
 
-    $store = loadQuadsIntoInMemoryStore($ontologyIRI, $rdfFileUrl, 300);
+    $store = loadQuadsIntoInMemoryStore($rdfFileUrl, 300);
 
     if (false === $store instanceof InMemoryStoreSqlite) {
         echo PHP_EOL.'No ontology data found for '.$ontologyIRI.' >> '.$rdfFileUrl;

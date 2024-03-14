@@ -18,6 +18,7 @@
 "https://raw.githubusercontent.com/hsu-aut/IndustrialStandard-ODP-ISA88/v2.0.0/ISA88.owl","related Github repository redirects to https://github.com/hsu-aut/IndustrialStandard-ODP-PackML and PackML is already known."
 "https://schema.org/",""
 "http://spinrdf.org/arg#",""
+"http://vocab.deri.ie/void",""
 "https://w3id.org/emmo#","Another URL to EMMO ontology"
 "https://w3id.org/emmo/top/annotations#",""
 "https://w3id.org/obda/vocabulary#","points to a valid RDF file (with statements about 1 ontology and 1 property) ontology is not actively used"
