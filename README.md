@@ -32,7 +32,7 @@ Check and if matching, work in the following ontologies:
   * https://www.big-map.eu/dissemination/battinfo
 * [x] **Battery Value Chain Ontology (BVCO)** - https://gitlab.cc-asp.fraunhofer.de/ISC-Public/ISC-Digital/ontology/bvco
 * [x] **Building ontology** - https://bimerr.iot.linkeddata.es/def/building/
-* [ ] https://github.com/CaSkade-Automation/CaSkMan
+* [x] https://github.com/CaSkade-Automation/CaSkMan
 * [x] **Capability and Skill Ontology (CaSk)** - *"OWL ontology to describe capabilities and skills of things. [...] In the context of automated production, Capabilities and Skills are terms that are used to refer to machine functions."*
   * https://github.com/CaSkade-Automation/CaSk
 * [ ] **COGITO Safety Ontology** - https://github.com/oeg-upm/cogito-safety-ontology/tree/main
@@ -60,7 +60,7 @@ Check and if matching, work in the following ontologies:
   * **Prüfen, ob das noch für uns passt, weil inhaltlicher Fokus eher Bauwirtschaft ist**
 * [ ] **Industrial Data Ontology** - https://rds.posccaesar.org/ontology/lis14/ont/core/
   * Die Verknüpfung mit dem Standard ISO 15926-2:2003 macht sie interessant
-* [x] **Industrial Ontologies Foundry Core Ontology** - The Industrial Ontologies Foundry TODO: \cite{kulvatunyou2022}
+* [ ] **Industrial Ontologies Foundry Core Ontology** - The Industrial Ontologies Foundry TODO: \cite{kulvatunyou2022}
 * [ ] **isa\_tab\_ontology** - Wird bei OntoCommons genannt, es ist jedoch noch nicht ersichtlich, ob das für uns passt. Bitte prüfen
   * Es geht hierbei scheinbar um ISA-Tab: https://www.dcc.ac.uk/resources/metadata-standards/isa-tab
   * https://isa-tools.org/index.html
@@ -104,6 +104,7 @@ maintenance and production management decisions
 * [ ] **Product Ontology** - http://www.productontology.org/ (nutzt GoodRElations)
 * [ ] **Product Ontology (PRONTO)** - https://ri.conicet.gov.ar/bitstream/handle/11336/13365/CONICET\_Digital\_Nro.16500.pdfsequence=1, https://data.ontocommons.linkeddata.es/vocabulary/ProductOntology(pronto)
   * Konnte keine RDF-Dateien finden, hier nochmal schauen
+* [ ] Project Haystack - über IoT und Standardkompatibilität - Frage von mir wo RDF Daten: https://github.com/Project-Haystack/haystack-defs/issues/17
 * [x] **RealEstateCore Ontology (REC)** - https://www.diva-portal.org/smash/get/diva2:1362356/FULLTEXT01.pdf, https://doc.realestatecore.io/3.0/full.html\#
   * Aufgenommen aufgrund des Papers, darin werden die folgenden Schlüsselwörter verwendet:  ontology, smart buildings, building automation, IoT, energy optimization
   * Prüfe, ob es noch in den Scope passt
