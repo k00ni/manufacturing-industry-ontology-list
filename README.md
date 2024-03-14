@@ -37,7 +37,7 @@ Check and if matching, work in the following ontologies:
   * https://github.com/CaSkade-Automation/CaSk
 * [ ] **COGITO Safety Ontology** - https://github.com/oeg-upm/cogito-safety-ontology/tree/main
   * Prüfe, ob das für uns relevant ist. Projekt fiel mit im Kontext von https://github.com/mahsa-teimourikia/Safety-Ontology auf.
-* [ ] **Collaborative Manufacturing Services Ontology** - https://data.ontocommons.linkeddata.es/vocabulary/CollaborativeManufacturingServicesOntology
+* [x] **Collaborative Manufacturing Services Ontology** - https://data.ontocommons.linkeddata.es/vocabulary/CollaborativeManufacturingServicesOntology
   * PDF: https://www.sciencedirect.com/science/article/pii/S2405896318314472
 * [ ] **Context Aware System Observation Ontology** - https://irstea.github.io/caso/OnToology/ontology/caso.owl/documentation/index-en.html - Verwendet Semantic Sensor Network Ontology
 * [ ] **Crystallography Domain Ontology** - https://github.com/emmo-repo/domain-crystallography
