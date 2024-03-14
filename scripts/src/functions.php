@@ -188,6 +188,7 @@ function getValidLicenses(): array
     $list[] = 'BSD-3-Clause';
     $list[] = 'CC-BY 1.0';
     $list[] = 'CC-BY 2.0';
+    $list[] = 'CC-BY-SA 3.0';
     $list[] = 'Custom license'; // if a custom license is used
     $list[] = 'GPL-3.0';
     $list[] = 'Information not available';
@@ -290,9 +291,15 @@ function guessFormat(string $data): string|null
 {
     $subStr = substr($data, 0, 1000);
 
-    if (str_contains($subStr, '@prefix')) {
+    if (
+        str_contains($subStr, '@prefix')
+        || str_contains($subStr, 'a owl:Ontology ;')
+    ) {
         return 'turtle';
-    } elseif (str_contains($subStr, '<rdf:RDF ')) {
+    } elseif (
+        str_contains($subStr, '<rdf:RDF')
+        || str_contains($subStr, '<?xml version="1.0"?>')
+    ) {
         return 'rdf';
     }
 
@@ -365,10 +372,10 @@ function loadQuadsIntoInMemoryStore(
         || '404: Not Found' == $rdfFileContent
         || str_contains($rdfFileContent, '<html ')
     ) {
-        // echo PHP_EOL.$rdfFileUrl.' > no data or 404 > IGNORED';
+        echo PHP_EOL.$rdfFileUrl.' > no data or 404 > IGNORED';
         return null;
     } elseif (null === guessFormat($rdfFileContent)) {
-        // echo PHP_EOL.$rdfFileUrl.' > it neither RDF/XML nor Turtle data > IGNORED'.PHP_EOL;
+        echo PHP_EOL.$rdfFileUrl.' > it neither RDF/XML nor Turtle data > IGNORED'.PHP_EOL;
         return null;
     }
 
