@@ -60,7 +60,7 @@ Check and if matching, work in the following ontologies:
   * **Prüfen, ob das noch für uns passt, weil inhaltlicher Fokus eher Bauwirtschaft ist**
 * [ ] **Industrial Data Ontology** - https://rds.posccaesar.org/ontology/lis14/ont/core/
   * Die Verknüpfung mit dem Standard ISO 15926-2:2003 macht sie interessant
-* [ ] **Industrial Ontologies Foundry Core Ontology** - The Industrial Ontologies Foundry TODO: \cite{kulvatunyou2022}
+* [x] **Industrial Ontologies Foundry Core Ontology** - The Industrial Ontologies Foundry TODO: \cite{kulvatunyou2022}
 * [ ] **isa\_tab\_ontology** - Wird bei OntoCommons genannt, es ist jedoch noch nicht ersichtlich, ob das für uns passt. Bitte prüfen
   * Es geht hierbei scheinbar um ISA-Tab: https://www.dcc.ac.uk/resources/metadata-standards/isa-tab
   * https://isa-tools.org/index.html
@@ -97,7 +97,6 @@ maintenance and production management decisions
 * [x] **Product Ontology (PRONTO)** - https://ri.conicet.gov.ar/bitstream/handle/11336/13365/CONICET\_Digital\_Nro.16500.pdfsequence=1, https://data.ontocommons.linkeddata.es/vocabulary/ProductOntology(pronto)
 * [x] **Product Types Ontology** - http://www.productontology.org/ (nutzt GoodRElations)
   * Konnte keine RDF-Dateien finden, hier nochmal schauen
-* [ ] Project Haystack - über IoT und Standardkompatibilität - Frage von mir wo RDF Daten: https://github.com/Project-Haystack/haystack-defs/issues/17
 * [x] **RealEstateCore Ontology (REC)** - https://www.diva-portal.org/smash/get/diva2:1362356/FULLTEXT01.pdf, https://doc.realestatecore.io/3.0/full.html\#
   * Aufgenommen aufgrund des Papers, darin werden die folgenden Schlüsselwörter verwendet:  ontology, smart buildings, building automation, IoT, energy optimization
   * Prüfe, ob es noch in den Scope passt
