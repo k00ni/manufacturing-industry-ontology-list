@@ -39,7 +39,7 @@ Check and if matching, work in the following ontologies:
   * Prüfe, ob das für uns relevant ist. Projekt fiel mit im Kontext von https://github.com/mahsa-teimourikia/Safety-Ontology auf.
 * [ ] **Collaborative Manufacturing Services Ontology** - https://data.ontocommons.linkeddata.es/vocabulary/CollaborativeManufacturingServicesOntology
   * PDF: https://www.sciencedirect.com/science/article/pii/S2405896318314472
-* [ ] **Context Aware System Observation Ontology** - https://irstea.github.io/caso/OnToology/ontology/caso.owl/documentation/index-en.html - Verwendet Semantic Sensor Network Ontology
+* [x] **Context Aware System Observation Ontology** - https://irstea.github.io/caso/OnToology/ontology/caso.owl/documentation/index-en.html - Verwendet Semantic Sensor Network Ontology
 * [ ] **Crystallography Domain Ontology** - https://github.com/emmo-repo/domain-crystallography
 * [ ] **Defection Ontology (DefectOnt)** - https://www.researchgate.net/publication/364530871_An_Ontology_for_Defect_Detection_in_Metal_Additive_Manufacturing , https://github.com/AndreaMazzullo/DefectOnt (kleine OWL Datei, aber womöglich brauchbar und erwähnenswert)
 * [ ] **Digital Construction Energy Ontology** - https://digitalconstruction.github.io/Energy/v/0.5/
