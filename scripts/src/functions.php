@@ -3,6 +3,9 @@
 declare(strict_types=1);
 
 use Curl\Curl;
+use quickRdf\DataFactory;
+use quickRdfIo\RdfIoException;
+use quickRdfIo\Util;
 use sweetrdf\InMemoryStoreSqlite\Store\InMemoryStoreSqlite;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 use Symfony\Contracts\Cache\ItemInterface;
@@ -27,209 +30,170 @@ function getContentOfRdfFile(string $link): string
     });
 }
 
-function storeResultToAssocArray(array $result): array
-{
-    $arr = [];
-    foreach ($result['result']['rows'] as $row) {
-        // entry exists and is array
-        if (isset($arr[$row['p']]) && is_array($arr[$row['p']])) {
-            $arr[$row['p']][] = $row['o'];
-        } elseif (isset($arr[$row['p']])) {
-            $arr[$row['p']] = [$arr[$row['p']], $row['o']];
-        } else {
-            $arr[$row['p']] = $row['o'];
-        }
-    }
-
-    return $arr;
-}
-
 function getCSVLineForOntology(
     string $rdfFileUrl,
     InMemoryStoreSqlite $store,
-    string $format,
-    array $knownNamespaces = []
+    string $format
 ): string {
-    $result = $store->query('SELECT ?iri WHERE {?iri a owl:Ontology.}');
+    list($ontologyIri, $ontologyData) = getOntologyDataAsArray($store);
 
-    if (1 == count($result['result']['rows'])) {
-        $ontologyIRI = $result['result']['rows'][0]['iri'];
+    // contains data for CSV line in the end
+    $dataArray = [];
 
-        $result = $store->query('SELECT ?p ?o WHERE {<'.$ontologyIRI.'> ?p ?o}');
-
-        /**
-         * Looks like:
-         *
-         * [
-         *      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"] => "http://www.w3.org/2002/07/owl#Ontology",
-         *      "http://www.w3.org/2002/07/owl#versionIRI"] => "http://emmo.info/emmo/1.0.0-beta/middle/units-extension"
-         *      ...
-         * ]
-         */
-        $ontologyData = storeResultToAssocArray($result);
-
-        // contains data for CSV line in the end
-        $dataArray = [];
-
-        // title (e.g. dcterms:title)
-        $title = null;
-        foreach ([
-            'http://purl.org/dc/elements/1.1/title',
-            'http://purl.org/dc/terms/title',
-            'http://www.w3.org/2000/01/rdf-schema#label',
-        ] as $property) {
-            if (isset($ontologyData[$property])) {
-                $title = $ontologyData[$property];
-                break;
-            }
+    // title (e.g. dcterms:title)
+    $title = null;
+    foreach ([
+        'http://purl.org/dc/elements/1.1/title',
+        'http://purl.org/dc/terms/title',
+        'http://www.w3.org/2000/01/rdf-schema#label',
+    ] as $property) {
+        if (isset($ontologyData[$property])) {
+            $title = $ontologyData[$property];
+            break;
         }
-        if (null !== $title) {
-            $dataArray[] = $title;
-        } else {
-            $dataArray[] = 'TODO no title property';
-        }
-
-        // is industry related
-        $dataArray[] = 'TODO';
-
-        // abbreviation
-        $dataArray[] = 'TODO';
-
-        // abstract (e.g. dcterms:abstract), but only take first sentence
-        $abstract = 'TODO';
-        foreach ([
-            'http://purl.org/dc/elements/1.1/description',
-            'http://purl.org/dc/terms/abstract',
-            'http://purl.org/dc/terms/description',
-            'http://www.w3.org/2000/01/rdf-schema#comment',
-        ] as $property) {
-            if (isset($ontologyData[$property])) {
-                $abstract = $ontologyData[$property];
-                if (is_array($abstract)) {
-                    $abstract = implode('', $abstract);
-                }
-
-                if (false !== strpos($abstract, '.')) {
-                    $abstract = substr($abstract, 0, strpos($abstract, '.')+1);
-                }
-                $abstract = preg_replace('/\n|\n\r/smi', '', $abstract);
-                $abstract = trim($abstract);
-                break;
-            }
-        }
-        $dataArray[] = $abstract;
-
-        // latest version
-        $version = 'TODO';
-        if (
-            isset($ontologyData['http://www.w3.org/2002/07/owl#versionInfo'])
-            && is_string($ontologyData['http://www.w3.org/2002/07/owl#versionInfo'])
-        ) {
-            $version = trim($ontologyData['http://www.w3.org/2002/07/owl#versionInfo']);
-        }
-        $dataArray[] = $version;
-
-        // latest change
-        $latestChange = 'TODO';
-        if (isset($ontologyData['http://purl.org/dc/terms/modified'])) {
-            if (is_array($ontologyData['http://purl.org/dc/terms/modified'])) {
-                $latestChange = implode('', $ontologyData['http://purl.org/dc/terms/modified']);
-            } else {
-                $latestChange = $ontologyData['http://purl.org/dc/terms/modified'];
-            }
-        }
-        $dataArray[] = $latestChange;
-
-        // project page
-        $projectPage = 'TODO';
-        foreach ([
-            'http://www.w3.org/2000/01/rdf-schema#seeAlso'
-        ] as $property) {
-            if (isset($ontologyData[$property])) {
-                if (is_array($ontologyData[$property])) {
-                    $projectPage = array_values($ontologyData[$property])[0];
-                } else {
-                    $projectPage = $ontologyData[$property];
-                }
-
-                break;
-            }
-        }
-        $dataArray[] = $projectPage;
-
-        // ontology IRI
-        $dataArray[] = $ontologyIRI;
-
-        // turtle file
-        if ('turtle' == $format) {
-            $dataArray[] = '';
-            $dataArray[] = $rdfFileUrl;
-        } else { // RDF/XML
-            $dataArray[] = $rdfFileUrl;
-            $dataArray[] = '';
-        }
-
-        // creator
-        $creators = [];
-        foreach ([
-            'http://purl.org/dc/elements/1.1/creator',
-            'http://purl.org/dc/terms/creator',
-            'http://xmlns.com/foaf/0.1/maker',
-        ] as $property) {
-            if (isset($ontologyData[$property])) {
-                if (is_string($ontologyData[$property])) {
-                    $ontologyData[$property] = [$ontologyData[$property]];
-                }
-                foreach ($ontologyData[$property] as $creator) {
-                    $creators[] = trim($creator);
-                }
-            }
-        }
-        $dataArray[] = implode(',', $creators);
-
-        // license
-        $license = 'TODO';
-        if (isset($ontologyData['http://purl.org/dc/terms/license'])) {
-            $license = getLicenseShortcut($ontologyData['http://purl.org/dc/terms/license']);
-        }
-        $dataArray[] = $license;
-
-        return '"'.implode('","', $dataArray).'"';
-    } elseif (1 < count($result['result']['rows'])) {
-        $knownNamespaces[] = $rdfFileUrl;
-        $str = '';
-        foreach ($result['result']['rows'] as $entry) {
-            if ($entry['iri'] != $rdfFileUrl && false === in_array($entry['iri'], $knownNamespaces, true)) {
-                $str .= getCSVLineForOntology($entry['iri'], $store, $format, $knownNamespaces).PHP_EOL;
-            }
-        }
-        return $str;
-    } else {
-        // show error if no ontology instance was found.
-        throw new Exception('No instance of owl:Ontology was found.');
     }
+    if (null !== $title) {
+        $dataArray[] = $title;
+    } else {
+        $dataArray[] = 'TODO no title property';
+    }
+
+    // is industry related
+    $dataArray[] = 'TODO';
+
+    // abbreviation
+    $dataArray[] = 'TODO';
+
+    // abstract (e.g. dcterms:abstract), but only take first sentence
+    $abstract = 'TODO';
+    foreach ([
+        'http://purl.org/dc/elements/1.1/description',
+        'http://purl.org/dc/terms/abstract',
+        'http://purl.org/dc/terms/description',
+        'http://www.w3.org/2000/01/rdf-schema#comment',
+    ] as $property) {
+        if (isset($ontologyData[$property])) {
+            $abstract = $ontologyData[$property];
+            if (is_array($abstract)) {
+                $abstract = implode('', $abstract);
+            }
+
+            if (false !== strpos($abstract, '.')) {
+                $abstract = substr($abstract, 0, strpos($abstract, '.')+1);
+            }
+            $abstract = preg_replace('/\n|\n\r/smi', '', $abstract);
+            $abstract = trim($abstract);
+            break;
+        }
+    }
+    $dataArray[] = $abstract;
+
+    // latest version
+    $version = 'TODO';
+    if (
+        isset($ontologyData['http://www.w3.org/2002/07/owl#versionInfo'])
+        && is_string($ontologyData['http://www.w3.org/2002/07/owl#versionInfo'])
+    ) {
+        $version = trim($ontologyData['http://www.w3.org/2002/07/owl#versionInfo']);
+    }
+    $dataArray[] = $version;
+
+    // latest change
+    $latestChange = 'TODO';
+    if (isset($ontologyData['http://purl.org/dc/terms/modified'])) {
+        if (is_array($ontologyData['http://purl.org/dc/terms/modified'])) {
+            $latestChange = implode('', $ontologyData['http://purl.org/dc/terms/modified']);
+        } else {
+            $latestChange = $ontologyData['http://purl.org/dc/terms/modified'];
+        }
+    }
+    $dataArray[] = $latestChange;
+
+    // project page
+    $projectPage = 'TODO';
+    foreach ([
+        'http://www.w3.org/2000/01/rdf-schema#seeAlso'
+    ] as $property) {
+        if (isset($ontologyData[$property])) {
+            if (is_array($ontologyData[$property])) {
+                $projectPage = array_values($ontologyData[$property])[0];
+            } else {
+                $projectPage = $ontologyData[$property];
+            }
+
+            break;
+        }
+    }
+    $dataArray[] = $projectPage;
+
+    // ontology IRI
+    $dataArray[] = $ontologyIri;
+
+    // turtle file
+    if ('turtle' == $format) {
+        $dataArray[] = '';
+        $dataArray[] = $rdfFileUrl;
+    } else { // RDF/XML
+        $dataArray[] = $rdfFileUrl;
+        $dataArray[] = '';
+    }
+
+    // creator
+    $creators = [];
+    foreach ([
+        'http://purl.org/dc/elements/1.1/creator',
+        'http://purl.org/dc/terms/creator',
+        'http://xmlns.com/foaf/0.1/maker',
+    ] as $property) {
+        if (isset($ontologyData[$property])) {
+            if (is_string($ontologyData[$property])) {
+                $ontologyData[$property] = [$ontologyData[$property]];
+            }
+            foreach ($ontologyData[$property] as $creator) {
+                $creators[] = trim($creator);
+            }
+        }
+    }
+    $dataArray[] = implode(',', $creators);
+
+    // license
+    $license = 'TODO';
+    if (isset($ontologyData['http://purl.org/dc/terms/license'])) {
+        if (isset(getValidLicenses()[$ontologyData['http://purl.org/dc/terms/license']])) {
+            $license = getValidLicenses()[$ontologyData['http://purl.org/dc/terms/license']];
+        } else {
+            throw new Exception('Unknown license: '. $ontologyData['http://purl.org/dc/terms/license']);
+        }
+    }
+    $dataArray[] = $license;
+
+    return '"'.implode('","', $dataArray).'"';
 }
 
-/**
- * For a given license URL it returns appropriate shortcut.
- *
- * Example: for https://creativecommons.org/licenses/by/4.0/legalcode it returns CC-BY 4.0
- */
-function getLicenseShortcut(string $value): string
+function getValidLicenses(): array
 {
-    if (str_contains($value, 'http://purl.org/NET/rdflicense/cc-by3.0')) {
-        return 'CC-BY 3.0';
-    } elseif (str_contains($value, 'http://purl.org/NET/rdflicense/cc-by4.0')) {
-        return 'CC-BY 4.0';
-    } elseif (str_contains($value, 'https://creativecommons.org/licenses/by/4.0/')) {
-        return 'CC-BY 4.0';
-    } elseif (str_contains($value, 'https://creativecommons.org/licenses/by-sa/4.0/')) {
-        return 'CC-BY-SA 4.0';
-    } elseif (str_contains($value, 'http://opensource.org/licenses/MIT')) {
-        return 'MIT';
-    }
+    $list = [
+        'http://purl.org/NET/rdflicense/cc-by3.0' => 'CC-BY 3.0',
+        'http://purl.org/NET/rdflicense/cc-by4.0' => 'CC-BY 4.0',
+        'https://creativecommons.org/licenses/by/4.0/' => 'CC-BY 4.0',
+        'https://creativecommons.org/licenses/by-sa/4.0/' => 'CC-BY-SA 4.0',
+        'http://opensource.org/licenses/MIT' => 'MIT'
+    ];
 
-    return 'Information not available';
+    // licenses with no related URL
+    $list[] = 'Apache-2.0 license';
+    $list[] = 'BSD-2-Clause';
+    $list[] = 'BSD-3-Clause';
+    $list[] = 'CC-BY 1.0';
+    $list[] = 'CC-BY 2.0';
+    $list[] = 'Custom license'; // if a custom license is used
+    $list[] = 'GPL-3.0';
+    $list[] = 'Information not available';
+    $list[] = 'OGC Document License Agreement';
+    $list[] = 'PDDL 1.0';
+    $list[] = 'W3C Document License (2023)';
+
+    return $list;
 }
 
 /**
@@ -254,6 +218,44 @@ function getNamespaceUriListUsedInRdfFile(string $rdfFileContent, string $type):
     }
 
     return $list;
+}
+
+function getOntologyDataAsArray(InMemoryStoreSqlite $store): array
+{
+    $result = $store->query('SELECT ?iri WHERE {?iri a owl:Ontology.}');
+
+    if (1 == count($result['result']['rows'])) {
+        $ontologyIRI = $result['result']['rows'][0]['iri'];
+
+        $result = $store->query('SELECT ?p ?o WHERE {<'.$ontologyIRI.'> ?p ?o}');
+
+        /**
+         * Looks like:
+         *
+         * [
+         *      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"] => "http://www.w3.org/2002/07/owl#Ontology",
+         *      "http://www.w3.org/2002/07/owl#versionIRI"] => "http://emmo.info/emmo/1.0.0-beta/middle/units-extension"
+         *      ...
+         * ]
+         */
+        $arr = [];
+        foreach ($result['result']['rows'] as $row) {
+            // entry exists and is array
+            if (isset($arr[$row['p']]) && is_array($arr[$row['p']])) {
+                $arr[$row['p']][] = $row['o'];
+            } elseif (isset($arr[$row['p']])) {
+                $arr[$row['p']] = [$arr[$row['p']], $row['o']];
+            } else {
+                $arr[$row['p']] = $row['o'];
+            }
+        }
+        return [$ontologyIRI, $arr];
+
+    } elseif (1 < count($result['result']['rows'])) {
+        throw new Exception('More than one instance of owl:Ontology was found.');
+    } else {
+        throw new Exception('No instance of owl:Ontology was found.');
+    }
 }
 
 /**
@@ -297,6 +299,24 @@ function guessFormat(string $data): string|null
 }
 
 /**
+ * It seems that empty() is not enough to check, if something is really empty.
+ * This function takes care of the edge cases.
+ *
+ * @see https://stackoverflow.com/questions/718986/checking-if-the-string-is-empty
+ */
+function isEmpty(string|null $input): bool
+{
+    if (null === $input) {
+        return true;
+    } else { // its a string
+        $input = trim($input);
+        $input = (string) preg_replace('/\s/', '', $input);
+
+        return 0 == strlen($input);
+    }
+}
+
+/**
  * Checks if a given ontology IRI is already known, which means its either part of
  * the ontologies.csv or broken-links-redirects.csv.
  */
@@ -328,4 +348,47 @@ function isOntologyIriAlreadyKnown(string $ontologyIri): bool
 
         return false;
     }
+}
+
+function loadQuadsIntoInMemoryStore(
+    string $ontologyIri,
+    string $rdfFileUrl,
+    int $maxQuadAmount
+): InMemoryStoreSqlite|null {
+    // download file and read content
+    $rdfFileContent = getContentOfRdfFile($rdfFileUrl);
+
+    if (
+        0 === strlen($rdfFileContent)
+        || '404: Not Found' == $rdfFileContent
+        || str_contains($rdfFileContent, '<html ')
+    ) {
+        // echo PHP_EOL.$ontologyIri.' > no data or 404 > IGNORED';
+        return null;
+    } elseif (null === guessFormat($rdfFileContent)) {
+        // echo PHP_EOL.$ontologyIri.' > it neither RDF/XML nor Turtle data > IGNORED'.PHP_EOL;
+        return null;
+    }
+
+    $relevantQuads = [];
+    try {
+        // parse a file
+        $iterator = Util::parse($rdfFileContent, new DataFactory(), guessFormat($rdfFileContent));
+        $i = 0;
+        foreach ($iterator as $item) {
+            $relevantQuads[] = $item;
+            if ($i++ > $maxQuadAmount) {
+                // only take a limit amount to avoid the script run too long
+                break;
+            }
+        }
+    } catch (RdfIoException $e) {
+        echo PHP_EOL.' > Exception while parsing content for IRI ('.$ontologyIri.'): '.$e->getMessage();
+        return null;
+    }
+
+    $store = InMemoryStoreSqlite::createInstance();
+    $store->addQuads($relevantQuads);
+
+    return $store;
 }

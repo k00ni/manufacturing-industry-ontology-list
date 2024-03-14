@@ -2,16 +2,13 @@
 
 ## TODOs
 
-* [x] Check if there is still a need for column "ontology type" in CSV
 * [ ] Remove KIF related content, because its more clear when there is only RDF (e.g. ontology relations)
-* [ ] Align all licenses (like CC-BY 4.0)
 * Validate ontologies.csv
   * [ ] by loading each referenced RDF file and try to find ontology IRI
   * [ ] no TODO in any column
+  * [ ] Align Github links to raw files (https://raw.githubusercontent.com/srfiorini/IEEE1872-owl/master/corax.owl vs. https://github.com/Battery-Value-Chain-Ontology/ontology/raw/master/BVCO.ttl)
 * [ ] Create at least 1 image which shows ALL ontologies and their relation
 * [ ] Remove obsolete entries from paper.bib
-* [ ] ontologies.csv: add note somewhere about `#.ttl` additions in rdf file column
-* [ ] Align Github links to raw files (https://raw.githubusercontent.com/srfiorini/IEEE1872-owl/master/corax.owl vs. https://github.com/Battery-Value-Chain-Ontology/ontology/raw/master/BVCO.ttl)
 * [ ] Mention Graphviz config + image somewhere in the documentation (and paper)
 * Find further ontology candidates:
   * [ ] Check https://bartoc.org/

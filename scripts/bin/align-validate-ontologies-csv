@@ -1,0 +1,145 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * This file alignes content of ontologies.csv.
+ */
+
+declare(strict_types=1);
+
+use sweetrdf\InMemoryStoreSqlite\Store\InMemoryStoreSqlite;
+
+require __DIR__.'/../vendor/autoload.php';
+
+$alignedData = [];
+
+/*
+ * Alignment part
+ */
+foreach (array_map('str_getcsv', file(__DIR__.'/../../ontologies.csv')) as $rawEntry) {
+    $alignedEntry = [];
+    foreach ($rawEntry as $key => $value) {
+        // replace multiple whitespaces with 1 whitespace
+        $value = preg_replace('/\s+/', ' ', $value);
+
+        $value = str_replace([', ', ' ,'], ',', $value);
+
+        // remove trailing whitespaces
+        $alignedEntry[$key] = trim($value);
+    }
+
+    // short description must end with a dot
+    if ('.' != mb_substr($rawEntry[3], -1)) {
+        $rawEntry[3] .= '.';
+    }
+
+    $alignedData[] = $alignedEntry;
+}
+
+/*
+ * Validation part
+ */
+foreach ($alignedData as $line => $entry) {
+    if (0 == $line) {
+        continue;
+    }
+
+    $rdfFileUrl = null;
+
+    // ontology IRI
+    $ontologyIRI = $entry[7];
+
+    // related RDF file(s)
+    $rdfXmlFile = isEmpty($entry[8]) ? null : $entry[8];
+    $turtleFile = isEmpty($entry[9]) ? null : $entry[9];
+
+    if (null === $rdfXmlFile && null === $turtleFile) {
+        echo PHP_EOL.$entry[0].' has neither RDF/XML nor Turtle file.';
+        continue;
+    }
+
+    $rdfFileUrl = $rdfXmlFile ?? $turtleFile;
+
+    $store = loadQuadsIntoInMemoryStore($ontologyIRI, $rdfFileUrl, 300);
+
+    if (false === $store instanceof InMemoryStoreSqlite) {
+        echo PHP_EOL.'No ontology data found for '.$ontologyIRI.' >> '.$rdfFileUrl;
+        continue;
+    }
+
+    try {
+        list($ontologyIRI, $ontologyData) = getOntologyDataAsArray($store);
+    } catch (Throwable $e) {
+        if (str_contains($e->getMessage(), 'No instance of owl:Ontology')) {
+            // happens if file contains only RDFS data or owl:Class statements
+            continue;
+        } else {
+            throw $e;
+        }
+    }
+
+    /*
+     * check 1: if there are no creators set, check if there are ONLY contributors
+     */
+    if ('Information not available' == $entry[10]) {
+        // contributors
+        $contributors = [];
+        foreach ([
+            'http://purl.org/dc/elements/1.1/contributor',
+            'http://purl.org/dc/terms/contributor',
+        ] as $property) {
+            if (isset($ontologyData[$property])) {
+                if (is_string($ontologyData[$property])) {
+                    $ontologyData[$property] = [$ontologyData[$property]];
+                }
+                foreach ($ontologyData[$property] as $contributor) {
+                    $contributors[] = trim($contributor);
+                }
+            }
+        }
+
+        if (0 < count($contributors)) {
+            $entry[10] = implode(',', $contributors);
+            $entry[10] = preg_replace('/\n|\n\r/', '', $entry[10]);
+        }
+    }
+
+    /*
+     * check 2: only valid licenses used?
+     */
+    if (in_array($entry[11], getValidLicenses(), true)) {
+        // OK
+    } else {
+        throw new Exception($entry[0].' has invalid license in use: '.$entry[11]);
+    }
+
+    /*
+     * check 3: is ontology IRI found in related RDF data?
+     */
+    $result = $store->query('SELECT ?iri WHERE {?iri a owl:Ontology.}');
+    if (1 == count($result['result']['rows']) && $result['result']['rows'][0]['iri'] == $ontologyIRI) {
+        // OK
+    } else {
+        var_dump($result['result']);
+        throw new Exception('not found for '.$ontologyIRI);
+    }
+
+    /*
+     * Done
+     *
+     * store (updated) data
+     */
+    $alignedData[$line] = $entry;
+}
+
+/*
+ * Write aligned data back to ontologies.csv.
+ */
+$path = __DIR__.'/../../ontologies.csv';
+$fp = fopen($path, 'w'); // open in write only mode (write at the start of the file)
+foreach ($alignedData as $row) {
+    fputcsv($fp, $row);
+}
+fclose($fp);
+
+echo PHP_EOL;
