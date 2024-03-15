@@ -12,3 +12,4 @@
 /cache
 /scripts/composer.lock
 /scripts/vendor
+.vscode/settings.json
