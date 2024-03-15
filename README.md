@@ -11,10 +11,10 @@
 * [ ] Remove obsolete entries from paper.bib
 * [ ] Mention Graphviz config + image somewhere in the documentation (and paper)
 * Find further ontology candidates:
+  * [ ] https://github.com/orgs/oeg-upm/repositories?type=all&q=ontology
   * [ ] Check https://bartoc.org/
   * [ ] Check BioPortal
-  * [ ] https://github.com/orgs/oeg-upm/repositories?type=all&q=ontology
-* [ ] Stats:
+* [ ] Possible statistics:
   * [ ] Number of owl Imports + Namespaces checked
   * [ ] Amount of each license used
 
@@ -27,10 +27,6 @@ Check and if matching, work in the following ontologies:
 * [ ] **Additive Manufacturing and Maintenance Operations Ontology (AMMO)** - https://github.com/LA3D/ammo
 * [ ] **Crystallography Domain Ontology** - https://github.com/emmo-repo/domain-crystallography
 * [ ] **Defection Ontology (DefectOnt)** - https://www.researchgate.net/publication/364530871_An_Ontology_for_Defect_Detection_in_Metal_Additive_Manufacturing , https://github.com/AndreaMazzullo/DefectOnt (kleine OWL Datei, aber womöglich brauchbar und erwähnenswert)
-* [ ] **Digital Construction Energy Ontology** - https://digitalconstruction.github.io/Energy/v/0.5/
-* [ ] **Digital Construction Entities Ontology** - https://digitalconstruction.github.io/Entities/v/0.5/
-* [ ] **Digital Construction Materials** - https://digitalconstruction.github.io/Materials/v/0.5/
-* [ ] **Domain ontology for atomistic and electronic modelling** - https://github.com/emmo-repo/domain-atomistic
 
 ## Misc
 
