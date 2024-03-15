@@ -129,6 +129,15 @@ foreach ($alignedData as $line => $entry) {
     }
 
     /*
+     * check 4: avoid claggy texts such as    "foo,bar baz"
+     *                                             ^
+     *                                              `--- missing whitespace
+     */
+    $regex = '/([a-z0-9]+),([a-z0-9]+)/i';
+    $entry[0] = preg_replace($regex, '${1}, ${2}', $entry[0]); // title
+    $entry[3] = preg_replace($regex, '${1}, ${2}', $entry[3]); // description
+
+    /*
      * Done
      *
      * store (updated) data
@@ -142,7 +151,8 @@ foreach ($alignedData as $line => $entry) {
 $path = __DIR__.'/../../ontologies.csv';
 $fp = fopen($path, 'w'); // open in write only mode (write at the start of the file)
 foreach ($alignedData as $row) {
-    fputcsv($fp, $row);
+    $line = '"'.implode('","', $row).'"'.PHP_EOL;
+    fwrite($fp, $line);
 }
 fclose($fp);
 
