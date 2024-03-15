@@ -38,11 +38,7 @@ Check and if matching, work in the following ontologies:
   * https://ontohub.org/spaceportal/IFC%20OWL/IFC4_ADD1///symbolskind=ObjectProperty
   * https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL/index.html
   * https://technical.buildingsmart.org/standards/ifc/ifc-schema-specifications/
-  * https://github.com/buildingSMART/ifcOWL
   * **Prüfen, ob das noch für uns passt, weil inhaltlicher Fokus eher Bauwirtschaft ist**
-* [x] **Product Lifecycle Management Ontology** - https://rds.posccaesar.org/ontology/plm/, Prüfe, ob hierfür noch passende Dokumentation vorhanden ist. Es scheint auf jeden Fall RDF-Daten vorhanden zu sein
-  * [ ] PLM ChEBI	http://rds.posccaesar.org/ontology/plm/ont/chebi-adapt - http://rds.posccaesar.org/ontology/plm/ont/chebi-adapt/0.9.0
-  * [ ] PLM collect	https://rds.posccaesar.org/ontology/plm/ont/core-collect - http://rds.posccaesar.org/ontology/plm/ont/core-collect/0.9.0
 
 ## Misc
 
