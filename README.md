@@ -31,9 +31,6 @@ Check and if matching, work in the following ontologies:
 * [ ] **Digital Construction Entities Ontology** - https://digitalconstruction.github.io/Entities/v/0.5/
 * [ ] **Digital Construction Materials** - https://digitalconstruction.github.io/Materials/v/0.5/
 * [ ] **Domain ontology for atomistic and electronic modelling** - https://github.com/emmo-repo/domain-atomistic
-* [ ] **Energy Efficiency Prediction Semantic Assistant Ontology (EEPSA)** - https://iesnaola.github.io/eepsa/EEPSA/index-en.html, Verwendet Semantic Sensor Network Ontology
-* [ ] **European Materials \& Modelling Ontology (EMMO)** - https://github.com/emmo-repo/ + https://emmc.eu/news/emmo-1-0-0-alpha-release/
-* [ ] **General Process Ontology (GPO)** - https://gitlab.cc-asp.fraunhofer.de/ISC-Public/ISC-Digital/ontology/gpo, Ontologie ist noch WIP
 
 ## Misc
 

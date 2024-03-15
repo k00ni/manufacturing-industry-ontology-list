@@ -65,7 +65,11 @@ foreach ($simplifiedOntologyList as $iri => $entry) {
             $ontologyIRI = $result['result']['rows'][0]['iri'];
 
             // get related ontology title
-            if (isOntologyIriAlreadyKnown($ontologyIRI) || isset($unknownOntologies[$ontologyIRI])) {
+            if (
+                isOntologyIriAlreadyKnown($ontologyIRI)
+                || isset($unknownOntologies[$ontologyIRI])
+                || '_:' == substr($ontologyIRI, 0, 2) // ignore blank nodes
+            ) {
                 // is known
                 continue;
             } else {

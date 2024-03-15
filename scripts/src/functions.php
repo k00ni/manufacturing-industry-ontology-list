@@ -178,6 +178,7 @@ function getValidLicenses(): array
         'http://creativecommons.org/publicdomain/zero/1.0/' => 'CC0 1.0 DEED',
         'https://creativecommons.org/licenses/by/4.0/' => 'CC-BY 4.0',
         'https://creativecommons.org/licenses/by/4.0/legalcode' => 'CC-BY 4.0',
+        'https://creativecommons.org/licenses/by-nc/4.0/' => 'CC-BY-NC 4.0',
         'https://creativecommons.org/licenses/by-sa/4.0/' => 'CC-BY-SA 4.0',
         'http://opensource.org/licenses/MIT' => 'MIT',
         'http://www.opendatacommons.org/licenses/pddl/1.0/' => 'PDDL 1.0',
