@@ -22,8 +22,6 @@ foreach (array_map('str_getcsv', file(__DIR__.'/../../ontologies.csv')) as $rawE
         // replace multiple whitespaces with 1 whitespace
         $value = preg_replace('/\s+/', ' ', $value);
 
-        $value = str_replace([', ', ' ,'], ',', $value);
-
         // remove trailing whitespaces
         $alignedEntry[$key] = trim($value);
     }
@@ -32,6 +30,13 @@ foreach (array_map('str_getcsv', file(__DIR__.'/../../ontologies.csv')) as $rawE
     if ('.' != mb_substr($rawEntry[3], -1)) {
         $rawEntry[3] .= '.';
     }
+
+    // remove trailing whitespaces around creator entries
+    $str = '';
+    foreach(explode(',', $rawEntry[10]) as $creator) {
+        $str .= trim($creator);
+    }
+    $rawEntry[10] = $str;
 
     $alignedData[] = $alignedEntry;
 }
