@@ -25,6 +25,10 @@ foreach ($simplifiedOntologyList as $iri => $entry) {
         continue;
     }
 
+    if (str_contains($entry['rdfxml_file'], '.zip') || str_contains($entry['rdfxml_file'], '.zip')) {
+        continue;
+    }
+
     // download file and read content
     if (0 < strlen($entry['rdfxml_file'])) {
         $format = 'rdf';

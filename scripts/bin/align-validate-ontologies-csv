@@ -59,6 +59,10 @@ foreach ($alignedData as $line => $entry) {
     }
 
     $rdfFileUrl = $rdfXmlFile ?? $turtleFile;
+    if (str_contains($rdfFileUrl, '.zip')) {
+        echo PHP_EOL.$entry[0].' has ZIP file referenced, which has to be extracted before usage.';
+        continue;
+    }
 
     $store = loadQuadsIntoInMemoryStore($rdfFileUrl, 300);
 
