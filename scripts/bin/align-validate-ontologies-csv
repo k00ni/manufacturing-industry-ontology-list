@@ -16,7 +16,12 @@ $alignedData = [];
 /*
  * Alignment part
  */
-foreach (array_map('str_getcsv', file(__DIR__.'/../../ontologies.csv')) as $rawEntry) {
+foreach (array_map('str_getcsv', file(__DIR__.'/../../ontologies.csv')) as $line => $rawEntry) {
+    if (0 == $line) {
+        $alignedData[] = $rawEntry;
+        continue;
+    }
+
     $alignedEntry = [];
     foreach ($rawEntry as $key => $value) {
         // replace multiple whitespaces with 1 whitespace
@@ -27,16 +32,22 @@ foreach (array_map('str_getcsv', file(__DIR__.'/../../ontologies.csv')) as $rawE
     }
 
     // short description must end with a dot
-    if ('.' != mb_substr($rawEntry[3], -1)) {
-        $rawEntry[3] .= '.';
+    if (false === str_contains($rawEntry[3], 'Information not available') && '.' != mb_substr($rawEntry[3], -1)) {
+        $alignedEntry[3] .= '.';
     }
+    $alignedEntry[3] = trim($alignedEntry[3]);
 
     // remove trailing whitespaces around creator entries
-    $str = '';
+    $creators = [];
     foreach(explode(',', $rawEntry[10]) as $creator) {
-        $str .= trim($creator);
+        $creators[] = trim($creator);
     }
-    $rawEntry[10] = $str;
+    $alignedEntry[10] = implode(',', $creators);
+    $alignedEntry[10] = str_replace(
+        '(via Git commits,might be incomplete)',
+        '(via Git commits, might be incomplete)',
+        $alignedEntry[10]
+    );
 
     $alignedData[] = $alignedEntry;
 }
