@@ -139,6 +139,9 @@ function getCSVLineForOntology(
         $dataArray[] = '';
     }
 
+    // download location
+    $dataArray[] = '';
+
     // creator
     $creators = [];
     foreach ([
