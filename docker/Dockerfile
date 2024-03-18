@@ -14,6 +14,10 @@ RUN mkdir /home/ontolist
 RUN chown ontolist:www-data /home/ontolist
 RUN adduser ontolist sudo
 
+# add custom PHP.ini settings
+RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
+COPY ./custom.ini /usr/local/etc/php/conf.d/custom.ini
+
 RUN mkdir /app
 WORKDIR /app
 
