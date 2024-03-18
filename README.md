@@ -12,7 +12,8 @@
 * [ ] Mention Graphviz config + image somewhere in the documentation (and paper)
 * Find further ontology candidates:
   * [ ] https://github.com/orgs/oeg-upm/repositories?type=all&q=ontology
-  * [ ] Check https://bartoc.org/
+  * [x] Check https://bartoc.org/
+  * [ ] https://showvoc.op.europa.eu/#/datasets
 * [ ] Possible statistics:
   * [ ] Number of owl Imports + Namespaces checked
   * [ ] Amount of each license used

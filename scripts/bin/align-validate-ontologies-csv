@@ -39,14 +39,14 @@ foreach (array_map('str_getcsv', file(__DIR__.'/../../ontologies.csv')) as $line
 
     // remove trailing whitespaces around creator entries
     $creators = [];
-    foreach(explode(',', $rawEntry[10]) as $creator) {
+    foreach(explode(',', $rawEntry[11]) as $creator) {
         $creators[] = trim($creator);
     }
-    $alignedEntry[10] = implode(',', $creators);
-    $alignedEntry[10] = str_replace(
+    $alignedEntry[11] = implode(',', $creators);
+    $alignedEntry[11] = str_replace(
         '(via Git commits,might be incomplete)',
         '(via Git commits, might be incomplete)',
-        $alignedEntry[10]
+        $alignedEntry[11]
     );
 
     $alignedData[] = $alignedEntry;
@@ -101,7 +101,7 @@ foreach ($alignedData as $line => $entry) {
     /*
      * check 1: if there are no creators set, check if there are ONLY contributors
      */
-    if ('Information not available' == $entry[10]) {
+    if ('Information not available' == $entry[11]) {
         // contributors
         $contributors = [];
         foreach ([
@@ -119,15 +119,15 @@ foreach ($alignedData as $line => $entry) {
         }
 
         if (0 < count($contributors)) {
-            $entry[10] = implode(',', $contributors);
-            $entry[10] = preg_replace('/\n|\n\r/', '', $entry[10]);
+            $entry[11] = implode(',', $contributors);
+            $entry[11] = preg_replace('/\n|\n\r/', '', $entry[11]);
         }
     }
 
     /*
      * check 2: only valid licenses used?
      */
-    if (in_array($entry[11], getValidLicenses(), true)) {
+    if (in_array($entry[12], getValidLicenses(), true)) {
         // OK
     } else {
         throw new Exception($entry[0].' has invalid license in use: '.$entry[11]);
