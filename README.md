@@ -18,13 +18,6 @@
   * [ ] Number of owl Imports + Namespaces checked
   * [ ] Amount of each license used
 
-Check and if matching, work in the following ontologies:
-
-* [ ] **Additive manufacturing** - Paper "A product life cycle ontology for additive manufacturing": https://philarchive.org/archive/ALIAPLv1
-  * Gibt es dazu noch irgendwo die öffentlich zugänglichen RDF Daten
-  * ODER
-    * Prüfe, ob sie zu folgender Publikation Rohdaten finden lassen: A Design for Additive Manufacturing Ontology: https://citeseerx.ist.psu.edu/documentrepid=rep1&type=pdf&doi=b18539e972dfd14782d6a907dd04d1b91819e8b2
-
 ## Misc
 
 File [yuml-diagram-config.txt](./yuml-diagram-config.txt) contains config code for graph visualization (yuml.me).
