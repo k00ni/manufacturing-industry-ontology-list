@@ -1,0 +1,88 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * This file alignes content of ontologies.csv.
+ */
+
+declare(strict_types=1);
+
+use sweetrdf\InMemoryStoreSqlite\Store\InMemoryStoreSqlite;
+
+require __DIR__.'/../vendor/autoload.php';
+
+$statistics = [
+    'number-of-related-ontologies' => 0,
+    'total-number-of-ontologies' => null,
+    'license-usage' => [],
+];
+
+/*
+ * Alignment part
+ */
+$csvEntries = array_map('str_getcsv', file(__DIR__.'/../../ontologies.csv'));
+foreach ($csvEntries as $line => $entry) {
+    if (0 == $line) {
+        continue;
+    }
+
+    echo '.';
+
+    /*
+     * Preparation part ----------------------------------------------------------------
+     */
+
+    $rdfFileUrl = null;
+
+    // ontology IRI
+    $ontologyIRI = $entry[7];
+
+    // related RDF file(s)
+    $rdfXmlFile = isEmpty($entry[8]) ? null : $entry[8];
+    $turtleFile = isEmpty($entry[9]) ? null : $entry[9];
+
+    $rdfFileUrl = $rdfXmlFile ?? $turtleFile;
+
+    $store = null;
+    $ontologyData = null;
+
+    if (null == $rdfFileUrl) {
+        // ignore
+    } else {
+        $store = loadQuadsIntoInMemoryStore($rdfFileUrl, 300);
+
+        if (false === $store instanceof InMemoryStoreSqlite) {
+            echo PHP_EOL.'No ontology data found for '.$ontologyIRI.' >> '.$rdfFileUrl;
+        }
+
+        try {
+            if ($store instanceof InMemoryStoreSqlite) {
+                list($ontologyIRI, $ontologyData) = getOntologyDataAsArray($store);
+            }
+        } catch (Throwable $e) {
+            if (str_contains($e->getMessage(), 'No instance of owl:Ontology')) {
+                // happens if file contains only RDFS data or owl:Class statements
+            } else {
+                throw $e;
+            }
+        }
+    }
+
+    /*
+     * Stats part ----------------------------------------------------------------
+     */
+    if ('yes' == $entry[1]) {
+        ++$statistics['number-of-related-ontologies'];
+    }
+}
+
+$statistics['total-number-of-ontologies'] = count($csvEntries)-1;
+
+echo PHP_EOL;
+echo PHP_EOL;
+echo PHP_EOL;
+var_dump($statistics);
+
+// TODO print statistics nicely
+
+echo PHP_EOL;
