@@ -13,10 +13,10 @@
 * Find further ontology candidates:
   * [ ] https://github.com/orgs/oeg-upm/repositories?type=all&q=ontology
   * [ ] Check https://bartoc.org/
-  * [ ] Check BioPortal
 * [ ] Possible statistics:
   * [ ] Number of owl Imports + Namespaces checked
   * [ ] Amount of each license used
+  * [ ] Amount of entries with/without abbreviation
 
 ## Misc
 

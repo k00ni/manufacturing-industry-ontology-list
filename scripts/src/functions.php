@@ -22,7 +22,8 @@ function getContentOfRdfFile(string $link): string
         $curl = new Curl();
         $curl->setConnectTimeout(3);
         $curl->setOpt(CURLOPT_FOLLOWLOCATION, true); // follow redirects
-        curl_setopt($curl->curl, CURLOPT_SSL_VERIFYHOST, false); // ignore SSL errors (because of broken SSL-certificates)
+        $curl->setOpt(CURLOPT_SSL_VERIFYPEER, false);
+        $curl->setOpt(CURLOPT_SSL_VERIFYHOST, false);
 
         $curl->get($link);
 
