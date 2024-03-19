@@ -177,6 +177,7 @@ function getCSVLineForOntology(
 function getValidLicenses(): array
 {
     $list = [
+        'https://www.apache.org/licenses/LICENSE-2.0' => 'Apache-2.0 license',
         'http://purl.org/NET/rdflicense/cc-by3.0' => 'CC-BY 3.0',
         'http://purl.org/NET/rdflicense/cc-by4.0' => 'CC-BY 4.0',
         'http://creativecommons.org/publicdomain/zero/1.0/' => 'CC0 1.0 DEED',
@@ -189,7 +190,6 @@ function getValidLicenses(): array
     ];
 
     // licenses with no related URL
-    $list[] = 'Apache-2.0 license';
     $list[] = 'BSD-2-Clause';
     $list[] = 'BSD-3-Clause';
     $list[] = 'CC-BY 1.0';
