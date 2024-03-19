@@ -196,6 +196,7 @@ function getValidLicenses(): array
     $list[] = 'CC-BY 2.0';
     $list[] = 'CC-BY-SA 3.0';
     $list[] = 'Custom license'; // if a custom license is used
+    $list[] = 'GPL-1.0';
     $list[] = 'GPL-3.0';
     $list[] = 'Information not available';
     $list[] = 'OGC Document License Agreement';
