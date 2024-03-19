@@ -49,7 +49,7 @@ foreach ($csvEntries as $line => $entry) {
     if (null == $rdfFileUrl) {
         // ignore
     } else {
-        $store = loadQuadsIntoInMemoryStore($rdfFileUrl, 300);
+        $store = loadQuadsIntoInMemoryStore($rdfFileUrl, 100);
 
         if (false === $store instanceof InMemoryStoreSqlite) {
             echo PHP_EOL.'No ontology data found for '.$ontologyIRI.' >> '.$rdfFileUrl;

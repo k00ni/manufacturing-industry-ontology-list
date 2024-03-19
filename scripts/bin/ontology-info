@@ -4,8 +4,6 @@
 declare(strict_types=1);
 
 use quickRdf\DataFactory;
-use quickRdfIo\Util;
-use sweetrdf\InMemoryStoreSqlite\Store\InMemoryStoreSqlite;
 
 require __DIR__.'/../src/bootstrap.php';
 
@@ -36,16 +34,10 @@ if (str_contains($data, '404: Not Found')) {
     return;
 }
 
-$dataFactory = new DataFactory();
-
-// generate a Graph instance, which helps us interacting with RDF data more easily
-$iterator = Util::parse($data, $dataFactory, $format);
-
-// read file content into in-memory SPARQL store
-$store = InMemoryStoreSqlite::createInstance();
-$store->addQuads($iterator);
+$store = loadQuadsIntoInMemoryStore($ontologyURIOrRdfFileURL);
 
 // generate CSV file line for given ontology
+echo PHP_EOL;
 echo PHP_EOL;
 if (isOntologyIriAlreadyKnown($ontologyURIOrRdfFileURL)) {
     echo 'Ontology is already known ('.$ontologyURIOrRdfFileURL.')';
@@ -65,6 +57,8 @@ if (0 < count($iris)) {
     echo 'CSV file lines for UNKNOWN ontologies referend in owl:import statements:';
     echo PHP_EOL;
 
+    $dataFactory = new DataFactory();
+
     foreach ($iris as $ontologyIri) {
         // if ontology IRI is unknown
         if (false === isOntologyIriAlreadyKnown($ontologyIri)) {
@@ -77,10 +71,7 @@ if (0 < count($iris)) {
                 continue;
             }
 
-            $iterator = Util::parse($data, $dataFactory, $format);
-            // read file content into in-memory SPARQL store
-            $store = InMemoryStoreSqlite::createInstance();
-            $store->addQuads($iterator);
+            $store = loadQuadsIntoInMemoryStore($ontologyIri);
 
             echo PHP_EOL;
             echo getCSVLineForOntology($ontologyIri, $store, $format);

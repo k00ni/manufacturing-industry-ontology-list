@@ -33,11 +33,11 @@ foreach ($simplifiedOntologyList as $iri => $entry) {
     if (0 < strlen($entry['rdfxml_file'])) {
         $format = 'rdf';
         $rdfFileContent = getContentOfRdfFile($entry['rdfxml_file']);
-        $store = loadQuadsIntoInMemoryStore($entry['rdfxml_file'], 300);
+        $store = loadQuadsIntoInMemoryStore($entry['rdfxml_file']);
     } else {
         $format = 'turtle';
         $rdfFileContent = getContentOfRdfFile($entry['turtle_file']);
-        $store = loadQuadsIntoInMemoryStore($entry['turtle_file'], 300);
+        $store = loadQuadsIntoInMemoryStore($entry['turtle_file']);
     }
 
     $owlImportIris = [];
@@ -54,7 +54,7 @@ foreach ($simplifiedOntologyList as $iri => $entry) {
     foreach ($iris as $referencedOntologyFileUrl) {
         echo ',';
 
-        $store = loadQuadsIntoInMemoryStore($referencedOntologyFileUrl, 300);
+        $store = loadQuadsIntoInMemoryStore($referencedOntologyFileUrl);
         if (null == $store) {
             continue;
         }

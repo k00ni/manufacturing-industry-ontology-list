@@ -11,6 +11,8 @@
   * [ ] Amount of each license used
   * [ ] Amount of entries with/without abbreviation
 
+* [ ] check http://www.ebusiness-unibw.org/ontologies/opdm/
+
 ## Misc
 
 File [yuml-diagram-config.txt](./yuml-diagram-config.txt) contains config code for graph visualization (yuml.me).

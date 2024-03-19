@@ -367,10 +367,10 @@ function isOntologyIriAlreadyKnown(string $ontologyIri): bool
     }
 }
 
-function loadQuadsIntoInMemoryStore(
-    string $rdfFileUrl,
-    int $maxQuadAmount
-): InMemoryStoreSqlite|null {
+function loadQuadsIntoInMemoryStore(string $rdfFileUrl): InMemoryStoreSqlite|null
+{
+    $maxQuadAmount = 100;
+
     // download file and read content
     $rdfFileContent = getContentOfRdfFile($rdfFileUrl);
 
