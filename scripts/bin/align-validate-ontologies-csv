@@ -74,21 +74,21 @@ foreach ($alignedData as $line => $entry) {
     $downloadLocation = isEmpty($entry[10]) ? '' : $entry[10];
 
     if (null === $rdfXmlFile && null === $turtleFile) {
-        echo PHP_EOL.$entry[0].' has neither RDF/XML nor Turtle file.';
+        echo PHP_EOL.$entry[0].' has neither RDF/XML nor Turtle file.'.PHP_EOL;
         continue;
     }
 
     $rdfFileUrl = $rdfXmlFile ?? $turtleFile;
 
     if (str_contains($downloadLocation, '.zip')) {
-        echo PHP_EOL.$entry[0].' has ZIP file referenced, which has to be extracted before usage.';
+        echo PHP_EOL.$entry[0].' has ZIP file referenced, which has to be extracted before usage.'.PHP_EOL;
         continue;
     }
 
     $store = loadQuadsIntoInMemoryStore($rdfFileUrl);
 
     if (false === $store instanceof InMemoryStoreSqlite) {
-        echo PHP_EOL.'No ontology data found for '.$ontologyIRI.' >> '.$rdfFileUrl;
+        echo PHP_EOL.'No ontology data found for '.$ontologyIRI.' >> '.$rdfFileUrl.PHP_EOL;
         continue;
     }
 
@@ -97,6 +97,8 @@ foreach ($alignedData as $line => $entry) {
     } catch (Throwable $e) {
         if (str_contains($e->getMessage(), 'No instance of owl:Ontology')) {
             // happens if file contains only RDFS data or owl:Class statements
+            continue;
+        } elseif (str_contains($e->getMessage(), 'More than one instance of owl:Ontology')) {
             continue;
         } else {
             throw $e;

@@ -2,8 +2,6 @@
 
 ## TODOs
 
-* [ ] if possible link all available RDF files
-  * TODO and above for SEAS https://w3id.org/seas/TradingOntology-1.1.rdf
 * [ ] build list of all problematic ontology IRIs to see if there is something left to cover
 * [ ] Remove KIF related content, because its more clear when there is only RDF (e.g. ontology relations)
 * [ ] Create at least 1 image which shows ALL ontologies and their relation
