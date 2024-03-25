@@ -2,9 +2,6 @@
 
 ## TODOs
 
-* add helper script to check if all files/project sites are still up
-  * [ ] example code: https://stackoverflow.com/a/73975832
-  * [ ] if they are offline, update related cache entry
 * [ ] if possible link all available RDF files
   * TODO and above for SEAS https://w3id.org/seas/TradingOntology-1.1.rdf
 * [ ] build list of all problematic ontology IRIs to see if there is something left to cover

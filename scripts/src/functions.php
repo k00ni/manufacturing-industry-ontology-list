@@ -420,3 +420,21 @@ function loadQuadsIntoInMemoryStore(string $rdfFileUrl): InMemoryStoreSqlite|nul
 
     return $store;
 }
+
+function urlIsStillAccessible(string $url): bool
+{
+    $curl = new Curl();
+    $curl->setOpt(CURLOPT_CONNECT_ONLY, true);
+    $curl->setConnectTimeout(5);
+    $curl->setMaximumRedirects(10);
+    $curl->setOpt(CURLOPT_FOLLOWLOCATION, true); // follow redirects
+    $curl->setOpt(CURLOPT_SSL_VERIFYPEER, false);
+    $curl->setOpt(CURLOPT_SSL_VERIFYHOST, false);
+
+    $curl->get($url);
+    if ($curl->error) {
+        return false;
+    } else {
+        return true;
+    }
+}

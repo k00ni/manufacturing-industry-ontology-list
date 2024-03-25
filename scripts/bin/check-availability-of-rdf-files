@@ -1,0 +1,53 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * This file checks availability of all RDF files in ontologies.csv.
+ */
+
+declare(strict_types=1);
+
+use Symfony\Component\Cache\Adapter\FilesystemAdapter;
+
+require __DIR__.'/../vendor/autoload.php';
+
+$failingRdfFiles = [];
+$cache = new FilesystemAdapter('ind_ontos', 0, __DIR__.'/../../cache');
+
+foreach (array_map('str_getcsv', file(__DIR__.'/../../ontologies.csv')) as $line => $entry) {
+    if (0 == $line) {
+        continue;
+    }
+
+    $rdfXmlFile = isEmpty($entry[8]) ? null : $entry[8];
+    $turtleFile = isEmpty($entry[9]) ? null : $entry[9];
+    $downloadLocation = isEmpty($entry[10]) ? '' : $entry[10];
+
+    $rdfFile = $rdfXmlFile ?? $turtleFile;
+    if (isEmpty($rdfFile)) {
+        // ignore
+        echo PHP_EOL.'IGN - '.$entry[0].' >> $rdfFile is empty';
+    } else {
+        if (urlIsStillAccessible($rdfFile)) {
+            echo PHP_EOL.'OK  - '.$entry[0].' >> '. $rdfFile;
+        } else {
+            echo PHP_EOL.'ERR - '.$entry[0].' >> '. $rdfFile;
+            $failingRdfFiles[] = $rdfFile;
+
+            // remove related cache entry to enforce fresh GET request next time
+            $key = md5($rdfFile);
+            return $cache->delete($key);
+        }
+    }
+}
+
+if (0 < count($failingRdfFiles)) {
+    $msg = 'The following RDF files are not accessible anymore: ';
+    $msg .= implode(', ', $failingRdfFiles);
+    throw new Exception($msg);
+}
+
+echo PHP_EOL;
+echo PHP_EOL;
+
+return 0;
