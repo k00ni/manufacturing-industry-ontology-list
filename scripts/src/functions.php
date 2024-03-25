@@ -27,7 +27,11 @@ function getContentOfRdfFile(string $link): string
 
         $curl->get($link);
 
-        return $curl->rawResponse;
+        if (200 <= $curl->httpStatusCode && $curl->httpStatusCode < 300) {
+            return $curl->rawResponse;
+        } else {
+            throw new Exception($link.' returned with status code '. $curl->httpStatusCode);
+        }
     });
 }
 
@@ -206,13 +210,13 @@ function getValidLicenses(): array
 }
 
 /**
- * @param string $type One of: turtle,xml
+ * @param string $fprmat One of: turtle,xml
  *
  * @return array<string>
  */
-function getNamespaceUriListUsedInRdfFile(string $rdfFileContent, string $type): array
+function getNamespaceUriListUsedInRdfFile(string $rdfFileContent, string $format): array
 {
-    if ('turtle' == $type) {
+    if ('turtle' == $format) {
         $regex = '/[@prefix]+\s+[a-z\-]+:\s*<(.*?)>/msi';
     } else { // == RDF/XML
         $regex = '/xmlns:[a-z\-]+="(.*?)"/smi';
@@ -220,10 +224,20 @@ function getNamespaceUriListUsedInRdfFile(string $rdfFileContent, string $type):
 
     $list = [];
     preg_match_all($regex, $rdfFileContent, $namespaceIRIs);
-    if (isset($namespaceIRIs[1])) {
+    if (isset($namespaceIRIs[1]) && 0 < count($namespaceIRIs[1])) {
         foreach ($namespaceIRIs[1] as $iri) {
             $list[] = $iri;
         }
+    } else {
+        echo PHP_EOL;
+        echo PHP_EOL;
+        echo 'Format = ' . $format;
+        echo PHP_EOL;
+        var_dump($namespaceIRIs);
+        echo PHP_EOL;
+        echo PHP_EOL;
+        echo substr($rdfFileContent, 0, 200);
+        echo PHP_EOL;
     }
 
     return $list;
@@ -379,7 +393,7 @@ function loadQuadsIntoInMemoryStore(string $rdfFileUrl): InMemoryStoreSqlite|nul
         || '404: Not Found' == $rdfFileContent
         || str_contains($rdfFileContent, '<html ')
     ) {
-        echo PHP_EOL.$rdfFileUrl.' > no data or 404 > IGNORED';
+        echo PHP_EOL.$rdfFileUrl.' > no data or 404 > IGNORED'.PHP_EOL;
         return null;
     } elseif (null === guessFormat($rdfFileContent)) {
         echo PHP_EOL.$rdfFileUrl.' > it neither RDF/XML nor Turtle data > IGNORED'.PHP_EOL;

@@ -18,24 +18,33 @@ echo PHP_EOL;
 
 foreach ($simplifiedOntologyList as $iri => $entry) {
     echo PHP_EOL;
-    echo PHP_EOL.$iri;
+    echo PHP_EOL;
+    echo PHP_EOL.'##########################################';
+    echo PHP_EOL.'Check '. $iri.' namespaces and owl:imports';
+    echo PHP_EOL.'##########################################';
+    echo PHP_EOL;
     echo PHP_EOL;
 
     if (0 == strlen($entry['rdfxml_file']) && 0 == strlen($entry['turtle_file'])) {
+        echo PHP_EOL.' ignored, because no file URLs provided.'.PHP_EOL;
         continue;
     }
-
+    
     if (str_contains($entry['rdfxml_file'], '.zip') || str_contains($entry['rdfxml_file'], '.zip')) {
+        echo PHP_EOL.'CSV entry with IRI '.$entry['ontology_iri'].' ignored, because no file URLs provided.'.PHP_EOL;
         continue;
     }
 
     // download file and read content
+    $usedRdfFileUrl = null;
     if (0 < strlen($entry['rdfxml_file'])) {
         $format = 'rdf';
+        $usedRdfFileUrl = $entry['rdfxml_file'];
         $rdfFileContent = getContentOfRdfFile($entry['rdfxml_file']);
         $store = loadQuadsIntoInMemoryStore($entry['rdfxml_file']);
     } else {
         $format = 'turtle';
+        $usedRdfFileUrl = $entry['turtle_file'];
         $rdfFileContent = getContentOfRdfFile($entry['turtle_file']);
         $store = loadQuadsIntoInMemoryStore($entry['turtle_file']);
     }
@@ -53,6 +62,13 @@ foreach ($simplifiedOntologyList as $iri => $entry) {
 
     foreach ($iris as $referencedOntologyFileUrl) {
         echo ',';
+
+        if (isset($brokenLinksRedirects[$referencedOntologyFileUrl])) {
+            echo PHP_EOL;
+            echo 'Ignored '.$referencedOntologyFileUrl.' because it is in broken-links-redirects.csv';
+            echo PHP_EOL;
+            continue;
+        }
 
         $store = loadQuadsIntoInMemoryStore($referencedOntologyFileUrl);
         if (null == $store) {
@@ -96,7 +112,13 @@ foreach ($simplifiedOntologyList as $iri => $entry) {
     }
 
     if (0 == count($iris)) {
-        throw new Exception($entry['ontology_iri'].': No related namespaces and owl:imports found (format='.$format.')!');
+        $msg = 'Ontology entry with IRI: '.$entry['ontology_iri'] . ' has no files with namespaces/owl:imports in file ';
+        $msg .= $usedRdfFileUrl.' (format=' . $format . ')!';
+        echo $msg;
+        echo PHP_EOL;
+        echo PHP_EOL.'STOPPED';
+        echo PHP_EOL;
+        return;
     }
 }
 
