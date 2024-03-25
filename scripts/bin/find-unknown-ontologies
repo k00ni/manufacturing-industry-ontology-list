@@ -15,40 +15,48 @@ $dataFactory = new DataFactory();
 $unknownOntologies = [];
 
 echo PHP_EOL;
+$foundInvalidURIs = [];
 
 foreach ($simplifiedOntologyList as $iri => $entry) {
     echo PHP_EOL;
     echo PHP_EOL;
-    echo PHP_EOL.'##########################################';
+    echo PHP_EOL.'###############################################################################';
     echo PHP_EOL.'Check '. $iri.' namespaces and owl:imports';
-    echo PHP_EOL.'##########################################';
+    echo PHP_EOL.'###############################################################################';
     echo PHP_EOL;
     echo PHP_EOL;
 
     if (0 == strlen($entry['rdfxml_file']) && 0 == strlen($entry['turtle_file'])) {
-        echo PHP_EOL.' ignored, because no file URLs provided.'.PHP_EOL;
+        echo PHP_EOL.' ignored, no file URLs provided.'.PHP_EOL;
+        $foundInvalidURIs[$entry['ontology_iri']] = 'ignored, no file URLs provided';
         continue;
     }
-    
-    if (str_contains($entry['rdfxml_file'], '.zip') || str_contains($entry['rdfxml_file'], '.zip')) {
-        echo PHP_EOL.'CSV entry with IRI '.$entry['ontology_iri'].' ignored, because no file URLs provided.'.PHP_EOL;
+
+    if (false === isEmpty($entry['download_location'])) {
+        echo PHP_EOL.'CSV entry with IRI '.$entry['ontology_iri'].' ignored, no directly accessible RDF file'.PHP_EOL;
         continue;
     }
 
     // download file and read content
-    $usedRdfFileUrl = null;
     if (0 < strlen($entry['rdfxml_file'])) {
         $format = 'rdf';
         $usedRdfFileUrl = $entry['rdfxml_file'];
         $rdfFileContent = getContentOfRdfFile($entry['rdfxml_file']);
-        $store = loadQuadsIntoInMemoryStore($entry['rdfxml_file']);
+
     } else {
         $format = 'turtle';
         $usedRdfFileUrl = $entry['turtle_file'];
         $rdfFileContent = getContentOfRdfFile($entry['turtle_file']);
-        $store = loadQuadsIntoInMemoryStore($entry['turtle_file']);
     }
 
+    if (isEmpty($rdfFileContent)) {
+        echo PHP_EOL.'EMPTY file: '.$usedRdfFileUrl.PHP_EOL;
+        $foundInvalidURIs[$entry['ontology_iri']] = 'empty file ('.$usedRdfFileUrl.')';
+        continue;
+    }
+
+    // load part of ontology
+    $store = loadQuadsIntoInMemoryStore($usedRdfFileUrl);
     $owlImportIris = [];
     if (null !== $store) {
         $owlImportIris = getOwlImportIris($store);
@@ -65,7 +73,7 @@ foreach ($simplifiedOntologyList as $iri => $entry) {
 
         if (isset($brokenLinksRedirects[$referencedOntologyFileUrl])) {
             echo PHP_EOL;
-            echo 'Ignored '.$referencedOntologyFileUrl.' because it is in broken-links-redirects.csv';
+            echo 'IGNORED: '.$referencedOntologyFileUrl.' because it is in broken-links-redirects.csv';
             echo PHP_EOL;
             continue;
         }
@@ -111,17 +119,44 @@ foreach ($simplifiedOntologyList as $iri => $entry) {
         }
     }
 
-    if (0 == count($iris)) {
+    $noIrisFound = 0 == count($iris);
+    $referencedFileNotPartOfBrokenLinksList = false === isset($brokenLinksRedirects[$usedRdfFileUrl]);
+    if ($noIrisFound && $usedRdfFileNotPartOfBrokenLinksList) {
         $msg = 'Ontology entry with IRI: '.$entry['ontology_iri'] . ' has no files with namespaces/owl:imports in file ';
         $msg .= $usedRdfFileUrl.' (format=' . $format . ')!';
+        echo PHP_EOL;
+        echo PHP_EOL;
         echo $msg;
         echo PHP_EOL;
         echo PHP_EOL.'STOPPED';
         echo PHP_EOL;
+        var_dump($brokenLinksRedirects);
+        echo PHP_EOL;
+
+        $foundInvalidURIs[$entry['ontology_iri']] = $referencedOntologyFileUrl.' no namespaces and owl:imports found';
         return;
     }
 }
 
+/*
+ * build a simple list to be sorted afterwards
+ */
+$list = [];
+foreach ($foundInvalidURIs as $uri => $comment) {
+    $list[] = ['uri' => $uri, 'comment' => $comment];
+}
+usort($list, function($a, $b) {
+    return $a['uri'] < $b['uri'] ? 1 : -1;
+});
+// write the sorted list into a file
+$str = '';
+foreach ($list as $entry) {
+    $str .= '"'.$entry['uri'].'","'.$entry['comment'].'"'.PHP_EOL;
+}
+// uncomment to get a list of invalid URIs found during execution
+// file_put_contents(__DIR__.'/../../found-invalid-uris.csv', $str);
+
+// ...
 echo PHP_EOL;
 
 if (0 < count($unknownOntologies)) {

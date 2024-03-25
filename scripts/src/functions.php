@@ -20,18 +20,16 @@ function getContentOfRdfFile(string $link): string
     // if there isn't one, run HTTP request and return response content
     return $cache->get($key, function(ItemInterface $item) use ($link): string  {
         $curl = new Curl();
-        $curl->setConnectTimeout(3);
+        $curl->setConnectTimeout(5);
+        $curl->setMaximumRedirects(10);
         $curl->setOpt(CURLOPT_FOLLOWLOCATION, true); // follow redirects
         $curl->setOpt(CURLOPT_SSL_VERIFYPEER, false);
         $curl->setOpt(CURLOPT_SSL_VERIFYHOST, false);
 
         $curl->get($link);
 
-        if (200 <= $curl->httpStatusCode && $curl->httpStatusCode < 300) {
-            return $curl->rawResponse;
-        } else {
-            throw new Exception($link.' returned with status code '. $curl->httpStatusCode);
-        }
+        // lazy approach: we dont care if link exists or not, just if it has parseable content
+        return $curl->rawResponse;
     });
 }
 
@@ -383,7 +381,7 @@ function isOntologyIriAlreadyKnown(string $ontologyIri): bool
 
 function loadQuadsIntoInMemoryStore(string $rdfFileUrl): InMemoryStoreSqlite|null
 {
-    $maxQuadAmount = 100;
+    $maxQuadAmount = 200;
 
     // download file and read content
     $rdfFileContent = getContentOfRdfFile($rdfFileUrl);
@@ -393,10 +391,10 @@ function loadQuadsIntoInMemoryStore(string $rdfFileUrl): InMemoryStoreSqlite|nul
         || '404: Not Found' == $rdfFileContent
         || str_contains($rdfFileContent, '<html ')
     ) {
-        echo PHP_EOL.$rdfFileUrl.' > no data or 404 > IGNORED'.PHP_EOL;
+        echo PHP_EOL.'NO DATA or 404: '.$rdfFileUrl.PHP_EOL;
         return null;
     } elseif (null === guessFormat($rdfFileContent)) {
-        echo PHP_EOL.$rdfFileUrl.' > it neither RDF/XML nor Turtle data > IGNORED'.PHP_EOL;
+        echo PHP_EOL.'NO RDF: '.$rdfFileUrl.' no RDF/XML nor Turtle'.PHP_EOL;
         return null;
     }
 

@@ -26,13 +26,14 @@ foreach (array_map('str_getcsv', file(__DIR__.'/../../ontologies.csv')) as $line
     $ontologyIRI = $entry[7];
 
     // related RDF file(s)
-    $rdfXmlFile = empty($entry[8]) ? '' : $entry[8];
-    $turtleFile = empty($entry[9]) ? '' : $entry[9];
+    $rdfXmlFile = isEmpty($entry[8]) ? '' : $entry[8];
+    $turtleFile = isEmpty($entry[9]) ? '' : $entry[9];
 
     $simplifiedOntologyList[$ontologyIRI] = [
         'abbreviation' => $abbreviation,
         'rdfxml_file' => $rdfXmlFile,
         'turtle_file' => $turtleFile,
+        'download_location' => $entry[10],
         'ontology_iri' => $ontologyIRI,
     ];
 }
@@ -49,6 +50,6 @@ $brokenLinksRedirects = [];
 foreach (array_map('str_getcsv', file(__DIR__.'/../../broken-links-redirects.csv')) as $line => $entry) {
     $brokenLinksRedirects[$entry[0]] = [
         'url' => $entry[0],
-        'comment' => $entry[1],
+        'comment' => (string) $entry[1],
     ];
 }
