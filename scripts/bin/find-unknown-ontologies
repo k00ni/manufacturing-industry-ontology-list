@@ -76,7 +76,16 @@ foreach ($simplifiedOntologyList as $iri => $entry) {
             echo 'IGNORED: '.$referencedOntologyFileUrl.' because it is in broken-links-redirects.csv';
             echo PHP_EOL;
             continue;
+        } elseif (isOntologyIriAlreadyKnown($referencedOntologyFileUrl)) {
+            echo PHP_EOL;
+            echo 'IGNORED: '.$referencedOntologyFileUrl.' is already known';
+            echo PHP_EOL;
+            continue;
         }
+
+        echo PHP_EOL;
+        echo 'Process '.$referencedOntologyFileUrl.' ...';
+        echo PHP_EOL;
 
         $store = loadQuadsIntoInMemoryStore($referencedOntologyFileUrl);
         if (null == $store) {

@@ -381,7 +381,7 @@ function isOntologyIriAlreadyKnown(string $ontologyIri): bool
 
 function loadQuadsIntoInMemoryStore(string $rdfFileUrl): InMemoryStoreSqlite|null
 {
-    $maxQuadAmount = 200;
+    $maxQuadAmount = 300;
 
     // download file and read content
     $rdfFileContent = getContentOfRdfFile($rdfFileUrl);

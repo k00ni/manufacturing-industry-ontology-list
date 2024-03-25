@@ -71,7 +71,7 @@ foreach ($alignedData as $line => $entry) {
     // related RDF file(s)
     $rdfXmlFile = isEmpty($entry[8]) ? null : $entry[8];
     $turtleFile = isEmpty($entry[9]) ? null : $entry[9];
-    $downloadLocation = isEmpty($entry[10]) ? null : $entry[10];
+    $downloadLocation = isEmpty($entry[10]) ? '' : $entry[10];
 
     if (null === $rdfXmlFile && null === $turtleFile) {
         echo PHP_EOL.$entry[0].' has neither RDF/XML nor Turtle file.';
