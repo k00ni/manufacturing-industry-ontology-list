@@ -2,15 +2,13 @@
 
 ## TODOs
 
-* [ ] build list of all problematic ontology IRIs to see if there is something left to cover
 * [ ] Remove KIF related content, because its more clear when there is only RDF (e.g. ontology relations)
-* [ ] Create at least 1 image which shows ALL ontologies and their relation
 * [ ] Remove obsolete entries from paper.bib
 * [ ] Mention Graphviz config + image somewhere in the documentation (and paper)
 * [ ] Possible statistics:
-  * [ ] Number of owl Imports + Namespaces checked
-  * [ ] Amount of each license used
-  * [ ] Amount of entries with/without abbreviation
+  * [x] Amount of each license used
+  * [ ] Number of entries with/without "Information not available"
+  * [ ] Number of entries with update in last 3 and 5 years
 
 ## Misc
 

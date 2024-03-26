@@ -12,6 +12,8 @@ use sweetrdf\InMemoryStoreSqlite\Store\InMemoryStoreSqlite;
 require __DIR__.'/../vendor/autoload.php';
 
 $statistics = [
+    'number-of-entries-with-information-not-available' => 0,
+    'number-of-entries-without-information-not-available' => 0,
     'number-of-related-ontologies' => 0,
     'total-number-of-ontologies' => null,
     'license-usage' => [],
@@ -49,7 +51,8 @@ foreach ($csvEntries as $line => $entry) {
     if (null == $rdfFileUrl) {
         // ignore
     } else {
-        $store = loadQuadsIntoInMemoryStore($rdfFileUrl, 100);
+        /*
+        $store = loadQuadsIntoInMemoryStore($rdfFileUrl);
 
         if (false === $store instanceof InMemoryStoreSqlite) {
             echo PHP_EOL.'No ontology data found for '.$ontologyIRI.' >> '.$rdfFileUrl;
@@ -62,21 +65,49 @@ foreach ($csvEntries as $line => $entry) {
         } catch (Throwable $e) {
             if (str_contains($e->getMessage(), 'No instance of owl:Ontology')) {
                 // happens if file contains only RDFS data or owl:Class statements
+            } elseif (str_contains($e->getMessage(), 'More than one instance of owl:Ontology was found')) {
+                // ...
             } else {
                 throw $e;
             }
         }
+        */
     }
 
     /*
      * Stats part ----------------------------------------------------------------
      */
+    // Manufacturing industry related
     if ('yes' == $entry[1]) {
         ++$statistics['number-of-related-ontologies'];
+    }
+
+    // License
+    if (false === isset($statistics['license-usage'][$entry[12]])) {
+        $statistics['license-usage'][$entry[12]] = ['license' => $entry[12], 'count' => 0];
+    }
+    ++$statistics['license-usage'][$entry[12]]['count'];
+
+    // Check amount of entries with Information not available in one of its fields
+    $foundInfoNotAvail = false;
+    foreach ($entry as $value) {
+        if (str_contains($value, 'Information not available')) {
+            $foundInfoNotAvail = true;
+        }
+    }
+    if ($foundInfoNotAvail) {
+        ++$statistics['number-of-entries-with-information-not-available'];
+    } else {
+        ++$statistics['number-of-entries-without-information-not-available'];
     }
 }
 
 $statistics['total-number-of-ontologies'] = count($csvEntries)-1;
+
+// sort licence list
+usort($statistics['license-usage'], function($a, $b) {
+    return $a['count'] < $b['count'] ? 1 : -1;
+});
 
 echo PHP_EOL;
 echo PHP_EOL;
