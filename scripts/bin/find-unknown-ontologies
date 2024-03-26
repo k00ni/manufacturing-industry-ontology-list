@@ -102,6 +102,7 @@ foreach ($simplifiedOntologyList as $iri => $entry) {
                 isOntologyIriAlreadyKnown($ontologyIRI)
                 || isset($unknownOntologies[$ontologyIRI])
                 || '_:' == substr($ontologyIRI, 0, 2) // ignore blank nodes
+                || false === str_starts_with($ontologyIRI, 'http') // not an URL
             ) {
                 // is known
                 continue;

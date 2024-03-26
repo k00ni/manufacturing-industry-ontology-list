@@ -187,6 +187,7 @@ function getValidLicenses(): array
         'https://creativecommons.org/licenses/by/4.0/legalcode' => 'CC-BY 4.0',
         'https://creativecommons.org/licenses/by-nc/4.0/' => 'CC-BY-NC 4.0',
         'https://creativecommons.org/licenses/by-sa/4.0/' => 'CC-BY-SA 4.0',
+        'GNU General Public License' => 'GPL-1.0',
         'http://opensource.org/licenses/MIT' => 'MIT',
         'http://www.opendatacommons.org/licenses/pddl/1.0/' => 'PDDL 1.0',
     ];
@@ -198,7 +199,6 @@ function getValidLicenses(): array
     $list[] = 'CC-BY 2.0';
     $list[] = 'CC-BY-SA 3.0';
     $list[] = 'Custom license'; // if a custom license is used
-    $list[] = 'GPL-1.0';
     $list[] = 'GPL-3.0';
     $list[] = 'Information not available';
     $list[] = 'OGC Document License Agreement';
@@ -215,19 +215,30 @@ function getValidLicenses(): array
 function getNamespaceUriListUsedInRdfFile(string $rdfFileContent, string $format): array
 {
     if ('turtle' == $format) {
-        $regex = '/[@prefix]+\s+[a-z\-]+:\s*<(.*?)>/msi';
+        $regexList = ['/[@prefix]+\s+[a-z\-]+:\s*<(.*?)>/msi'];
     } else { // == RDF/XML
-        $regex = '/xmlns:[a-z\-]+="(.*?)"/smi';
+        $regexList = [
+            '/xmlns:[a-z\-]+="(.*?)"/smi',
+            '/ENTITY\s*[a-z\-_0-9]+\s*"(.*?)"/smi',
+        ];
     }
 
     $list = [];
-    preg_match_all($regex, $rdfFileContent, $namespaceIRIs);
-    if (isset($namespaceIRIs[1]) && 0 < count($namespaceIRIs[1])) {
-        foreach ($namespaceIRIs[1] as $iri) {
-            $list[] = $iri;
+
+    foreach ($regexList as $regex) {
+        preg_match_all($regex, $rdfFileContent, $namespaceIRIs);
+        if (isset($namespaceIRIs[1]) && 0 < count($namespaceIRIs[1])) {
+            foreach ($namespaceIRIs[1] as $iri) {
+                if (str_starts_with($iri, 'http')) {
+                    $list[] = $iri;
+                }
+            }
         }
-    } else {
+    }
+
+    if (0 == count($list)) {
         echo PHP_EOL;
+        echo PHP_EOL.'No namespaces found!';
         echo PHP_EOL;
         echo 'Format = ' . $format;
         echo PHP_EOL;
@@ -316,9 +327,12 @@ function guessFormat(string $data): string|null
     ) {
         return 'turtle';
     } elseif (
-        str_contains($subStr, '<rdf:RDF')
-        || str_contains($subStr, '<?xml version="1.0"')
-        || str_contains($subStr, '<!DOCTYPE rdf:RDF')
+        (
+            str_contains($subStr, '<rdf:RDF')
+            || str_contains($subStr, '<?xml version="1.0"')
+            || str_contains($subStr, '<!DOCTYPE rdf:RDF')
+        )
+        && false === str_contains($subStr, '<!DOCTYPE html')
     ) {
         return 'rdf';
     }
