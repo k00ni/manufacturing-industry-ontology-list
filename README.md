@@ -7,8 +7,8 @@
 * [ ] Mention Graphviz config + image somewhere in the documentation (and paper)
 * [ ] Possible statistics:
   * [x] Amount of each license used
-  * [ ] Number of entries with/without "Information not available"
-  * [ ] Number of entries with update in last 3 and 5 years
+  * [x] Number of entries with/without "Information not available"
+  * [ ] Number of entries with update in last 3 and 7 years
 
 ## Misc
 

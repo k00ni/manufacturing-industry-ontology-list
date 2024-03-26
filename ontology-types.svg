@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="145mm"
+   height="101mm"
+   viewBox="0 0 145 101"
+   version="1.1"
+   id="svg1114"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="ontology-types.svg"
+   inkscape:export-filename="/home/ka/nextcloud-imise/KI-Werk/Material/Aufgabe 8 - Bestandsaufnahme Ontologien Industrieproduktion/Publikation/aktuelle version/ontology-types.png"
+   inkscape:export-xdpi="149.86"
+   inkscape:export-ydpi="149.86"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1116"
+     pagecolor="#ffffff"
+     bordercolor="#cccccc"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.98520767"
+     inkscape:cx="313.63946"
+     inkscape:cy="162.90982"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       position="72.241537,120.47368"
+       orientation="1,0"
+       id="guide29425" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1111" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.97258px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:70.3721;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.336724"
+       x="225.28169"
+       y="114.36205"
+       id="text1544-6-6-7-0"
+       transform="matrix(0.76786159,0,0,0.76786159,-123.47024,-53.114465)"><tspan
+         x="225.28169"
+         y="114.36205"
+         id="tspan29494">Top-Level-Ontology</tspan></text>
+    <path
+       id="rect2595"
+       style="fill:none;stroke:#000000;stroke-width:1.23969;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 72.049702,1.0102781 c 0,0 0,0 28.118108,37.0413999 H 42.60254 Z"
+       sodipodi:nodetypes="cccc" />
+    <path
+       id="rect5053"
+       style="fill:none;stroke:#000000;stroke-width:0.681065"
+       d="m 41.375406,38.934715 h 59.997744 l 9.89296,19.974587 H 31.932663 Z"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       id="rect5053-5"
+       style="fill:none;stroke:#000000;stroke-width:0.783551"
+       d="m 32.003795,59.438469 h 79.413235 l 13.09436,19.974587 H 19.505346 Z"
+       sodipodi:nodetypes="ccccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.61646px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:70.3721;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.336724"
+       x="225.28169"
+       y="114.36205"
+       id="text1544-6-6-7-0-7"
+       transform="matrix(0.99342605,0,0,0.99342605,-174.192,-62.267624)"><tspan
+         x="225.28169"
+         y="114.36205"
+         id="tspan29496">Mid-Level Ontology</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.42073px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:70.3721;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.336724"
+       x="225.28169"
+       y="114.36205"
+       id="text1544-6-6-7-0-7-3"
+       transform="matrix(1.0374096,0,0,1.0374096,-179.04342,-47.841294)"><tspan
+         x="225.28169"
+         y="114.36205"
+         id="tspan29498">Core Ontology</tspan></text>
+    <path
+       id="rect5053-5-5"
+       style="fill:none;stroke:#000000;stroke-width:0.901186"
+       d="M 19.607492,79.797053 H 124.6553 L 141.97652,99.77164 H 3.0745409 Z"
+       sodipodi:nodetypes="ccccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.42073px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:70.3721;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.336724"
+       x="225.28169"
+       y="114.36205"
+       id="text1544-6-6-7-0-7-3-6"
+       transform="matrix(1.0374096,0,0,1.0374096,-177.78113,-27.48271)"><tspan
+         x="225.28169"
+         y="114.36205"
+         id="tspan29500">Task Ontology</tspan></text>
+  </g>
+</svg>

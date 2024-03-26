@@ -27,24 +27,32 @@ sorting=nty
 \usepackage{graphicx}
 \graphicspath{ {./} }
 
-\title{Ontologien aus dem Bereich der Industrie (TODO)}
+\title{Maschinenlesbare Ontologien und Vokabulare aus dem Bereich der industriellen Produktion}
 \author{\textbf{Konrad Abicht} \\ k.abicht@gmail.com}
-\date{TODO}
+\date{TODO Datum}
 
 \begin{document}
 
 \maketitle
 
-\begin{abstract}
-    TODO
-\end{abstract}
+\paragraph{{\large Zusammenfassung}}
+
+\paragraph{Einleitung:} Aktuell gibt es keine Liste von maschinenlesbaren, öffentlich-zugänglichen Ontologien und Vokabularen in RDF mit Bezug zum Themengebiet der industriellen Produktion. Ähnliche Arbeiten haben leidiglich eine kleine Menge an Ontologien zu dem Thema untersucht.
+
+\paragraph{Methodik:} Es wurde im Zeitraum vom 01.11.2023 - 26.03.2024 eine Internet- und Literaturrecherche durchgeführt und eine CSV-Datei mit allen thematisch passenden bzw. referenzierten Ontologien und Vokabularen erstellt. Zu jeder Ontologie wurden eine Reihe von Metadaten erfasst (z.B. Titel, Kurzbeschreibung, Projektseite, Version, letzte Änderung und Lizenz).
+
+\paragraph{Resultate:} Als Ergebnis wurden \textbf{343} Ontologien bzw. Vokabulare gefunden, wobei \textbf{189} einen thematischen Bezug zur industriellen Produktion haben. Nur 75 Ontologien besitzen vollständige Metadaten, bei dem Rest konnte mindestens ein Metadatum nicht ermittelt werden. Es wurden alle Ontologien ignoriert, zu denen es zwar wissenschaftliche Publikationen gibt, jedoch keine öffentlich einsehbaren RDF-Daten. Weitere Auswertungen sind in dieser Publikation zu finden. Die Rohdaten stehen unter einer freien Lizenz (CC-BY 4.0) zur freien Verwendung bereit.
+
+\paragraph{Diskussion:} Die Untersuchung wurde lediglich über einen Zeitraum von 5 Monaten durchgeführt. Weiterhin wurde der thematische Fokus industrielle Produktion im weitesten Sinne betrachtet, wodurch möglicherweise auch thematisch nicht direkt passende Ontologien einbezogen wurden.
+
+\paragraph{Fazit:} Diese Arbeit zeigt [...]
+
+\newpage
 
 \section{Einleitung}
 
-Im Folgenden werden die Ergebnisse einer systematischen Internet- und Literaturrecherche zur Ermittlung aller öffentlich zugänglichen\footnote{RDF-Dokument ist über eine URL abrufbar.} und in einer formalen Sprache (z.B. RDF/OWL) vorliegenden Ontologien (und Vokabulare) vorgestellt, die sich thematisch im Bereich Industrie einordnen lassen.
-Das Ziel war die Erstellung einer Übersicht, bestehend aus maschinenlesbaren Ontologien, die eine automatisierte Nutzung des modellierten Wissens erlauben (z.B. OWL Reasoning oder Inferenz).
-
-[...]
+Es wurde eine Internet- und Literaturrecherche zur Ermittlung aller öffentlich zugänglichen\footnote{RDF-Dokument ist über eine URL abrufbar.} und RDF vorliegenden Ontologien (und Vokabulare) aus dem Themengebiet der industriellen Produktion durchgeführt.
+Das Ziel war die Erstellung einer Übersicht, bestehend aus maschinenlesbaren Ontologien, die eine automatisierte Verarbeitung des modellierten Wissens erlauben (z.B. OWL Reasoning oder Inferenz).
 
 Die Arbeit ist wie folgt strukturiert: [...] Kapitel 2 enthält ... in Kapitel 3 folgt ... usw.
 
@@ -65,85 +73,81 @@ Skript: generate-yuml-diagram-config
 \section{Fachlicher Hintergrund}
 
 In diesem Kapitel werden die notwendige Vorkenntnise für diese Arbeit kurz zusammengefasst.
-Ergänzend dazu werden weitere Begriffe informell definiert, weil die Rechercheergebnisse zeigen, dass Ontologie-Autoren keine einheitlichen Begriffe für die Einordnung ihrer Arbeiten verwenden.
 
 \subsection{Semantic Web und formale Sprachen}
 
 \textbf{TODO}
 RDF/OWL
-KIF
 
 \subsection{Ontologien und Kontrollierte Vokabulare}
 
-Im Rahmen dieser Recherche lag der Fokus auf einer Gruppe von Ontologien.
-Zur Beschreibung dieser Gruppe wurde die Definition von Fabian Neuhaus \cite{neuhaus2018ontology} genutzt, jedoch mit ein paar Ergänzungen.
-Zusammengenommen ist eine Ontologie Teil der Gruppe, wenn sie alle folgenden Punkte erfüllt:
+Im Rahmen dieser Arbeit lag der Fokus auf maschinenlesbaren RDF Ontologien und Vokabularen.
+Eine Ontologie wurde aufgenommen, wenn sie die folgenden Kriterien erfüllt:
 
 \begin{enumerate}
-    \item Die Ontologie besitzt eine URL zu einer Textdatei, welche in einer formalen Sprache (RDF/OWL oder KIF) vorliegt.
+    \item Die Ontologie besitzt eine URL zu einer Textdatei, welche in einer formalen Sprache (RDF/OWL) vorliegt.
     \item Die Ontologie stellt ein Vokabular zur Beschreibung des Fachgebietes bereit.
     \item Der Ontologie liegt eine logische Theorie (z.B. in Form von Axiomen, Regeln, Hierarchien) über das Fachgebiet zugrunde, die auf das Vokabular zurückgreift.
 \end{enumerate}
 
-Im Rahmen der Recherche wurden Publikationen zu Ontologien gefunden, bei denen die öffentlich zugängliche Daten nicht ermittelt werden konnten.
-Diese Arbeiten wurden aus den folgenden Gründen ignoriert:
-\begin{enumerate}
-    \item Ohne die zugehörigen Rohdaten in formaler Sprache kann nicht sichergestellt werden, dass eine Ontologie vollständig vorliegt. Davon abgeleitete Arbeiten könnten zu unerwarteten Fehlern und Widersprüchen führen. Weiterhin würde man erzwingen, dass das beschriebenen Wissen zuerst manuell in eine entsprechend Form gebracht werden muss, um eine Weiterverarbeitung zu ermöglichen.
-    \item Eine automatisierte Nutzung des modellierten Wissens wird als nicht gegeben angesehen, wenn das Wissen selbst nicht in einer maschinenlesbaren, formalen Sprache vorliegt. Publikationen zu Ontologien liegen häufig als PDF-Datei vor, wobei das darin beschriebene Faktenwissen (inkl. Formeln in Description Logic und Prädikatenlogik 1. Stufe) nicht entsprechend annotiert ist. Für einen Parser sieht es daher genauso aus, wie der restliche Inhalt.
-\end{enumerate}
+Diese Kriterien basieren größtenteils auf den Ausführungen von Fabian Neuhaus aus \cite{neuhaus2018ontology}, mit ein paar Ergänzungen.
+Im Folgenden wird der Begriff Ontologie auch für Vokabulare genutzt, außer es wird explizit darauf hingewiesen.
+Der Grund für diese Festlegung sind die Rechercheergebnisse, die zeigen, dass manche Autoren häufig ihre eigenen Arbeiten entweder als Ontologie oder Vokabular, oder beides, bezeichneten.
+Zum Beispiel bezeichnet Martin Hepp GoodRelations als standardisiertes Vokabular für Produkte, Preise und Unternehmensdaten, nutzt jedoch Ontologie als Quasi-Synonym, siehe das folgende Zitat: "\textit{GoodRelations is a standardized vocabulary (also known as "schema", "data dictionary", or "ontology") for product, price, store, and company data that can [...]}"\footnote{Quelle: \url{https://www.heppnetz.de/ontologies/goodrelations/v1.html}}.
 
-Im Kontext dieser Arbeit bezeichnet der Begriff Ontologie auch Vokabulare.
-Der Grund für diese Festlegung sind die Rechercheergebnisse, die zeigen, dass die Autoren häufig ihre eigenen Arbeiten entweder als Ontologie oder Vokabular, oder beides, bezeichneten\footnote{Zum Beispiel bezeichnet Martin Hepp GoodRelations als standardisiertes Vokabular für Produkte, Preise und Unternehmensdaten, nutzt jedoch Ontologie als Quasi-Synonym, Zitat: "GoodRelations is a standardized vocabulary (also known as "schema", "data dictionary", or "ontology") for product, price, store, and company data that can [...]", Quelle: \url{https://www.heppnetz.de/ontologies/goodrelations/v1.html}}.
+\subsubsection{Ontologiearten}
+
+\begin{figure}[H]
+    \includegraphics[scale=0.4]{ontology-types}
+    \centering
+    \caption{Ontology Types}
+\end{figure}
+
+Die Untersuchung ergab, dass die Autoren ihre Ontologien überwiegend nach der etablierten Vierteilung einordnen.
+An der Spitze der Hierarchie steht die \textbf{Top-Level Ontologie} (Synonyme: Upper Ontology, Foundational Ontology).
+Sie beinhaltet fachgebiets-unabhängige Inhalte (Begriffe, Relationen, Regeln, Axiome etc.) zur Beschreibung eines Ausschnitts der Realität.
+Zu den bekanntesten gehören Suggested Upper Merged Ontology (SUMO), Descriptive Ontology for Linguistic and Cognitive Engineering (DOLCE) und Basic Formal Ontology (BFO).
+Top-Level-Ontologien bringen häufig eine eigene Theorie zur Beschreibung der Realität mit.
+Jede abgeleitete Ontologie übernimmt somit auch die zugehörige Theorie, Implikationen etc.
+
+Es folgt die Ebene der \textbf{Mid-Level Ontologie}, welche die Inhalte der Top-Level Ontologie ergänzt bzw. verändert. Sie besitzen einen geringen thematischen Bezug und dient häufig als inhaltliche Brücke zwischen einer Top-Level Ontologie und ihr untergeordneten Kern- bzw. Task-Ontologien.
+
+Danach folgt die Ebene der \textbf{Kern Ontologie} (Synonyme: Core Ontology, Domain Ontology).
+Ihr Inhalt bezieht sich stärker auf ein Fachgebiet oder sie ergänzt die Inhalte anderer Ontologien.
+
+Unter den Kern-Ontologien folgt die \textbf{Task-Ontologie} (Synonyme: Application Ontology).
+Sie nutzt in der Regel die Inhalte von Ontologien höherer Ebenen und stellt eigene Inhalte für einen konkreten Anwendungsfall bereit.
 
 \subsubsection{Ontology Design Pattern (ODP)}
 
-\textbf{TODO}
+Ontology Design Pattern (ODP) sind kleine unabhängige Ontologien, die einen sehr begrenzten Themenbereich modellieren und dabei einen hohen Grad an Wiederverwendbarkeit und Kombinierbarkeit mit anderen ODPs und Modellierungsansätzen besitzen \cite{gangemi2009ontology}.
+Es besteht keine Beschränkung für deren Aufbau, Struktur und Ausrichtung.
 
-\subsection{Ontologiearten}
+\subsection{Industry Foundation Classes (IFC)}
 
-\textbf{TODO: baue Grafik mit Darstellung der Arten und Mapping der Dreiteilung und Fünfteilung}
-
-Die Rechercheergebnisse zeigten, dass Autoren ihre Ontologien überwiegend nach der etablierten Dreiteilung Top-Level-, Kern- und Task-Ontologie einordnen.
-An der Spitze der Hierarchie steht die \textbf{Top-Level Ontologie} (Synonyme: Upper Ontology, Foundational Ontology).
-Sie beinhaltet fachgebiets-unabhängige Inhalte\footnote{Begriffe, Relationen, Regeln, Axiome etc.} zur Beschreibung des Ausschnitts der Realität.
-Zu den bekanntesten gehören Suggested Upper Merged Ontology (SUMO), Descriptive Ontology for Linguistic and Cognitive Engineering (DOLCE) und Basic Formal Ontology (BFO)\footnote{Mehr Details zu diesen in einem späteren Kapitel.}.
-Top-Level-Ontologien bringen häufig eine eigene Theorie zur Beschreibung der Realität mit.
-Nutzen abgeleitete Ontologien die Inhalte einer Top-Level Ontologie, so übernehmen sie implizit auch die zugehörige Theorie.
-
-In der genannte Hierarchie folgt unter der Top-Level Ontologie die \textbf{Kern-Ontologie} (Synonyme: Core Ontology, Domain Ontology).
-Ihr Inhalt bezieht sich entweder stärker auf ein Fachgebiet oder ergänzt die Inhalte anderer Ontologien.
-
-Unter den Kern-Ontologien folgt die \textbf{Task-Ontologie} (Synonyme: Application Ontology).
-Sie nutzt in der Regel die Inhalte einer Top-Level Ontologie und sowie mehrerer Kern-Ontologien und stellen eigene Inhalte für einen konkreten Anwendungsfall bereit.
-
-Diese Dreiteilung wird von manchen Ontologie-Autoren nicht verwendet (z.B. \cite{kulvatunyou2022}).
-Sie verfeinern den "Mittelbau", die oben genannten Kern-Ontologien, und unterscheiden zwischen Mid-level und Domain-Ontologien.
-Diese Aufgliederung hat ihre Berechtigung und kann aus vielen Gründen naheliegend sein.
-Jedoch existiert bisher keine Methode zur eindeutigen inhaltlichen Abgrenzung von Mid-level- und Domain-Ontologien, weshalb diese Arbeit nur die Dreiteilung nutzt.
-Mid-level und Domain-Ontologien werden daher bei den Kern-Ontologien eingruppiert.
-Damit ist eine einheitliche Einteilung der recherchierten Ontologien möglich.
-
-\subsection{intelligent information Request and Delivery Standard (iiRDS)}
-
-"iiRDS, the standard for intelligent information request and delivery, offers a metadata model for the domain of technical documentation and enables the exchange of documentation content enriched with metadata between companies, platforms, and services. iiRDS can be combined with ontologies describing product features and components as well as events in smart factories. It thus allows applications, for example, to deliver relevant information for installation, maintenance or troubleshooting tasks triggered by events or machine states."
-
-https://iirds.org/fileadmin/iiRDS\_specification/20201103-1.1-release/index.html
-
-\url{https://data.ontocommons.linkeddata.es/vocabulary/Iirds%E2%80%93IntelligentInformationRequestAndDeliveryStandard}
-
-TODO: Passt das?
-
-\subsubsection{Industry Foundation Classes (IFC)}
-
-"The Industry Foundation Classes IFC represent an open specification for Building Information Modeling BIM data that is exchanged and shared among the various participants in a building construction or facility management project. IFC's are the international openBIM standard."
-
-https://standards.buildingsmart.org/IFC/RELEASE/IFC4/ADD1/HTML/
+Die Industry Foundation Classes (IFC) sind ein offener internationaler Standard zur digitalen Beschreibung von Gebäudemodellen im Building Information Model Format (kurz BIM)\footnote{\url
+https://technical.buildingsmart.org/standards/ifc/}.
+Es erlaubt den Datenasustausch zwischen Softwareanwendungen verschiedener Teilnehmer der Bau- und Facility-Management-Branche zur gemeinsamen Verwendung.
+Der Standard enthält Definitionen für Daten, die für Gebäude während ihres Lebenszyklus erforderlich sind.
+ICF wird an dieser Stelle kurz vorgestellt, weil es Ontologien mit IFC Bezug in den Rechercheergebnissen gibt.
 
 \subsection{Lizenzinformationen}
 
-\textbf{TODO}
+Zu jeder Ontologie wurde die zugehörige Lizenz recherchiert.
+Sie bestimmt die rechtlichen Rahmenbedingungen unter denen eine Ontologie benutzt werden darf.
+Die verwendeten Lizenzen reichen von Public Domain bis hin zu restriktiven individuellen Lizenzregelungen.
+Im Folgenden werden alle Lizenzen aufgelistet, die während der Recherche gefunden wurden:
 
-z.B. Creative Commons, wie https://creativecommons.org/licenses/by/4.0/
+\begin{enumerate}
+    \item Apache License 2.0\footnote{\url{https://www.apache.org/licenses/LICENSE-2.0.html}}
+    \item BSD License (2- und 3-Clause)\footnote{\url{https://opensource.org/license/bsd-2-clause}, \url{https://opensource.org/license/bsd-3-clause}}
+    \item Creative Commons Licenses (verschiedene Arten)\footnote{\url{https://creativecommons.org/licenses/?lang=en}}
+    \item GNU Public License (verschiedene Arten)\footnote{\url{https://www.gnu.org/licenses/licenses.en.html}}
+    \item MIT License\footnote{\url{https://opensource.org/license/mit}}
+    \item OGC Document License Agreement\footnote{\url{https://www.ogc.org/about-ogc/policies/document-license-agreement/}}
+    \item Public Domain Dedication License (PDDL)\footnote{\url{https://opendatacommons.org/licenses/pddl/}}
+    \item W3C Document License (2023 version)\footnote{\url{https://www.w3.org/copyright/document-license-2023/}}
+\end{enumerate}
 
 
 \section{Verwandte Arbeiten (Related Work)}
@@ -208,6 +212,10 @@ Als ein Problem wurden die oft mangelhaften Angaben zur Weiterverwendung und Liz
 Ein anderes die oft mangelnde Unterstützung für die Mitarbeit (z.B. Melden von Fehlern, Einreichung von Ergänzungen).
 Bei unserer Recherche sind wir auch auf diese Probleme gestoßen.
 
+\subsection{OntoCommons ontology catalogue}
+
+https://data.ontocommons.linkeddata.es/index
+
 \section{Methodik}
 
 Das Ziel der Literatur- und Internetrecherche war die Erstellung einer Übersicht, bestehend aus maschinenlesbaren Ontologien, die eine automatisierte Nutzung des modellierten Wissens erlauben (z.B. OWL Reasoning oder Inferenz).
@@ -238,6 +246,13 @@ Im Folgenden ist eine Auflistung aller genutzter Suchbegriffe:
 \textbf{TODO: Folgende Suchbegriffe vielleicht eher als thematische Schwerpunkte bezeichnen?}
 
 \textbf{Suchbegriffe je Plattform als stumpfe Liste aufzählen?}
+
+Im Rahmen der Recherche wurden Publikationen zu Ontologien gefunden, bei denen die öffentlich zugängliche Daten nicht ermittelt werden konnten.
+Diese Arbeiten wurden aus den folgenden Gründen ignoriert:
+\begin{enumerate}
+    \item Ohne die zugehörigen Rohdaten in formaler Sprache kann nicht sichergestellt werden, dass eine Ontologie vollständig vorliegt. Davon abgeleitete Arbeiten könnten zu unerwarteten Fehlern und Widersprüchen führen. Weiterhin würde man erzwingen, dass das beschriebenen Wissen zuerst manuell in eine entsprechend Form gebracht werden muss, um eine Weiterverarbeitung zu ermöglichen.
+    \item Eine automatisierte Nutzung des modellierten Wissens wird als nicht gegeben angesehen, wenn das Wissen selbst nicht in einer maschinenlesbaren, formalen Sprache vorliegt. Publikationen zu Ontologien liegen häufig als PDF-Datei vor, wobei das darin beschriebene Faktenwissen (inkl. Formeln in Description Logic und Prädikatenlogik 1. Stufe) nicht entsprechend annotiert ist. Für einen Parser sieht es daher genauso aus, wie der restliche Inhalt.
+\end{enumerate}
 
 \subsubsection{Industry Ontology}
 
@@ -531,9 +546,15 @@ Das Simple Knowledge Organization System ist eine RDF-basierte formale Sprache z
 
 \section{Fazit und weitere Arbeiten}
 
+Vorschläge für Verbesserungen?
+
 [...]
 
-\textbf{TODO: Erwähnung KI-Werk Projekt}
+\subsection{Erwähnungen}
+
+Ich danke Paul-Robert Kästner für die Sichtung und Zuarbeit der ersten Ontologie-Einträge.
+
+Die Arbeit wurde im Rahmen KI-Werk Projektes durchgeführt, welches vom Bundesministerium für Bildung und Forschung (BMBF) gefördert wurde (https://www.cbasynergy.net/cba/ki-werk.html).
 
 
 
@@ -542,3 +563,4 @@ Das Simple Knowledge Organization System ist eine RDF-basierte formale Sprache z
 \printbibliography
 
 \end{document}
+

@@ -179,7 +179,7 @@ function getCSVLineForOntology(
 function getValidLicenses(): array
 {
     $list = [
-        'https://www.apache.org/licenses/LICENSE-2.0' => 'Apache-2.0 license',
+        'https://www.apache.org/licenses/LICENSE-2.0' => 'Apache License 2.0',
         'http://purl.org/NET/rdflicense/cc-by3.0' => 'CC-BY 3.0',
         'http://purl.org/NET/rdflicense/cc-by4.0' => 'CC-BY 4.0',
         'http://creativecommons.org/publicdomain/zero/1.0/' => 'CC0 1.0 DEED',
