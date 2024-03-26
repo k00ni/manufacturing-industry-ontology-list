@@ -30,7 +30,7 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: paper.tex
+          root_file: paper-de.tex
       # Linter to validate our CSV file
       - name: Run csv-lint
         uses: kcheriyath/csvlinter@V0.6.0

@@ -212,33 +212,52 @@ Als ein Problem wurden die oft mangelhaften Angaben zur Weiterverwendung und Liz
 Ein anderes die oft mangelnde Unterstützung für die Mitarbeit (z.B. Melden von Fehlern, Einreichung von Ergänzungen).
 Bei unserer Recherche sind wir auch auf diese Probleme gestoßen.
 
-\subsection{OntoCommons ontology catalogue}
+\subsection{OntoCommons Ontology Catalogue}
 
 https://data.ontocommons.linkeddata.es/index
 
 \section{Methodik}
 
-Das Ziel der Literatur- und Internetrecherche war die Erstellung einer Übersicht, bestehend aus maschinenlesbaren Ontologien, die eine automatisierte Nutzung des modellierten Wissens erlauben (z.B. OWL Reasoning oder Inferenz).
-Das Ergebnis sollte dabei die folgenden Forschungsfragen beantworten:
+Der OntoCommons Ontology Catalogue kommt der angestrebten Liste von maschinenlesbaren RDF Ontologien am nächsten.
+Jedoch ist der Catalogue nicht ohne zusätzlichen Mehraufwand maschinell zu verarbeiten.
+Es handelt es sich um eine Webseite\footnote{Es wird HTML ohne Annotationen der Elemente verwendet, was das Parsing und spätere Auswerten erheblich erschwert.} und bei manchen Ontologien ist kein Link auf RDF-Daten hinterlegt. Abschließend ist noch festzustellen, dass die Liste nur einen kleinen Ausschnitt der verfügbaren Ontologien beinhaltet.
+
+Aus den genannten Gründen wurde eine eigene Literatur- und Internetrecherche durchgeführt und die gefundenen Ontologien in einer CSV-Datei gesammelt.
+CSV-Dateien sind einfach zu parsen und werden in jeder gängigen Programmier- und Skriptsprache unterstützt.
+Interessenten können die CSV-Datei automatisiert, maschinell auswerten und die referenzierten Ontologien über die angegebenen URLs zu den RDF-Daten direkt konsumieren.
+Dies erlaubt durchgängige Maschinenlesbarkeit und einen hohen Grad der Automatisierung.
+
+Die folgenden Forschungsfragen wurden bei der Erstellung der Liste zugrundegelegt:
 
 \begin{enumerate}
-    \item Welche Ontologien für das Fachgebiet Industrie gibt es?
+    \item Welche Ontologien für das Fachgebiet industrielle Fertigung gibt es?
     \item Welche dieser Ontologien werden aktiv betreut bzw. wann war die letzte dokumentierte Aktivität im Projekt?
-    \item Sollten Top-Level-Ontologien von diesen Ontologien genutzt werden, welche sind das?
 \end{enumerate}
-
-Diese Forschungsfragen ermöglichen einen neutralen Blick auf die vorhandenen Ontologien.
 
 Bei der gesamten Recherche waren sowohl deutsch- als auch englischsprachige Inhalte von Interesse.
 
-\subsection{Literaturrecherche}
+\subsection{Anlaufstellen für die Suche}
 
-Viele Ontologien wurden von Mitgliedern der wissenschaftlichen Gemeinschaft entwickelt.
-Daher stand die Literaturrecherche am Anfang, um die Publikationen zu finden, welche eine Ontologie und ihre Inhalte näher vorstellen.
-Die Art der Publikationen reichen von wissenschaftlichen Beiträgen über White-Paper bis zu einfachen Readme-Dateien.
-Als Hauptanlaufpunkt wurde Google Scholar eingesetzt.
+Die Ontologieentwicklung hat starke wissenschaftliche Wurzeln, daher stand die Literaturrecherche am Anfang, um die Publikationen zu finden, welche eine Ontologie und ihre Inhalte näher vorstellen.
+Für die Internetsuche wurde \textbf{Google Search} verwendet.
+\textbf{Google Scholar}\footnote{\url{https://scholar.google.com/}} kam bei der Recherche in wissenschaftlichen Publikationen zum Einsatz.
+Daneben gibt es viele weitere Anlaufstellen, die bei der Recherche eine Rolle spielten.
+Nicht alle davon haben unmittelbar etwas mit Ontologien zu tun.
+Die folgende Liste enthält alle Webseiten, die im Rahmen der Recherche genutzt wurden:
+
+\begin{enumerate}
+    \item \textbf{AURORAL Ontologien} (\url{https://auroral.iot.linkeddata.es/index.html}) - Liste von Ontologien, die für das AURORAL Projekt (\url{https://www.auroral.eu/#/}) entwickelt wurden. Es enthält u.a. Ontologien zum Thema Ladestationen und Energiekonsum.
+    \item Projektseite der \textbf{Basic Formal Ontology} (kurz BFO, \url{https://basic-formal-ontology.org/users.html}) - Enthält eine Liste von Ontologie-Projekten, welche die Top-Level Ontologie BFO nutzen.
+    \item \textbf{BioPortal} - Ontologie-Portal mit über 1094 Ontologien, vordergründig aus dem biomedizinischen Themenbereich\footnote{Geprüft am 26.03.2024}.
+    \item \textbf{Basic Register of Thesauri, Ontologies \& Classifications} (kurz BARTOC, \url{https://bartoc.org}) - Eine Webseite mit angebundener Suchmaschine, die Knowledge Organization Systems, Vokabulare und Ontologien auflistet. Es wurden ausschließlich OWL Ontologien verwendet. Einträge, die nicht in Deutsch oder Englisch vorlagen wurden automatisch übersetzt und geprüft.
+    \item \textbf{EU Vocabularies} (\url{https://op.europa.eu/en/web/eu-vocabularies/controlled-vocabularies}) - Eine Webseite u.a. mit Ontologien und Vokabularen, bereitgestellt von der Europäischen Union (bzw. einer ihr unterstellten Institution).
+    \item \textbf{Github} (\url{https://www.github.com}) - Ein Onlinedienst zur Softwareentwicklung, der jedoch sehr häufig als Ort für Ontologie-Projekte genutzt wird.
+    \item \textbf{IndustryPortal} (\url{https://industryportal.enit.fr/}) - Ontologie-Portal mit über 109 Ontologien\footnote{Geprüft am 26.03.2024.} aus der Industrie und angrenzenden Themenbereichen.
+    \item \textbf{OntoCommons Ontology Catalogue} (\url{https://data.ontocommons.linkeddata.es/index}) - Manuell kuratierte Liste mit Ontologien aus den Themenbereichen Industrie, Produktion, Materialwissenschaften, Bauwirtschaften und weiteren.
+    \item \textbf{ShowVoc} (\url{https://showvoc.op.europa.eu/}) - Ein Portal mit einer Liste von Ontologien, Vokabularen und anderen. Es wurden nur die Ontologien ausgewertet.
+\end{enumerate}
+
 Es wurden die Suchergebnisse für jeden dieser Suchbegriffe näher untersucht, insofern sie von einer Ontologie handelten.
-In der Regel basierte eine vorgestellte Ontologie auf weiteren Ontologien, welche in einem separaten Kapitel vorgestellt werden.
 
 Es wurden ausschließlich englischsprachige Suchbegriffe verwendet, die relevant für das Fachgebiet Industrie sind.
 Im Folgenden ist eine Auflistung aller genutzter Suchbegriffe:
@@ -246,13 +265,11 @@ Im Folgenden ist eine Auflistung aller genutzter Suchbegriffe:
 \textbf{TODO: Folgende Suchbegriffe vielleicht eher als thematische Schwerpunkte bezeichnen?}
 
 \textbf{Suchbegriffe je Plattform als stumpfe Liste aufzählen?}
+industry,defect,manufacturing,digital twin
 
-Im Rahmen der Recherche wurden Publikationen zu Ontologien gefunden, bei denen die öffentlich zugängliche Daten nicht ermittelt werden konnten.
-Diese Arbeiten wurden aus den folgenden Gründen ignoriert:
-\begin{enumerate}
-    \item Ohne die zugehörigen Rohdaten in formaler Sprache kann nicht sichergestellt werden, dass eine Ontologie vollständig vorliegt. Davon abgeleitete Arbeiten könnten zu unerwarteten Fehlern und Widersprüchen führen. Weiterhin würde man erzwingen, dass das beschriebenen Wissen zuerst manuell in eine entsprechend Form gebracht werden muss, um eine Weiterverarbeitung zu ermöglichen.
-    \item Eine automatisierte Nutzung des modellierten Wissens wird als nicht gegeben angesehen, wenn das Wissen selbst nicht in einer maschinenlesbaren, formalen Sprache vorliegt. Publikationen zu Ontologien liegen häufig als PDF-Datei vor, wobei das darin beschriebene Faktenwissen (inkl. Formeln in Description Logic und Prädikatenlogik 1. Stufe) nicht entsprechend annotiert ist. Für einen Parser sieht es daher genauso aus, wie der restliche Inhalt.
-\end{enumerate}
+
+
+
 
 \subsubsection{Industry Ontology}
 
@@ -283,22 +300,7 @@ Supply Chain Management (= Lieferkettenmanagement) ist eine Bezeichung, die seit
 Ergänzt wurde die Literaturrecherche durch eine Internetrecherche, weil nicht alle Ontologien durch wissenschaftliche Literatur dokumentiert sind.
 Zur Internetrecherche wurden die folgenden Webseiten genutzt:
 
-\begin{enumerate}
-    \item IndustryPortal (von OntoCommons) (\url{https://industryportal.enit.fr/}) - TODO Ontologie-Bibliothek ... erwähnen, dass es Anfang März offline ging.
-    \item TODO (\url{https://data.ontocommons.linkeddata.es/index}) - TODO Ontologie-Bibliothek ... Was? Warum?
-    \item Github (\url{https://www.github.com}) - TODO Was? Warum?
-       \begin{itemize}
-           \item https://github.com/search?q=topic%3Aontology+industry&type=repositories&ref=advsearch&p=1
-           - Topic: ontology
-           - Suchbegriffe: industry, manufacturing
-       \end{itemize}
-    \item Projektseite der Basic Formal Ontology (kurz BFO, \url{https://basic-formal-ontology.org/users.html}) - Enthält eine Liste von Ontologie-Projekten, welche die BFO nutzen.
-    \item BioPortal - Stichwörter für Titel: industry,defect,manufacturing,digital twin
-    \item https://bartoc.org - nur OWL Ontologien; Einträge (nicht in DE/EN) wurden automatisch übersetzt und geprüft;  auch andere Suche mit nur nach Ontologien genutzt
-    \item https://showvoc.op.europa.eu/\#/datasets - Nur die Ontology-Einträge
-    \item https://op.europa.eu/en/web/eu-vocabularies/controlled-vocabularies - EU vocabularies
-    \item https://auroral.iot.linkeddata.es/index.html
-\end{enumerate}
+
 
 - Stichwörter für Suchmaschinen auf den verschiedenen Webseiten: industry, product, manufacturing; machine
 
@@ -330,7 +332,7 @@ Weiterhin wurden die Import-Statements in den RDF-Daten der Ontologien manuell g
 Im Rahmen der Literatur- und Internetrecherche wurde eine Ontologie selektiert, wenn sie die folgenden Kriterien erfüllte:
 
 \begin{enumerate}
-    \item Die Ontologie besitzt eine URL zu einer Textdatei, welche in einer formalen Sprache (RDF/OWL oder KIF) vorliegt.
+    \item Die Ontologie besitzt eine URL zu einer Textdatei, welche in einer formalen Sprache (RDF/OWL) vorliegt.
     \item Die Ontologie stellt ein Vokabular zur Beschreibung des Fachgebietes bereit.
     \item Der Ontologie liegt eine logische Theorie (z.B. in Form von Axiomen, Regeln, Hierarchien) über das Fachgebiet zugrunde, die auf das Vokabular zurückgreift.
     \item Die Inhalte der Ontologie haben einen direkten thematischen Bezug zu den vorher genannten Schlüsselwörtern bzw. den damit zusammenhängenden Themen.
@@ -375,6 +377,16 @@ Jedoch erschwert das die Nachverfolgbarkeit und Einordnung der referenzierten On
 - \textbf{HINWEIS für CRAWLING}: Timeout lag bei 5 Sek.
 - \textbf{HINWEIS für CRAWLING}: Nur erste 300 Triple der Ontologie eingelesen bzgl. owl:import
 - \textbf{HINWEIS für TOOLING}: LibreOffice, VSCode, Docker, PHP (welches Tool für was?)
+
+\subsection{Ignorierte Einträge}
+
+Im Rahmen der Recherche wurden Publikationen zu Ontologien gefunden, bei denen die öffentlich zugängliche Daten nicht ermittelt werden konnten.
+Diese Arbeiten wurden aus den folgenden Gründen ignoriert:
+\begin{enumerate}
+    \item Ohne die zugehörigen Rohdaten in formaler Sprache kann nicht sichergestellt werden, dass eine Ontologie vollständig vorliegt. Davon abgeleitete Arbeiten könnten zu unerwarteten Fehlern und Widersprüchen führen. Weiterhin würde man erzwingen, dass das beschriebenen Wissen zuerst manuell in eine entsprechend Form gebracht werden muss, um eine Weiterverarbeitung zu ermöglichen.
+    \item Eine automatisierte Nutzung des modellierten Wissens wird als nicht gegeben angesehen, wenn das Wissen selbst nicht in einer maschinenlesbaren, formalen Sprache vorliegt. Publikationen zu Ontologien liegen häufig als PDF-Datei vor, wobei das darin beschriebene Faktenwissen (inkl. Formeln in Description Logic und Prädikatenlogik 1. Stufe) nicht entsprechend annotiert ist. Für einen Parser sieht es daher genauso aus, wie der restliche Inhalt.
+\end{enumerate}
+
 
 \section{Rechercheergebnisse}
 
@@ -435,113 +447,6 @@ Ich gehe daher davon aus, dass es sich hier lediglich um einen erneuten Upload d
 Weiterführende Metadaten zu den Ontologien finden Sie in unseren Rohdaten, welche in Form einer CSV-Datei öffentlich zur Verfügung stehen. \textbf{TODO Link zu Github Repository}
 
 Im Anhang ist eine Tabelle aller selektierten Ontologien in Form einer Tabelle zu finden.
-
-\subsection{Referenzierte Ontologien}
-
-In diesem Kapitel werden alle Ontologien aufgelistet, die keinen thematischen Bezug zur Industrie haben, jedoch von den Ontologien mit Industrie-Bezug verwendet werden.
-Die Einträge sind alphabetisch sortiert und unter ihnen befinden sich Top-Level- und Kern-Ontologien.
-Jede Ontologie wird mit einer kurzen Zusammenfassung vorgestellt.
-
-\subsubsection{Top-Level Ontologien}
-
-\paragraph{Basic Formal Ontology (BFO)} Die Basic Formal Ontology (BFO)\footnote{Projektseite: \url{https://basic-formal-ontology.org/}} ist eine Top-Level Ontologie, welche initial 2002 im Rahmen von BFO Project von Barry Smith und Pierre Grenon entwickelt wurde.
-Sie eignet sich theoretisch für den Einsatz in beliebigen Fachgebieten, weil sie nur sehr allgemeine Begriffe (und deren Beziehungen untereinander) zur Beschreibung der Realität definiert.
-Die BFO teilt die Realität in zwei Hauptzweige ein: in Kontinuanten (Entitäten, die ohne zeitlichen Bezug existieren) und Okkurrenten (Entitäten, die eine zeitliche Ausdehnung haben).
-BFO wird von verschiedenen (wissenschaftlichen) Gemeinschaften verwendet, um domänenspezifische Ontologien zu erstellen und zu harmonisieren, z.B. in der Biomedizin, der Geographie, der Soziologie, etc.
-Die Ontologie wird stetig weiterentwickelt und liegt aktuell in Version 2.0 vor\footnote{Quelle: \url{https://github.com/BFO-ontology/BFO?tab=readme-ov-file\#implementations}}.
-
-\paragraph{Suggested Upper Merged Ontology (SUMO)}
-
-Die SUMO\footnote{Projektseite: \url{https://www.ontologyportal.org/index.html}} Ontologie ist eine Top-Level Ontologie, deren Entwicklung laut Projektseite von Adam Pease (technical editor) geleitet wird.
-Die Ontologie ist in der Sprache "Standard Upper Ontology Knowledge Interchange Format" (SUO-KIF) geschrieben\footnote{\url{https://github.com/ontologyportal/sigmakee/blob/master/suo-kif.pdf}} und bestand anfangs aus Ontologie-Beiträgen auf einer Mailing-Liste, die jedoch mit der Zeit stark erweitert wurden (\cite{niles2001towards}, S. 2 ff.).
-SUMO stellt Definitionen für sehr allgemeine Begriffe bereit, welche für abgeleitete Kern-Ontologien verwendet werden können.
-Laut eigener Aussage wird sie für die Forschung und Entwicklung von Anwendungen aus den Bereichen Suche, Linguistik und Reasoning verwendet \footnote{Quelle: \url{https://www.ontologyportal.org/index.html}}.
-Die KIF-Dateien des Projektes sind thematisch aufgeteilt (z.B. Anatomy.kif für Anatomie, Military.kif für Militärisches) und in einem Github-Repository\footnote{\url{https://github.com/ontologyportal/sumo}} zu finden.
-Das Projekt scheint weiterhin gepflegt zu werden, denn der letzte Commit ist vom 4. März 2024\footnote{\url{https://github.com/ontologyportal/sumo/commit/596147ccc5636e20441875a6a29158d8567d7f80}}.
-
-\subsubsection{W3C Ontologien und Empfehlungen}
-
-\textbf{TODO}
-
-\paragraph{Extensible Markup Language (XML)}
-
-Die Extensible Markup Language (XML) ist eine Auszeichnungssprache, die Regeln zum Definieren beliebiger Daten in Textdateien bereitstellt\footnote{\url{https://www.w3.org/XML/}}.
-
-\paragraph{Extensible Markup Language Schema (XSD, XML Schema)}
-
-Das Extensible Markup Language Schema (oder XML Schema oder XML Schema Definition) ist eine W3C-Empfehlung zum Definieren von Strukturen für XML-Dokumente\footnote{\url{http://www.w3.org/TR/xmlschema11-1/} und \url{http://www.w3.org/TR/xmlschema11-2/}}.
-
-\paragraph{OWL-Time} Die OWL-Time ist eine OWL-2 DL Ontologie, die temporale Konzepte bereitstellt\footnote{\url{https://www.w3.org/TR/owl-time/}}.
-
-\paragraph{Provenance Ontology (PROV)}
-
-Die Provenance Ontology\footnote{\url{https://www.w3.org/TR/2013/REC-prov-o-20130430/}} wurde mit dem Ziel entwickelt, verschiedene Informationen zur Herkunft von Dingen oder Daten zu modellieren und zwischen Systemen und im Internet auszutauschen.
-
-\paragraph{Resource Description Framework Concepts Vocabulary (RDF)}
-
-Das Resource Description Framework Concepts Vocabulary ist eine W3C Empfehlung und stellt ein Triple-basiertes Datenmodell für Metadaten bereit\footnote{\url{https://www.w3.org/TR/rdf11-concepts/}}.
-
-\paragraph{Resource Description Framework Schema Vocabulary (RDFS)}
-
-Das Resource Description Framework Schema Vocabulary ist eine W3C Empfehlung und eine Sammlung von Klassen und Properties, die zur Beschreibung von Ontologie verwendet werden können\footnote{\url{https://www.w3.org/TR/rdf11-schema/}}.
-
-\paragraph{VANN (VANN)}
-
-VANN ist ein von dem W3C empfohlenes Vokabular zur Annotierung von Beschreibungen anderer Vokabulare\footnote{\url{https://vocab.org/vann/}}.
-
-\paragraph{Web Ontology Language (OWL)}
-
-Die Web Ontology Language ist eine von dem W3C empfohlene Spezifikation um Ontologien anhand einer formalen Beschreibungssprache erstellen, publizieren und verteilen zu können\footnote{\url{https://www.w3.org/TR/owl2-overview/}}.
-
-\subsubsection{Sonstige Ontologien}
-
-\textbf{TODO}
-
-\paragraph{Data Catalog Vocabulary (DCAT)}
-
-Das Data Catalog Vocabulary (DCAT) ist ein RDF-Vokabular welches mit dem Ziel entwickelt wurde, die Interoperabilität zwischen Datenkatalogen im Internet zu verbessern\footnote{\url{https://www.w3.org/TR/vocab-dcat-2/}}.
-DCAT wird u.a. im Schema.org Vokabular verwendet um Datensätze semantisch auszuzeichnen.
-
-\paragraph{Dublin Core Metadata Initiative (DC Terms, DC Elements)}
-
-Bei Dublin Core handelt es sich um eine Sammlung einfacher und standardisierter Konventionen zur Beschreibung von Dokumenten und anderen Objekte im Internet mithilfe von Metadaten\footnote{\url{https://www.dublincore.org/specifications/dublin-core/dcmi-terms/}}.
-
-\paragraph{Friend of a Friend (FOAF)}
-
-Die Friend of a Friend Ontologie (FOAF) stellt Klassen und Properties zur maschinenlesbaren Modellierung von Beziehungen zwischen Personen über das Internet bereit\footnote{\url{http://xmlns.com/foaf/spec/}}.
-Es wird häufig zur Modellierung von personenbezogenen Daten, wie Namen oder Beziehungen, verwendet.
-FOAF wird u.a. im Schema.org Vokabular genutzt, in dem die Klasse Person in beiden Vokabularen verknüpft werden.
-
-\paragraph{GoodRelations Ontologie}
-
-Die GoodRelations-Ontologie\footnote{https://www.heppnetz.de/ontologies/goodrelations/v1.html} istlaut Aussage ihres Autores Martin Hepp ein Vokabular zur Modellierung von Daten im E-Commerce Bereich (z.B. Produkte, Dienstleistungen oder Unternehmen).
-Sie wurde mit dem Ziel entwickelt, Produkte und Dienstleistungen auf E-Commerce-Webseiten mit zusätzlichen Metadaten auszuzeichnen, um die Sichtbarkeit in Suchmaschinen zu erhöhen.
-GoodRelations wurde 2012 als E-Commerce Kern in das Vokabular schema.org aufgenommen\footnote{\url{http://blog.schema.org/2012/11/good-relations-and-schemaorg.html}}.
-Damit gingen alle Klassen und Properties in das schema.org Vokabular über und wurden darin integriert\footnote{Beispiel: Klasse Product \url{https://schema.org/Product}}.
-Die Ontologie existiert seit der Aufnahme in Schema.org faktisch nicht mehr und wird hier nur noch erwähnt, weil sie in manchen Ontologie-Publikationen explizit erwähnt wird.
-
-\paragraph{Quantities, Units, Dimensions and Types ontology (QUDT)}
-
-\textbf{TODO: Text glattziehen, Projektseite und letzte Aktivität}
-
-Unit-Measure-Ontologien stellen eine konzeptuelle Repräsentation von Quantitäten, Quantitätsarten und Einheiten dar.
-Der bekannteste und weitläufig eingesetzte Vertreter, ist die von der NASA entwickelte QUDT\cite{QUDTOntology}.
-Innerhalb dieser Ontologie werden im Kern die Konzepte physikalischer Quantitäten.
-Quantitätsarten, Einheiten und Dimensionen, sowie Datentypen repräsentiert.
-Die Ontologie basiert auf dem internationalen Standard der SI-Unit (franz. Système international d'unités) und liegt im OWL-Format vor. Ein Hauptanwendungszeck einer solchen Ontologien, ist das Konvertieren von physikalischen  Einheiten unter Berücksichtigung der Dimensionalität.
-QUDT wird eingesetzt in Luft- und Raumfahrt, Industrieproduktion, sowie Energie- und Wasserversorgung.
-Ein Beispiel ist die Verwendung von QUDT innerhalb der Systems-Architecture-Ontology (SAO) für Cyber-Physical-Systems.
-
-\paragraph{Schema.org}
-
-Schema.org\footnote{\url{https://www.schema.org}} ist eine von verschiedenen Unternehmen und Freiwilligen gepflegte quelloffene Ontologie, mit deren Hilfe man Daten auf Webseiten auszeichnen kann.
-Das Ziel ist es, Suchmaschinen zusätzliche Metadaten über die Webseiteninhalte bereitstellen zu können.
-Auf einer dezidierten Entwickler-Seite\footnote{\url{https://schema.org/docs/developers.html}} findet man u.a. weiterführende Links (z.B. FAQ) und einen Bereich, wo man sich die Rohdaten in verschiedenen RDF-Dialekten herunterladen kann.
-
-\paragraph{Simple Knowledge Organization System (SKOS)}
-
-Das Simple Knowledge Organization System ist eine RDF-basierte formale Sprache zur Kodierung von Dokumentationssprachen wie Thesauri, Klassifikationen oder anderen kontrollierten Vokabularen\footnote{\url{https://www.w3.org/2004/02/skos/}}.
-
 
 
 \section{Fazit und weitere Arbeiten}

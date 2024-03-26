@@ -2,9 +2,10 @@
 
 ## TODOs
 
-* [ ] Remove KIF related content, because its more clear when there is only RDF (e.g. ontology relations)
 * [ ] Remove obsolete entries from paper.bib
 * [ ] Mention Graphviz config + image somewhere in the documentation (and paper)
+* [ ] add short info how to use PHP scripts
+* [ ] small RDF file which models connections between ontologies/vocabularies?
 * [ ] Possible statistics:
   * [x] Amount of each license used
   * [x] Number of entries with/without "Information not available"
