@@ -65,6 +65,18 @@ foreach ($alignedData as $line => $entry) {
 
     $rdfFileUrl = null;
 
+    echo PHP_EOL;
+    echo '####################################################';
+    echo PHP_EOL;
+    echo 'Validate: '. $entry[0];
+    echo PHP_EOL;
+    echo '####################################################';
+    echo PHP_EOL;
+    echo '- OWL file:          '.$entry[8].PHP_EOL;
+    echo '- Turtle file:       '.$entry[9].PHP_EOL;
+    echo '- Download location: '.$entry[10];
+    echo PHP_EOL;
+
     // ontology IRI
     $ontologyIRI = $entry[7];
 

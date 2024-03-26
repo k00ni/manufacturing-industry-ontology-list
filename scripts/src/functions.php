@@ -317,7 +317,8 @@ function guessFormat(string $data): string|null
         return 'turtle';
     } elseif (
         str_contains($subStr, '<rdf:RDF')
-        || str_contains($subStr, '<?xml version="1.0"?>')
+        || str_contains($subStr, '<?xml version="1.0"')
+        || str_contains($subStr, '<!DOCTYPE rdf:RDF')
     ) {
         return 'rdf';
     }
