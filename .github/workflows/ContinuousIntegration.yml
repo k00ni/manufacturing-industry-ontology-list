@@ -33,6 +33,9 @@ jobs:
           root_file: paper.tex
       # Linter to validate our CSV file
       - name: Run csv-lint
-        uses: blackstar257/docker-csvlint@master
-        env:
-          ACTION_STATE_NAME: "ontologies.csv"
+        uses: kcheriyath/csvlinter@V0.6.0
+        with:
+          file_list: "ontologies.csv"
+          find_pattern: "*.csv"
+          find_path: "./"
+          fail_on_error: "true"
