@@ -24,6 +24,7 @@
 "https://w3id.org/ammo/module/process/","404 error, page not found"
 "https://w3id.org/emmo#","Another URL to EMMO ontology"
 "https://w3id.org/express#","Redirects to HTML version of EXPRESS ontology https://pi.pauwel.be/evoc/express_W3ID/20151211/index.html"
+"https://w3id.org/i40/sto/iot#concerns","Another ontology URI for https://w3id.org/i40/sto/iot/concerns/"
 "https://w3id.org/obda/vocabulary#","points to a valid RDF file (with statements about 1 ontology and 1 property) ontology is not actively used"
 "https://w3id.org/requirement-ontology/rdl/","link leads to 404 page; seems to be an ontology, but no RDf data found"
 "https://w3id.org/saref","Points to outdated version (2.1.1) of SAREF, current version is 3.2.1"
@@ -38,6 +39,7 @@
 "http://www.hsu-ifa.de/ontologies/WADL","Related RDF file references v1.4.2 of the ontology (current version is 2.0.0)"
 "http://www.linkedmodel.org/1.0/schema/dtype","Links to (outdated) version 1.0 of known Datatype Ontology"
 "http://www.loa-cnr.it/codeps/owl/ofntb.owl#","Redirects to http://netregister.it/"
+"http://www.loa-cnr.it/ontologies/DUL.owl","Points to outdated version (3.2) of DOLCE+DnS Ultralite, current version is 4.1"
 "http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#","could not find related ontology design pattern"
 "http://www.ontologydesignpatterns.org/cp/owl/situation.owl#","just a redirect (related ontoloy is used without #)"
 "http://www.ontologyrepository.com/CommonCoreOntologies/",
