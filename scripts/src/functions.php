@@ -183,6 +183,7 @@ function getValidLicenses(): array
         'http://purl.org/NET/rdflicense/cc-by3.0' => 'CC-BY 3.0',
         'http://purl.org/NET/rdflicense/cc-by4.0' => 'CC-BY 4.0',
         'http://creativecommons.org/publicdomain/zero/1.0/' => 'CC0 1.0 DEED',
+        'https://creativecommons.org/licenses/by/1.0/' => 'CC-BY 1.0',
         'https://creativecommons.org/licenses/by/4.0/' => 'CC-BY 4.0',
         'https://creativecommons.org/licenses/by/4.0/legalcode' => 'CC-BY 4.0',
         'https://creativecommons.org/licenses/by-nc/4.0/' => 'CC-BY-NC 4.0',
@@ -195,7 +196,6 @@ function getValidLicenses(): array
     // licenses with no related URL
     $list[] = 'BSD-2-Clause';
     $list[] = 'BSD-3-Clause';
-    $list[] = 'CC-BY 1.0';
     $list[] = 'CC-BY 2.0';
     $list[] = 'CC-BY-SA 3.0';
     $list[] = 'Custom license'; // if a custom license is used
@@ -220,6 +220,7 @@ function getNamespaceUriListUsedInRdfFile(string $rdfFileContent, string $format
         $regexList = [
             '/xmlns:[a-z\-]+="(.*?)"/smi',
             '/ENTITY\s*[a-z\-_0-9]+\s*"(.*?)"/smi',
+            '/<Prefix.*?IRI="(.*?)"/smi',
         ];
     }
 

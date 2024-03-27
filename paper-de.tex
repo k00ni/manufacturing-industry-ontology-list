@@ -216,9 +216,13 @@ Bei unserer Recherche sind wir auch auf diese Probleme gestoßen.
 
 https://data.ontocommons.linkeddata.es/index
 
+\subsection{IndustryPortal}
+
+https://industryportal.enit.fr/ontologies
+
 \section{Methodik}
 
-Der OntoCommons Ontology Catalogue kommt der angestrebten Liste von maschinenlesbaren RDF Ontologien am nächsten.
+Das IndustryPortal-Projekt und OntoCommons Ontology Catalogue kommen der angestrebten Liste von maschinenlesbaren RDF Ontologien am nächsten.
 Jedoch ist der Catalogue nicht ohne zusätzlichen Mehraufwand maschinell zu verarbeiten.
 Es handelt es sich um eine Webseite\footnote{Es wird HTML ohne Annotationen der Elemente verwendet, was das Parsing und spätere Auswerten erheblich erschwert.} und bei manchen Ontologien ist kein Link auf RDF-Daten hinterlegt. Abschließend ist noch festzustellen, dass die Liste nur einen kleinen Ausschnitt der verfügbaren Ontologien beinhaltet.
 
@@ -240,10 +244,9 @@ Bei der gesamten Recherche waren sowohl deutsch- als auch englischsprachige Inha
 
 Die Ontologieentwicklung hat starke wissenschaftliche Wurzeln, daher stand die Literaturrecherche am Anfang, um die Publikationen zu finden, welche eine Ontologie und ihre Inhalte näher vorstellen.
 Für die Internetsuche wurde \textbf{Google Search} verwendet.
-\textbf{Google Scholar}\footnote{\url{https://scholar.google.com/}} kam bei der Recherche in wissenschaftlichen Publikationen zum Einsatz.
-Daneben gibt es viele weitere Anlaufstellen, die bei der Recherche eine Rolle spielten.
-Nicht alle davon haben unmittelbar etwas mit Ontologien zu tun.
-Die folgende Liste enthält alle Webseiten, die im Rahmen der Recherche genutzt wurden:
+\textbf{Google Scholar}\footnote{\url{https://scholar.google.com/}} kam bei der Recherche nach wissenschaftlichen Publikationen zum Einsatz.
+Daneben wurde in weiteren Onlinediensten gesucht, wobei nicht alle unmittelbar etwas mit Ontologien zu tun haben.
+Die folgende Liste enthält alle während der Recherche genutzten Onlinedienste:
 
 \begin{enumerate}
     \item \textbf{AURORAL Ontologien} (\url{https://auroral.iot.linkeddata.es/index.html}) - Liste von Ontologien, die für das AURORAL Projekt (\url{https://www.auroral.eu/#/}) entwickelt wurden. Es enthält u.a. Ontologien zum Thema Ladestationen und Energiekonsum.
@@ -253,56 +256,50 @@ Die folgende Liste enthält alle Webseiten, die im Rahmen der Recherche genutzt 
     \item \textbf{EU Vocabularies} (\url{https://op.europa.eu/en/web/eu-vocabularies/controlled-vocabularies}) - Eine Webseite u.a. mit Ontologien und Vokabularen, bereitgestellt von der Europäischen Union (bzw. einer ihr unterstellten Institution).
     \item \textbf{Github} (\url{https://www.github.com}) - Ein Onlinedienst zur Softwareentwicklung, der jedoch sehr häufig als Ort für Ontologie-Projekte genutzt wird.
     \item \textbf{IndustryPortal} (\url{https://industryportal.enit.fr/}) - Ontologie-Portal mit über 109 Ontologien\footnote{Geprüft am 26.03.2024.} aus der Industrie und angrenzenden Themenbereichen.
+    \item \textbf{Linked Open Vocabularies} (\url{https://lov.linkeddata.es/dataset/lov/}) - Ein kuratierter Katalog von Vokabularen und Ontologien zur Beschreibung von Daten im Internet.
     \item \textbf{OntoCommons Ontology Catalogue} (\url{https://data.ontocommons.linkeddata.es/index}) - Manuell kuratierte Liste mit Ontologien aus den Themenbereichen Industrie, Produktion, Materialwissenschaften, Bauwirtschaften und weiteren.
     \item \textbf{ShowVoc} (\url{https://showvoc.op.europa.eu/}) - Ein Portal mit einer Liste von Ontologien, Vokabularen und anderen. Es wurden nur die Ontologien ausgewertet.
 \end{enumerate}
 
 Es wurden die Suchergebnisse für jeden dieser Suchbegriffe näher untersucht, insofern sie von einer Ontologie handelten.
 
-Es wurden ausschließlich englischsprachige Suchbegriffe verwendet, die relevant für das Fachgebiet Industrie sind.
-Im Folgenden ist eine Auflistung aller genutzter Suchbegriffe:
+\subsection{Suchparameter}
 
-\textbf{TODO: Folgende Suchbegriffe vielleicht eher als thematische Schwerpunkte bezeichnen?}
+Eine eindeutige Abgrenzung der industriellen Fertigung zu angrenzenden Themen war mir nicht komplett möglich.
+Der Hauptgrund war die Menge an Trends im Rahmen der Industrie 4.0\footnote{\url{https://www.plattform-i40.de/IP/Navigation/EN/Industrie40/WhatIsIndustrie40/what-is-industrie40.html}}.
+So spielt die Digitalisierung und starke Vernetzung bei der Produktion eine wichtige Rolle, wodurch die Bedeutung von z.B. Sensoren zunimmt.
+Die Bedeutung von Sensoren in der Produktion vor der Industrie 4.0 war im Verhältnis eher untergeordnet.
+Im Rahmen der Industrie 4.0 werden Sensoren jedoch häufig von intelligenten Systemen ausgewertet, die aufgrund der Daten Rückschlüsse auf z.B. eine Maschine und deren Einsatz ziehen.
+Dafür werden Fakten über die Umwelt verarbeitet, z.B. zu Luftdruck, Gewicht, Materialeigenschaften etc.
+Das spielt wiederum bei Digitalen Zwillingen eine wichtige Rolle, welche einen digitalen Repräsentanten einer physischen Entität darstellen.
+Sie wiederum erlauben statistische Auswertungen und Simulationen.
+Die Liste liese sich weiter fortsetzen.
+Anhand dieses Beispiel sollte die Verkettung der unterschiedlichen Themengebiet illustriert werden.
 
-\textbf{Suchbegriffe je Plattform als stumpfe Liste aufzählen?}
-industry,defect,manufacturing,digital twin
+Ontologien befinden sich häufig in Onlinediesten, die eine Schlüsselwort-basierte Suche besitzen.
+Daneben gelangt man auch mithilfe von Schlüsselwörtern über Google Search an die Ontologien.
+Aus diesem Grund wurde die folgende Liste an Schlüsselwörtern erarbeitet, welche den Themenbereich industrielle Produktion (in einem weiteren Sinne) repräsentieren:
 
+\begin{enumerate}
+    \item defect
+    \item digital twin
+    \item industry
+    \item machine
+    \item manufacturing
+    \item product
+    \item supply chain
+\end{enumerate}
 
+\textbf{TODO:} Beschreibe die zugehörigen Themenbereiche nochmal... mit Grafik?
 
-
-
-\subsubsection{Industry Ontology}
-
-Eine damit gekennzeichnete Publikation beschreibt eine Ontologie mit direktem Bezug zur Industrie.
-
-\subsubsection{Industry 4.0}
-
-Dieser Begriff bezeichnet die vierte industrielle Revolution, bezogen auf den technologischen Fortschritt. In einem I4.0-Szenario steht der Fertigungsprozess im Mittelpunkt und bildet die Hauptaktivität, bei der Technologien und Hilfsmittel wie autonome Roboter, Cyber-Physical-Systems, Big-Data Analysis und IoT eingesetzt werden.
-
-\subsubsection{Manufacturing, Smart Manufacturing, Smart Factory, Factory 4.0}
-
-Ein Oberbegriff für eine (evolutionäre) Initiative zur Änderung der Geschäftsstrategie im Fertigungsbereich.
-Hierbei sollen Fertigungszentren modernisiert werden unter Einbeziehung von Technologien wie Industry Internet of Things (IIOT), 3D-Modeling, Industrieautomation, Mobile-Computing und Intelligente analysebasierte Entscheidungssysteme.
-In diesem Zusammenhang spielen auch die Themen wie Wartung (Maintenance) eine wichtige Rolle.
-
-\subsubsection{Cyber-Physical Systems (CPS)}
-
-Cyber-physische Systeme sind Systeme, bei denen informations- und softwaretechnische mit mechanischen Komponenten verbunden sind, wobei Datentransfer und -austausch sowie Kontrolle bzw. Steuerung über ein Netzwerk (z.B. Internet) in Echtzeit erfolgen.
-Wesentliche Bestandteile sind mobile und bewegliche Einrichtungen, Geräte und Maschinen (darunter auch Roboter), eingebettete und vernetzte Systeme (Internet der Dinge).
-Sensoren registrieren und verarbeiten Daten aus der physikalischen Welt, Aktoren (Antriebselemente) wirken auf die physikalische Welt ein, sodass z.B. Weichen gestellt, Schleusen geöffnet, Fenster und Türen geschlossen, Produktionsvorgänge begonnen, geändert und angehalten werden \footnote{\url{https://wirtschaftslexikon.gabler.de/definition/cyberphysische-systeme-54077}}.
-
-\subsubsection{Supply Chain Management}
-
-Supply Chain Management (= Lieferkettenmanagement) ist eine Bezeichung, die seit dem Jahr 1990 verstärkt in der Literatur verwendet wird. Eine Lieferkette (Supply Chain) kann definiert werden als "eine Menge von mindestens drei unabhängig voneinander agierenden Firmen (oder Personen), die direkt an den vor- und nachgelagerten Strömen von Produkten, Dienstleistungen, Finanzmitteln und/oder Informationen von einer Quelle zu einem Kunden beteiligt sind" (\cite{mentzer2001defining}, S. 4). Aufgrund der Vielfalt an Definitionen für Lieferkettenmanagement (Supply Chain Management), nutzen wir im Rahmen dieser Arbeit lediglich die folgende: Alle notwendigen Tätigkeiten, die zur Umsetzung einer Lieferkette benötigt werden.
+Die meisten Onlinedienste besaßen an sich schon wenige Ontologien, weshalb die Suche mit weiteren Schlüsselwörtern oft nicht nötig war, um den gesamten Bestand zu sichten.
+Für den Fall, dass es neben Ontologien und Vokabularen noch andere Typen gab, so wurden diese anderen ignoriert.
 
 \subsection{Internetrecherche}
 
 Ergänzt wurde die Literaturrecherche durch eine Internetrecherche, weil nicht alle Ontologien durch wissenschaftliche Literatur dokumentiert sind.
 Zur Internetrecherche wurden die folgenden Webseiten genutzt:
 
-
-
-- Stichwörter für Suchmaschinen auf den verschiedenen Webseiten: industry, product, manufacturing; machine
 
 TODO: Hin- und Her-Bouncing erklären? Ausgangspunkt > schauen was es an Ontologien gibt > Kriterien verfeinern > ...
 
@@ -418,6 +415,21 @@ Diese Arbeiten wurden aus den folgenden Gründen ignoriert:
 - Vehicles Sales Ontology nutzt Namespaces wie http://en.wikipedia.org/wiki/, die jedoch weder verwendet werden noch auf gültige Ontologie verweisen
 
 - Sollte es keine RDF-Datei vom Projekt geben, werden auch Mirrors wie DBpedia Archivo genutzt
+
+- Es gab Vorkommen in Portalen, bei denen die Metadaten nicht den Angaben in den RDF-Daten entsprachen, z.B. https://industryportal.enit.fr/ontologies/I40KG
+  - Titel im Portal: Industry 4.0 Knowledge Graph
+  - Titel in RDF: Industrial IoT Architecture Ontology (DC terms: title property)
+
+Bei der Auswertung der Metadaten wurde die folgende Reihenfolge eingehalten:
+
+\begin{enumerate}
+    \item RDF-Daten
+    \item In den RDF-Daten verlinkte Projektseite
+    \item Angaben auf Onlinedienst, der die Ontologie bereitstellt
+\end{enumerate}
+
+Wenn eine Anlaufstelle keine Metadaten zu Tage fördert wurde die nächste probiert.
+Und lagen am Ende zu einem Metadatum immer noch keine Angaben vor, so wurde an der Stelle "Information not available" in der CSV-Datei hinterlegt.
 
 %----------------------------------------
 % eingeschlossenen Textblock kürzen
