@@ -156,26 +156,41 @@ Im Folgenden werden alle Lizenzen aufgelistet, die während der Recherche gefund
 
 \section{Verwandte Arbeiten}
 
-- Welche Untersuchungen wurden bereits dahingehend unternommen?
+Es konnten keine Vorarbeiten gefunden werden, bei denen eine geprüfte Liste an Ontologien aus dem Themenbereich der industriellen Fertigung bzw. der Industrie im allgemeinen erstellt wurde.
+Jedoch gibt es ein paar Onlinedienste und wissenschaftliche Publikationen, die ähnliche Anstrengungen betreffen.
 
-- Wozu gab es noch keine oder nur unzureichende Untersuchungen?
+\subsection{IndustryPortal}
+
+IndustryPortal \cite{amdouni2023industryportal} (\url{https://industryportal.enit.fr/ontologies}) ist eine Open Source Plattform für die Entwicklung, Publikation und Pflege von Ontologien aus dem Themenbereich Industrie, welche im Rahmen des OntoCommons-Projektes\footnote{\url{https://ontocommons.eu/}} entwickelt wurde.
+Auf der Plattform können laut der Dokumentation\footnote{\url{https://industryportal.github.io/}} alle registrierten Benutzer u.a. neue Ontologien eintragen und bestehende Metadaten verändern.
+Es wurden keine Angaben gefunden, die auf eine Überprüfung der Angaben hinweisen.
+
+Die Hauptunterschiede zwischen IndustryPortal und dieser Arbeit liegen in der Methodik und dem Datenumfang.
+Es konnte mehrfach nachgewiesen werden, dass die Metadaten in IndustryPortal mindestens unvollständig sind, teilweise jedoch auch widersprüchlich zu den Angaben in den RDF-Daten.
+Als Beispiel sei auf die "Volkswagen Vehicle Ontology"\footnote{\url{https://industryportal.enit.fr/ontologies/VVO}} verwiesen, welche beim Veröffentlichungsdatum (release date) und Uploaddatum (uploaded) den Wert "11/02/2022" hat.
+Die Ontologie wurde jedoch über 10 Jahre früher (Oktober 2011) bereits im Rahmen einer W3C-Studie erwähnt\footnote{\url{https://www.w3.org/2001/sw/sweo/public/UseCases/Volkswagen/}}.
+Trotz dieser Situation war und ist IndustryPortal eine wertvolle Quelle, denn sie stellen kostenfrei eine Infrastruktur bereit, die eine langfristige Verbesserung der Ontologien und zugehörigen Metadaten erlaubt.
+
+IndustryPortal enthält zum aktuellen Zeitpunkt\footnote{28.03.2024} 109 Ontologien für den Themenbereich Industrie im weitesten Sinne.
+Im Rahmen dieser Arbeit wurden jedoch über 217 Ontologie allein im weiteren Themenbereich industrielle Fertigung ermittelt.
+Zählt man die referenzierten, aber thematisch häufig nicht passenden, Ontologien hinzu, steigt die Anzahl auf 384.
+
+\subsection{OntoCommons Ontology Catalogue}
+
+Der OntoCommons Ontology Catalogue\footnote{\url{https://data.ontocommons.linkeddata.es/index}} wurde im Rahmen des OntoCommons-Projektes erstellt und wird scheinbar weiterhin gepflegt.
+Jeder kann über ein Online-Formular\footnote{\url{https://ontocommons.eu/node/146}} Ontologien für die Liste vorschlagen.
+Aktuell\footnote{28.03.2024} enthält die Liste 37 Ontologien, die sich fokussieren auf die Themenbereiche industrielle Fertigung, Materialien und Bauwesen.
+Im Rahmen dieser Arbeit wurden jedoch über 217 Ontologie allein im weiteren Themenbereich industrielle Fertigung ermittelt.
+Der Umfang und die Qualität der Metadaten je Ontologie schwanken ebenfalls.
+Bei manchen Ontologien ist kein Link auf die RDF-Daten angegeben, womit sich die Frage stellt, warum diese überhaupt erwähnt werden\footnote{Beispiel "MPFQ Ontology (Material-Process-Function-Quality)":
+
+\url{https://data.ontocommons.linkeddata.es/vocabulary/MpfqOntology(material-process-function-quality)}}.
 
 \subsection{Ontologies for Industry 4.0}
-%
-% Ontologies for Industry 4.0
-% https://www.cambridge.org/core/services/aop-cambridge-core/content/view/BF86BB5310356D642C82470D67974804/S0269888919000109a.pdf/div-class-title-ontologies-for-industry-4-0-div.pdf
 
-Zu Beginn der Publikation "Ontologies for Industry 4.0" \cite{kumar2019ontologies} (2019) geben die Autoren zuerst eine kurze Einordnung des Themengebietes Industrie 4.0, Factory 4.0 und Smart Manufacturing.
-Diese wird ergänzt durch eine historische Einordnung.
-Danach folgt eine Zusammenfassung relevanter Herausforderungen (z.B. Mensch-Maschine-Kommunikation oder Datenanalyse) und die zur Bewältigung genutzten Technologien (z.B. Internet of Things, 5G, Cloud).
-Im zweiten Teil der Arbeit wird der ontologische Rahmen vorgestellt und die Autoren listen eine Reihe von Anwendungsbereichen für Ontologien auf, jedoch ohne diese näher einzuordnen.
-Immerhin wird am Ende des Abschnitts ein kurzer Vergleich zwischen zwei verschiedenen Strukturierungsansätzen für Ontologien andiskutiert.
-Im Kapitel 2.2 stellen die Autoren einige Resultate ihrer Standardisierungsvorhaben zu Industrieontologien vor und beschreiben den aktuellen Stand.
-Das Hauptaugenmerk lag dabei zuerst auf der Kommunikation zwischen Robotern, menschlichen Bedienern, Endkunden und diversen Zulieferern.
-Laut Aussage der Autoren sollten diese Themen zuerst geklärt werden, um daraus resultierende Probleme zu vermeiden.
-Ihre Arbeit basiert auf dem IEEE-Beitrag namens "IEEE 1872-2015 Standard Ontologies for Robotics and Automation"\footnote{1872-2015 - IEEE Standard Ontologies for Robotics and Automation: \url{https://ieeexplore.ieee.org/document/7084073}}.
-Diese Ontologien bieten eine ontologische Basis für weiterführende Konzepte aus dem Bereich Industrie 4.0.
-Danach folgt eine kurze Vorstellung der folgenden Ontologien:
+Aufgrund der hohen thematischen Übereinstimmung wurde die Publikation "Ontologies for Industry 4.0" \cite{kumar2019ontologies} (2019) aufgenommen.
+Die Autoren geben zuerst eine kurze Einführung in die Themengebiete Industrie 4.0, Factory 4.0 und Smart Manufacturing und zählen danach relevante Herausforderungen in diesem Zusammenhang auf, z.B. Mensch-Maschine-Kommunikation oder Datenanalyse.
+Später im Papier werden vier Ontologien vorgestellt:
 \begin{enumerate}
     \item \textbf{CORA:} Core Ontology for Robotics and Automation
     \item \textbf{ROA:} The Ontology for Autonomous Robotics\footnote{In der zugehörigen Publikation\cite{olszewska2017ontology} kürzen die Autoren die Ontologie jedoch mit ORA ab.}
@@ -183,10 +198,8 @@ Danach folgt eine kurze Vorstellung der folgenden Ontologien:
     \item \textbf{O4I4}: Ontology for Industry 4.0
 \end{enumerate}
 
-Im dritten Teil der Arbeit gehen die Autoren die folgenden Szenarien im Bereich Industrie 4.0 ein: Smart-rapid prototyping scenario und UAV’s good delivery scenario.
-Jedes Szenario wird kurz eingeführt und danach der Einsatz der Ontologien beschrieben.
-Es ist erwähnenswert, dass die Publikation an mehreren Stellen eine Auflistung von relevanten Publikationen enthält, die jedoch nur benannt aber nicht inhaltlich eingeordnet werden. Damit bieten die Autoren einen guten Ausblick, jedoch fehlt dem Leser die Einordnung in das Papier.
-
+Leider gaben die Autoren keine Links auf die zugehörigen RDF-Daten an, wodurch die Ontologien nicht mehr im Scope für diese Arbeit sind.
+Jedoch konnte im Rahmen der Recherche ein Link auf die RDF-Daten der CORA Ontologie ermittelt werden.
 
 \subsection{Where to Publish and Find Ontologies? A Survey of Ontology Libraries}
 
@@ -215,14 +228,6 @@ Am Ende der Publikation weisen die Autoren noch auf eine Reihe von offenen Probl
 Als ein Problem wurden die oft mangelhaften Angaben zur Weiterverwendung und Lizensierung von Ontologien genannt.
 Ein anderes die oft mangelnde Unterstützung für die Mitarbeit (z.B. Melden von Fehlern, Einreichung von Ergänzungen).
 Bei unserer Recherche sind wir auch auf diese Probleme gestoßen.
-
-\subsection{OntoCommons Ontology Catalogue}
-
-https://data.ontocommons.linkeddata.es/index
-
-\subsection{IndustryPortal}
-
-https://industryportal.enit.fr/ontologies
 
 \section{Methodik}
 
@@ -442,7 +447,6 @@ Sind es doch die Metadaten, die zuerst bei Suchanfragen in Ontologie-Portalen un
 Die Suche nach den Metadaten wurde erschwert durch kaputte Web-Links (Stichwort: link rot), was mich dazu zwang manuell über verschiedene Onlinedienste an weitere Daten über eine Ontologie zu gelangen.
 
 Diese Arbeit stellt ein stabiles Fundament für weitere Untersuchungen zu Ontologien in der industriellen Fertigung dar. Zudem erlaubt sie interessierten Personen und Unternehmen, die sich im RDF-Umfeld noch nicht so gut auskennen, einfacher an die Ontologie zu gelangen, ohne sich mit technischem Kleinklein beschäftigen zu müssen.
-
 
 \section{Erwähnungen}
 

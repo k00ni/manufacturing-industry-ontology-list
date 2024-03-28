@@ -10,6 +10,7 @@
   * [x] Amount of each license used
   * [x] Number of entries with/without "Information not available"
   * [x] Number of entries with update in last 3 and 7 years
+  * [ ] Nicht auflösbare URL bei ontology URI
 * [ ] Parameter beim Crawling kurz nennen: Timeout lag bei 5 Sek., nur erste 300 Triple der Ontologie eingelesen bzgl. owl:import
 * [ ] Genutzte Tools: LibreOffice, VSCode, Docker, PHP (welches Tool für was?)
 
