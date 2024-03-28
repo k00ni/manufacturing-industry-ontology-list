@@ -3,6 +3,7 @@
 \usepackage[english]{babel}
 \usepackage{caption}
 \usepackage{float}
+\usepackage{longtable}
 \usepackage{subcaption}
 \usepackage[table,xcdraw]{xcolor}
 
@@ -27,7 +28,7 @@ sorting=nty
 \usepackage{graphicx}
 \graphicspath{ {./} }
 
-\title{Maschinenlesbare Ontologien und Vokabulare aus dem Bereich der industriellen Produktion}
+\title{Maschinenlesbare Ontologien und -Vokabulare in RDF aus dem Bereich der industriellen Produktion}
 \author{\textbf{Konrad Abicht} \\ k.abicht@gmail.com}
 \date{TODO Datum}
 
@@ -37,16 +38,15 @@ sorting=nty
 
 \paragraph{{\large Zusammenfassung}}
 
-\paragraph{Einleitung:} Aktuell gibt es keine geprüfte Liste mit maschinenlesbaren, öffentlich-zugänglichen RDF-Ontologien und -Vokabularen mit Bezug zum Themengebiet der industriellen Produktion. Ähnliche Arbeiten, wie IndustryPortal, sind Community-getrieben und besitzen keine Prüfung der Metadaten, wodurch Widersprüche bei den Angaben zur referenzierten Ontologie entstehen können. Weiterhin enthält die erarbeitete Liste im Vergleich signifikant mehr Einträge.
+\paragraph{Einleitung:} Aktuell gibt es keine geprüfte Liste mit maschinenlesbaren, öffentlich-zugänglichen RDF-Ontologien und -Vokabularen mit Bezug zum Themengebiet der industriellen Produktion. Ähnliche Arbeiten, wie IndustryPortal, sind Community-getrieben und besitzen keine Prüfung der Metadaten, wodurch Widersprüche bei den Angaben zur referenzierten Ontologie entstehen können.
 
 \paragraph{Methodik:} Es wurde im Zeitraum vom 01.11.2023 - 28.03.2024 eine Internet- und Literaturrecherche durchgeführt und eine CSV-Datei mit allen thematisch passenden bzw. referenzierten Ontologien und Vokabularen erstellt. Zu jeder Ontologie wurden eine Reihe von Metadaten erfasst (z.B. Titel, Kurzbeschreibung, Projektseite, Version, letzte Änderung und Lizenz).
 
-\paragraph{Resultate:} Als Ergebnis wurden \textbf{XXXXXXX} Ontologien bzw. Vokabulare gefunden, wobei \textbf{YYYYYYY} einen thematischen Bezug zur industriellen Produktion haben. Nur \textbf{ZZZZZZ} Ontologien besitzen vollständige Metadaten, bei dem Rest konnte mindestens ein Metadatum nicht ermittelt werden. Es wurden alle Ontologien ignoriert, zu denen es zwar wissenschaftliche Publikationen gibt, jedoch keine öffentlich einsehbaren RDF-Daten. Weitere Auswertungen sind in dieser Publikation zu finden. Die Rohdaten stehen unter einer freien Lizenz (CC-BY 4.0) zur freien Verwendung bereit.
+\paragraph{Resultate:} Als Ergebnis wurden \textbf{374} Ontologien bzw. Vokabulare gefunden, wobei \textbf{217} einen thematischen Bezug zur industriellen Produktion haben. Nur \textbf{85} Ontologien besitzen vollständige Metadaten, bei dem Rest konnte mindestens ein Metadatum nicht ermittelt werden. Es wurden alle Ontologien ignoriert, zu denen es zwar wissenschaftliche Publikationen gibt, jedoch keine öffentlich zugänglichen RDF-Daten. Weitere Auswertungen sind am Ende der Publikation zu finden. Die Rohdaten stehen unter einer freien Lizenz (CC-BY 4.0) zur freien Verwendung bereit.
 
-\paragraph{Diskussion:} Die Untersuchung wurde lediglich über einen Zeitraum von 5 Monaten durchgeführt. Weiterhin wurde der thematische Fokus industrielle Produktion im weitesten Sinne betrachtet, wodurch möglicherweise auch thematisch nicht vollständig passende Ontologien einbezogen wurden.
+\paragraph{Diskussion:} Die Untersuchung wurde lediglich über einen Zeitraum von 5 Monaten durchgeführt. Weiterhin wurde der thematische Fokus industrielle Fertigung im weitesten Sinne betrachtet, wodurch möglicherweise auch thematisch nicht vollständig passende Ontologien einbezogen wurden.
 
-\paragraph{Fazit:} Der wissenschaftliche Beitrag dieser Arbeit ist eine händisch geprüfte Liste von Ontologien, die unter einer freien Lizenz zugänglich ist. Daneben gibt es eine Auswertung zu den Rechercheergebnissen, wodurch Rückschlüsse zum Zustand der betrachteten Ontologien gezogen werden können.
-[...]
+\paragraph{Fazit:} Der wissenschaftliche Beitrag dieser Arbeit ist eine händisch geprüfte Liste von Ontologien, die unter einer freien Lizenz zugänglich ist. Daneben gibt es eine Auswertung zu den Rechercheergebnissen, wodurch Rückschlüsse zum Zustand der betrachteten Ontologien gezogen werden können. Aufgrund der frei zugänglichen Forschungsdaten können nachfolgende Untersuchungen leichter durchgeführt werden.
 
 \newpage
 
@@ -330,6 +330,8 @@ Im Rahmen der Literatur- und Internetrecherche wurde eine Ontologie selektiert, 
 Eine Ontologie wurde auch als thematisch passend angesehen, wenn sie in einer von den Autoren bzw. Experten kuratierten Liste eingetragen war.
 Es wurde zwar stichprobenartig geprüft, jedoch wurde in diesem Fall allgemein angenommen, dass jemand mit fachlichem Hintergrund die Ontologie bewusst so eingeordnet hatte.
 
+Es wurden alle Ontologien (nebst zugehöriger wissenschaftlicher Publikationen) igonriert, bei denen keine RDF-Daten vorlagen. Ohne die zugehörigen RDF-Daten kann nicht sichergestellt werden, dass eine Ontologie vollständig vorliegt. Davon abgeleitete Arbeiten könnten zu unerwarteten Fehlern und Widersprüchen führen.
+
 \subsection{Erfasste Metadaten zu einer Ontologie}
 
 Bei jeder selektierten Ontologie wurden eine Reihe von objektiven Angaben ergänzt.
@@ -337,8 +339,6 @@ Eine Bewertung der Inhalte (wie Qualität der RDF-Daten oder genutzte Lizenzen) 
 Die Metadaten wurden so gewählt, dass sie einen neutralen Blick auf die vorliegenden Industrie-Ontologien gewähren.
 Aufgrund des Umfangs wurde die Liste der Metadaten auf die notwendigsten Angaben beschränkt.
 Alle Angaben in der zugehörigen CSV-Datei wurden in Englisch erstellt, um eine größtmögliche Zugänglichkeit zu ermöglichen.
-Bei vielen Ontologien konnten nicht alle Metadaten-Felder ausgefüllt werden.
-In diesem Fall wurde "Information not available" eingetragen, um Falschaussagen und Missverständnisse zu vermeiden.
 Im Folgenden die Metadaten mit einer kurzen Erklärung:
 
 \begin{itemize}
@@ -357,173 +357,345 @@ Im Folgenden die Metadaten mit einer kurzen Erklärung:
     \item \textbf{License} - Falls vorhanden, eine Angabe zu der verwendeten Lizenz.
 \end{itemize}
 
-
-
 \subsection{Inhaltliche Nacharbeiten}
 
-\textbf{TODO} Manche Einträge in ontologies.csv wurden inhaltlich angepasst, weil sonst missverständlich, z.B. http://emmo.info/emmo/top/annotations\# hat als Titel "Annotations", bezieht sich aber auf EMMO Ontologie Annotations
+Es wurden Einträge in der ontologies.csv inhaltlich angepasst, um ein Mindestmaß an Verständlichkeit zu gewährleisten.
+Im Folgenden eine Auflistung der Nacharbeiten.
 
-- autor vs. contributors
-  - Autorenschaft wurde teilweise anhand der Git-Commits ermitteln (z.B. VDI3682), weil direkt in Metadaten und Projektbeschreibung nicht ersichtlich
-- titel soweit wie möglich original, aber verständlich
-- Lizenz wie in RDF, falls möglich
+\begin{enumerate}
+    \item Unvollständige oder fehlende Angaben wurden durch Angaben von Ontologie-Portalen ergänzt, sofern inhaltlich passend.
+    \item Manche Ontologie besaßen keine Autoren, lediglich Beitragende. In diesem Fall wurden diese in das Autors/creators Feld übernommen.
+    \item Konnten keine Autoren und Beitragenden ermittelt werden (z.B. VDI3682), so wurde versucht den Klarnamen der Autoren über Git-Commits zu ermitteln.
+    \item Gewisse Angaben, wie die neuste Version, wurden vereinheitlicht, um eine Vergleichbarkeit herzustellen.
+\end{enumerate}
 
+Bei der Auswertung der Metadaten wurden zuerst die RDF-Daten geprüft. Waren diese unvollständig, wurde auf die Projektseite zurückgegriffen, falls vorhanden.
+Führten beide zu nix, wurde versucht, die Metadaten über den Onlinedienst zu beziehen, der Daten über die Ontologie bereitstellte.
+Und lagen am Ende zu einem Metadatum immer noch keine Angaben vor, so wurde an der Stelle "Information not available" in der CSV-Datei hinterlegt.
 
 \subsection{Eigene Hilfsskripte}
 
-\textbf{TODO:}Auf Hilfsskripte eingehen: cleaning CSV file; finde referenzierte Namespaces/Ontologien; liste noch nicht erfasste, aber referenzierte Ontologien aus ontologies.csv auf
+Zur Erleichterung der eigenen Arbeit wurden verschiedene PHP-Skripte geschrieben.
+Sie erlaubten eine semi-automatische Einarbeitung der Ontologien und nachträgliche Validerung der Metadaten.
+Alle Skripte sind im zugehörigen Github-Repository näher dokumentiert, daher werden im Folgenden nur die zwei wichtigsten kurz vorgestellt.
 
-\textbf{TODO einarbeiten:} es wurde ein Hilfsskript gebaut, um referenzierte Ontologien/Namespaces zu finden. Dabei sah man, dass auch veraltete Namespaces verwendet werden.
-- car options ontology nutzt goodrelations (http://purl.org/goodrelations/v1\#) - Legacy Liste mit diesen Ontologien im PHP-Code (TODO: Liste nennen)
+Ein Skript wurde zur Ermittelung noch unbekannter Ontologien genutzt, in dem es die RDF-Daten bereits bekannter Ontologien analysiert und über die Namespaces und owl:imports neue Ontologien ermittelt.
 
-Für nicht RDF-Namespaces wie XML wurde versucht anhand des Kontextes die passende Namespace IRI zu ermitteln
-
-
-
-
-
-
-
-
-
-
-
-\textbf{TODO:} sofern vorhanden wurde die RDF-Datei im Turtle Format heruntergeladen (leichte Lesbarkeit), ansonsten RDF/XML oder was noch verfügbar war.
-
-
-
-Es gab Ontologien (Information Artifact Ontology aus "Open Biological and Biomedical Ontology Foundry"\footnote{\url{https://obofoundry.org/}}) welche Namespaces auf eine Art verwendeten, deren Zurückverfolgbarkeit unmöglich machte.
-So wurde obo:http://purl.obolibrary.org/obo/ verwendet, in den Rohdaten (https://raw.githubusercontent.com/information-artifact-ontology/IAO/master/iao.owl) wurden dann jedoch Einträge wie obo:RO\_0001900 verwendet, welche auf eine Subontology https://obofoundry.org/ontology/ro.html verweisen.
-Das ist an sich kein fehlerhaftes Verhalten und mag aus Datenmodellierungssicht Sinn ergeben.
-Jedoch erschwert das die Nachverfolgbarkeit und Einordnung der referenzierten Ontologien, wenn statt der eigentlich Ontologie IRI eine IRI auf die Hauptontologie (?) verwendet wird.
-
-- \textbf{HINWEIS für CRAWLING}: Timeout lag bei 5 Sek.
-- \textbf{HINWEIS für CRAWLING}: Nur erste 300 Triple der Ontologie eingelesen bzgl. owl:import
-- \textbf{HINWEIS für TOOLING}: LibreOffice, VSCode, Docker, PHP (welches Tool für was?)
-
-\subsection{Ignorierte Einträge}
-
-Im Rahmen der Recherche wurden Publikationen zu Ontologien gefunden, bei denen die öffentlich zugängliche Daten nicht ermittelt werden konnten.
-Diese Arbeiten wurden aus den folgenden Gründen ignoriert:
-\begin{enumerate}
-    \item Ohne die zugehörigen Rohdaten in formaler Sprache kann nicht sichergestellt werden, dass eine Ontologie vollständig vorliegt. Davon abgeleitete Arbeiten könnten zu unerwarteten Fehlern und Widersprüchen führen. Weiterhin würde man erzwingen, dass das beschriebenen Wissen zuerst manuell in eine entsprechend Form gebracht werden muss, um eine Weiterverarbeitung zu ermöglichen.
-    \item Eine automatisierte Nutzung des modellierten Wissens wird als nicht gegeben angesehen, wenn das Wissen selbst nicht in einer maschinenlesbaren, formalen Sprache vorliegt. Publikationen zu Ontologien liegen häufig als PDF-Datei vor, wobei das darin beschriebene Faktenwissen (inkl. Formeln in Description Logic und Prädikatenlogik 1. Stufe) nicht entsprechend annotiert ist. Für einen Parser sieht es daher genauso aus, wie der restliche Inhalt.
-\end{enumerate}
-
+Ein anderes Skript wurde erstellt, um die CSV-Datei zu validieren und einen gewissen Formatierungsstandard zu halten.
+Damit sollte z.B. die Differenzansicht\footnote{\url{https://git-scm.com/docs/git-diff}} bei Änderungen klein gehalten und kaputte Sonderzeichen vermieden werden.
 
 \section{Rechercheergebnisse}
 
-[...]
-
-\textbf{TODO: binde finale Version der Grafik ontology-map.png hier ein}
-
-\textbf{TODO: Zusammenfassung der Rechercherergebnisse}
-
-- Publikationen, welche jedoch auf nicht mehr erreichbare Projektseiten/RDF-Daten verlinken (link rot)
-
-- Es gab Referenzen auf Ontologien, die nicht mehr (in der genutzten Form) existieren (z.B. GoodRelations => gehört nun zu schema.org)
-
-- Manche Ontologien besitzen nur ungenügend Dokumentation zur Herkunft und Autorenschaft: daher Schwierigkeiten herauszufinden, welchen Daten man vertrauen kann
-
-- Manche Ontologien nutzen nicht auflösbare Präfixe, z.B. "Semantically Integrated Planning Model (SIMPM)" nutzt "metadata" > http://data.bioontology.org/metadata/ (gesamte Liste nennen)
-
-- Manche Ontologien haben keine Ontology IRI (z.B. IMAMO)
-
-- Manche Ontologie-Dateien besaßen SSL-Zertifikatsprobleme (alle über industryportal)
-
-- Manche Ontologien besitzen eine IRI, die zu einem 404 Fehler führt, z.B. AMontology > https://github.com/iassouroko/AMontology/blob/master/AMOntology-vFinal1.owl nutzt http://www.semanticweb.org/ina3/ontologies/2016/2/untitled-ontology-122\#
-  - oder http://emmo.info/emmo/middle/isq (hier gemeldet: https://github.com/emmo-repo/EMMO/issues/285)
-
-- Nutzung von Namespaces die nicht verwendet wurden und auch auf keine Ontologien zeigten, z.B. Vehicle Sales Ontology zeigt auf http://dbpedia.org/resource/, ohne jedoch nie zu verwenden
-
-- Manchmal wurde die https statt http Version einer ontology IRI verwendet (z.B. Spin Spif => OWL, RDFS)
-
-- Vehicles Sales Ontology nutzt Namespaces wie http://en.wikipedia.org/wiki/, die jedoch weder verwendet werden noch auf gültige Ontologie verweisen
-
-- Sollte es keine RDF-Datei vom Projekt geben, werden auch Mirrors wie DBpedia Archivo genutzt
-
-- Es gab Vorkommen in Portalen, bei denen die Metadaten nicht den Angaben in den RDF-Daten entsprachen, z.B. https://industryportal.enit.fr/ontologies/I40KG
-  - Titel im Portal: Industry 4.0 Knowledge Graph
-  - Titel in RDF: Industrial IoT Architecture Ontology (DC terms: title property)
-
-Bei der Auswertung der Metadaten wurde die folgende Reihenfolge eingehalten:
+Die folgende Liste enthält eine Reihe interessanter Statistiken:
 
 \begin{enumerate}
-    \item RDF-Daten
-    \item In den RDF-Daten verlinkte Projektseite
-    \item Angaben auf Onlinedienst, der die Ontologie bereitstellt
+    \item Nur ca. \textbf{23\%} (85 von 374) der erfassten Ontologien besitzen vollständige Metadaten. Bei dem Rest (N=289) gibt es mindestens ein Metadatum, bei dem der Wert fehlt und es daher "Information not available" beinhaltet.
+    \item Bei ca. \textbf{82\%} (309 von 374) der erfassten Ontologien konnte ein Datum für die letzte Aktivität nachgewiesen werden. Von diesen 309 Ontologien erhielten...
+        \begin{itemize}
+            \item ... \textbf{127} ein Update innerhalb von \textbf{3} Jahren.
+            \item ... \textbf{100} ein Update innerhalb von \textbf{7} Jahren, aber älter als 3 Jahren.
+            \item ... \textbf{82} ihr letztes Update vor über \textbf{8+} Jahren.
+        \end{itemize}
+    \item Eine Liste der meist genutzten Lizenzen (min. 10 mal in Verwendung):
+        \begin{itemize}
+            \item \textbf{114x} CC-BY 4.0
+            \item \textbf{66x} Information not available
+            \item \textbf{47x} CC-BY 3.0
+            \item \textbf{40x} MIT
+            \item \textbf{37x} Apache License 2.0
+            \item \textbf{16x} W3C Document License (2023)
+            \item \textbf{10x} BSD-3-Clause
+        \end{itemize}
+        Bei \textbf{66} Ontologien konnten keine Lizenzinformationen ermittelt werden.
+    \item BACnet (Building Automation and Control Network) Ontology benutzt mit \textbf{326 Elementen} die meisten Namespace-Definitionen (@prefix)\footnote{\url{https://bacowl.sourceforge.net/2012/bacnet.ttl}}.
 \end{enumerate}
 
-Wenn eine Anlaufstelle keine Metadaten zu Tage fördert wurde die nächste probiert.
-Und lagen am Ende zu einem Metadatum immer noch keine Angaben vor, so wurde an der Stelle "Information not available" in der CSV-Datei hinterlegt.
+Im Folgenden eine Liste erwähnenswerter Beobachtungen:
 
-%----------------------------------------
-% eingeschlossenen Textblock kürzen
-%
+\begin{enumerate}
+    \item Es wurden Ontologien referenziert, die nicht mehr in ihrer Form existierten, weil sie z.B. in eine andere Ontologie übergangen sind. Z.B. GoodRelations ging 2012 in schema.org über. Ein anderes Beispiel ist die Ontologie RealEstateCore: sie gab ihre OWL-Ontologie in Version 4 auf und verlagerte sich dann auf SHACL und Digital Twin Definition Language Serialisierungen\footnote{Siehe auch \url{https://dev.realestatecore.io/docs/DTDL-or-SHACL} und \url{https://doc.realestatecore.io/3.3/full.html}}.
+    \item XXX Ontologien nutzen eine nicht auflösbare URL als Ontologie URI.
+    \item Bei manchen Ontologien wurden fehlerhafte/abgelaufene SSL-Zertifikate auf dem Server mit den RDF-Daten eingesetzt. Um an die Daten gelangen zu können wurde daher die Überprüfung des SSL-Zertifikats ausgelassen.
+    \item Es gab manchmal widersprüchliche Angaben zwischen den RDF-Daten einer Ontologie und den Metadaten auf einem Ontologie-Portal. Zum Beispiel wird auf \url{https://industryportal.enit.fr/ontologies/I40KG} als Titel "Industry 4.0 Knowledge Graph" angegeben, jedoch wurde "Industrial IoT Architecture Ontology" in den Metadaten genutzt\footnote{dcterms:title Property}.
+    \item Product Types Ontology\footnote{\url{http://www.productontology.org/}} stellt lediglich einen RDF-Daten-Dump mit nur 1000 der am häufigsten abgefragten Klassen als Ontologie bereit.
+\end{enumerate}
 
-  - Beispiel Volkswagen Vehicles Ontology: Aufgrund fehlender Originalquelle (z.B. wiss. Publikation oder Projektseite) und der unterschiedlichen Dokumentation zur Volkswagen Vehicles Ontology, werden die aktuellen Funde im Folgenden einzeln dargelegt.
+\section{Diskussion}
 
-Die Ontologie wird in einer Untersuchung namens "Case Study: Contextual Search for Volkswagen and the Automotive Industry" des W3C aus dem Jahre 2011 erwähnt (\cite{greenly2011case}, S. 2).
-In der Studie ging es u.a. um die Verbesserung der Suche für Nutzer in digitalen Quellen.
-In diesem Zuge wurde u.a. die Volkswagen Vehicles Ontology entwickelt, um Volkswagen-spezifische Konzepte bei Fahrzeugen beschreiben zu können.
-Der Autor der Ontologie war Martin Hepp.
-Man nutzte diese und andere Vokabulare/Ontologien, um die eigenen Daten anzureichern, um kontextbasierte Suchanfragen zu ermöglichen.
-Die URL http://purl.org/vvo/ns wird als Quelle für die Ontologie angegeben, jedoch gelangt man darüber am Ende nur zu https://www.volkswagen.co.uk/en.html, welches keine weiteren Informationen bereitstellt.
-Weitere Details zur Ontologie selbst wurden nicht genannt.
+Die vorgestellte Ontologie-Liste hat keinen Anspruch auf Vollständigkeit.
+Die Untersuchung wurde über einen begrenzten Zeitraum von 5 Monaten durchgeführt.
+Weiterhin wurde der thematische Fokus industrielle Fertigung im weitesten Sinne betrachtet, wodurch auch thematisch nicht vollständig passende Ontologien einbezogen sein könnten.
+An dieser Stelle wäre eine Nachuntersuchung mit Domainexperten sinnvoll.
+In den Skripten wurden RDF-Bibliotheken genutzt, welche nicht alle RDF-Dateien lesen konnten\footnote{Fehler beim XML-Parsing}.
+In diesen Fällen wurden die Dateien manuell ausgewertet.
 
-Der Link https://industryportal.enit.fr/ontologies/VVO führt zu einem Projekteintrag auf IndustryPortal.
-Als Autor wird Abdelouadoud Rasmi angegeben, der jedoch keine ersichtliche Verbindung zu Volkswagen hat.
-In der zugehörigen OWL-Datei\footnote{https://data.industryportal.enit.fr/ontologies/VVO/submissions/1/downloadapikey=019adb70-1d64-41b7-8f6e-8f7e5eb54942} findet man jedoch im Abschnitt Autor auch Martin Hepp und bei Beitragende (contributors) u.a. den Erstautor der oben genannten W3C Studie William Greenly.
-Aufgrund dieses und anderer Gemeinsamkeiten, z.B. gleicher Name (Volkswagen Vehicles Ontology) und XML-Namensraum (http://purl.org/vvo/ns\#), wird angenommen, dass es sich um die gleiche Ontologie handelt. Die Ontologie auf IndustryPortal hat als Veröffentlichungsdatum den 2. November 2022, wobei als Veröffentlichungsdatum bei der Version der 12. Oktober 2010 genannt wird.
-Es liegen keine Informationen vor, dass zwischen diesen Daten weitere Veränderungen an der Ontologie vorgenommen wurden.
-Ich gehe daher davon aus, dass es sich hier lediglich um einen erneuten Upload der Version von 2010 handelt.
+\section{Fazit und Ausblick}
 
+Die Rechercheergebnisse zeigen ein vielfältiges Bild.
+Für das Themengebiet industrielle Fertigung und angrenzende Themengebiete konnten viele passende Ontologien gefunden werden.
+Es scheint ein über die letzten 10 Jahre beständiges Interesse an Ontologien in diesen Bereichen zu geben, was die Zeitpunkte der ermittelten letzten Aktivitäten zeigen.
+Ebenso ist positiv, dass einige Ontologien eine dezidierte Spezifikationsseite besitzen, auf der man neben den Metadaten, u.a. auch eine Liste der Klassen und Properties sowie andere Inhalte findet.
 
+Jedoch war es bei dem Großteil der Ontologie aufwendig an die gewünschten Metadaten zu gelangen.
+Es ist bemerkenswert, wie wenig Aufmerksamkeit die Ontologie-Autoren auf die Metadaten zu legen scheinen.
+Sind es doch die Metadaten, die zuerst bei Suchanfragen in Ontologie-Portalen und Suchmaschinen herangezogen werden.
+Die Suche nach den Metadaten wurde erschwert durch kaputte Web-Links (Stichwort: link rot), was mich dazu zwang manuell über verschiedene Onlinedienste an weitere Daten über eine Ontologie zu gelangen.
 
-
-
-
-
-
-
-
-
-
-- die Ontologie RealEstateCore gab ihre OWL-Ontologie in Version 4 auf und verlagerte sich dann auf SHACL und Digital Twin Definition Language Serialisierungen
-- https://dev.realestatecore.io/docs/DTDL-or-SHACL
-- Doc der neusten V3: https://doc.realestatecore.io/3.3/full.html
-
-- BACnet ontology hat 326 prefixes
-
-- RDF Datei (https://doc.realestatecore.io/3.3/full.unioned.rdf) für RealEstateCore war ab 14.03. nicht mehr erreichbar (Page not found error),
-durch kurzes probieren auf full.rdf gestoßen die ging.
-
-- kurios: Product Types Ontology stellt im Dump nur die 1000 am häufigsten abgefragten Klassen als Ontologie bereit (http://www.productontology.org/)
+Diese Arbeit stellt ein stabiles Fundament für weitere Untersuchungen zu Ontologien in der industriellen Fertigung dar. Zudem erlaubt sie interessierten Personen und Unternehmen, die sich im RDF-Umfeld noch nicht so gut auskennen, einfacher an die Ontologie zu gelangen, ohne sich mit technischem Kleinklein beschäftigen zu müssen.
 
 
-
-
-
-%----------------------------------------
-
-
-
-Weiterführende Metadaten zu den Ontologien finden Sie in unseren Rohdaten, welche in Form einer CSV-Datei öffentlich zur Verfügung stehen. \textbf{TODO Link zu Github Repository}
-
-Im Anhang ist eine Tabelle aller selektierten Ontologien in Form einer Tabelle zu finden.
-
-
-\section{Fazit und weitere Arbeiten}
-
-Vorschläge für Verbesserungen?
-
-[...]
-
-\subsection{Erwähnungen}
+\section{Erwähnungen}
 
 Ich danke Paul-Robert Kästner für die Sichtung und Zuarbeit der ersten Ontologie-Einträge.
 
 Die Arbeit wurde im Rahmen KI-Werk Projektes durchgeführt, welches vom Bundesministerium für Bildung und Forschung (BMBF) gefördert wurde (https://www.cbasynergy.net/cba/ki-werk.html).
+
+\newpage
+
+\section{Anhang}
+
+Gekürzte Ontologie-Liste zum Thema industrielle Fertigung:
+
+\begin{table}[H]
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{|l|l|l|}
+            \hline
+            & Name & Project page or publication \\ \hline
+            1 & 3D Modeling Ontology & http://bdi.si.ehu.es/bdi/ontologies/ExtruOnt/docs/ \\ \hline
+            2 & Additive Manufacturing and Maintenance Operations Ontology & https://github.com/LA3D/ammo \\ \hline
+            3 & Additive Manufacturing Ontology & https://www.nist.gov/programs-projects/systems-integration-additive-manufacturing \\ \hline
+            4 & Additive Manufacturing and Maintenance Operations Ontology & https://github.com/LA3D/ammo \\ \hline
+            5 & AURORAL Adapters Ontology & https://github.com/oeg-upm/auroral-adapters-ontology \\ \hline
+            6 & AURORAL Cell-Tower Ontology & https://github.com/oeg-upm/auroral-cellTower-ontology \\ \hline
+            7 & AURORAL Energy Ontology & https://github.com/oeg-upm/auroral-energy-ontology \\ \hline
+            8 & AURORAL Logistic Ontology & https://github.com/oeg-upm/auroral-shipmentBiomass-ontology \\ \hline
+            9 & AURORAL Vehicle Charger Ontology & https://github.com/oeg-upm/auroral-VehicleCharger-ontology \\ \hline
+            10 & Automotive Industry Ontology & https://iurianu.rocks/developer/ontology-for-automotive-industry/ \\ \hline
+            11 & Battery Interface Ontology & https://www.big-map.eu/dissemination/battinfo \\ \hline
+            12 & Bicycle Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/bicycle.html \\ \hline
+            13 & Brick & https://brickschema.org/ \\ \hline
+            14 & Building Automation and Control Network Ontology & https://bacowl.sourceforge.net/intro.html \\ \hline
+            15 & Building Circularity Assessment Ontology & https://github.com/linmor-sys/BCAO \\ \hline
+            16 & Building Element Ontology & https://pi.pauwel.be/voc/buildingelement/index-en.html \\ \hline
+            17 & Building Ontology & https://bimerr.iot.linkeddata.es/def/building/ \\ \hline
+            18 & Building Product Ontology & https://www.projekt-scope.de/ontologies/bpo/ \\ \hline
+            19 & Building Topology Ontology & https://github.com/w3c-lbd-cg/bot \\ \hline
+            20 & Capability and Skills Ontology based on Industry Standards & https://github.com/CaSkade-Automation/CaSk \\ \hline
+            21 & Capability and Skills Ontology based on Manufacturing & https://github.com/CaSkade-Automation/CaSkMan \\ \hline
+            22 & Car HiFi Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/carhifi.html \\ \hline
+            23 & Car Options Ontology & Information not available \\ \hline
+            24 & Chair Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/chair.html \\ \hline
+            25 & Classification of Business Functions & https://showvoc.op.europa.eu/\#/datasets/Classification\_of\_Business\_Functions\_\%28CBF\_1.0\%29/metadata \\ \hline
+            26 & Clothing Product Information Ontology & http://www.ebusiness-unibw.org/ontologies/cpi/ns \\ \hline
+            27 & Coffee Machine Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/coffeemachine.html \\ \hline
+            28 & Collaborative Manufacturing Service Ontology & https://zenodo.org/records/3374505 \\ \hline
+            29 & Components for ExtruOnt & https://www.semantic-web-journal.net/system/files/swj2217.pdf \\ \hline
+            30 & Computer Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/computer.html \\ \hline
+            31 & Context Aware System Observation Ontology & https://irstea.github.io/caso/OnToology/ontology/caso.owl/documentation/index-en.html \\ \hline
+            32 & Cooker and Oven Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/cookeroven.html \\ \hline
+            33 & core & https://rds.posccaesar.org/ontology/plm/ont/core/ \\ \hline
+            34 & Core Ontology for Robotics and Automation & https://github.com/srfiorini/IEEE1872-owl \\ \hline
+            35 & Core Ontology for Robotics and Automation (Bare) & https://github.com/srfiorini/IEEE1872-owl \\ \hline
+            36 & CORAX & https://github.com/srfiorini/IEEE1872-owl \\ \hline
+            37 & Crystallography Domain Ontology & https://github.com/emmo-repo/domain-crystallography \\ \hline
+            38 & CSS Ontology & https://github.com/CaSkade-Automation/CSS \\ \hline
+            39 & DefectOnt & https://github.com/AndreaMazzullo/DefectOnt/ \\ \hline
+            40 & Digital Buildings Ontology & https://github.com/google/digitalbuildings/ \\ \hline
+            41 & Digital Camera Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/digitalcamera.html \\ \hline
+            42 & Digital Construction Materials & Information not available \\ \hline
+            43 & Digital Receiver Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/digitalreceiver.html \\ \hline
+            44 & DIN EN 61360 Ontology-Design-Pattern & https://github.com/hsu-aut/IndustrialStandard-ODP-DINEN61360 \\ \hline
+            45 & DIN EN 62264-2 Ontology-Design-Pattern & https://github.com/hsu-aut/IndustrialStandard-ODP-DINEN62264-2 \\ \hline
+            46 & DIN 8580 Ontology-Design-Pattern & https://github.com/hsu-aut/IndustrialStandard-ODP-DIN8580 \\ \hline
+            47 & Dishwasher Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/dishwasher.html \\ \hline
+            48 & Distribution Element Ontology & https://pi.pauwel.be/voc/distributionelement/index-en.html \\ \hline
+            49 & DogOnt: Ontology Modeling for Intelligent Domotic Environments & https://iot-ontologies.github.io/dogont/ \\ \hline
+            50 & Domain Mechanical Testing & https://github.com/emmo-repo/domain-mechanical-testing \\ \hline
+            51 & Domain Mechanical Testing Chemistry & https://github.com/emmo-repo/domain-mechanical-testing \\ \hline
+            52 & Dryer Machine Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/dryermachine.html \\ \hline
+            53 & DVD Player and Blu-ray Player Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/blurayplayer.html \\ \hline
+            54 & eClass Products and Services Ontology & http://www.heppnetz.de/projects/eclassowl/ \\ \hline
+            55 & EEPSA Ontology & https://iesnaola.github.io/eepsa/EEPSA/index-en.html \\ \hline
+            56 & Elemental Multiperspective Material Ontology & https://emmc.eu/emmo \\ \hline
+            57 & Elemental Multiperspective Material middle-level ontology & https://github.com/emmo-repo/EMMO \\ \hline
+            58 & equipment & https://rds.posccaesar.org/ontology/plm/ont/equipment/ \\ \hline
+            59 & ERA Vocabulary & https://showvoc.op.europa.eu/\#/datasets/ERA\_vocabulary/metadata \\ \hline
+            60 & European Waste Classification for Statistics & https://showvoc.op.europa.eu/\#/datasets/ESTAT\_European\_Waste\_Classification\_for\_Statistics\_\%28EWC-Stat\_Rev.4\%29/metadata \\ \hline
+            61 & Extruder Ontology & http://bdi.si.ehu.es/bdi/ontologies/ExtruOnt/docs/ \\ \hline
+            62 & Extruder's sensors ontology & http://bdi.si.ehu.es/bdi/ontologies/ExtruOnt/docs/ \\ \hline
+            63 & Facility Ontology & https://github.com/oeg-upm/cogito-facility-ontology \\ \hline
+            64 & Fridge and Freezer Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/refrigerator.html \\ \hline
+            65 & Furniture Sector Ontology & https://industryportal.enit.fr/ontologies/FUNSTEP \\ \hline
+            66 & Game Console Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/gameconsole.html \\ \hline
+            67 & Garment Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/garment.html \\ \hline
+            68 & General Process Ontology & https://gitlab.cc-asp.fraunhofer.de/ISC-Public/ISC-Digital/ontology/gpo \\ \hline
+            69 & GRACE Ontology & https://industryportal.enit.fr/ontologies/GRACE \\ \hline
+            70 & Grid2Onto & https://industryportal.enit.fr/ontologies/GRID2ONTO \\ \hline
+            71 & Hair Dryer Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/hairdryer.html \\ \hline
+            72 & Home Hifi Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/homehifi.html \\ \hline
+            73 & IEEE Standard for Autonomous Robotics Ontology & https://github.com/hsu-aut/IndustrialStandard-ODP-IEEE1872-2 \\ \hline
+            74 & IFC2X3 & https://github.com/buildingsmart-community/ifcOWL \\ \hline
+            75 & IFC2X3\_TC1 & https://github.com/buildingsmart-community/ifcOWL \\ \hline
+            76 & IFC4 & https://github.com/buildingsmart-community/ifcOWL \\ \hline
+            77 & IFC4\_ADD1 & https://github.com/buildingsmart-community/ifcOWL \\ \hline
+            78 & IFC4\_ADD2 & https://github.com/buildingsmart-community/ifcOWL \\ \hline
+            79 & Industrial Maintenance Ontology & https://industryportal.enit.fr/ontologies/IMAMO \\ \hline
+            80 & IOF Core Ontology & https://github.com/iofoundry/ontology/ \\ \hline
+            81 & International System of Quantities & https://github.com/emmo-repo/EMMO \\ \hline
+            82 & Industrial IoT Architecture Ontology & https://github.com/i40-Tools/StandardsOntology \\ \hline
+            83 & Industrial Ontologies Foundry Supply Chain Reference Ontology & https://spec.industrialontologies.org/iof/ontology/supplychain/SupplyChainReferenceOntology/ \\ \hline
+            84 & Industry 40 Knowledge Graph & https://industryportal.enit.fr/ontologies/I40KG \\ \hline
+            85 & IoT Ontology & https://github.com/oeg-upm/cogito-iot-ontology \\ \hline
+            86 & ISO 22400-2 Ontology-Design-Pattern & https://github.com/hsu-aut/IndustrialStandard-ODP-ISO22400-2 \\ \hline
+            87 & Key Performance Indicator ontology & https://bimerr.iot.linkeddata.es/def/key-performance-indicator/ \\ \hline
+            88 & Landline Phones Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/landlinephone.html \\ \hline
+            89 & M3-lite Taxonomy & https://github.com/fiesta-iot/ontology \\ \hline
+            90 & M3 Ontology & Information not available \\ \hline
+            91 & Maintenance Activity Ontology & https://github.com/uwasystemhealth/Paper\_Archive\_Maintenance\_Activity \\ \hline
+            92 & Maintenance Activity Ontology & https://industryportal.enit.fr/ontologies/MNT-ACT \\ \hline
+            93 & Maintenance Reference Ontology & https://spec.industrialontologies.org/iof/ontology/maintenance/Maintenance/ \\ \hline
+            94 & Manufacturing & https://github.com/emmo-repo/EMMO \\ \hline
+            95 & Manufacturing Semantics Ontology & https://www.academia.edu/download/30806306/Lemaignan2006.pdf \\ \hline
+            96 & Manufacturing System Ontology & https://github.com/enegri/OFM \\ \hline
+            97 & ManuService Ontology & https://industryportal.enit.fr/ontologies/MANUSERVICE \\ \hline
+            98 & Materials & https://github.com/emmo-repo/EMMO \\ \hline
+            99 & Materials Design Ontology & https://github.com/LiUSemWeb/Materials-Design-Ontology \\ \hline
+            100 & Material properties ontology & https://bimerr.iot.linkeddata.es/def/material-properties/ \\ \hline
+        \end{tabular}%
+    }
+\end{table}
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{table}[H]
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{|l|l|l|}
+            \hline
+            & Name & Project page or publication \\ \hline
+            101 & Material Science and Engineering Ontology & https://matportal.org/ontologies/MSEO \\ \hline
+            102 & Mechanical Testing Ontology (MTO) & https://industryportal.enit.fr/ontologies/MTO \\ \hline
+            103 & Microstructure domain ontology & https://github.com/emmo-repo/domain-microstructure \\ \hline
+            104 & Microwave Vocabulary & https://ebusiness-unibw.org/ontologies/opdm/microwave.html \\ \hline
+            105 & Mobile Phone Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/mobilephone.html \\ \hline
+            106 & Modem Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/modem.html \\ \hline
+            107 & Molecules And Materials Basic Ontology & https://github.com/daimoners/MAMBO \\ \hline
+            108 & MPS500 & https://github.com/hsu-aut/MPS500-Capabilities \\ \hline
+            109 & MPS500 AssembleCylinder & https://github.com/hsu-aut/MPS500-Capabilities \\ \hline
+            110 & MPS500 AssembleThermometer & https://github.com/hsu-aut/MPS500-Capabilities \\ \hline
+            111 & MPS500 CameraModule & https://github.com/hsu-aut/MPS500-Capabilities \\ \hline
+            112 & MPS500 DrillingModule & https://github.com/hsu-aut/MPS500-Capabilities \\ \hline
+            113 & MPS500 PropertyTypes & https://github.com/hsu-aut/MPS500-Capabilities \\ \hline
+            114 & MPS500 RawCylinderSupplyModule & https://github.com/hsu-aut/MPS500-Capabilities \\ \hline
+            115 & MPS500 RawThermometerSupplyModule & https://github.com/hsu-aut/MPS500-Capabilities \\ \hline
+            116 & MPS500 ShippingModule & https://github.com/hsu-aut/MPS500-Capabilities \\ \hline
+            117 & MPS500 StorageModule PutInStorage & https://github.com/hsu-aut/MPS500-Capabilities \\ \hline
+            118 & MPS500 StorageModule RetrieveFromStorage & https://github.com/hsu-aut/MPS500-Capabilities \\ \hline
+            119 & MPS500 Transport Module & https://github.com/hsu-aut/MPS500-Capabilities \\ \hline
+            120 & MSDL (Manufacturing Service Description Language) & https://industryportal.enit.fr/ontologies/MSDL \\ \hline
+            121 & Navigation Device Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/navigation.html \\ \hline
+            122 & Occupancy Profile ontology & https://github.com/oeg-upm/bimerr-occupant-behavior \\ \hline
+            123 & oneM2M Base Ontology & https://git.onem2m.org/MAS/BaseOntology \\ \hline
+            124 & Ontology for Maintenance Procedure Documentation (OMPD) Conditional Maintenance Task Ontology & https://industryportal.enit.fr/ontologies/OMPD-CMTO \\ \hline
+            125 & Ontology for the Battery Value Chain & https://gitlab.cc-asp.fraunhofer.de/ISC-Public/ISC-Digital/ontology/bvco \\ \hline
+            126 & Ontology model for Web of Things & http://iot.linkeddata.es/def/wot/index-en.html \\ \hline
+            127 & Ontology of units of Measure & http://bdi.si.ehu.es/bdi/ontologies/ExtruOnt/docs/ \\ \hline
+            128 & OntoSensor Device Ontology & https://mmisw.org/ont/univmemphis/sensor \\ \hline
+            129 & OPC UA Core ontology & https://github.com/OntoUA/ua-nodeset-core-ont \\ \hline
+            130 & OPC UA NodeSet ontology & https://github.com/OntoUA/ua-nodeset-core-ont \\ \hline
+            131 & OPC UA Ontology-Design-Pattern & https://github.com/hsu-aut/IndustrialStandard-ODP-OPC-UA \\ \hline
+            132 & OpenADR ontology & https://albaizq.github.io/OpenADRontology/OnToology/ontology/openADRontology.owl/documentation/index-en.html \\ \hline
+            133 & OpenLink Product Features Ontology & http://www.openlinksw.com/ontology/features\# \\ \hline
+            134 & Open Energy Ontology & https://openenergy-platform.org/ontology/ \\ \hline
+            135 & PackML StateMachine Ontology-Design-Pattern & https://github.com/hsu-aut/IndustrialStandard-ODP-PackML \\ \hline
+            136 & Paper Vocabulary & https://ebusiness-unibw.org/ontologies/opdm/paper.html \\ \hline
+            137 & PCA 'Part 14' upper ontology & https://rds.posccaesar.org/ontology/lis14/ont/core/ \\ \hline
+            138 & Platform Ontology & https://github.com/oeg-upm/cogito-platform-ontology \\ \hline
+            139 & Portable Media Player Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/portablemp.html \\ \hline
+            140 & Position Ontology & https://github.com/srfiorini/IEEE1872-owl \\ \hline
+            141 & Printer Vocabulary & https://ebusiness-unibw.org/ontologies/opdm/printer.html \\ \hline
+            142 & process & https://rds.posccaesar.org/ontology/plm/ont/process/ \\ \hline
+            143 & Process Ontology & https://github.com/oeg-upm/cogito-construction-process-ontology \\ \hline
+            144 & Product Ontology & https://github.com/mvegetti/PRONTO/ \\ \hline
+            145 & Product Types Ontology & http://www.productontology.org/ \\ \hline
+            146 & Product Vocabulary & https://ns.inria.fr/provoc/v1/provoc\_v1.html \\ \hline
+            147 & PSS Ontology & https://industryportal.enit.fr/ontologies/PSS \\ \hline
+            148 & RealEstateCore Full & https://github.com/RealEstateCore/rec \\ \hline
+            149 & Reference Generalized Ontological Model & https://github.com/MuhammadYahta/rgom \\ \hline
+            150 & Reified Requirements Ontology & https://data.dnv.com/ontology/requirement-ontology/core/req-ont.html \\ \hline
+            151 & Resistance Spot Welding Ontology & https://github.com/nsai-uio/RSWO \\ \hline
+            152 & RESPOND Ontology & https://respond-project.github.io/RESPOND-Ontology/respond/index-en.html \\ \hline
+            153 & RFID System Configuration Ontology & https://github.com/eleniTsalapati/ONTOLOGIES \\ \hline
+            154 & RIVA InfoModel & https://github.com/hsu-aut/RIVA\_InfoModel \\ \hline
+            155 & Resource, Material, Process, Function and Quality (rmpfq) ontology & https://github.com/zhengxiaochen/rmpfq\_ontology \\ \hline
+            156 & ROMAIN: Reference Ontology for industrial Maintenance & https://industryportal.enit.fr/ontologies/ROMAIN \\ \hline
+            157 & RPARTS & https://github.com/srfiorini/IEEE1872-owl \\ \hline
+            158 & Safety Ontology & https://github.com/mahsa-teimourikia/Safety-Ontology \\ \hline
+            159 & Safety Ontology & https://github.com/oeg-upm/cogito-safety-ontology \\ \hline
+            160 & SAREF Ontology & https://saref.etsi.org/core/ \\ \hline
+            161 & SAREF extension for the Automotive domain & https://saref.etsi.org/saref4auto/ \\ \hline
+            162 & SAREF extension for building & https://saref.etsi.org/saref4bldg/ \\ \hline
+            163 & SAREF extension for the Energy domain & https://saref.etsi.org/saref4ener/ \\ \hline
+            164 & SAREF extension for the electric grid domain & https://saref.etsi.org/saref4grid/ \\ \hline
+            165 & SAREF extension for the industry and manufacturing domain & https://saref.etsi.org/saref4inma/ \\ \hline
+            166 & SAREF extension for the smart lifts domain & https://saref.etsi.org/saref4lift/ \\ \hline
+            167 & SAREF4SYST: an extension of SAREF for typology of systems and their inter-connections & https://saref.etsi.org/saref4syst/ \\ \hline
+            168 & SAREF4WATR is an extension of SAREF for Water & https://github.com/oeg-upm/S4WATR \\ \hline
+            169 & SCOPRO (Supply Chain Process Ontology) & https://openreview.net/pdf?id=ricE3prhfH8 \\ \hline
+            170 & SCORVoc & https://github.com/vocol/scor \\ \hline
+            171 & SEAS Architecture ontology & https://ci.mines-stetienne.fr/seas/ArchitectureOntology \\ \hline
+            172 & SEAS Building Ontology & https://ci.mines-stetienne.fr/seas/BuildingOntology \\ \hline
+            173 & SEAS Device ontology & https://ci.mines-stetienne.fr/seas/DeviceOntology \\ \hline
+            174 & SEAS Electric Light Source Ontology & https://ci.mines-stetienne.fr/seas/ElectricLightSourceOntology \\ \hline
+            175 & SEAS Electric Power System Ontology & https://ci.mines-stetienne.fr/seas/ElectricPowerSystemOntology \\ \hline
+            176 & SEAS Electric Street Light System Ontology & https://ci.mines-stetienne.fr/seas/StreetLightSystemOntology \\ \hline
+            177 & SEAS Electric Vehicle ontology & https://ci.mines-stetienne.fr/seas/ElectricVehicleOntology \\ \hline
+            178 & SEAS Photovoltaic ontology & https://ci.mines-stetienne.fr/seas/PhotovoltaicOntology \\ \hline
+            179 & SEAS Smart Meter ontology & https://ci.mines-stetienne.fr/seas/SmartMeterOntology \\ \hline
+            180 & SEAS Thermodynamic System ontology & https://ci.mines-stetienne.fr/seas/ThermodynamicSystemOntology \\ \hline
+            181 & Semantic Sensor Network Ontology & https://www.w3.org/TR/vocab-ssn/ \\ \hline
+            182 & Semantically Integrated Planning Model & https://industryportal.enit.fr/ontologies/SIMPM \\ \hline
+            183 & Sensor Data ontology & https://bimerr.iot.linkeddata.es/def/sensor-data/ \\ \hline
+            184 & Sensor, Observation, Sample and Actuator & https://www.w3.org/TR/vocab-ssn/ \\ \hline
+            185 & Sharework Ontology for Human-Robot Collaboration & https://industryportal.enit.fr/ontologies/SOHO \\ \hline
+            186 & Shaver Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/shaver.html \\ \hline
+            187 & Shoe Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/shoe.html \\ \hline
+            188 & Shredder Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/shredder.html \\ \hline
+            189 & SmartHomeWeather & https://paul.staroch.name/en/ \\ \hline
+            190 & SmartProducts EADS & https://projects.kmi.open.ac.uk/smartproducts/ontology.html \\ \hline
+            191 & SmartProducts Generic model & https://projects.kmi.open.ac.uk/smartproducts/ontology.html \\ \hline
+            192 & SmartProducts Product model & https://projects.kmi.open.ac.uk/smartproducts/ontology.html \\ \hline
+            193 & Statistical classification of products by activity & https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/cpa21 \\ \hline
+            194 & Storage Media Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/storagemedia.html \\ \hline
+            195 & Tablet PC Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/tablet.html \\ \hline
+            196 & Television Vocabulary & https://ebusiness-unibw.org/ontologies/opdm/television.html \\ \hline
+            197 & Top Level Ontology of Ontology-based-InformationFlow-Industry-40 & https://github.com/ko3n1g/Ontology-based-InformationFlow-Industry-4.0 \\ \hline
+            198 & Units of measure (uom) & https://rds.posccaesar.org/ontology/plm/ont/uom/ \\ \hline
+            199 & Utility vocabulary of OPDM Category Scheme based on the taxonomy of product types defined by Google & Information not available \\ \hline
+            200 & Vacuum Cleaner Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/vacuum.html \\ \hline
+            201 & VDI 2206 Ontology-Design-Pattern & https://github.com/hsu-aut/IndustrialStandard-ODP-VDI2206 \\ \hline
+            202 & VDI 2860 Ontology-Design-Pattern & https://github.com/hsu-aut/IndustrialStandard-ODP-VDI2860 \\ \hline
+            203 & VDI 3682 Ontology-Design-Pattern & https://github.com/hsu-aut/IndustrialStandard-ODP-VDI3682 \\ \hline
+            204 & VDI 5100 Ontology-Design-Pattern & https://github.com/hsu-aut/IndustrialStandard-ODP-VDI5100 \\ \hline
+            205 & VDI VDE NAMUR 2658 & https://github.com/hsu-aut/IndustrialStandard-ODP-VDIVDENAMUR2658 \\ \hline
+            206 & Vehicle Sales Ontology for Semantic Web-based E-Commerce & https://www.heppnetz.de/ontologies/vso/ns \\ \hline
+            207 & Versioning Ontology & https://data.ontocommons.linkeddata.es/vocabulary/VersioningOntology(veronto) \\ \hline
+            208 & Vicinity core model & http://iot.linkeddata.es/def/core/index-en.html \\ \hline
+            209 & Video Camera Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/videocamera.html \\ \hline
+            210 & Video Projectors Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/videoprojector.html \\ \hline
+            211 & Virtual Asset Representation Ontology & https://fundaciontekniker.github.io/a4blue-ontology/var/index-en.html \\ \hline
+            212 & visualization4ExtruOnt & http://bdi.si.ehu.es/bdi/ontologies/ExtruOnt/docs/ \\ \hline
+            213 & Volkswagen Vehicles Ontology & https://www.w3.org/2001/sw/sweo/public/UseCases/Volkswagen/Volkswagen.pdf \\ \hline
+            214 & Washer Machine Vocabulary & http://www.ebusiness-unibw.org/ontologies/opdm/washingmachine.html \\ \hline
+            215 & Waste Categories & https://showvoc.op.europa.eu/\#/datasets/ESTAT\_Waste\_categories/metadata \\ \hline
+            216 & WoT Digital Twin Ontology & https://oeg-upm.github.io/WoT-DT-ontology/OnToology/dt-ontology.ttl/documentation/index-en.html \\ \hline
+            217 & Z-BRE4K semantic model & https://www.z-bre4k.eu/ \\ \hline
+        \end{tabular}%
+    }
+\end{table}
+
+
+
 
 
 

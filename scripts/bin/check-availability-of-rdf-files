@@ -26,12 +26,12 @@ foreach (array_map('str_getcsv', file(__DIR__.'/../../ontologies.csv')) as $line
     $rdfFile = $rdfXmlFile ?? $turtleFile;
     if (isEmpty($rdfFile)) {
         // ignore
-        echo PHP_EOL.'IGN - '.$entry[0].' >> $rdfFile is empty';
+        echo PHP_EOL.'IGN - '.$entry[0].' >> $rdfFile is empty.PHP_EOL';
     } else {
-        if (urlIsStillAccessible($rdfFile)) {
-            echo PHP_EOL.'OK  - '.$entry[0].' >> '. $rdfFile;
+        if (urlIsAccessible($rdfFile)) {
+            echo PHP_EOL.'OK  - '.$entry[0].' >> '. $rdfFile.PHP_EOL;
         } else {
-            echo PHP_EOL.'ERR - '.$entry[0].' >> '. $rdfFile;
+            echo PHP_EOL.'ERR - '.$entry[0].' >> '. $rdfFile.PHP_EOL;
             $failingRdfFiles[] = $rdfFile;
 
             // remove related cache entry to enforce fresh GET request next time

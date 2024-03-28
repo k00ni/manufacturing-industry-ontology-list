@@ -439,7 +439,7 @@ function loadQuadsIntoInMemoryStore(string $rdfFileUrl): InMemoryStoreSqlite|nul
     return $store;
 }
 
-function urlIsStillAccessible(string $url): bool
+function urlIsAccessible(string $url): bool
 {
     $curl = new Curl();
     $curl->setOpt(CURLOPT_CONNECT_ONLY, true);

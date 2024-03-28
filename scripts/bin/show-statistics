@@ -7,16 +7,18 @@
 
 declare(strict_types=1);
 
-use sweetrdf\InMemoryStoreSqlite\Store\InMemoryStoreSqlite;
-
 require __DIR__.'/../vendor/autoload.php';
 
 $statistics = [
+    'license-usage' => [],
+    'total-number-of-ontologies' => null,
+    'number-of-related-ontologies' => 0,
     'number-of-entries-with-information-not-available' => 0,
     'number-of-entries-without-information-not-available' => 0,
-    'number-of-related-ontologies' => 0,
-    'total-number-of-ontologies' => null,
-    'license-usage' => [],
+    'number-of-entries-with-last-activity-info' => 0,
+    'number-of-entries-with-last-activity-within-3-years' => 0,
+    'number-of-entries-with-last-activity-within-7-years' => 0,
+    'number-of-entries-with-last-activity-older-than-7-years' => 0,
 ];
 
 /*
@@ -27,8 +29,6 @@ foreach ($csvEntries as $line => $entry) {
     if (0 == $line) {
         continue;
     }
-
-    echo '.';
 
     /*
      * Preparation part ----------------------------------------------------------------
@@ -100,6 +100,27 @@ foreach ($csvEntries as $line => $entry) {
     } else {
         ++$statistics['number-of-entries-without-information-not-available'];
     }
+
+    // last activity with 3 and 7 years
+    if ('Information not available' != $entry[5]) {
+        ++$statistics['number-of-entries-with-last-activity-info'];
+
+        // define timestamps 3 and 7 years ago
+        $now = new DateTime('now');
+        $threeYearsAgo = (new DateTime('now'))->modify('-3 years')->format('Y-m-d');
+        $sevenYearsAgo = (new DateTime('now'))->modify('-7 years')->format('Y-m-d');
+
+        $d = new DateTime($entry[5]);
+        // within 3 years
+        if ($threeYearsAgo <= $d->format('Y-m-d')) {
+            ++$statistics['number-of-entries-with-last-activity-within-3-years'];
+        } elseif ($sevenYearsAgo <= $d->format('Y-m-d')) {
+            // within 7 years
+            ++$statistics['number-of-entries-with-last-activity-within-7-years'];
+        } else {
+            ++$statistics['number-of-entries-with-last-activity-older-than-7-years'];
+        }
+    }
 }
 
 $statistics['total-number-of-ontologies'] = count($csvEntries)-1;
@@ -109,7 +130,18 @@ usort($statistics['license-usage'], function($a, $b) {
     return $a['count'] < $b['count'] ? 1 : -1;
 });
 
+$licenses = $statistics['license-usage'];
+unset($statistics['license-usage']);
+
 echo PHP_EOL;
+echo PHP_EOL;
+
+foreach ($licenses as $entry) {
+    if (10 <= $entry['count']) {
+        echo PHP_EOL.'\item \textbf{'.$entry['count'].'x} '.$entry['license'];
+    }
+}
+
 echo PHP_EOL;
 echo PHP_EOL;
 var_dump($statistics);
