@@ -37,32 +37,36 @@ sorting=nty
 
 \paragraph{{\large Zusammenfassung}}
 
-\paragraph{Einleitung:} Aktuell gibt es keine Liste von maschinenlesbaren, öffentlich-zugänglichen Ontologien und Vokabularen in RDF mit Bezug zum Themengebiet der industriellen Produktion. Ähnliche Arbeiten haben leidiglich eine kleine Menge an Ontologien zu dem Thema untersucht.
+\paragraph{Einleitung:} Aktuell gibt es keine geprüfte Liste mit maschinenlesbaren, öffentlich-zugänglichen RDF-Ontologien und -Vokabularen mit Bezug zum Themengebiet der industriellen Produktion. Ähnliche Arbeiten, wie IndustryPortal, sind Community-getrieben und besitzen keine Prüfung der Metadaten, wodurch Widersprüche bei den Angaben zur referenzierten Ontologie entstehen können. Weiterhin enthält die erarbeitete Liste im Vergleich signifikant mehr Einträge.
 
-\paragraph{Methodik:} Es wurde im Zeitraum vom 01.11.2023 - 26.03.2024 eine Internet- und Literaturrecherche durchgeführt und eine CSV-Datei mit allen thematisch passenden bzw. referenzierten Ontologien und Vokabularen erstellt. Zu jeder Ontologie wurden eine Reihe von Metadaten erfasst (z.B. Titel, Kurzbeschreibung, Projektseite, Version, letzte Änderung und Lizenz).
+\paragraph{Methodik:} Es wurde im Zeitraum vom 01.11.2023 - 28.03.2024 eine Internet- und Literaturrecherche durchgeführt und eine CSV-Datei mit allen thematisch passenden bzw. referenzierten Ontologien und Vokabularen erstellt. Zu jeder Ontologie wurden eine Reihe von Metadaten erfasst (z.B. Titel, Kurzbeschreibung, Projektseite, Version, letzte Änderung und Lizenz).
 
-\paragraph{Resultate:} Als Ergebnis wurden \textbf{343} Ontologien bzw. Vokabulare gefunden, wobei \textbf{189} einen thematischen Bezug zur industriellen Produktion haben. Nur 75 Ontologien besitzen vollständige Metadaten, bei dem Rest konnte mindestens ein Metadatum nicht ermittelt werden. Es wurden alle Ontologien ignoriert, zu denen es zwar wissenschaftliche Publikationen gibt, jedoch keine öffentlich einsehbaren RDF-Daten. Weitere Auswertungen sind in dieser Publikation zu finden. Die Rohdaten stehen unter einer freien Lizenz (CC-BY 4.0) zur freien Verwendung bereit.
+\paragraph{Resultate:} Als Ergebnis wurden \textbf{XXXXXXX} Ontologien bzw. Vokabulare gefunden, wobei \textbf{YYYYYYY} einen thematischen Bezug zur industriellen Produktion haben. Nur \textbf{ZZZZZZ} Ontologien besitzen vollständige Metadaten, bei dem Rest konnte mindestens ein Metadatum nicht ermittelt werden. Es wurden alle Ontologien ignoriert, zu denen es zwar wissenschaftliche Publikationen gibt, jedoch keine öffentlich einsehbaren RDF-Daten. Weitere Auswertungen sind in dieser Publikation zu finden. Die Rohdaten stehen unter einer freien Lizenz (CC-BY 4.0) zur freien Verwendung bereit.
 
-\paragraph{Diskussion:} Die Untersuchung wurde lediglich über einen Zeitraum von 5 Monaten durchgeführt. Weiterhin wurde der thematische Fokus industrielle Produktion im weitesten Sinne betrachtet, wodurch möglicherweise auch thematisch nicht direkt passende Ontologien einbezogen wurden.
+\paragraph{Diskussion:} Die Untersuchung wurde lediglich über einen Zeitraum von 5 Monaten durchgeführt. Weiterhin wurde der thematische Fokus industrielle Produktion im weitesten Sinne betrachtet, wodurch möglicherweise auch thematisch nicht vollständig passende Ontologien einbezogen wurden.
 
-\paragraph{Fazit:} Diese Arbeit zeigt [...]
+\paragraph{Fazit:} Der wissenschaftliche Beitrag dieser Arbeit ist eine händisch geprüfte Liste von Ontologien, die unter einer freien Lizenz zugänglich ist. Daneben gibt es eine Auswertung zu den Rechercheergebnissen, wodurch Rückschlüsse zum Zustand der betrachteten Ontologien gezogen werden können.
+[...]
 
 \newpage
 
 \section{Einleitung}
 
-Es wurde eine Internet- und Literaturrecherche zur Ermittlung aller öffentlich zugänglichen\footnote{RDF-Dokument ist über eine URL abrufbar.} und RDF vorliegenden Ontologien (und Vokabulare) aus dem Themengebiet der industriellen Produktion durchgeführt.
-Das Ziel war die Erstellung einer Übersicht, bestehend aus maschinenlesbaren Ontologien, die eine automatisierte Verarbeitung des modellierten Wissens erlauben (z.B. OWL Reasoning oder Inferenz).
+Es wurde eine Internet- und Literaturrecherche zur Ermittlung aller öffentlich zugänglichen\footnote{RDF-Dokument ist über eine URL abrufbar.} und in RDF vorliegenden Ontologien (und Vokabulare) aus dem Themengebiet der industriellen Produktion durchgeführt.
+Das Ziel war die Erstellung einer Liste, bestehend aus maschinenlesbaren Ontologien, die eine automatisierte Verarbeitung des modellierten Wissens erlauben (z.B. Training einer KI oder OWL Reasoning).
+Interessenten können somit thematisch passende Ontologien aus der Liste auswählen, sich die RDF-Daten herunterladen und mit eigenen Axiomen ergänzen.
+Bis zu diesem Zeitpunkt war das nur sehr begrenzt und mit hohem technischen Aufwand möglich.
 
 Die Arbeit ist wie folgt strukturiert: [...] Kapitel 2 enthält ... in Kapitel 3 folgt ... usw.
 
 \subsection{Öffentlich verfügbare Forschungsdaten}
 
-Die erstellten Forschungsdaten stehen in einem Github-Repository für die Öffentlichkeit zur Verfügung:
+Alle erstellten Forschungsdaten stehen in einem Github-Repository für die Öffentlichkeit zur Verfügung:
 
 \textbf{TODO:} Link einfügen
 
-\textbf{TODO:} Die Inhalte unterliegen dabei den Bedingungen der Creative Commons BY 4.0.
+Die Inhalte unterliegen dabei den Bedingungen der Creative Commons BY 4.0.
+Etwaige Rechte der Ontologieautoren, die Metadaten betreffend (z.B. Zusammenfassungen, Namen), bleiben unberührt.
 
 \subsubsection{Graph Visualisierung}
 
@@ -82,17 +86,13 @@ RDF/OWL
 \subsection{Ontologien und Kontrollierte Vokabulare}
 
 Im Rahmen dieser Arbeit lag der Fokus auf maschinenlesbaren RDF Ontologien und Vokabularen.
-Eine Ontologie wurde aufgenommen, wenn sie die folgenden Kriterien erfüllt:
-
-\begin{enumerate}
-    \item Die Ontologie besitzt eine URL zu einer Textdatei, welche in einer formalen Sprache (RDF/OWL) vorliegt.
-    \item Die Ontologie stellt ein Vokabular zur Beschreibung des Fachgebietes bereit.
-    \item Der Ontologie liegt eine logische Theorie (z.B. in Form von Axiomen, Regeln, Hierarchien) über das Fachgebiet zugrunde, die auf das Vokabular zurückgreift.
-\end{enumerate}
+Maschinenlesbarkeit ist gegeben, wenn die Ontologie in Form einer Textdatei (in einer RDF-Notation) vorliegt und die Datei über eine URL abgerufen werden kann.
+Die Ontologie muss zudem ein Vokabular zur Beschreibung des Fachgebietes bereitstellen und eine logische Theorie (z.B. in Form von Axiomen, Regeln, Hierarchien) über das Fachgebiet zugrunde legen, die auf das Vokabular zurückgreift.
+In der Praxis sind die Ontologien bei diesem Punkt manchmal lückenhaft, weshalb die Theorie nur in Ansätzen erkennbar sein muss.
 
 Diese Kriterien basieren größtenteils auf den Ausführungen von Fabian Neuhaus aus \cite{neuhaus2018ontology}, mit ein paar Ergänzungen.
-Im Folgenden wird der Begriff Ontologie auch für Vokabulare genutzt, außer es wird explizit darauf hingewiesen.
-Der Grund für diese Festlegung sind die Rechercheergebnisse, die zeigen, dass manche Autoren häufig ihre eigenen Arbeiten entweder als Ontologie oder Vokabular, oder beides, bezeichneten.
+\textbf{Im Rahmen dieser Arbeit wird der Begriff Ontologie auch für Vokabulare genutzt, außer es wird explizit darauf hingewiesen.}
+Der Grund für diese Festlegung sind die Rechercheergebnisse, die zeigen, dass manche Autoren ihre eigenen Arbeiten ihr Arbeiten sowohl als Ontologie als auch Vokabular bezeichneten.
 Zum Beispiel bezeichnet Martin Hepp GoodRelations als standardisiertes Vokabular für Produkte, Preise und Unternehmensdaten, nutzt jedoch Ontologie als Quasi-Synonym, siehe das folgende Zitat: "\textit{GoodRelations is a standardized vocabulary (also known as "schema", "data dictionary", or "ontology") for product, price, store, and company data that can [...]}"\footnote{Quelle: \url{https://www.heppnetz.de/ontologies/goodrelations/v1.html}}.
 
 \subsubsection{Ontologiearten}
@@ -104,13 +104,12 @@ Zum Beispiel bezeichnet Martin Hepp GoodRelations als standardisiertes Vokabular
 \end{figure}
 
 Die Untersuchung ergab, dass die Autoren ihre Ontologien überwiegend nach der etablierten Vierteilung einordnen.
+
 An der Spitze der Hierarchie steht die \textbf{Top-Level Ontologie} (Synonyme: Upper Ontology, Foundational Ontology).
 Sie beinhaltet fachgebiets-unabhängige Inhalte (Begriffe, Relationen, Regeln, Axiome etc.) zur Beschreibung eines Ausschnitts der Realität.
 Zu den bekanntesten gehören Suggested Upper Merged Ontology (SUMO), Descriptive Ontology for Linguistic and Cognitive Engineering (DOLCE) und Basic Formal Ontology (BFO).
-Top-Level-Ontologien bringen häufig eine eigene Theorie zur Beschreibung der Realität mit.
-Jede abgeleitete Ontologie übernimmt somit auch die zugehörige Theorie, Implikationen etc.
 
-Es folgt die Ebene der \textbf{Mid-Level Ontologie}, welche die Inhalte der Top-Level Ontologie ergänzt bzw. verändert. Sie besitzen einen geringen thematischen Bezug und dient häufig als inhaltliche Brücke zwischen einer Top-Level Ontologie und ihr untergeordneten Kern- bzw. Task-Ontologien.
+Es folgt die Ebene der \textbf{Mid-Level Ontologie}, welche die Inhalte der Top-Level Ontologie ergänzt bzw. verändert. Sie besitzen einen geringen thematischen Bezug und dienen als inhaltliche Brücke zwischen einer Top-Level Ontologie und ihr direkt untergeordneten Kern- bzw. Task-Ontologien.
 
 Danach folgt die Ebene der \textbf{Kern Ontologie} (Synonyme: Core Ontology, Domain Ontology).
 Ihr Inhalt bezieht sich stärker auf ein Fachgebiet oder sie ergänzt die Inhalte anderer Ontologien.
@@ -118,18 +117,23 @@ Ihr Inhalt bezieht sich stärker auf ein Fachgebiet oder sie ergänzt die Inhalt
 Unter den Kern-Ontologien folgt die \textbf{Task-Ontologie} (Synonyme: Application Ontology).
 Sie nutzt in der Regel die Inhalte von Ontologien höherer Ebenen und stellt eigene Inhalte für einen konkreten Anwendungsfall bereit.
 
+Als Nutzer der hier vorgestellten Ontologien sollte man wissen, auf welcher Ebene sich eine Ontologie befindet.
+Das impliziert die inhaltliche Ausprägung und etwaige Abhängigkeiten, die bei der späteren Verarbeitung eine Rolle spielen.
+So übernimmt eine Kern Ontologie die Theorie einer Top-Level Ontologie (inkl. aller Implikationen), was bei Nichtbeachtung später zu Widersprüchen mit eigenen Axiomen führen kann.
+
 \subsubsection{Ontology Design Pattern (ODP)}
 
 Ontology Design Pattern (ODP) sind kleine unabhängige Ontologien, die einen sehr begrenzten Themenbereich modellieren und dabei einen hohen Grad an Wiederverwendbarkeit und Kombinierbarkeit mit anderen ODPs und Modellierungsansätzen besitzen \cite{gangemi2009ontology}.
 Es besteht keine Beschränkung für deren Aufbau, Struktur und Ausrichtung.
+Die ODPs lassen sich auch in die vorgestellte Vierteilung der Ontologien entsprechend einordnen.
 
 \subsection{Industry Foundation Classes (IFC)}
 
 Die Industry Foundation Classes (IFC) sind ein offener internationaler Standard zur digitalen Beschreibung von Gebäudemodellen im Building Information Model Format (kurz BIM)\footnote{\url
 https://technical.buildingsmart.org/standards/ifc/}.
-Es erlaubt den Datenasustausch zwischen Softwareanwendungen verschiedener Teilnehmer der Bau- und Facility-Management-Branche zur gemeinsamen Verwendung.
+Es erlaubt den Datenaustausch zwischen Softwareanwendungen verschiedener Teilnehmer der Bau- und Facility-Management-Branche zur gemeinsamen Verwendung.
 Der Standard enthält Definitionen für Daten, die für Gebäude während ihres Lebenszyklus erforderlich sind.
-ICF wird an dieser Stelle kurz vorgestellt, weil es Ontologien mit IFC Bezug in den Rechercheergebnissen gibt.
+ICF wurde an dieser Stelle kurz vorgestellt, weil es Ontologien mit IFC Bezug in den Rechercheergebnissen gibt.
 
 \subsection{Lizenzinformationen}
 
@@ -141,8 +145,8 @@ Im Folgenden werden alle Lizenzen aufgelistet, die während der Recherche gefund
 \begin{enumerate}
     \item Apache License 2.0\footnote{\url{https://www.apache.org/licenses/LICENSE-2.0.html}}
     \item BSD License (2- und 3-Clause)\footnote{\url{https://opensource.org/license/bsd-2-clause}, \url{https://opensource.org/license/bsd-3-clause}}
-    \item Creative Commons Licenses (verschiedene Arten)\footnote{\url{https://creativecommons.org/licenses/?lang=en}}
-    \item GNU Public License (verschiedene Arten)\footnote{\url{https://www.gnu.org/licenses/licenses.en.html}}
+    \item Creative Commons Licenses (in verschiedenen Arten und Versionen)\footnote{\url{https://creativecommons.org/licenses/?lang=en}}
+    \item GNU Public License (verschiedene Versionen)\footnote{\url{https://www.gnu.org/licenses/licenses.en.html}}
     \item MIT License\footnote{\url{https://opensource.org/license/mit}}
     \item OGC Document License Agreement\footnote{\url{https://www.ogc.org/about-ogc/policies/document-license-agreement/}}
     \item Public Domain Dedication License (PDDL)\footnote{\url{https://opendatacommons.org/licenses/pddl/}}
@@ -150,7 +154,7 @@ Im Folgenden werden alle Lizenzen aufgelistet, die während der Recherche gefund
 \end{enumerate}
 
 
-\section{Verwandte Arbeiten (Related Work)}
+\section{Verwandte Arbeiten}
 
 - Welche Untersuchungen wurden bereits dahingehend unternommen?
 
@@ -223,30 +227,63 @@ https://industryportal.enit.fr/ontologies
 \section{Methodik}
 
 Das IndustryPortal-Projekt und OntoCommons Ontology Catalogue kommen der angestrebten Liste von maschinenlesbaren RDF Ontologien am nächsten.
+Sie waren daher ein wertvoller Anlaufpunkt bei der Recherche.
+\textbf{TODO:} IndustryPortal noch einflechten
+
 Jedoch ist der Catalogue nicht ohne zusätzlichen Mehraufwand maschinell zu verarbeiten.
 Es handelt es sich um eine Webseite\footnote{Es wird HTML ohne Annotationen der Elemente verwendet, was das Parsing und spätere Auswerten erheblich erschwert.} und bei manchen Ontologien ist kein Link auf RDF-Daten hinterlegt. Abschließend ist noch festzustellen, dass die Liste nur einen kleinen Ausschnitt der verfügbaren Ontologien beinhaltet.
 
-Aus den genannten Gründen wurde eine eigene Literatur- und Internetrecherche durchgeführt und die gefundenen Ontologien in einer CSV-Datei gesammelt.
-CSV-Dateien sind einfach zu parsen und werden in jeder gängigen Programmier- und Skriptsprache unterstützt.
-Interessenten können die CSV-Datei automatisiert, maschinell auswerten und die referenzierten Ontologien über die angegebenen URLs zu den RDF-Daten direkt konsumieren.
-Dies erlaubt durchgängige Maschinenlesbarkeit und einen hohen Grad der Automatisierung.
+Aus den genannten Gründen wurde eine eigene Literatur- und Internetrecherche durchgeführt und die passenden Ontologien in einer CSV-Datei gesammelt.
+Es wurde das CSV-Format gewählt, weil CSV-Dateien einfach zu parsen sind und in jeder gängigen Programmier- und Skriptsprache unterstützt werden.
+Interessenten können die CSV-Datei automatisiert, maschinell auswerten und die referenzierten Ontologien über die angegebenen URLs zu den RDF-Daten direkt einlesen.
+Das erlaubt durchgängige Maschinenlesbarkeit und einen hohen Grad an Automatisierung.
+
+\subsection{Forschungsfragen}
 
 Die folgenden Forschungsfragen wurden bei der Erstellung der Liste zugrundegelegt:
 
 \begin{enumerate}
-    \item Welche Ontologien für das Fachgebiet industrielle Fertigung gibt es?
+    \item Welche Ontologien für das Fachgebiet industrielle Fertigung (im weitesten Sinne) gibt es?
     \item Welche dieser Ontologien werden aktiv betreut bzw. wann war die letzte dokumentierte Aktivität im Projekt?
+    \item Welche lizenzrechtlichen Regelungen muss man beim Einsatz einer Ontologie beachten?
 \end{enumerate}
 
-Bei der gesamten Recherche waren sowohl deutsch- als auch englischsprachige Inhalte von Interesse.
+\subsection{Thematische Abgrenzung}
+
+Die industrielle Fertigung ist thematisch sehr breit aufgestellt.
+Themenbereiche wie Fertigungsverfahren, Mess- und Prüftechnik und Automatisierung spielen dabei eine wichtige Rolle.
+Zusätzlich gibt es eine Reihe von Trends, wie z.B. Smart Manufacturing, bei dem es um eine Änderung der Geschäftsstrategie im Fertigungsbereich geht.
+Hierbei sollen Fertigungszentren modernisiert werden unter Einbeziehung von Technologien wie z.B. IIOT, 3D-Modeling, Industrieautomation, Mobile-Computing und intelligente Analyse-basierte Entscheidungssysteme.
+Die Trends sind dadurch charakterisiert, dass sie häufig interdisziplinär aufgestellt sind.
+
+Auf dieser Grundlage eine thematisch Abgrenzung für diese Untersuchung zu erstellen war nicht einfach.
+Dadurch, dass Ontologien sich jedoch häufig in Onlinediesten befinden, die eine Schlüsselwort-basierte Suche besitzen, wurde eine Liste von Schlüsselwörtern erarbeitet:
+
+\begin{enumerate}
+    \item defect
+    \item digital twin
+    \item industry
+    \item machine
+    \item manufacturing
+    \item product
+    \item sensor
+    \item supply chain
+\end{enumerate}
+
+Die meisten Onlinedienste besaßen an sich schon wenige Ontologien, weshalb die Suche mit weiteren Schlüsselwörtern oft nicht nötig war, um den gesamten Bestand zu sichten.
+Für den Fall, dass es neben Ontologien und Vokabularen noch andere Typen gab, so wurden diese Typen ignoriert.
 
 \subsection{Anlaufstellen für die Suche}
 
 Die Ontologieentwicklung hat starke wissenschaftliche Wurzeln, daher stand die Literaturrecherche am Anfang, um die Publikationen zu finden, welche eine Ontologie und ihre Inhalte näher vorstellen.
 Für die Internetsuche wurde \textbf{Google Search} verwendet.
 \textbf{Google Scholar}\footnote{\url{https://scholar.google.com/}} kam bei der Recherche nach wissenschaftlichen Publikationen zum Einsatz.
+Bei der gesamten Recherche waren sowohl deutsch- als auch englischsprachige Inhalte von Interesse.
+
+\subsubsection{Dezidierte Onlinedienste}
+
 Daneben wurde in weiteren Onlinediensten gesucht, wobei nicht alle unmittelbar etwas mit Ontologien zu tun haben.
-Die folgende Liste enthält alle während der Recherche genutzten Onlinedienste:
+Die folgende Liste enthält alle Onlinedienste, die im Rahmen der Recherche genutzt wurden:
 
 \begin{enumerate}
     \item \textbf{AURORAL Ontologien} (\url{https://auroral.iot.linkeddata.es/index.html}) - Liste von Ontologien, die für das AURORAL Projekt (\url{https://www.auroral.eu/#/}) entwickelt wurden. Es enthält u.a. Ontologien zum Thema Ladestationen und Energiekonsum.
@@ -263,108 +300,97 @@ Die folgende Liste enthält alle während der Recherche genutzten Onlinedienste:
 
 Es wurden die Suchergebnisse für jeden dieser Suchbegriffe näher untersucht, insofern sie von einer Ontologie handelten.
 
-\subsection{Suchparameter}
+\subsubsection{Auswertung von Namespaces und owl:import}
 
-Eine eindeutige Abgrenzung der industriellen Fertigung zu angrenzenden Themen war mir nicht komplett möglich.
-Der Hauptgrund war die Menge an Trends im Rahmen der Industrie 4.0\footnote{\url{https://www.plattform-i40.de/IP/Navigation/EN/Industrie40/WhatIsIndustrie40/what-is-industrie40.html}}.
-So spielt die Digitalisierung und starke Vernetzung bei der Produktion eine wichtige Rolle, wodurch die Bedeutung von z.B. Sensoren zunimmt.
-Die Bedeutung von Sensoren in der Produktion vor der Industrie 4.0 war im Verhältnis eher untergeordnet.
-Im Rahmen der Industrie 4.0 werden Sensoren jedoch häufig von intelligenten Systemen ausgewertet, die aufgrund der Daten Rückschlüsse auf z.B. eine Maschine und deren Einsatz ziehen.
-Dafür werden Fakten über die Umwelt verarbeitet, z.B. zu Luftdruck, Gewicht, Materialeigenschaften etc.
-Das spielt wiederum bei Digitalen Zwillingen eine wichtige Rolle, welche einen digitalen Repräsentanten einer physischen Entität darstellen.
-Sie wiederum erlauben statistische Auswertungen und Simulationen.
-Die Liste liese sich weiter fortsetzen.
-Anhand dieses Beispiel sollte die Verkettung der unterschiedlichen Themengebiet illustriert werden.
+In allen Ontologien werden Namensräume und in manchen auch owl:import-Anweisungen genutzt.
+Namensräume dienen dazu häufig genutzte URLs abzukürzen, um damit Platz zu sparen und die Lesbarkeit zu erhöhen.
+Sie können aber auch Inhalte referenzieren, die in eigenen Ontologie zwar genutzt werden, aber in der referenzierten Ontologie näher beschrieben sind.
 
-Ontologien befinden sich häufig in Onlinediesten, die eine Schlüsselwort-basierte Suche besitzen.
-Daneben gelangt man auch mithilfe von Schlüsselwörtern über Google Search an die Ontologien.
-Aus diesem Grund wurde die folgende Liste an Schlüsselwörtern erarbeitet, welche den Themenbereich industrielle Produktion (in einem weiteren Sinne) repräsentieren:
+Ähnlich verhält es sich mit owl:import-Anweisungen. Sie sagen aus, dass die Ontologie auf Inhalte einer referenzierten Ontologie angewiesen ist bzw. diese die Ontologie erweitern.
+In der Praxis gibt es verschiedene Auslegungen und Implementierungen\footnote{Gute Ausführungen zum Thema hier: \url{https://protegewiki.stanford.edu/wiki/How_Owl_Imports_Work}}.
 
-\begin{enumerate}
-    \item defect
-    \item digital twin
-    \item industry
-    \item machine
-    \item manufacturing
-    \item product
-    \item supply chain
-\end{enumerate}
+Ontologien wie EMMO\footnote{\url{http://emmo.info/}} haben eine hohe Modularisierung, daher müssen die owl:import-Anweisungen genutzt werden, um an alle referenzierten OWL-Daten zu gelangen.
 
-\textbf{TODO:} Beschreibe die zugehörigen Themenbereiche nochmal... mit Grafik?
+Im Rahmen dieser Untersuchung wird von der Annahme ausgegangen, dass Ontologieautoren mit der Nutzung von Namespaces und owl:import signalisieren, dass die Inhalte der referenzierten Ontologie auf irgendeine Weise inhaltlich relevant sind.
 
-Die meisten Onlinedienste besaßen an sich schon wenige Ontologien, weshalb die Suche mit weiteren Schlüsselwörtern oft nicht nötig war, um den gesamten Bestand zu sichten.
-Für den Fall, dass es neben Ontologien und Vokabularen noch andere Typen gab, so wurden diese anderen ignoriert.
+Aus diesem Grund wurden beide ebenfalls ausgewertet.
 
-\subsection{Internetrecherche}
+\subsection{Auswahlkriterien für eine Ontologie}
 
-Ergänzt wurde die Literaturrecherche durch eine Internetrecherche, weil nicht alle Ontologien durch wissenschaftliche Literatur dokumentiert sind.
-Zur Internetrecherche wurden die folgenden Webseiten genutzt:
-
-
-TODO: Hin- und Her-Bouncing erklären? Ausgangspunkt > schauen was es an Ontologien gibt > Kriterien verfeinern > ...
-
-\textbf{TODO:}Auf Hilfsskripte eingehen: cleaning CSV file; finde referenzierte Namespaces/Ontologien; liste noch nicht erfasste, aber referenzierte Ontologien aus ontologies.csv auf
-
-\textbf{TODO} Manche Einträge in ontologies.csv wurden inhaltlich angepasst, weil sonst missverständlich, z.B. http://emmo.info/emmo/top/annotations\# hat als Titel "Annotations", bezieht sich aber auf EMMO Ontologie Annotations
-- Weiterhin wurde versucht, so wenig wie möglich Abkürzungen zu verwenden
-
-Weiterhin wurden die Import-Statements in den RDF-Daten der Ontologien manuell geprüft und etwaige Verlinkungen in die Recherche aufgenommen.
-- Ontologien wie EMMO (http://emmo.info/) haben eine hohe Modularisierung, daher müssen die owl:import Statements genutzt werden, um an alle referenzierten OWL-Daten zu kommen. Die Top- und Mid-Level-Ontologien sind nur "leere" Hüllen.
-
-- Autorenschaft wurde teilweise anhand der Git-Commits ermitteln (z.B. VDI3682), weil direkt in Metadaten und Projektbeschreibung nicht ersichtlich
-
-- die Ontologie RealEstateCore gab ihre OWL-Ontologie in Version 4 auf und verlagerte sich dann auf SHACL und Digital Twin Definition Language Serialisierungen
-  - https://dev.realestatecore.io/docs/DTDL-or-SHACL
-  - Doc der neusten V3: https://doc.realestatecore.io/3.3/full.html
-
-- BACnet ontology hat 326 prefixes
-
-- RDF Datei (https://doc.realestatecore.io/3.3/full.unioned.rdf) für RealEstateCore war ab 14.03. nicht mehr erreichbar (Page not found error),
-  durch kurzes probieren auf full.rdf gestoßen die ging.
-
-- kurios: Product Types Ontology stellt im Dump nur die 1000 am häufigsten abgefragten Klassen als Ontologie bereit (http://www.productontology.org/)
-
-\subsection{Selektion einer Ontologie}
-
-Im Rahmen der Literatur- und Internetrecherche wurde eine Ontologie selektiert, wenn sie die folgenden Kriterien erfüllte:
+Im Rahmen der Literatur- und Internetrecherche wurde eine Ontologie selektiert, wenn sie die folgenden Mindestkriterien erfüllte:
 
 \begin{enumerate}
-    \item Die Ontologie besitzt eine URL zu einer Textdatei, welche in einer formalen Sprache (RDF/OWL) vorliegt.
-    \item Die Ontologie stellt ein Vokabular zur Beschreibung des Fachgebietes bereit.
-    \item Der Ontologie liegt eine logische Theorie (z.B. in Form von Axiomen, Regeln, Hierarchien) über das Fachgebiet zugrunde, die auf das Vokabular zurückgreift.
-    \item Die Inhalte der Ontologie haben einen direkten thematischen Bezug zu den vorher genannten Schlüsselwörtern bzw. den damit zusammenhängenden Themen.
-    \item Die Ontologie wurde explizit in einer kuratierten Ontologie-Bibliothek aufgelistet (z.B. OntoCommons ontology catalogue). Es wird in diesem Fall angenommen, dass jemand mit fachlichem Hintergrund die Ontologie bewusst thematisch eingeordnet hat. (TODO)
-    \item Enthält eine Instanz von owl:Ontology und x Klassen/Properties definiert
+    \item Die Ontologie liegt als Textdatei\footnote{Das schließt auch dynamisch generierte Textdateien mit ein.} in einer RDF-Notation (RDF/XML oder RDF/Turtle) vor und kann über eine URL heruntergeladen werden.
+    \item Die Ontologie stellt ein Vokabular zur Beschreibung des Fachgebietes bereit und es liegt eine logische Theorie (z.B. in Form von Axiomen, Regeln, Hierarchien) über das Fachgebiet zugrunde, die auf das Vokabular zurückgreift.
+    \item Die Inhalte der Ontologie haben einen direkten thematischen Bezug zu den aufgelisteten Schlüsselwörtern bzw. den damit zusammenhängenden Themen.
+    \item In der Textdatei ist mindestens eine Instanz von owl:Ontology zu finden oder mindestens eine Klasse bzw. Property definiert.
+    \item Bei den Metadaten der Ontologie muss mindestens der Name vorhanden sein.
 \end{enumerate}
 
-\textbf{TODO: Schlüsselwort => Thema hier angemessen oder sollte das extra behandelt werden?}
+Eine Ontologie wurde auch als thematisch passend angesehen, wenn sie in einer von den Autoren bzw. Experten kuratierten Liste eingetragen war.
+Es wurde zwar stichprobenartig geprüft, jedoch wurde in diesem Fall allgemein angenommen, dass jemand mit fachlichem Hintergrund die Ontologie bewusst so eingeordnet hatte.
 
-Bei jeder selektierten Ontologie wurde anschließend eine Reihe von objektiven Angaben ergänzt.
-Eine Bewertung der Inhalte (wie RDF-Daten, genutzte Lizenzen o.ä.) fand nicht statt.
-Sie helfen dabei, einen neutralen Blick auf die vorliegenden Industrie-Ontologien zu erhalten.
-Im Folgenden die Angaben mit einer kurzen Erklärung:
+\subsection{Erfasste Metadaten zu einer Ontologie}
+
+Bei jeder selektierten Ontologie wurden eine Reihe von objektiven Angaben ergänzt.
+Eine Bewertung der Inhalte (wie Qualität der RDF-Daten oder genutzte Lizenzen) fand nicht statt.
+Die Metadaten wurden so gewählt, dass sie einen neutralen Blick auf die vorliegenden Industrie-Ontologien gewähren.
+Aufgrund des Umfangs wurde die Liste der Metadaten auf die notwendigsten Angaben beschränkt.
+Alle Angaben in der zugehörigen CSV-Datei wurden in Englisch erstellt, um eine größtmögliche Zugänglichkeit zu ermöglichen.
+Bei vielen Ontologien konnten nicht alle Metadaten-Felder ausgefüllt werden.
+In diesem Fall wurde "Information not available" eingetragen, um Falschaussagen und Missverständnisse zu vermeiden.
+Im Folgenden die Metadaten mit einer kurzen Erklärung:
 
 \begin{itemize}
     \item \textbf{Name der Ontologie} - Der Name der Ontologie, der in den RDF-Daten bzw. der zugehörigen Dokumentation zu finden ist.
-    \item \textbf{Ist Industry related?} - TODO
-    \item \textbf{Abkürzung} - Falls vorhanden, die Abkürzung des Namens der Ontologie. Wird häufig als Prefix in den RDF-Daten verwendet.
-    \item \textbf{Kurzbeschreibung} - Eine kurze, prägnante Beschreibung über den Inhalt der Ontologie.
-    \item \textbf{Projektseite oder Publikation} - Eine URL auf die Projektseite, falls vorhanden. Alternativ eine URL zur zugehörigen Publikation.
-    \item \textbf{Ontologie IRI} - TODO
-    \item \textbf{Neuste Version} - Falls vorhanden, eine Angabe zur neusten Version der Rohdaten. Die neuste Version und das Datum der neusten, dokumentierten Änderung hängen nicht zusammen und können vollkommen verschiedene zeitliche Bezüge haben.
-    \item \textbf{Datum der neusten, dokumentierten Änderung} - Eine Datumsangabe der neusten und dokumentierten Änderung an den Rohdaten. Die Änderung kann, muss aber nicht zeitlich mit der neusten Version zusammenfallen.
-    \item \textbf{Link zu Rohdaten (RDF/XML oder Turtle-Datei)}: Eine URL zu einer oder mehreren Dateien mit den Rohdaten im RDF-Format.
-    \item \textbf{Downloadbereich}: Manche RDF-Dateien besitzen keinen statischen Download-Link oder sind Teil eines ZIP Archivs. Diese findet man dann hier.
-    \item \textbf{Autor(en)} - Eine Liste von Namen der Autoren oder beteiligten Gruppen/Unternehmen.
-    \item \textbf{Lizenz} - Falls vorhanden, eine Angabe zu der/den verwendeten Lizenz(en).
+    \item \textbf{Manufacturing Industry related} - In der Spalte steht "yes", wenn die Ontologie einen direkten thematischen Bezug hat. Alle Ontologien ohne thematischen Bezug, die jedoch referenziert wurden, erhalten in der Spalte "no".
+    \item \textbf{Abbreviation} - Die Abkürzung des Namens der Ontologie, sofern vorhanden.
+    \item \textbf{Short description} - Eine kurze, prägnante Beschreibung über den Inhalt der Ontologie.
+    \item \textbf{Project page or publication} - Eine URL auf die Projektseite, falls vorhanden. Alternativ eine URL zu einer Publikation über die Ontologie oder zu einem Ontologie-Portal mit weiteren Angaben.
+    \item \textbf{Ontologie URI} - URI zur Ontologie. Sie ist in der Regel global eindeutig.
+    \item \textbf{Latest version} - Falls vorhanden, eine Angabe zur neusten Version der RDF-Daten. Die neuste Version und das Datum der neusten, dokumentierten Änderung hängen nicht zusammen und können vollkommen verschiedene zeitliche Bezüge haben.
+    \item \textbf{Latest activity found} - Eine Datumsangabe der neusten und dokumentierten Änderung an den RDF-Daten. Die Änderung kann, muss aber nicht zeitlich mit der neusten Version zusammenfallen.
+    \item \textbf{RDF/XML file}: Eine URL zur RDF/XML-Datei der Ontologie, falls vorhanden.
+    \item \textbf{RDF/Turtle file}: Eine URL zur RDF/Turtle-Datei der Ontologie, falls vorhanden.
+    \item \textbf{Download location}: Manche RDF-Dateien besitzen keinen statischen Download-Link oder sind Teil eines ZIP Archivs. Diese findet man dann hier.
+    \item \textbf{Autors/creators} - Eine Liste von Namen der Autoren oder beteiligten Gruppen/Unternehmen. Sollte es keine Angaben zu Autoren geben, werden hier alle Beitragende aufgelistet.
+    \item \textbf{License} - Falls vorhanden, eine Angabe zu der verwendeten Lizenz.
 \end{itemize}
 
-\textbf{TODO:} sofern vorhanden wurde die RDF-Datei im Turtle Format heruntergeladen (leichte Lesbarkeit), ansonsten RDF/XML oder was noch verfügbar war.
+
+
+\subsection{Inhaltliche Nacharbeiten}
+
+\textbf{TODO} Manche Einträge in ontologies.csv wurden inhaltlich angepasst, weil sonst missverständlich, z.B. http://emmo.info/emmo/top/annotations\# hat als Titel "Annotations", bezieht sich aber auf EMMO Ontologie Annotations
+
+- autor vs. contributors
+  - Autorenschaft wurde teilweise anhand der Git-Commits ermitteln (z.B. VDI3682), weil direkt in Metadaten und Projektbeschreibung nicht ersichtlich
+- titel soweit wie möglich original, aber verständlich
+- Lizenz wie in RDF, falls möglich
+
+
+\subsection{Eigene Hilfsskripte}
+
+\textbf{TODO:}Auf Hilfsskripte eingehen: cleaning CSV file; finde referenzierte Namespaces/Ontologien; liste noch nicht erfasste, aber referenzierte Ontologien aus ontologies.csv auf
 
 \textbf{TODO einarbeiten:} es wurde ein Hilfsskript gebaut, um referenzierte Ontologien/Namespaces zu finden. Dabei sah man, dass auch veraltete Namespaces verwendet werden.
 - car options ontology nutzt goodrelations (http://purl.org/goodrelations/v1\#) - Legacy Liste mit diesen Ontologien im PHP-Code (TODO: Liste nennen)
 
 Für nicht RDF-Namespaces wie XML wurde versucht anhand des Kontextes die passende Namespace IRI zu ermitteln
+
+
+
+
+
+
+
+
+
+
+
+\textbf{TODO:} sofern vorhanden wurde die RDF-Datei im Turtle Format heruntergeladen (leichte Lesbarkeit), ansonsten RDF/XML oder was noch verfügbar war.
+
+
 
 Es gab Ontologien (Information Artifact Ontology aus "Open Biological and Biomedical Ontology Foundry"\footnote{\url{https://obofoundry.org/}}) welche Namespaces auf eine Art verwendeten, deren Zurückverfolgbarkeit unmöglich machte.
 So wurde obo:http://purl.obolibrary.org/obo/ verwendet, in den Rohdaten (https://raw.githubusercontent.com/information-artifact-ontology/IAO/master/iao.owl) wurden dann jedoch Einträge wie obo:RO\_0001900 verwendet, welche auf eine Subontology https://obofoundry.org/ontology/ro.html verweisen.
@@ -451,6 +477,32 @@ In der zugehörigen OWL-Datei\footnote{https://data.industryportal.enit.fr/ontol
 Aufgrund dieses und anderer Gemeinsamkeiten, z.B. gleicher Name (Volkswagen Vehicles Ontology) und XML-Namensraum (http://purl.org/vvo/ns\#), wird angenommen, dass es sich um die gleiche Ontologie handelt. Die Ontologie auf IndustryPortal hat als Veröffentlichungsdatum den 2. November 2022, wobei als Veröffentlichungsdatum bei der Version der 12. Oktober 2010 genannt wird.
 Es liegen keine Informationen vor, dass zwischen diesen Daten weitere Veränderungen an der Ontologie vorgenommen wurden.
 Ich gehe daher davon aus, dass es sich hier lediglich um einen erneuten Upload der Version von 2010 handelt.
+
+
+
+
+
+
+
+
+
+
+
+
+- die Ontologie RealEstateCore gab ihre OWL-Ontologie in Version 4 auf und verlagerte sich dann auf SHACL und Digital Twin Definition Language Serialisierungen
+- https://dev.realestatecore.io/docs/DTDL-or-SHACL
+- Doc der neusten V3: https://doc.realestatecore.io/3.3/full.html
+
+- BACnet ontology hat 326 prefixes
+
+- RDF Datei (https://doc.realestatecore.io/3.3/full.unioned.rdf) für RealEstateCore war ab 14.03. nicht mehr erreichbar (Page not found error),
+durch kurzes probieren auf full.rdf gestoßen die ging.
+
+- kurios: Product Types Ontology stellt im Dump nur die 1000 am häufigsten abgefragten Klassen als Ontologie bereit (http://www.productontology.org/)
+
+
+
+
 
 %----------------------------------------
 
