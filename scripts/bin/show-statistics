@@ -11,14 +11,19 @@ require __DIR__.'/../vendor/autoload.php';
 
 $statistics = [
     'license-usage' => [],
-    'total-number-of-ontologies' => null,
-    'number-of-related-ontologies' => 0,
+    'number-of-domain-related-ontologies' => 0,
     'number-of-entries-with-information-not-available' => 0,
     'number-of-entries-without-information-not-available' => 0,
+    //
+    'number-of-entries-with-rdf-xml-or-turtle-file' => 0,
+    'number-of-entries-with-download-location' => 0,
+    //
     'number-of-entries-with-last-activity-info' => 0,
     'number-of-entries-with-last-activity-within-3-years' => 0,
     'number-of-entries-with-last-activity-within-7-years' => 0,
     'number-of-entries-with-last-activity-older-than-7-years' => 0,
+    //
+    'number-of-entries-with-dereferenceable-ontology-uri' => 0,
 ];
 
 /*
@@ -29,6 +34,14 @@ foreach ($csvEntries as $line => $entry) {
     if (0 == $line) {
         continue;
     }
+
+    // ignore all non domain related ontologies
+    if ('no' == $entry[1]) {
+        continue;
+    }
+
+    // domain related
+    ++$statistics['number-of-domain-related-ontologies'];
 
     /*
      * Preparation part ----------------------------------------------------------------
@@ -44,55 +57,42 @@ foreach ($csvEntries as $line => $entry) {
     $turtleFile = isEmpty($entry[9]) ? null : $entry[9];
 
     $rdfFileUrl = $rdfXmlFile ?? $turtleFile;
-
-    $store = null;
-    $ontologyData = null;
-
-    if (null == $rdfFileUrl) {
-        // ignore
+    if (isEmpty($rdfFileUrl)) {
+        if (isEmpty($entry[10])) {
+            echo PHP_EOL;
+            echo PHP_EOL;
+            echo 'Invalid entry:';
+            echo PHP_EOL;
+            var_dump($entry);
+            echo PHP_EOL;
+            return;
+        } else {
+            ++$statistics['number-of-entries-with-download-location'];
+        }
     } else {
-        /*
-        $store = loadQuadsIntoInMemoryStore($rdfFileUrl);
-
-        if (false === $store instanceof InMemoryStoreSqlite) {
-            echo PHP_EOL.'No ontology data found for '.$ontologyIRI.' >> '.$rdfFileUrl;
-        }
-
-        try {
-            if ($store instanceof InMemoryStoreSqlite) {
-                list($ontologyIRI, $ontologyData) = getOntologyDataAsArray($store);
-            }
-        } catch (Throwable $e) {
-            if (str_contains($e->getMessage(), 'No instance of owl:Ontology')) {
-                // happens if file contains only RDFS data or owl:Class statements
-            } elseif (str_contains($e->getMessage(), 'More than one instance of owl:Ontology was found')) {
-                // ...
-            } else {
-                throw $e;
-            }
-        }
-        */
+        ++$statistics['number-of-entries-with-rdf-xml-or-turtle-file'];
     }
 
     /*
      * Stats part ----------------------------------------------------------------
      */
-    // Manufacturing industry related
-    if ('yes' == $entry[1]) {
-        ++$statistics['number-of-related-ontologies'];
-    }
 
-    // License
+    /*
+     * License
+     */
     if (false === isset($statistics['license-usage'][$entry[12]])) {
         $statistics['license-usage'][$entry[12]] = ['license' => $entry[12], 'count' => 0];
     }
     ++$statistics['license-usage'][$entry[12]]['count'];
 
-    // Check amount of entries with Information not available in one of its fields
+    /*
+     * Check amount of entries with Information not available in one of its fields
+     */
     $foundInfoNotAvail = false;
     foreach ($entry as $value) {
         if (str_contains($value, 'Information not available')) {
             $foundInfoNotAvail = true;
+            break;
         }
     }
     if ($foundInfoNotAvail) {
@@ -101,7 +101,9 @@ foreach ($csvEntries as $line => $entry) {
         ++$statistics['number-of-entries-without-information-not-available'];
     }
 
-    // last activity with 3 and 7 years
+    /*
+     * last activity with 3 and 7 years
+     */
     if ('Information not available' != $entry[5]) {
         ++$statistics['number-of-entries-with-last-activity-info'];
 
@@ -121,9 +123,15 @@ foreach ($csvEntries as $line => $entry) {
             ++$statistics['number-of-entries-with-last-activity-older-than-7-years'];
         }
     }
-}
 
-$statistics['total-number-of-ontologies'] = count($csvEntries)-1;
+    /**
+     * check if ontology uri is dereferenceable
+     */
+    if (urlIsAccessible($entry[7])) {
+        ++$statistics['number-of-entries-with-dereferenceable-ontology-uri'];
+        echo '.';
+    }
+}
 
 // sort licence list
 usort($statistics['license-usage'], function($a, $b) {
@@ -138,8 +146,8 @@ echo PHP_EOL;
 
 foreach ($licenses as $entry) {
     if (10 <= $entry['count']) {
-        echo PHP_EOL.'\item \textbf{'.$entry['count'].'x} '.$entry['license'];
     }
+    echo PHP_EOL.'\item \textbf{'.$entry['count'].'x} '.$entry['license'];
 }
 
 echo PHP_EOL;

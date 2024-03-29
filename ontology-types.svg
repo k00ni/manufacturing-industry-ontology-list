@@ -3,8 +3,8 @@
 
 <svg
    width="145mm"
-   height="101mm"
-   viewBox="0 0 145 101"
+   height="45mm"
+   viewBox="0 0 145 45"
    version="1.1"
    id="svg1114"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
@@ -26,9 +26,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.98520767"
-     inkscape:cx="313.63946"
-     inkscape:cy="162.90982"
+     inkscape:zoom="0.92388071"
+     inkscape:cx="349.61223"
+     inkscape:cy="28.683357"
      inkscape:window-width="1920"
      inkscape:window-height="1016"
      inkscape:window-x="0"
@@ -36,12 +36,7 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
      showguides="true"
-     inkscape:guide-bbox="true">
-    <sodipodi:guide
-       position="72.241537,120.47368"
-       orientation="1,0"
-       id="guide29425" />
-  </sodipodi:namedview>
+     inkscape:guide-bbox="true" />
   <defs
      id="defs1111" />
   <g
@@ -54,24 +49,24 @@
        x="225.28169"
        y="114.36205"
        id="text1544-6-6-7-0"
-       transform="matrix(0.76786159,0,0,0.76786159,-123.47024,-53.114465)"><tspan
+       transform="matrix(0.76786159,0,0,0.76786159,-123.83749,-79.075358)"><tspan
          x="225.28169"
          y="114.36205"
-         id="tspan29494">Top-Level-Ontology</tspan></text>
-    <path
-       id="rect2595"
-       style="fill:none;stroke:#000000;stroke-width:1.23969;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 72.049702,1.0102781 c 0,0 0,0 28.118108,37.0413999 H 42.60254 Z"
-       sodipodi:nodetypes="cccc" />
+         id="tspan1050">Top-Level-Ontology</tspan></text>
     <path
        id="rect5053"
-       style="fill:none;stroke:#000000;stroke-width:0.681065"
-       d="m 41.375406,38.934715 h 59.997744 l 9.89296,19.974587 H 31.932663 Z"
+       style="fill:none;stroke:#000000;stroke-width:0.49288"
+       d="m 41.008142,12.432986 h 59.997748 l 9.89297,10.46125 H 31.565399 Z"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       id="rect5053-3"
+       style="fill:none;stroke:#000000;stroke-width:0.741171;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 48.119944,1.4289188 H 93.51662 l 7.48541,11.0329362 H 40.975189 Z"
        sodipodi:nodetypes="ccccc" />
     <path
        id="rect5053-5"
-       style="fill:none;stroke:#000000;stroke-width:0.783551"
-       d="m 32.003795,59.438469 h 79.413235 l 13.09436,19.974587 H 19.505346 Z"
+       style="fill:none;stroke:#000000;stroke-width:0.568864"
+       d="m 31.636531,22.815484 h 79.413249 l 13.09436,10.528333 H 19.138082 Z"
        sodipodi:nodetypes="ccccc" />
     <text
        xml:space="preserve"
@@ -79,24 +74,24 @@
        x="225.28169"
        y="114.36205"
        id="text1544-6-6-7-0-7"
-       transform="matrix(0.99342605,0,0,0.99342605,-174.192,-62.267624)"><tspan
+       transform="matrix(0.99342605,0,0,0.99342605,-174.55925,-94.578521)"><tspan
          x="225.28169"
          y="114.36205"
-         id="tspan29496">Mid-Level Ontology</tspan></text>
+         id="tspan1052">Mid-Level Ontology</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:4.42073px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:70.3721;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.336724"
        x="225.28169"
        y="114.36205"
        id="text1544-6-6-7-0-7-3"
-       transform="matrix(1.0374096,0,0,1.0374096,-179.04342,-47.841294)"><tspan
+       transform="matrix(1.0374096,0,0,1.0374096,-179.41067,-89.14803)"><tspan
          x="225.28169"
          y="114.36205"
-         id="tspan29498">Core Ontology</tspan></text>
+         id="tspan1054">Core Ontology</tspan></text>
     <path
        id="rect5053-5-5"
-       style="fill:none;stroke:#000000;stroke-width:0.901186"
-       d="M 19.607492,79.797053 H 124.6553 L 141.97652,99.77164 H 3.0745409 Z"
+       style="fill:none;stroke:#000000;stroke-width:0.65679"
+       d="M 19.240228,33.567708 H 124.28805 l 17.32122,10.609687 H 2.7072762 Z"
        sodipodi:nodetypes="ccccc" />
     <text
        xml:space="preserve"
@@ -104,9 +99,9 @@
        x="225.28169"
        y="114.36205"
        id="text1544-6-6-7-0-7-3-6"
-       transform="matrix(1.0374096,0,0,1.0374096,-177.78113,-27.48271)"><tspan
+       transform="matrix(1.0374096,0,0,1.0374096,-178.14838,-78.843619)"><tspan
          x="225.28169"
          y="114.36205"
-         id="tspan29500">Task Ontology</tspan></text>
+         id="tspan1056">Task Ontology</tspan></text>
   </g>
 </svg>
