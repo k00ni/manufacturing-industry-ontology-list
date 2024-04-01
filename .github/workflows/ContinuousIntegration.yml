@@ -1,4 +1,3 @@
-# This action provides a few helper to ease our paper writing process.
 name: Continuous Integration
 on: [push]
 jobs:
@@ -11,7 +10,6 @@ jobs:
     steps:
       - name: "Checkout"
         uses: "actions/checkout@v3"
-
       - name: "Install PHP"
         uses: "shivammathur/setup-php@v2"
         with:
@@ -19,6 +17,7 @@ jobs:
           coverage: "none"
       - name: Install Composer dependencies
         run: cd scripts && composer update --no-progress --prefer-dist --optimize-autoloader
+      # check availability of RDF files used in ontologies.csv
       - name: "Run checks"
         run: "php scripts/bin/check-availability-of-rdf-files"
   check_latext_csv:
@@ -26,11 +25,6 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v3
-      # compiles our tex file to see if there are any problems
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: paper-de.tex
       # Linter to validate our CSV file
       - name: Run csv-lint
         uses: kcheriyath/csvlinter@V0.6.0

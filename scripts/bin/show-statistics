@@ -2,7 +2,7 @@
 <?php
 
 /**
- * This file alignes content of ontologies.csv.
+ * This builds the statistics based on ontologies.csv.
  */
 
 declare(strict_types=1);
@@ -26,9 +26,6 @@ $statistics = [
     'number-of-entries-with-dereferenceable-ontology-uri' => 0,
 ];
 
-/*
- * Alignment part
- */
 $csvEntries = array_map('str_getcsv', file(__DIR__.'/../../ontologies.csv'));
 foreach ($csvEntries as $line => $entry) {
     if (0 == $line) {
@@ -153,7 +150,5 @@ foreach ($licenses as $entry) {
 echo PHP_EOL;
 echo PHP_EOL;
 var_dump($statistics);
-
-// TODO print statistics nicely
 
 echo PHP_EOL;
