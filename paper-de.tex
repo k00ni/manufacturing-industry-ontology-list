@@ -39,17 +39,20 @@ sorting=nty
 
 \paragraph{Einleitung:} Aktuell gibt es keine geprüfte Liste mit maschinenlesbaren, öffentlich-zugänglichen RDF-Ontologien und -Vokabularen mit Bezug zum Themengebiet der industriellen Fertigung.
 Ähnliche Arbeiten, wie IndustryPortal, sind Community-getrieben und besitzen keine Prüfung der Metadaten, wodurch es zu Widersprüchen zwischen den Angaben auf dem Portal und in den RDF-Daten kommt.
-Eine solche Liste soll interessierten Personen und Institutionen helfen, sich schneller als bisher einen Überblick über passende Ontologien zu verschaffen.
+Eine solche Liste wird benötigt, damit interessierte Personen und Institutionen einen einfachen Zugang zu den Ontologien erhalten und sich nicht erst die verstreuten Fakten zusammen suchen müssen.
 
 \paragraph{Methodik:} Es wurde im Zeitraum vom 01.11.2023 - 28.03.2024 eine Internet- und Literaturrecherche durchgeführt und eine CSV-Datei mit allen thematisch passenden bzw. referenzierten Ontologien und Vokabularen erstellt.
 Zu jeder Ontologie wurden eine Reihe von Metadaten erfasst (z.B. Titel, Kurzbeschreibung, Projektseite, Version, letzte Änderung und Lizenz).
 Es wurden alle Ontologien ignoriert, zu denen es zwar wissenschaftliche Publikationen gibt, jedoch keine öffentlich zugänglichen RDF-Daten. Weitere Auswertungen sind am Ende der Publikation zu finden.
-Es wurden Skripte eingesetzt, um semi-automatisch referenzierte Ontologien zu ermitteln.
 
-\paragraph{Resultate:} Als Ergebnis wurden \textbf{217} Ontologien bzw. Vokabulare für den Themenbereich industrielle Fertigung gefunden. Nur \textbf{XXXXXX} Ontologien besitzen vollständige Metadaten, bei dem Rest konnte mindestens ein Metadatum nicht ermittelt werden.  Die Rohdaten (CSV-Datei, Skripte etc.) stehen unter einer freien Lizenz (CC-BY 4.0) für alle Menschen zur freien Verfügung.
+\paragraph{Resultate:} Im Rahmen der Recherche wurden \textbf{217} Ontologien bzw. Vokabulare für den Themenbereich industrielle Fertigung (und angrenzende Themengebiete) gefunden.
+Nur \textbf{50} Ontologien besitzen vollständige Metadaten, bei dem Rest (N=167) konnte mindestens ein Metadatum nicht ermittelt werden.
+\textbf{180} Ontologien stehen unter einer freien bzw. Open Source Lizenz zur Verfügung.
+Alle Rohdaten (CSV-Datei, Skripts etc.) stehen unter einer freien Lizenz (CC-BY 4.0) für jeden zur freien Verfügung.
 
 \paragraph{Diskussion:} Die Untersuchung wurde lediglich über einen Zeitraum von 5 Monaten durchgeführt.
-Weiterhin wurde der thematische Fokus industrielle Fertigung im weitesten Sinne betrachtet, wodurch möglicherweise auch thematisch nicht vollständig passende Ontologien einbezogen wurden.
+Weiterhin wurde der thematische Fokus industrielle Fertigung im weitesten Sinne betrachtet, wodurch möglicherweise auch thematisch nicht passende Ontologien einbezogen wurden.
+Es gab zudem auch Fehler beim Auslesen mancher RDF-Dateien, wodurch eine manuelle Auswertung nötig war.
 
 \paragraph{Fazit:} Der wissenschaftliche Beitrag dieser Arbeit ist eine händisch geprüfte Liste von Ontologien, die unter einer freien Lizenz zugänglich ist. Daneben gibt es eine Auswertung zu den Rechercheergebnissen, wodurch Rückschlüsse zum Zustand der betrachteten Ontologien gezogen werden können. Aufgrund der frei zugänglichen Forschungsdaten können nachfolgende Untersuchungen leichter durchgeführt werden.
 
@@ -57,10 +60,10 @@ Weiterhin wurde der thematische Fokus industrielle Fertigung im weitesten Sinne 
 
 \section{Einleitung}
 
-Formale Ontologien und Vokabulare sind heutzutage weit verstreut im Internet.
-Aus diesem Grund ist eine umfassende Recherche nach Ontologien für ein konkretes Themengebiet oft müßsam und zeitraubend.
-Man muss neben Spezifikationsseiten und wissenschaftlichen Publikationen auch verschiedene Ontologie-Portale konsultieren.
-Der durchschnittliche Domain Experte besitzt häufig nicht das Hintergrundwissen in den Formalen Ontologien und Semantic Web Technologien \cite{sanfilippo2019formal}.
+Die Metadaten zu formalen Ontologien und Vokabularen sind aktuell weit verstreut im Internet.
+Aus diesem Grund ist eine umfassende Recherche nach Ontologien für ein konkretes Themengebiet oft mühsam und zeitraubend.
+Man muss für einen vollständigen Blick neben Seiten mit Spezifikationen und wissenschaftlichen Publikationen auch verschiedene Ontologie-Portale konsultieren.
+Für den durchschnittliche Domain Experten stellt das eine hohe Hürde da, weil häufig nicht das Hintergrundwissen in den Formalen Ontologien und Semantic Web Technologien vorhanden ist \cite{sanfilippo2019formal}.
 
 Es fehlt an Brücken zwischen den Formalen Ontologien, OWL-Ontologien und den verschiedenen wissenschaftlichen Disziplinen.
 Diese Arbeit soll eine solche Brücke für die Bereiche OWL-Ontologien und industrielle Fertigung beisteuern.
@@ -69,22 +72,16 @@ Das Ziel war die Erstellung einer Liste, bestehend aus maschinenlesbaren Ontolog
 Interessenten können somit thematisch passende Ontologien aus der Liste auswählen, sich die RDF-Daten herunterladen und z.B. mit eigenen Axiomen ergänzen.
 Bis zu diesem Zeitpunkt waren solche Testbeds/Experimente nur sehr begrenzt und mit hohem technischen Aufwand möglich.
 
-Die Arbeit ist wie folgt strukturiert: [...] Kapitel 2 enthält ... in Kapitel 3 folgt ... usw.
+Die Arbeit ist wie folgt strukturiert: Kapitel 2 fasst das notwendige Vorwissen des Lesers zusammen. In Kapitel 3 werden verwandte Arbeiten und Projekte vorgestellt. Die Methodik wird im Detail in Kapitel 4 vorgestellt. In Kapitel 5 erfolgt die Auswertung der Rechercheergebnisse. In Kapitel 6 folgt eine kurze Diskussion und Kapitel 7 schließt mit einem Fazit und Ausblick ab.
 
 \subsection{Öffentlich verfügbare Forschungsdaten}
 
-Alle erstellten Forschungsdaten stehen in einem Github-Repository für die Öffentlichkeit zur Verfügung:
+Alle erstellten Forschungsdaten stehen in einem Github-Repository für die Öffentlichkeit zur Verfügung:\linebreak
 
-\textbf{TODO:} Link einfügen
+\textbf{\url{https://github.com/k00ni/manufacturing-industry-ontology-list}}\linebreak
 
-Die Inhalte unterliegen dabei den Bedingungen der Creative Commons BY 4.0.
+Der Großteil der Inhalte stehen dabei unter den Bedingungen der Creative Commons BY 4.0 zur Verfügung.
 Etwaige Rechte der Ontologieautoren, die Metadaten betreffend (z.B. Zusammenfassungen, Namen), bleiben unberührt.
-
-\subsubsection{Graph Visualisierung}
-
-Skript: generate-yuml-diagram-config
-
-- Vereinheitlichung der Prefixe bei den RDF-Daten (z.B. dc vs dcterms vs dcelements oder prov vs. prov\_namespace)
 
 \section{Fachlicher Hintergrund}
 
@@ -195,9 +192,9 @@ Bei manchen Ontologien ist kein Link auf die RDF-Daten angegeben, womit sich die
 
 \subsection{Wissenschaftliche Publikationen}
 
-Aufgrund der hohen thematischen Übereinstimmung wurde die Publikation "Ontologies for Industry 4.0" \cite{kumar2019ontologies} aufgenommen.
+\paragraph{Ontologies for Industry 4.0} Aufgrund der hohen thematischen Übereinstimmung wurde die Publikation \cite{kumar2019ontologies} aufgenommen.
 Die Autoren geben zuerst eine kurze Einführung in die Themengebiete Industrie 4.0, Factory 4.0 und Smart Manufacturing und zählen danach relevante Herausforderungen in diesem Zusammenhang auf, z.B. Mensch-Maschine-Kommunikation oder Datenanalyse.
-Später im Papier werden vier Ontologien vorgestellt:
+Später im Papier werden zu diesen Themenbereichen passend die folgenden 4 Ontologien vorgestellt:
 \begin{enumerate}
     \item \textbf{CORA:} Core Ontology for Robotics and Automation
     \item \textbf{ROA:} The Ontology for Autonomous Robotics\footnote{In der zugehörigen Publikation\cite{olszewska2017ontology} kürzen die Autoren die Ontologie jedoch mit ORA ab.}
@@ -208,7 +205,7 @@ Später im Papier werden vier Ontologien vorgestellt:
 Leider gaben die Autoren keine Links auf die zugehörigen RDF-Daten an, wodurch die Ontologien eigentlich nicht im Scope dieser Arbeit sind.
 Jedoch konnte im Rahmen der Recherche ein Link auf die RDF-Daten der CORA Ontologie ermittelt werden.
 
-Die Autoren des Papiers "Where to Publish and Find Ontologies? A Survey of Ontology Libraries" \cite{d2012publish} geben einen Überblick über Ontologie-Bibliotheken (inkludiert auch Ontology Directory, Ontology Repository, Ontology Archive).
+\paragraph{Where to Publish and Find Ontologies? A Survey of Ontology Libraries} Die Autoren des Papiers \cite{d2012publish} geben einen Überblick über Ontologie-Bibliotheken (inkludiert auch Ontology Directory, Ontology Repository, Ontology Archive).
 Diese Publikation ist relevant, weil sie weiterhin nutzbare Ontologie-Bibliotheken auflistet.
 Neben Metadaten wie Titel, Lizenz und die neuste Version, werden häufig auch die zugehörigen RDF Daten bereitgestellt.
 Die folgenden Portale sind weiterhin nutzbar:
@@ -224,20 +221,17 @@ Die folgenden Portale sind weiterhin nutzbar:
 
 Für diese Arbeit sind Ontologie-Bibliotheken, wie hier aufgelistet, unerlässlich.
 Sie decken zwar nur ein begrenztes Themengebiet ab, bieten in der Regel aber leichte Zugänglichkeit (z.B. mit Suchfunktion und Listen).
-
 Meine Rechercheergebnisse bestätigen die Beobachtungen der Autoren, nämlich das es oft unvollständige Angaben zur Weiterverwendung und Lizenzierung von Ontologien gibt.
 
 \section{Methodik}
 
 Es wurde eine Literatur- und Internetrecherche durchgeführt und die passenden Ontologien in einer CSV-Datei gesammelt.
 Es wurde das CSV-Format gewählt, weil CSV-Dateien einfach zu parsen sind und in jeder gängigen Programmier- und Skriptsprache unterstützt werden.
-Interessenten können die CSV-Datei automatisiert, maschinell auswerten und die per URL referenzierten RDF-Daten der Ontologien direkt einlesen.
-Das erlaubt durchgängige Maschinenlesbarkeit und einen hohen Grad an Automatisierung.
 Bei der gesamten Recherche waren nur deutsch- und englischsprachige Inhalte von Interesse.
 
 \subsection{Forschungsfragen}
 
-Die folgenden Forschungsfragen wurden bei der Erstellung der Liste zugrundegelegt:
+Die folgenden Forschungsfragen wurden bei der Erstellung der Liste zugrunde gelegt:
 
 \begin{enumerate}
     \item Welche Ontologien für das Fachgebiet industrielle Fertigung (im weitesten Sinne) gibt es?
@@ -247,28 +241,27 @@ Die folgenden Forschungsfragen wurden bei der Erstellung der Liste zugrundegeleg
 
 \subsection{Thematische Abgrenzung}
 
-Die industrielle Fertigung ist thematisch sehr breit und viele Themenbereiche wie Fertigungsverfahren, Mess- und Prüftechnik und Automatisierung spielen dabei eine wichtige Rolle.
-Zusätzlich gibt es eine Reihe von Trends, welche häufig interdisziplinär aufgestellt sind und vollkommen neue Thwmengebiete mitbringen (z.B. Big Data beim Smart Manufacturing).
-Bei dieser Ausgangslage eine thematisch Abgrenzung für diese Untersuchung zu erstellen war nicht einfach.
-Dadurch, dass Ontologien sich jedoch häufig in Onlinediesten befinden, die eine Schlüsselwort-basierte Suche besitzen, wurde eine Liste von Schlüsselwörtern erarbeitet: defect, digital twin, industry, machine, manufacturing, product, sensor, supply chain.
+Die industrielle Fertigung ist thematisch sehr breit und viele Themenbereiche, wie Fertigungsverfahren, Mess- und Prüftechnik und Automatisierung spielen dabei eine wichtige Rolle.
+Zusätzlich gibt es eine Reihe von Trends, welche häufig interdisziplinär aufgestellt sind und vollkommen neue Themengebiete einbringen (z.B. Big Data beim Smart Manufacturing).
+Es war nicht einfach bei dieser Ausgangslage eine thematisch Abgrenzung zu erstellen.
+Am Ende wurden relevante Schlüsselwörter erarbeitet, weil sich Ontologien häufig in Onlinediesten befinden, die eine Schlüsselwort-basierte Suche besitzen. Im Folgenden die finale Liste an Schlüsselwörtern: \textit{building, defect, digital twin, factory, industry, machine, manufacturing, product, sensor, supply chain}.
 Sie repräsentieren zentrale Konzepte der industriellen Fertigung sowie angrenzenden Themengebieten / Trends.
 Es wurde hier ein Mittelweg zwischen thematischer Genauigkeit und Handhabbarkeit angestrebt.
 Die meisten Onlinedienste besaßen an sich schon wenige Ontologien, weshalb die Suche mit weiteren Schlüsselwörtern oft nicht nötig war, um den gesamten Bestand zu sichten.
 
 \subsection{Recherchequellen}
 
-Die Ontologieentwicklung hat starke wissenschaftliche Wurzeln, daher stand die Literaturrecherche am Anfang, um die Publikationen zu finden, welche eine Ontologie und ihre Inhalte näher vorstellen.
+Die Ontologieentwicklung hat starke wissenschaftliche Wurzeln, daher wurde mit der Sichtung der wissenschaftlichen Publikationen begonnen, die eine Ontologie und ihre Inhalte näher vorstellen.
+\textbf{Google Scholar}\footnote{\url{https://scholar.google.com/}} kam bei der Recherche zum Einsatz.
 Für die Internetsuche wurde \textbf{Google Search} verwendet.
-\textbf{Google Scholar}\footnote{\url{https://scholar.google.com/}} kam bei der Recherche nach wissenschaftlichen Publikationen zum Einsatz.
 
 \subsubsection{Dezidierte Onlinedienste}
 
-Daneben wurde in weiteren Onlinediensten gesucht, wobei nicht alle unmittelbar etwas mit Ontologien zu tun haben.
 Die folgende Liste enthält alle Onlinedienste, die im Rahmen der Recherche genutzt wurden:
 
 \begin{enumerate}
     \item \textbf{AURORAL Ontologien} (\url{https://auroral.iot.linkeddata.es/index.html}) - Liste von Ontologien, die für das AURORAL Projekt (\url{https://www.auroral.eu/#/}) entwickelt wurden. Es enthält u.a. Ontologien zum Thema Ladestationen und Energiekonsum.
-    \item Projektseite der \textbf{Basic Formal Ontology} (kurz BFO, \url{https://basic-formal-ontology.org/users.html}) - Enthält eine Liste von Ontologie-Projekten, welche die Top-Level Ontologie BFO nutzen.
+    \item Projektseite der \textbf{Basic Formal Ontology} (kurz BFO, \url{https://basic-formal-ontology.org/users.html}) - Liste von Ontologie-Projekten, die die BFO nutzen.
     \item \textbf{BioPortal} - Ontologie-Portal mit über 1094 Ontologien, vordergründig aus dem biomedizinischen Themenbereich\footnote{Geprüft am 26.03.2024}.
     \item \textbf{Basic Register of Thesauri, Ontologies \& Classifications} (kurz BARTOC, \url{https://bartoc.org}) - Eine Webseite mit angebundener Suchmaschine, die Knowledge Organization Systems, Vokabulare und Ontologien auflistet. Es wurden ausschließlich OWL Ontologien verwendet. Einträge, die nicht in Deutsch oder Englisch vorlagen wurden automatisch übersetzt und geprüft.
     \item \textbf{EU Vocabularies} (\url{https://op.europa.eu/en/web/eu-vocabularies/controlled-vocabularies}) - Eine Webseite u.a. mit Ontologien und Vokabularen, bereitgestellt von der Europäischen Union (bzw. einer ihr unterstellten Institution).
@@ -279,14 +272,14 @@ Die folgende Liste enthält alle Onlinedienste, die im Rahmen der Recherche genu
     \item \textbf{ShowVoc} (\url{https://showvoc.op.europa.eu/}) - Ein Portal mit einer Liste von Ontologien, Vokabularen und anderen. Es wurden nur die Ontologien ausgewertet.
 \end{enumerate}
 
-Es wurden die Suchergebnisse für jeden dieser Suchbegriffe näher untersucht, insofern sie von einer Ontologie handelten.
+Es wurden die Suchergebnisse für jedes Schlüsselwort näher untersucht, insofern sie von einer Ontologie handelten.
 Für den Fall, dass es neben Ontologien und Vokabularen noch andere Typen gab, so wurden diese Typen ignoriert.
 
 \subsubsection{Auswertung von Namespaces und owl:import}
 
 In Ontologien kommen häufig Namensräume und owl:import-Anweisungen zum Einsatz.
-Namensräume dienen dazu häufig genutzte URLs abzukürzen, um damit Platz zu sparen und die Lesbarkeit zu erhöhen.
-Bei owl:import-Anwensungen signalisiert man, dass die Ontologie auf Inhalte einer referenzierten Ontologie angewiesen ist bzw. diese die Ontologie erweitern.
+Namensräume dienen dazu häufig genutzte URLs abzukürzen
+Bei owl:import-Anweisungen signalisiert man, dass die Ontologie auf Inhalte einer referenzierten Ontologie angewiesen ist bzw. diese die Ontologie erweitern.
 In der Praxis gibt es verschiedene Auslegungen und Implementierungen\footnote{Gute Ausführungen zum Thema hier: \url{https://protegewiki.stanford.edu/wiki/How_Owl_Imports_Work}}.
 Im Rahmen dieser Untersuchung wird von der Annahme ausgegangen, dass Ontologie-Autoren mit der Nutzung von Namespaces und owl:import signalisieren, dass die Inhalte der referenzierten Ontologie auf irgendeine Weise inhaltlich relevant sind.
 
@@ -347,16 +340,10 @@ Es wurden Einträge in der ontologies.csv inhaltlich angepasst, um ein Mindestma
     \item Die Versionen und Datumsangaben (der letzten Aktivität) wurden vereinheitlicht, um eine Vergleichbarkeit herzustellen.
 \end{enumerate}
 
-\subsection{Eigene Hilfsskripte}
-
-Zur Erleichterung der eigenen Arbeit wurden verschiedene PHP-Skripte geschrieben.
-Sie erlaubten eine semi-automatische Einarbeitung der Ontologien und nachträgliche Validerung der Metadaten.
-Alle Skripte sind im zugehörigen Github-Repository näher dokumentiert.
-
 \section{Rechercheergebnisse}
 
-Im Folgenden werden die wichtigsten Erkentnisse ausgewertet.
-Die Datenbasis waren die \textbf{217} Ontologien, die einen thematischen Bezug zur industriellen Fertigung haben.
+Im Folgenden werden die wichtigsten Erkentnisse zusammengefasst.
+Die Datenbasis bestand aus den \textbf{217} Ontologien, die einen thematischen Bezug zur industriellen Fertigung haben.
 
 \begin{figure}[H]
     \begin{minipage}[c]{0.4\linewidth}
@@ -400,23 +387,23 @@ Bei \textbf{89} Ontologien konnte eine Projektaktivität (z.B. Git-Commit) inner
 Eine Projektaktivität vor über 3 Jahren, aber innerhalb der letzten 7 Jahre konnte bei \textbf{55} Ontologien festgestellt werden.
 Und bei \textbf{26} Ontologien konnte keine oder nur eine Projektaktivität vor über 7 Jahren festgestellt werden.
 
-Ein Großteil der Ontologie, \textbf{178 Stück}, besitzen eine dereferenzierbare Ontology URI.
+\textbf{178 Stück} Ontologien besitzen eine dereferenzierbare Ontology URI.
 Zur Überprüfung der Dereferenzierbarkeit wurde ein HTTP-Request abgesendet und der Response ausgewertet.
 Als dereferenzierbar wurde eine Ontology URI angesehen, wenn der Response keinen Fehler zurücklieferte.
 
 \begin{figure}[H]
-    \includegraphics[scale=0.14]{bars-license-usage}
+    \includegraphics[scale=0.26]{bars-license-usage}
     \centering
-    \caption{Meist genutzte Lizenzen (min. 10 Stück)}
+    \caption{Meist genutzte Lizenzen (min. 10 mal in Verwendung)}
 \end{figure}
 
 \textbf{180} Ontologien nutzten eine freie bzw. Open Source Lizenz und lediglich \textbf{5} Ontologien benutzten eine eigene Lizenzregelung, die sich keiner bekannten Open Source Lizenz direkt zuordnen lies.
 Bei \textbf{32} Ontologien konnten keine Angaben zur Lizenz gefunden werden.
-Diese Feststellung stimmt positiv, weil es damit jedem ermöglicht eigene Arbeiten auf den Ontologien aufzubauen, ohne Lizenzkosten oder rechtliche Auseinandersetzungen zu fürchten.
+Der hohe Anteil an Ontologie mit einer freien bzw. Open Source Lizenz stimmt positiv, weil es damit jedem ermöglicht, eigene Arbeiten auf diesen Ontologien aufzubauen, ohne auf Lizenzkosten oder rechtliche Auseinandersetzungen achten zu müssen.
 Es muss an dieser Stelle jedoch auch erwähnt werden, dass es zwei Ontologien gibt, die nur für nicht-kommerzielle Zwecke zur Verfügung stehen (EEPSA Ontology, Industry 4.0 Knowledge Graph).
 
 Abschließend noch zwei Erwähnungen.
-Es wurden Ontologien gefunden, die nicht mehr in ihrer Form existierten, weil sie z.B. in eine andere Ontologie übergangen sind. So GoodRelations ging 2012 in schema.org über. Ein anderes Beispiel ist die Ontologie RealEstateCore: sie gab ihre OWL-Ontologie in Version 4 auf und verlagerte sich dann auf SHACL und Digital Twin Definition Language Serialisierungen\footnote{Siehe auch \url{https://dev.realestatecore.io/docs/DTDL-or-SHACL} und \url{https://doc.realestatecore.io/3.3/full.html}}.
+Es wurden Ontologien gefunden, die nicht mehr in ihrer Form existierten, weil sie z.B. in eine andere Ontologie übergangen sind. Die GoodRelations Ontology ging 2012 in schema.org über. Ein anderes Beispiel ist die Ontologie RealEstateCore: sie gab ihre OWL-Ontologie in Version 4 auf und verlagerte sich dann auf SHACL und Digital Twin Definition Language Serialisierungen\footnote{Siehe auch \url{https://dev.realestatecore.io/docs/DTDL-or-SHACL} und \url{https://doc.realestatecore.io/3.3/full.html}}.
 
 Und die Product Types Ontology\footnote{\url{http://www.productontology.org/}} stellt lediglich einen RDF-Daten-Dump mit nur 1000 der am häufigsten abgefragten Klassen als Ontologie bereit.
 
@@ -424,22 +411,24 @@ Und die Product Types Ontology\footnote{\url{http://www.productontology.org/}} s
 
 Die vorgestellte Ontologie-Liste hat keinen Anspruch auf Vollständigkeit.
 Die Untersuchung wurde über einen begrenzten Zeitraum von 5 Monaten durchgeführt.
-Weiterhin wurde der thematische Fokus industrielle Fertigung im weitesten Sinne betrachtet, wodurch auch thematisch nicht vollständig passende Ontologien einbezogen sein könnten.
+Weiterhin wurde der thematische Fokus industrielle Fertigung weit ausgelegt, wodurch auch thematisch nicht passende Ontologien einbezogen sein könnten.
 An dieser Stelle wäre eine Nachuntersuchung mit Domainexperten sinnvoll.
 In den Skripten wurden RDF-Bibliotheken genutzt, welche nicht alle RDF-Dateien lesen konnten\footnote{Fehler beim XML-Parsing}.
 In diesen Fällen wurden die Dateien manuell ausgewertet.
 
 \section{Fazit und Ausblick}
 
-Die Rechercheergebnisse zeigen ein vielfältiges Bild.
-Für das Themengebiet industrielle Fertigung und angrenzende Themengebiete konnten viele passende Ontologien gefunden werden.
-Es scheint ein über die letzten 10 Jahre beständiges Interesse an Ontologien in diesen Bereichen zu geben, was die Zeitpunkte der ermittelten letzten Aktivitäten zeigen.
-Ebenso ist positiv, dass einige Ontologien eine dezidierte Spezifikationsseite besitzen, auf der man neben den Metadaten, u.a. auch eine Liste der Klassen und Properties sowie andere Inhalte findet.
+Die Rechercheergebnisse zeigen ein gemischtes Bild.
+Für das Themengebiet industrielle Fertigung und angrenzende Themengebiete konnten 217 passende Ontologien gefunden werden.
+Die ermittelten letzten Aktivitäten je Ontologie deuten auf ein über 10 Jahre währendes Interesse an dem Themenbereich hin.
+Ebenso ist positiv, dass einige Ontologien eine dezidierte Webseite mit der Spezifikation besitzen, die neben den Metadaten, u.a. auch eine Liste der Klassen und Properties bereitstellt.
 
 Jedoch war es bei dem Großteil der Ontologie aufwendig an die gewünschten Metadaten zu gelangen.
 Es ist bemerkenswert, wie wenig Aufmerksamkeit die Ontologie-Autoren auf die Metadaten zu legen scheinen.
 Sind es doch die Metadaten, die zuerst bei Suchanfragen in Ontologie-Portalen und Suchmaschinen herangezogen werden.
-Die Suche nach den Metadaten wurde erschwert durch kaputte Web-Links (Stichwort: link rot), was mich dazu zwang manuell über verschiedene Onlinedienste an weitere Daten über eine Ontologie zu gelangen.
+Die gesamte Recherche wurde regelmäßig erschwert durch nicht mehr erreichbare Web-Resourcen, was mich dazu zwang, manuell über andere Onlinedienste zu suchen.
+Dieses Phänomen ist unter dem Namen "link rot" bzw. "reference rot" bekannt und gut dokumentiert \cite{lakic2023link} \cite{frey2020dbpedia}.
+Kritisch wird das Problem, wenn essentielle Web-Ressourcen aus wissenschaftlichen Publikationen nicht mehr erreichbar sind und damit die Reproduzierbarkeit der Arbeit zumindest erschwert wird.
 
 Diese Arbeit stellt ein stabiles Fundament für weitere Untersuchungen zu Ontologien in der industriellen Fertigung dar. Zudem erlaubt sie interessierten Personen und Unternehmen, die sich im RDF-Umfeld noch nicht so gut auskennen, einfacher an die Ontologie zu gelangen, ohne sich mit technischem Kleinklein beschäftigen zu müssen.
 
