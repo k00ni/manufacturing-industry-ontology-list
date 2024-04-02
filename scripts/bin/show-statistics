@@ -22,6 +22,7 @@ $statistics = [
     'number-of-entries-with-last-activity-within-3-years' => 0,
     'number-of-entries-with-last-activity-within-7-years' => 0,
     'number-of-entries-with-last-activity-older-than-7-years' => 0,
+    'number-of-entries-with-no-last-activity-found' => 0,
     //
     'number-of-entries-with-dereferenceable-ontology-uri' => 0,
 ];
@@ -43,11 +44,6 @@ foreach ($csvEntries as $line => $entry) {
     /*
      * Preparation part ----------------------------------------------------------------
      */
-
-    $rdfFileUrl = null;
-
-    // ontology IRI
-    $ontologyIRI = $entry[7];
 
     // related RDF file(s)
     $rdfXmlFile = isEmpty($entry[8]) ? null : $entry[8];
@@ -119,6 +115,8 @@ foreach ($csvEntries as $line => $entry) {
         } else {
             ++$statistics['number-of-entries-with-last-activity-older-than-7-years'];
         }
+    } else {
+        ++$statistics['number-of-entries-with-no-last-activity-found'];
     }
 
     /**
