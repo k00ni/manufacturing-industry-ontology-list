@@ -1,9 +1,7 @@
 # List of manufacturing industry ontologies in RDF
 
-## TODOs
-
-* [ ] Parameter beim Crawling kurz nennen: Timeout lag bei 5 Sek., nur erste 300 Triple der Ontologie eingelesen bzgl. owl:import
-* [ ] Genutzte Tools: LibreOffice, VSCode, Docker, PHP (welches Tool für was?)
+This repository contains a list of manufacturing industry ontologies, collected during an internet- and literature study in 2024.
+Besides, all scripts and tools used during the study are also provided or at least mentioned.
 
 ## License
 
