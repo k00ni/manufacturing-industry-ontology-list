@@ -1,14 +1,4 @@
 /.~lock*
-/*.pdf
-/ax.zip
-/paper-de.aux
-/paper-de.bbl
-/paper-de.bcf
-/paper-de.blg
-/paper-de.log
-/paper-de.out
-/paper-de.run.xml
-/paper-de.synctex.gz
 /cache
 /scripts/composer.lock
 /scripts/vendor
